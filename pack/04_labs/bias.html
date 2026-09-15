@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scenario Audit — Atlas of the Build Loop</title>
+  <link rel="stylesheet" href="../assets/pack.css" />
+  <style>
+    .lab-lead { max-width: none; margin: 0 0 1rem; }
+    .pick {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.65rem 1rem;
+      margin: 0 0 1.15rem;
+    }
+    .pick label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .pick select {
+      flex: 1 1 18rem;
+      max-width: 36rem;
+      font: inherit;
+      font-weight: 650;
+      padding: 0.7rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--card);
+      color: var(--text);
+      box-shadow: var(--shadow);
+    }
+    .hidden { display: none !important; }
+    .scene {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    label.box {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 1.1rem 0 0.4rem;
+    }
+    textarea {
+      width: 100%;
+      min-height: 11rem;
+      font: inherit;
+      line-height: 1.5;
+      padding: 0.75rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--inset);
+      color: var(--text);
+    }
+    .row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.85rem; }
+    .btn {
+      border: 1px solid var(--border);
+      background: var(--btn);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 0.6rem 1rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn.primary {
+      background: linear-gradient(180deg, #7ee8d4, #2bb89a);
+      border-color: #9af0dc;
+      color: #062f2c;
+    }
+    .key {
+      display: none;
+      margin-top: 1.1rem;
+      padding: 0.95rem 1.05rem;
+      border-radius: 12px;
+      background: var(--inset);
+      border: 1px solid var(--border);
+    }
+    .key.show { display: block; }
+    .key h3 { margin: 0 0 0.45rem; font-size: 0.95rem; color: var(--gold); }
+    .key ul { margin: 0 0 0.85rem; padding-left: 1.15rem; }
+    .key li { margin: 0.35rem 0; }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="../index.html">the Build Loop</a>
+      <nav>
+        <a href="../index.html">Cover</a>
+        <a href="../contents.html">Contents</a>
+        <a href="index.html">Labs</a>
+        <a href="../dashboard.html">Dashboard</a>
+      </nav>
+      <button type="button" class="theme-btn" data-theme-toggle>Dim mode</button>
+    </div>
+  </header>
+  <div class="wrap">
+    <p class="tag">Lab 02 · Judgment</p>
+    <h1>Scenario Audit</h1>
+    <p class="lead lab-lead">Choose a lesson. Read the note. Some statements are sound; some are not. Write your answer in the box. The number of mistakes is not given.</p>
+
+    <div class="pick">
+      <label for="deck">Lesson</label>
+      <select id="deck">
+        <option value="">Choose a lesson…</option>
+      </select>
+    </div>
+
+    <div id="work" class="hidden">
+      <div class="card" style="display:block">
+        <div class="label" id="roundTitle"></div>
+        <p class="scene" id="scene"></p>
+        <label class="box" for="answer">Your Answer</label>
+        <textarea id="answer" placeholder="Write your answer here."></textarea>
+        <div class="row">
+          <button type="button" class="btn primary" id="show">Show answer</button>
+        </div>
+        <div class="key" id="key"></div>
+      </div>
+    </div>
+    <div id="grok-grader"></div>
+  </div>
+  <script src="shared.js"></script>
+  <script src="../assets/theme.js"></script>
+  <script>
+            const SCENES = [
+      {
+        "id": "bl-01-loop",
+        "num": "L01",
+        "title": "The Loop",
+        "scene": "A product trio is asked for a six-month AI-summary roadmap by Friday. They correctly note that a loop is for work where the map is incomplete, and that skipping diamond 1 is a common injury. They still put the entire bet on one Gantt because leadership likes dates. In the kickoff they diverge and score every idea as it is spoken to save time. Someone says moving faster is OODA; the task list grows while the model of the user stays last year’s. They Plan and Do a full architecture, then Act on how excited the room felt — no named Check. Build starts Monday because the name Build–Measure–Learn starts with Build. A known payroll export on the same program is also labeled complex so it can skip its checklist. A designer asks for twenty minutes of named diverge with no scoring; the room says there is no time, then spends an hour arguing vendors. Nobody writes what would change their mind before the first commit.",
+        "ok": [
+          "A loop is for work where the map is incomplete.",
+          "Skipping diamond 1 is a common injury."
+        ],
+        "errors": [
+          {
+            "bad": "Putting a complex product bet on one Gantt because leadership likes dates",
+            "fix": "A Gantt assumes known cause and effect. The Friday artifact should be a loop, not a fake roadmap."
+          },
+          {
+            "bad": "Diverging and scoring every idea as it is spoken",
+            "fix": "That is undeclared converge. Name the mode; add first, then kill/keep."
+          },
+          {
+            "bad": "Moving faster as OODA while the user model stays last year’s",
+            "fix": "Speed without Orient is panic. Orient is the scarce step."
+          },
+          {
+            "bad": "Plan–Do then Act on excitement with no named Check",
+            "fix": "PDCA Check is a comparison to a measure named in Plan."
+          },
+          {
+            "bad": "Building first because BML starts with Build",
+            "fix": "Intellectual order is Learn → Measure → Build."
+          },
+          {
+            "bad": "Labeling a known payroll export complex to skip its checklist",
+            "fix": "Complicated work keeps the checklist. Do not steal the complex label to dodge sequence."
+          }
+        ]
+      },
+      {
+        "id": "bl-02-methods",
+        "num": "L02",
+        "title": "Project Management Methodology",
+        "scene": "A department announces it is Agile. Daily standups exist, which can be a cadence heartbeat. Discovery still has no capacity, so delivery invents the portal in the sprint review. The same Scrum board holds a fixed-date payroll cutover and the unvalidated portal. WIP is 23 items for six people; they call it passion. There is no definition of done, so QA will catch it at the end. They ship an ‘MVP’ that is a half-built full product with no hypothesis. Waterfall is mocked in Slack even for the statute-shaped cutover. Dual-track is implemented as two teams that never meet. Sprint length is cut mid-cycle because a date slipped, destroying the only heartbeat that showed throughput. A staff engineer asks for a written DoD on the cutover dry-run; the board instead adds more stories so the chart looks busy.",
+        "ok": [
+          "Daily standups can be a cadence heartbeat.",
+          "A department can name Agile as a stance about late information."
+        ],
+        "errors": [
+          {
+            "bad": "Discovery has no capacity so delivery invents the product",
+            "fix": "Dual-track exists so discovery can earn the next slice."
+          },
+          {
+            "bad": "One Scrum board for a legal cutover and an unvalidated portal",
+            "fix": "Split the sandwich. Different clocks and DoDs."
+          },
+          {
+            "bad": "WIP of 23 as passion",
+            "fix": "High WIP is usually delay. Limit starts."
+          },
+          {
+            "bad": "No DoD because QA will catch it",
+            "fix": "If DoD is late, metrics lie."
+          },
+          {
+            "bad": "MVP as a discount full product with no hypothesis",
+            "fix": "MVP is the smallest test of a claim."
+          },
+          {
+            "bad": "Mocking Waterfall for a statute-shaped cutover",
+            "fix": "Sequence is honest when cause and effect are known."
+          },
+          {
+            "bad": "Dual-track as two teams that never meet",
+            "fix": "The tracks must talk."
+          }
+        ]
+      },
+      {
+        "id": "bl-03-intent",
+        "num": "L03",
+        "title": "Communicating Intent",
+        "scene": "A manager wants alignment. Purpose is written as a human outcome, and a constraint forbids a new vendor this sprint — both sound. The rest of the brief is ‘build a dashboard’ and ‘modern UX’ as the end state. How Might We is ‘how might we build the red button on page 3?’ Non-goals are skipped so morale stays high. Success is ‘stakeholders are excited.’ The document is 28 pages and called a brief. The manager aligns on vision in the morning and micromanages CSS in the afternoon. Instruction is used for a production deploy checklist, which is appropriate, then the same style is used for a complex prototype week. Two competent teammates say they still cannot act if the manager disappears for two days, because the walls were never written. A contractor is told the purpose is ‘deliver the epic.’",
+        "ok": [
+          "Purpose as a human outcome is the right kind of line.",
+          "A production deploy checklist is a correct use of instruction."
+        ],
+        "errors": [
+          {
+            "bad": "‘Build a dashboard’ standing in for intent",
+            "fix": "That is a task/solution noun, not purpose or end state."
+          },
+          {
+            "bad": "‘Modern UX’ as end state",
+            "fix": "End state must be observable later."
+          },
+          {
+            "bad": "HMW that only allows the red button",
+            "fix": "A good HMW allows structurally different answers, including non-software."
+          },
+          {
+            "bad": "Skipping non-goals for morale",
+            "fix": "Unwritten non-goals become the Thursday scope fight."
+          },
+          {
+            "bad": "Success = stakeholder excitement",
+            "fix": "Prefer behavior you can count."
+          },
+          {
+            "bad": "A 28-page ‘brief’",
+            "fix": "A brief is readable in minutes."
+          },
+          {
+            "bad": "Vision in the morning, CSS micromanagement in the afternoon, and instruction on a complex prototype week",
+            "fix": "Alignment is the stack; instruction is for low-variance work. Do not mix them as a control habit."
+          }
+        ]
+      },
+      {
+        "id": "bl-04-brainstorm",
+        "num": "L04",
+        "title": "Brainstorming",
+        "scene": "Four people meet to generate options. They do have a How Might We on the wall, which is the right input. The director steers in minute two so they stay realistic. Someone runs Crazy 8s, SCAMPER, and a free-for-all in forty minutes. Devil’s advocate starts during generation to keep them honest. Minutes record only the ideas the scribe liked. They dot-vote on slogans and call the winner the prototype. SCAMPER is used on a blank page with no artifact. The photo of forty stickies is the shipped output. A later critique will remember who got shot down. A quiet engineer’s written ideas never leave a notebook because the room switched to talking. Quantity is praised, then immediately ranked. The facilitator calls the session a success because people had fun.",
+        "ok": [
+          "A How Might We on the wall is the right input to a brainstorm.",
+          "Generation can be time-boxed in a single session."
+        ],
+        "errors": [
+          {
+            "bad": "Director steering in minute two to stay realistic",
+            "fix": "Steering is undeclared converge. HiPPO in generation collapses the set."
+          },
+          {
+            "bad": "Stacking Crazy 8s, SCAMPER, and free-for-all in forty minutes",
+            "fix": "Pick one primary method."
+          },
+          {
+            "bad": "Devil’s advocate during generation",
+            "fix": "Schedule it after clustering."
+          },
+          {
+            "bad": "Minutes of only liked ideas",
+            "fix": "Capture everything; cluster later."
+          },
+          {
+            "bad": "Dot-voting slogans as the prototype",
+            "fix": "Promote testable claims; vote on what to test if you vote at all."
+          },
+          {
+            "bad": "SCAMPER on a blank page",
+            "fix": "SCAMPER attacks an existing artifact."
+          },
+          {
+            "bad": "Photo of stickies as the output",
+            "fix": "Output is a testable claim, or cancel."
+          }
+        ]
+      },
+      {
+        "id": "bl-05-prototype",
+        "num": "L05",
+        "title": "Prototyping",
+        "scene": "The riskiest assumption is that contractors can find the packet. The team agrees a smallest slice needs a fail rule. They still build a high-fidelity looks-like of an AI helper because leadership wants a real demo. They call it an MVP once it has a domain name, with no measure. Mechanism risk is deferred until after the pretty shell. The demo is designed so it cannot fail on stage. A one-way safety instruction is prototyped as a cute fake that could teach the wrong action. Paper is rejected because vice presidents will not take it seriously, and nobody states the question the paper would answer. Five contractors are invited to clap at the demo instead of attempting the packet unassisted. The stop condition is never written, so a failed findability test cannot kill the helper this sprint.",
+        "ok": [
+          "The riskiest assumption is findability, not helper polish.",
+          "A smallest slice should include a fail rule."
+        ],
+        "errors": [
+          {
+            "bad": "High-fi looks-like of the helper because leadership wants a real demo",
+            "fix": "Match fidelity to the question. Findability is a lo-fi experience test."
+          },
+          {
+            "bad": "Domain name makes it an MVP",
+            "fix": "MVP is shipped and measured in the real system."
+          },
+          {
+            "bad": "Pretty shell before mechanism when mechanism is a risk",
+            "fix": "That is theater. Works-like may look like junk."
+          },
+          {
+            "bad": "A demo that cannot fail",
+            "fix": "If it cannot fail, it is sales."
+          },
+          {
+            "bad": "Cute fake on a one-way safety door",
+            "fix": "Forbidden if it can teach a dangerous action."
+          },
+          {
+            "bad": "Rejecting paper because of rank, without stating the question",
+            "fix": "A VP can read paper if you tell them what question it answers."
+          }
+        ]
+      },
+      {
+        "id": "bl-06-review",
+        "num": "L06",
+        "title": "Review",
+        "scene": "A critique is on the calendar. The artifact is supposed to be on trial against the brief, which is correct. There is no brief in the room. Executives nod at a high-fi walkthrough; that is called user testing. Task success is ‘they said it was nice.’ A pre-mortem produces jokes and no owners. Steelman is used as a sarcastic prefix to a straw man. Experts with veto are invited after the launch date is printed. The meeting ends with ‘let’s keep thinking.’ Kill is socially impossible, so everything solidifies. Spend does not change. A user who has the actual job is in the room with their boss who championed the design, so they do not fail the task out loud. I like / I wish / What if is skipped for a live redesign by committee.",
+        "ok": [
+          "The artifact should be on trial against the brief.",
+          "A critique can be a scheduled gate."
+        ],
+        "errors": [
+          {
+            "bad": "No brief in the room",
+            "fix": "Cancel the critique. People will review an imaginary product."
+          },
+          {
+            "bad": "Executive nods called user testing",
+            "fix": "Stakeholder review is a different truth."
+          },
+          {
+            "bad": "Task success as ‘they said it was nice’",
+            "fix": "Success is completing the job by a named rule."
+          },
+          {
+            "bad": "Pre-mortem as jokes without owners",
+            "fix": "Owned failure stories are the point."
+          },
+          {
+            "bad": "Sarcastic steelman",
+            "fix": "Steelman is the strongest fair form, especially of the kill case."
+          },
+          {
+            "bad": "Experts after the date is printed",
+            "fix": "Veto experts go before the date."
+          },
+          {
+            "bad": "‘Keep thinking’ / kill unsayable / spend unchanged",
+            "fix": "Name redesign, solidify, kill, pivot, or ship. If spend does not change, it was not a review."
+          }
+        ]
+      },
+      {
+        "id": "bl-07-ship",
+        "num": "L07",
+        "title": "Iteration and Shipping",
+        "scene": "The team says they iterated, so they delivered. They have thirty story points done and zero tests; they report that as learning velocity. Pivot vs persevere will be decided after they see the numbers. The retro produces twelve actions and a slide about who slipped. They want to stay in beta forever so they can keep learning, and they also scheduled a hardening sprint for quality after the tweet. Launch is planned as a party that will prove the idea. Support has no script and rollback is unnamed. A learning-mode pretotype is booked for the all-hands as if it already shipped. On-call is nobody. A live slice is silently rewritten the night before the party because ‘we are still iterating,’ which is a mode confusion: change is now expensive and users already have a habit on the old link.",
+        "ok": [
+          "The team can have both a learning track and a delivery track in the same month.",
+          "Story points can exist as a delivery instrument if DoD is real."
+        ],
+        "errors": [
+          {
+            "bad": "Iterated, therefore delivered",
+            "fix": "Learning can be fast with zero ship. Use two scoreboards."
+          },
+          {
+            "bad": "Zero tests reported as learning velocity",
+            "fix": "Learning velocity is tests, not points."
+          },
+          {
+            "bad": "Threshold after the data",
+            "fix": "Write pivot/persevere/kill before the test."
+          },
+          {
+            "bad": "Retro as twelve actions plus blame",
+            "fix": "One change to the next loop; inspect the system."
+          },
+          {
+            "bad": "Eternal beta and quality after the tweet",
+            "fix": "Eternal beta skips ops. Quality after launch means it was never in DoD."
+          },
+          {
+            "bad": "Launch party as proof of the idea",
+            "fix": "Launch is a mode switch. Shipping proves you can operate a slice."
+          },
+          {
+            "bad": "Learning-mode artifact on the all-hands as shipped",
+            "fix": "Offer the task-success table; keep the rest in the lab."
+          }
+        ]
+      }
+    ];
+
+    const deckSel = document.getElementById("deck");
+    SCENES.forEach((s) => {
+      const o = document.createElement("option");
+      o.value = s.id;
+      o.textContent = s.num + " — " + s.title;
+      deckSel.appendChild(o);
+    });
+
+    const work = document.getElementById("work");
+    const sceneEl = document.getElementById("scene");
+    const titleEl = document.getElementById("roundTitle");
+    const answer = document.getElementById("answer");
+    const keyEl = document.getElementById("key");
+    const showBtn = document.getElementById("show");
+    let current = null;
+    let revealed = false;
+    let grader = { refresh() {} };
+
+    function renderKey(s) {
+      const ok = s.ok.map((t) => `<li>${t}</li>`).join("");
+      const err = s.errors.map((e) => `<li><strong>${e.bad}.</strong> ${e.fix}</li>`).join("");
+      return `<h3>Sound claims — not mistakes</h3><ul>${ok}</ul><h3>Mistakes and the correct concept or action</h3><ul>${err}</ul><p class="muted" style="margin:0">Educational only. Not medical advice.</p>`;
+    }
+
+    function fillValues() {
+      const s = current;
+      const trainee = answer.value.trim() || "(I have not written anything yet.)";
+      let key = "(The trainee has not revealed the official key. Do not dump a full error inventory. Evaluate only the mistakes they named. If they missed a likely error, ask one hint as a question — not a spoiler.)";
+      if (s && revealed) {
+        key = "Sound claims:\n" + s.ok.map((t, i) => (i + 1) + ". " + t).join("\n") +
+          "\n\nPlanted mistakes and corrections:\n" +
+          s.errors.map((e, i) => (i + 1) + ". MISTAKE: " + e.bad + "\n   CORRECT: " + e.fix).join("\n");
+      }
+      return {
+        LESSON: s ? (s.num + " — " + s.title) : "(no lesson selected)",
+        SCENARIO: s ? s.scene : "(no scenario loaded)",
+        TRAINEE: trainee,
+        KEY: key,
+      };
+    }
+
+    function openScene(id) {
+      current = SCENES.find((s) => s.id === id) || null;
+      revealed = false;
+      if (!current) {
+        work.classList.add("hidden");
+        grader.refresh();
+        return;
+      }
+      work.classList.remove("hidden");
+      titleEl.textContent = current.num + " · " + current.title;
+      sceneEl.textContent = current.scene;
+      answer.value = "";
+      keyEl.classList.remove("show");
+      keyEl.innerHTML = "";
+      grader.refresh();
+    }
+
+    showBtn.onclick = () => {
+      if (!current) return;
+      revealed = true;
+      keyEl.innerHTML = renderKey(current);
+      keyEl.classList.add("show");
+      const named = answer.value.trim().length;
+      AtlasProgress.touchLab("bias", { actions: 1, score: named ? 1 : 0 });
+      grader.refresh();
+    };
+
+    answer.addEventListener("input", () => grader.refresh());
+    deckSel.onchange = () => {
+      const url = new URL(location.href);
+      if (!deckSel.value) url.searchParams.delete("decks");
+      else url.searchParams.set("decks", deckSel.value);
+      history.replaceState(null, "", url);
+      openScene(deckSel.value);
+    };
+
+    AtlasProgress.touchLab("bias", { visit: true });
+    if (window.AtlasLabGrader) {
+      grader = AtlasLabGrader.mount("grok-grader", "bias", {
+        how: "Your audit fills in automatically. Copy prompt → new Grok chat → send. After you click Show answer, the official key is included so the tutor can compare.",
+        fillValues,
+      });
+    }
+    const q = new URLSearchParams(location.search).get("decks");
+    if (q && SCENES.some((s) => s.id === q)) {
+      deckSel.value = q;
+      openScene(q);
+    }
+  </script>
+</body>
+</html>

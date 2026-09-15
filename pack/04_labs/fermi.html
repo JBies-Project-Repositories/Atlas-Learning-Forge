@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Term Match — Atlas of the Build Loop</title>
+  <link rel="stylesheet" href="../assets/pack.css" />
+  <style>
+    .lab-lead { max-width: none; margin: 0 0 1rem; }
+    .pick {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.65rem 1rem;
+      margin: 0 0 1.15rem;
+    }
+    .pick label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .pick select {
+      flex: 1 1 18rem;
+      max-width: 36rem;
+      font: inherit;
+      font-weight: 650;
+      padding: 0.7rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--card);
+      color: var(--text);
+      box-shadow: var(--shadow);
+    }
+    .row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
+    .btn {
+      border: 1px solid var(--border);
+      background: var(--btn);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 0.55rem 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn.primary {
+      background: linear-gradient(180deg, #7ee8d4, #2bb89a);
+      border-color: #9af0dc;
+      color: #062f2c;
+    }
+    .hidden { display: none !important; }
+    .board {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem 1.1rem;
+      margin-top: 0.85rem;
+    }
+    .col-label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 0.4rem;
+    }
+    .col { display: grid; gap: 0.45rem; align-content: start; }
+    .tile {
+      text-align: left;
+      width: 100%;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 0.7rem 0.8rem;
+      font-weight: 650;
+      font-size: 0.95rem;
+      line-height: 1.35;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+    .tile:hover:not(:disabled) { border-color: var(--accent); }
+    .tile.sel { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+    .tile.ok {
+      border-color: var(--ok);
+      background: var(--inset);
+      color: var(--text);
+      cursor: default;
+    }
+    .tile.bad { box-shadow: 0 0 0 2px var(--bad); }
+    .tile:disabled { cursor: default; }
+    .why {
+      display: none;
+      margin-top: 1rem;
+      padding: 0.85rem 1rem;
+      border-radius: 12px;
+      background: var(--inset);
+      border: 1px solid var(--border);
+    }
+    .why.show { display: block; }
+    .why .verdict { font-weight: 800; margin: 0 0 0.3rem; }
+    .why .verdict.ok { color: var(--ok); }
+    .why .verdict.bad { color: var(--bad); }
+    .why p { margin: 0; }
+    .next-btn {
+      display: none;
+      margin-top: 0.9rem;
+      margin-right: 0.45rem;
+      border: 0;
+      background: linear-gradient(180deg, #7ee8d4, #2bb89a);
+      color: #062f2c;
+      padding: 0.65rem 1.05rem;
+      border-radius: 10px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .next-btn.show { display: inline-block; }
+    .ghost {
+      display: none;
+      margin-top: 0.9rem;
+      border: 1px solid var(--border);
+      background: var(--btn);
+      color: var(--text);
+      padding: 0.65rem 1.05rem;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .ghost.show { display: inline-block; }
+    .done h2 { margin: 0 0 0.45rem; color: var(--heading); }
+    @media (max-width: 700px) {
+      .board { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="../index.html">the Build Loop</a>
+      <nav>
+        <a href="../index.html">Cover</a>
+        <a href="../contents.html">Contents</a>
+        <a href="index.html">Labs</a>
+        <a href="../dashboard.html">Dashboard</a>
+      </nav>
+      <button type="button" class="theme-btn" data-theme-toggle>Dim mode</button>
+    </div>
+  </header>
+  <div class="wrap">
+    <p class="tag">Lab 03 · Matching</p>
+    <h1>Term Match</h1>
+    <p class="lead lab-lead">Choose a lesson from the menu, then pair each term or idea with its definition.</p>
+
+    <div class="pick">
+      <label for="deck">Lesson</label>
+      <select id="deck">
+        <option value="">Choose a lesson…</option>
+      </select>
+    </div>
+
+    <div id="play" class="hidden">
+      <p class="muted" id="meta"></p>
+      <div class="card" id="panel" style="display:block">
+        <div class="label" id="roundTitle"></div>
+        <div class="board">
+          <div>
+            <div class="col-label">Term / idea</div>
+            <div class="col" id="left"></div>
+          </div>
+          <div>
+            <div class="col-label">Definition</div>
+            <div class="col" id="right"></div>
+          </div>
+        </div>
+        <div class="why" id="why"></div>
+        <button type="button" class="next-btn" id="next">Next lesson</button>
+      </div>
+    </div>
+
+    <div id="done" class="card hidden" style="display:block">
+      <div class="done">
+        <h2>Board clear</h2>
+        <p id="doneText"></p>
+        <div class="row">
+          <button type="button" class="btn primary" id="again">Match this deck again</button>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <script src="shared.js"></script>
+  <script src="../assets/theme.js"></script>
+  <script>
+            const DECKS = [
+      {
+        "id": "bl-01-loop",
+        "num": "L01",
+        "title": "The Loop",
+        "pairs": [
+          {
+            "id": "t0",
+            "left": "Divergent thinking",
+            "right": "Increasing the number of live options; adding before scoring",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t1",
+            "left": "Convergent thinking",
+            "right": "Reducing options against a named criterion",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t2",
+            "left": "Complicated work",
+            "right": "Many parts, but cause and effect can be known in advance by experts",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t3",
+            "left": "Complex work",
+            "right": "Cause and effect are clearer after probes; the system talks back",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t4",
+            "left": "PDCA",
+            "right": "Plan–Do–Check–Act: improve an observable process with a named check",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t5",
+            "left": "OODA",
+            "right": "Observe–Orient–Decide–Act: a tempo loop whose scarce step is Orient",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t6",
+            "left": "Build–Measure–Learn",
+            "right": "Lean Startup loop; intellectual order is Learn → Measure → Build",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t7",
+            "left": "Double Diamond",
+            "right": "Two diverge–converge pairs: problem, then solution",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t8",
+            "left": "Design Thinking stages",
+            "right": "Named doors on the same spine (empathize, define, ideate, prototype, test)",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t9",
+            "left": "Orient",
+            "right": "Updating the model after an observation, including disconfirming facts",
+            "why": "From this lesson’s Key Terms table."
+          }
+        ]
+      },
+      {
+        "id": "bl-02-methods",
+        "num": "L02",
+        "title": "Project Management Methodology",
+        "pairs": [
+          {
+            "id": "t0",
+            "left": "Design Thinking",
+            "right": "Structured problem-framing and testing; fails as sticky-note theater",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t1",
+            "left": "Lean Startup",
+            "right": "Hypothesis, smallest falsifying slice, measure, pivot or persevere",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t2",
+            "left": "Agile",
+            "right": "Values for responding to late information; not a board",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t3",
+            "left": "Scrum",
+            "right": "Named empirical wrapper: backlog, sprint, increment, DoD, inspect-and-adapt",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t4",
+            "left": "Dual-track",
+            "right": "Discovery and delivery in parallel, talking, with separate capacities",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t5",
+            "left": "Waterfall",
+            "right": "Sequential specify-then-build bet; honest for stable complicated work",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t6",
+            "left": "Discovery",
+            "right": "Work that produces a decision about what is worth building",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t7",
+            "left": "Delivery",
+            "right": "Work that produces an increment to the definition of done",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t8",
+            "left": "Cadence",
+            "right": "A regular inspect interval; a heartbeat, not a pressure pump",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t9",
+            "left": "Scope",
+            "right": "Work allowed into the current cadence",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t10",
+            "left": "Work in progress (WIP)",
+            "right": "Started-not-done items; high WIP is usually delay",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t11",
+            "left": "Definition of done",
+            "right": "The checklist that makes “done” fail-able",
+            "why": "From this lesson’s Key Terms table."
+          }
+        ]
+      },
+      {
+        "id": "bl-03-intent",
+        "num": "L03",
+        "title": "Communicating Intent",
+        "pairs": [
+          {
+            "id": "t0",
+            "left": "Commander’s intent",
+            "right": "Purpose + end state + constraints so others can act without you",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t1",
+            "left": "Purpose",
+            "right": "Why the work exists for a human or system",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t2",
+            "left": "End state",
+            "right": "Observable picture of “true” when you walk in later",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t3",
+            "left": "Constraints",
+            "right": "Hard walls (time, law, safety, budget), not preferences",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t4",
+            "left": "Problem statement",
+            "right": "Who, job, evidence of pain; no smuggled solution",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t5",
+            "left": "How Might We",
+            "right": "Ideation prompt that keeps the job and allows multiple solution types",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t6",
+            "left": "Non-goals",
+            "right": "Plausible work explicitly out of this round",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t7",
+            "left": "Success criteria",
+            "right": "Observable tests that the end state happened",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t8",
+            "left": "Vision",
+            "right": "Longer directional picture; does not replace this-round criteria",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t9",
+            "left": "Brief",
+            "right": "Short package of intent a working group can execute",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t10",
+            "left": "Alignment",
+            "right": "Shared purpose/end state/constraints",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t11",
+            "left": "Instruction",
+            "right": "Specified steps for low-variance work",
+            "why": "From this lesson’s Key Terms table."
+          }
+        ]
+      },
+      {
+        "id": "bl-04-brainstorm",
+        "num": "L04",
+        "title": "Brainstorming",
+        "pairs": [
+          {
+            "id": "t0",
+            "left": "Deferred judgment",
+            "right": "No scoring or killing during generation",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t1",
+            "left": "Quantity before quality",
+            "right": "Volume and variety first; selection later",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t2",
+            "left": "Brainwriting",
+            "right": "Silent written generation to reduce first-speaker monopoly",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t3",
+            "left": "Crazy 8s",
+            "right": "Fast multi-sketch diverge to force variety",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t4",
+            "left": "SCAMPER",
+            "right": "Prompt list to attack an existing artifact",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t5",
+            "left": "Constraint-based ideation",
+            "right": "Added walls that increase, not decrease, variety",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t6",
+            "left": "How Might We",
+            "right": "Problem-shaped prompt that allows multiple solution types",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t7",
+            "left": "Socratic review",
+            "right": "Questions that expose missing who/job/constraint",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t8",
+            "left": "Devil’s-advocate review",
+            "right": "Scheduled argument of the strongest case against a cluster",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t9",
+            "left": "Idea progression",
+            "right": "Capture → cluster → testable claim → park/kill",
+            "why": "From this lesson’s Key Terms table."
+          }
+        ]
+      },
+      {
+        "id": "bl-05-prototype",
+        "num": "L05",
+        "title": "Prototyping",
+        "pairs": [
+          {
+            "id": "t0",
+            "left": "Fidelity",
+            "right": "How finished the artifact looks or behaves",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t1",
+            "left": "Low-fidelity",
+            "right": "Cheap, ugly on purpose; tests the job",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t2",
+            "left": "Mid-fidelity",
+            "right": "Structured but unfinished; tests the steps",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t3",
+            "left": "High-fidelity",
+            "right": "Close to real texture; tests trust, timing, load",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t4",
+            "left": "Looks-like",
+            "right": "Tests appearance and recognition",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t5",
+            "left": "Works-like",
+            "right": "Tests mechanism; may look like junk",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t6",
+            "left": "Experience prototype",
+            "right": "Tests the episode in time",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t7",
+            "left": "Pretotype",
+            "right": "Fake of the experience before the mechanism exists",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t8",
+            "left": "Prototype",
+            "right": "Artifact built to answer a question; should be able to fail",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t9",
+            "left": "MVP",
+            "right": "Smallest shipped test of a hypothesis in the real system",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t10",
+            "left": "Smallest testable slice",
+            "right": "Audience + task + fail rule + stop condition",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t11",
+            "left": "Riskiest assumption first",
+            "right": "Test the high-impact unknown, not the comforting one",
+            "why": "From this lesson’s Key Terms table."
+          }
+        ]
+      },
+      {
+        "id": "bl-06-review",
+        "num": "L06",
+        "title": "Review",
+        "pairs": [
+          {
+            "id": "t0",
+            "left": "Design critique",
+            "right": "Structured look at an artifact against the brief",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t1",
+            "left": "I like / I wish / What if",
+            "right": "Speech protocol: specific praise, desired change, experiment",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t2",
+            "left": "Assumption mapping",
+            "right": "Claims placed on ignorance × impact",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t3",
+            "left": "Riskiest assumption test",
+            "right": "Stop/go test of the fatal unknown",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t4",
+            "left": "Pre-mortem",
+            "right": "Assume failure, write how, assign owners",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t5",
+            "left": "Steelman",
+            "right": "Strongest fair form of the opposing view",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t6",
+            "left": "User testing",
+            "right": "People with the job attempt the job",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t7",
+            "left": "Task success",
+            "right": "Whether they completed the job by a named rule",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t8",
+            "left": "Stakeholder review",
+            "right": "Payers, blockers, integrators",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t9",
+            "left": "Expert review",
+            "right": "Domain method (legal, safety, a11y, security)",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t10",
+            "left": "Redesign / solidify / kill / pivot / ship",
+            "right": "Named end-moves of a review",
+            "why": "From this lesson’s Key Terms table."
+          }
+        ]
+      },
+      {
+        "id": "bl-07-ship",
+        "num": "L07",
+        "title": "Iteration and Shipping",
+        "pairs": [
+          {
+            "id": "t0",
+            "left": "Learning velocity",
+            "right": "Rate of kill/keep on assumptions (tests, not tickets)",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t1",
+            "left": "Feature velocity",
+            "right": "Rate of DoD-passing increments users can touch",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t2",
+            "left": "Pivot",
+            "right": "Job alive, approach wrong; change the bet",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t3",
+            "left": "Persevere",
+            "right": "Bet holds; keep the approach, maybe raise fidelity",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t4",
+            "left": "Evidence threshold",
+            "right": "Pre-written signal for pivot / persevere / kill",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t5",
+            "left": "Retrospective",
+            "right": "Inspect the loop; one change to the next cycle",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t6",
+            "left": "Launch",
+            "right": "Mode switch from learning to delivery for a slice",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t7",
+            "left": "Quality",
+            "right": "DoD + brief constraints at ship time, not a later phase",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t8",
+            "left": "Operations",
+            "right": "On-call, rollback, support, vendor-fail behavior after launch",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t9",
+            "left": "Mode switch",
+            "right": "Learning (change cheap) vs delivery (change expensive)",
+            "why": "From this lesson’s Key Terms table."
+          }
+        ]
+      }
+    ];
+
+    const BODY = new Set(["bl-01-loop", "bl-02-methods", "bl-03-intent"]);
+    const BLOOD = new Set(["bl-04-brainstorm", "bl-05-prototype", "bl-06-review", "bl-07-ship"]);
+
+    const deckSel = document.getElementById("deck");
+    const lessons = document.createElement("optgroup");
+    lessons.label = "Lessons";
+    DECKS.forEach((d) => {
+      const o = document.createElement("option");
+      o.value = d.id;
+      o.textContent = d.num + " — " + d.title;
+      lessons.appendChild(o);
+    });
+    deckSel.appendChild(lessons);
+    const sets = document.createElement("optgroup");
+    sets.label = "Sets";
+    [["all", "All lessons"], ["body", "Arc A–B · door + methods"], ["blood", "Arc C–D · tools + ship"]].forEach(([v, t]) => {
+      const o = document.createElement("option");
+      o.value = v;
+      o.textContent = t;
+      sets.appendChild(o);
+    });
+    deckSel.appendChild(sets);
+
+    const play = document.getElementById("play");
+    const done = document.getElementById("done");
+    const leftHost = document.getElementById("left");
+    const rightHost = document.getElementById("right");
+    const why = document.getElementById("why");
+    const next = document.getElementById("next");
+
+    let selected = [];
+    let r = 0;
+    let firstTry = 0;
+    let totalPairs = 0;
+    let matched, missed, pickL, pickR, byId, busy, rounds;
+
+    function shuffle(a) {
+      const x = a.slice();
+      for (let i = x.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [x[i], x[j]] = [x[j], x[i]];
+      }
+      return x;
+    }
+
+    function idsFromValue(v) {
+      if (!v) return [];
+      if (v === "all") return DECKS.map((d) => d.id);
+      if (v === "body") return [...BODY];
+      if (v === "blood") return [...BLOOD];
+      return [v];
+    }
+
+    function parseUrl() {
+      const q = new URLSearchParams(location.search).get("decks");
+      if (!q) return "";
+      if (q === "all" || q === "body" || q === "blood") return q;
+      const ids = q.split(",").map((s) => s.trim()).filter((id) => DECKS.some((d) => d.id === id));
+      if (ids.length === DECKS.length) return "all";
+      if (ids.length === 4 && ids.every((id) => BODY.has(id))) return "body";
+      if (ids.length === 4 && ids.every((id) => BLOOD.has(id))) return "blood";
+      return ids[0] || "";
+    }
+
+    function writeUrl(v) {
+      const url = new URL(location.href);
+      if (!v) url.searchParams.delete("decks");
+      else url.searchParams.set("decks", v);
+      history.replaceState(null, "", url);
+    }
+
+    function begin(ids) {
+      selected = ids.map((id) => DECKS.find((d) => d.id === id)).filter(Boolean);
+      if (!selected.length) {
+        play.classList.add("hidden");
+        done.classList.add("hidden");
+        return;
+      }
+      const one = selected.length === 1;
+      rounds = selected.map((d) => ({
+        id: d.id,
+        title: d.num + " · " + d.title,
+        pairs: one ? shuffle(d.pairs) : shuffle(d.pairs).slice(0, 6),
+      }));
+      r = 0;
+      firstTry = 0;
+      totalPairs = rounds.reduce((n, x) => n + x.pairs.length, 0);
+      done.classList.add("hidden");
+      play.classList.remove("hidden");
+      loadRound();
+    }
+
+    deckSel.onchange = () => {
+      writeUrl(deckSel.value);
+      begin(idsFromValue(deckSel.value));
+    };
+    document.getElementById("again").onclick = () => begin(selected.map((d) => d.id));
+
+    function meta() {
+      const round = rounds[r];
+      document.getElementById("meta").innerHTML =
+        `${round.title} · deck ${r + 1} of ${rounds.length} · First-try <strong>${firstTry}</strong>/${totalPairs} · Matched ${matched.size}/${round.pairs.length}`;
+    }
+
+    function tile(side, pair) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "tile";
+      b.dataset.id = pair.id;
+      b.dataset.side = side;
+      b.textContent = pair[side];
+      b.onclick = () => choose(side, pair.id, b);
+      return b;
+    }
+
+    function loadRound() {
+      const round = rounds[r];
+      matched = new Set();
+      missed = new Set();
+      pickL = pickR = null;
+      busy = false;
+      byId = Object.fromEntries(round.pairs.map((p) => [p.id, p]));
+      document.getElementById("roundTitle").textContent = round.title;
+      why.classList.remove("show");
+      why.innerHTML = "";
+      next.classList.remove("show");
+      leftHost.innerHTML = "";
+      rightHost.innerHTML = "";
+      shuffle(round.pairs).forEach((p) => leftHost.appendChild(tile("left", p)));
+      shuffle(round.pairs).forEach((p) => rightHost.appendChild(tile("right", p)));
+      meta();
+    }
+
+    function choose(side, id, btn) {
+      if (busy || matched.has(id) || btn.classList.contains("ok")) return;
+      if (side === "left") {
+        play.querySelectorAll('[data-side="left"].sel').forEach((el) => el.classList.remove("sel"));
+        pickL = id;
+      } else {
+        play.querySelectorAll('[data-side="right"].sel').forEach((el) => el.classList.remove("sel"));
+        pickR = id;
+      }
+      btn.classList.add("sel");
+      if (pickL && pickR) settle();
+    }
+
+    function settle() {
+      const ok = pickL === pickR;
+      const pair = byId[pickL];
+      const tiles = [...play.querySelectorAll(".tile")];
+      const L = tiles.find((el) => el.dataset.side === "left" && el.dataset.id === pickL);
+      const R = tiles.find((el) => el.dataset.side === "right" && el.dataset.id === pickR);
+      if (ok) {
+        if (!missed.has(pickL)) firstTry += 1;
+        matched.add(pickL);
+        L.classList.remove("sel");
+        R.classList.remove("sel");
+        L.classList.add("ok");
+        R.classList.add("ok");
+        L.disabled = R.disabled = true;
+        why.innerHTML = `<div class="verdict ok">Match</div><p>${pair.why}</p>`;
+        why.classList.add("show");
+        pickL = pickR = null;
+        meta();
+        AtlasProgress.touchLab("fermi", { actions: 1, score: firstTry });
+        if (matched.size === rounds[r].pairs.length) roundDone();
+      } else {
+        busy = true;
+        missed.add(pickL);
+        missed.add(pickR);
+        L.classList.add("bad");
+        R.classList.add("bad");
+        why.innerHTML = `<div class="verdict bad">Not that definition</div><p>“${pair.left}” does not match the card you picked. Both stay unmatched — try another pairing.</p>`;
+        why.classList.add("show");
+        AtlasProgress.touchLab("fermi", { actions: 1, score: firstTry });
+        setTimeout(() => {
+          L.classList.remove("bad", "sel");
+          R.classList.remove("bad", "sel");
+          pickL = pickR = null;
+          busy = false;
+        }, 700);
+      }
+    }
+
+    function roundDone() {
+      if (r < rounds.length - 1) {
+        next.textContent = "Next lesson";
+        next.classList.add("show");
+        next.onclick = () => { r += 1; loadRound(); };
+      } else {
+        next.textContent = "See score";
+        next.classList.add("show");
+        next.onclick = finish;
+      }
+    }
+
+    function finish() {
+      play.classList.add("hidden");
+      done.classList.remove("hidden");
+      const names = selected.map((d) => d.num).join(", ");
+      document.getElementById("doneText").innerHTML =
+        `First-try matches: <strong>${firstTry}/${totalPairs}</strong> on ${names}. Term → definition.`;
+      AtlasProgress.touchLab("fermi", { actions: 1, score: firstTry });
+    }
+
+    AtlasProgress.touchLab("fermi", { visit: true });
+
+    const fromUrl = parseUrl();
+    if (fromUrl) {
+      deckSel.value = fromUrl;
+      begin(idsFromValue(fromUrl));
+    }
+  </script>
+</body>
+</html>

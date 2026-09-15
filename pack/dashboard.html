@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard — Atlas of the Build Loop</title>
+  <link rel="stylesheet" href="assets/pack.css" />
+  <style>
+    .big{font-size:1.8rem;font-weight:800;color:var(--ok)}
+    .bar{height:10px;background:var(--inset);border-radius:99px;overflow:hidden;margin:.4rem 0}
+    .bar i{display:block;height:100%;background:linear-gradient(90deg,#2bb89a,#157a4b)}
+    button{border:1px solid var(--border);background:var(--btn);color:var(--text);border-radius:10px;padding:.5rem .8rem;cursor:pointer;font-weight:600}
+    .card h2{margin:0 0 .5rem;font-size:.95rem;color:var(--gold)}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin:1rem 0}
+    @media(max-width:640px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">the Build Loop</a>
+      <nav>
+        <a href="index.html">Cover</a>
+        <a href="contents.html">Contents</a>
+        <a href="decks.html">Quiz</a>
+        <a href="04_labs/index.html">Labs</a>
+      </nav>
+      <button type="button" class="theme-btn" data-theme-toggle>Dim mode</button>
+    </div>
+  </header>
+  <div class="wrap">
+    <h1>Progress Dashboard</h1>
+    <p class="lead">Quiz and lab activity stored in this browser only.</p>
+    <div class="grid">
+      <div class="card"><h2>Quiz answers recorded</h2><div class="big" id="qAns">0</div><p class="desc" id="qLast">—</p></div>
+      <div class="card"><h2>Lab actions</h2><div class="big" id="labActs">0</div><p class="desc" id="labLast">No lab activity yet.</p></div>
+    </div>
+    <div class="card" style="margin-bottom:.75rem">
+      <h2>Labs</h2>
+      <div id="labs"></div>
+    </div>
+    <div class="card">
+      <h2>Suggested next move</h2>
+      <p id="next" class="desc">Loading…</p>
+      <p style="margin-top:1rem"><button id="clear">Reset Atlas progress (this browser)</button></p>
+    </div>
+  </div>
+  <script src="04_labs/shared.js"></script>
+  <script src="assets/theme.js"></script>
+  <script>
+    const data = AtlasProgress.load();
+    const q = data.quiz || {};
+    document.getElementById("qAns").textContent = q.answered || 0;
+    document.getElementById("qLast").textContent = q.lastAt ? ("Last: " + new Date(q.lastAt).toLocaleString()) : "No quiz answers yet";
+    const labMeta = {
+      spaced: "Spaced Repetition",
+      bias: "Scenario Audit",
+      fermi: "Term Match",
+      steelman: "Misconception Steelman",
+    };
+    const labs = data.labs || {};
+    const host = document.getElementById("labs");
+    let html = "";
+    Object.keys(labMeta).forEach(id => {
+      const L = labs[id] || { visits:0, actions:0, best:0 };
+      const pct = Math.min(100, (L.actions || 0) * 5);
+      html += `<div style="margin:.6rem 0"><strong>${labMeta[id]}</strong> · visits ${L.visits||0} · actions ${L.actions||0} · best ${L.best||0}
+        <div class="bar"><i style="width:${pct}%"></i></div></div>`;
+    });
+    host.innerHTML = html || "<p class='desc'>No lab activity yet.</p>";
+    const labActions = Object.values(labs).reduce((n, L) => n + (L.actions || 0), 0);
+    document.getElementById("labActs").textContent = labActions;
+    const lastLab = Object.values(labs).map(L => L.lastAt).filter(Boolean).sort().slice(-1)[0];
+    document.getElementById("labLast").textContent = lastLab ? ("Last: " + new Date(lastLab).toLocaleString()) : "No lab activity yet.";
+
+    let suggestion = "Open the cover, then Contents, then Lesson 1.";
+    if (!(q.answered > 5)) suggestion = "Read Lessons 1–2, then quiz decks for those lessons.";
+    else if (!labs.spaced || (labs.spaced.actions||0) < 3) suggestion = "Do 10 cards in Spaced Repetition Lab.";
+    else if (!labs.fermi || (labs.fermi.actions||0) < 3) suggestion = "Term Match: pair each term with its definition.";
+    else if (!labs.bias) suggestion = "Scenario Audit: find planted errors in a lesson note and write the correct concept.";
+    else if (!labs.steelman) suggestion = "Steelman Studio: rewrite a weak take on loops or shipping.";
+    else suggestion = "Run All-decks quiz in exam mode.";
+    document.getElementById("next").textContent = suggestion;
+
+    document.getElementById("clear").onclick = () => {
+      if (confirm("Clear Atlas of the Build Loop progress keys on this browser?")) {
+        localStorage.removeItem("atlas_build_loop_progress_v1");
+        localStorage.removeItem("atlas_build_loop_weak_v1");
+        localStorage.removeItem("atlas_build_loop_srs_v1");
+        localStorage.removeItem("atlas_build_loop_theme_v1");
+        location.reload();
+      }
+    };
+  </script>
+</body>
+</html>

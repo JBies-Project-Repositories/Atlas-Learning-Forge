@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Prototyping — Atlas of the Build Loop</title>
+<link rel="stylesheet" href="../assets/pack.css"/>
+</head><body>
+<div class="lesson-wrap">
+<nav class="lesson-nav"><a href="../index.html">Cover</a> <a href="../contents.html">Contents</a> <a href="../decks.html">Quiz</a> <a href="../04_labs/index.html">Labs</a> <a href="../dashboard.html">Dashboard</a> <a href="04_Brainstorming.html">← Prev</a> <a href="06_Review.html">Next →</a> <button type="button" class="theme-btn" data-theme-toggle>Dim mode</button><div class="mark">Atlas of the Build Loop</div></nav>
+<figure class="lesson-hero"><img src="../assets/arc-c.jpg" alt="Cardboard and clay on a workbench"/></figure>
+<article class="lesson">
+<div class="badge">Dense lesson · professional practice · educational only</div>
+<h1>Prototyping</h1>
+<h2>Learning Objectives</h2>
+<ul>
+<li>Choose a fidelity (low / mid / high) that matches the question, not the stakeholder’s appetite for polish.</li>
+<li>Tell looks-like, works-like, and experience prototypes apart, and pick pretotype vs prototype vs MVP.</li>
+<li>Define the smallest testable slice and put the riskiest assumption first.</li>
+<li>Refuse a high-fidelity demo that cannot fail — that is a sales artifact, not a test.</li>
+</ul>
+<h2>Prerequisites</h2>
+<ul>
+<li>Lessons 3–4: a testable claim exists (who, job, what would change your mind).</li>
+<li>You can name one assumption that, if false, should stop the work.</li>
+</ul>
+<h2>Lesson Content</h2>
+<h3>Fidelity is a budget for attention</h3>
+<p><strong>Fidelity</strong> is how finished the artifact looks or behaves. <strong>Low-fidelity</strong> is cheap and ugly on purpose: paper, boxes, a script. It answers “is this even the job?” <strong>Mid-fidelity</strong> is structured but unfinished: clickable wireflows, a Wizard-of-Oz backend. It answers “can a person get through the steps?” <strong>High-fidelity</strong> looks or works close to the real thing. It answers “will this hold in the real texture — timing, trust, accessibility, load?”</p>
+<p>The injury is using high fidelity too early. Polish persuades. Stakeholders say yes to a picture of a product that has not been tested. Then the picture becomes the spec. Low fidelity is a kindness: it is easier to kill.</p>
+<p>Match fidelity to the <strong>question</strong>, not to the audience’s rank. A vice president can read paper if you tell them what question the paper is for. If they cannot, you have an alignment problem (Lesson 3), not a fidelity problem.</p>
+<h3>Looks-like, works-like, experience</h3>
+<p>A <strong>looks-like</strong> prototype tests appearance, hierarchy, and recognition. A <strong>works-like</strong> prototype tests mechanism: the algorithm, the mechanical joint, the data path — it may look like junk. An <strong>experience</strong> prototype tests the whole episode in time: waiting, handoff, emotion, the phone call after. Teams often build looks-like when the risk is works-like (does the matcher even work?) or experience (will a tired person complete this at 11 p.m.?).</p>
+<p>Name which one you are making. A pretty shell with no mechanism is not “agile.” It is a looks-like. That is allowed if appearance is the risk. It is fraud if the risk was mechanism.</p>
+<h3>Pretotype, prototype, MVP</h3>
+<p><strong>Pretotype</strong> (as used in this field guide): a fake of the experience that tests demand or comprehension <strong>before</strong> you build the mechanism. Fake door, paper service, concierge. The point is to see if anyone cares or understands.</p>
+<p><strong>Prototype:</strong> an artifact built to answer a design or technical question. It may never ship. It should be able to fail.</p>
+<p><strong>MVP (minimum viable product):</strong> the smallest <strong>shipped</strong> thing that tests a business or usage hypothesis in the real system of record. It is not a prototype with a domain name. If it has no measure and no kill criterion, it is just v0.1.</p>
+<p>The syllabus also says <strong>smallest testable slice</strong> and <strong>riskiest assumption first</strong>. Those two rules decide which of the three you make. If the riskiest assumption is “people want this,” pretotype. If it is “the algorithm can rank this,” works-like prototype. If it is “we can operate this at 100 users,” a carefully scoped MVP — not a tour of every future feature.</p>
+<h3>Riskiest assumption first</h3>
+<p>List assumptions. Score <strong>impact if wrong</strong> × <strong>how little we know</strong>. Test the top one. Teams love testing the assumption they already believe, because it feels like progress. That is theater.</p>
+<p>A smallest testable slice includes: the audience, the task, the success/fail rule, and what you will <strong>stop</strong> if it fails. If you cannot name the stop, you are not testing. You are demoing.</p>
+<figure class="fig">
+<svg class="lesson-chart" viewBox="0 0 720 200" role="img" aria-label="Fidelity ladder from paper to MVP">
+  <rect x="20" y="80" width="120" height="70" rx="8" fill="var(--card)" stroke="var(--border)"/>
+  <text x="80" y="110" text-anchor="middle" font-size="12" font-weight="700">Paper</text>
+  <text x="80" y="130" text-anchor="middle" class="muted" font-size="11">lo-fi pretotype</text>
+  <rect x="160" y="60" width="120" height="90" rx="8" fill="var(--card)" stroke="var(--border)"/>
+  <text x="220" y="100" text-anchor="middle" font-size="12" font-weight="700">Wizard</text>
+  <text x="220" y="120" text-anchor="middle" class="muted" font-size="11">mid experience</text>
+  <rect x="300" y="40" width="120" height="110" rx="8" fill="var(--card)" stroke="var(--border)"/>
+  <text x="360" y="90" text-anchor="middle" font-size="12" font-weight="700">Works-like</text>
+  <text x="360" y="110" text-anchor="middle" class="muted" font-size="11">mechanism risk</text>
+  <rect x="440" y="25" width="120" height="125" rx="8" fill="#7eb8c4"/>
+  <text x="500" y="85" text-anchor="middle" font-size="12" font-weight="700">Hi-fi</text>
+  <text x="500" y="105" text-anchor="middle" font-size="11">texture / trust</text>
+  <rect x="580" y="15" width="120" height="135" rx="8" fill="#1c5d68"/>
+  <text x="640" y="80" text-anchor="middle" fill="#fff6d6" font-size="12" font-weight="700">MVP</text>
+  <text x="640" y="100" text-anchor="middle" fill="#c5eef2" font-size="11">shipped test</text>
+  <text x="360" y="185" text-anchor="middle" class="muted" font-size="12">Climb only when the cheaper step cannot kill the assumption.</text>
+</svg>
+<figcaption>Do not climb because a stakeholder asked for a “real demo.” Climb because the current rung cannot answer the question.</figcaption>
+</figure>
+<h3>What not to prototype</h3>
+<p>Do not prototype a one-way safety door as a cute fake if the fake could teach a dangerous action. Do not use users as unpaid labor for a mechanism you already know is broken. Do not high-fi a thing whose riskiest assumption is legal: ask counsel, then pretotype the remainder.</p>
+<p><strong>Uncertainty:</strong> “Pretotype” is popular jargon; the syllabus lists it next to prototype and MVP. This pack treats it as <strong>pre-mechanism demand/comprehension tests</strong>, not as a trademarked process.</p>
+<h2>Worked example(s)</h2>
+<p><strong>Problem:</strong> Claim from L04: contractors will complete required forms in one sitting if fields are pre-filled from HRIS. Riskiest assumption is actually “they can even find the packet” — not the pre-fill quality.</p>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>Re-rank assumptions. Finding beats pre-fill. If they cannot find it, pre-fill never runs.</li>
+<li>Smallest test: five new contractors, a paper map of the current email → link → form. Task: “Finish the packet. Talk aloud. We will not help unless you stop for two minutes.”</li>
+<li>Fidelity: low, experience-ish (real time, real inbox if possible). Looks-like branding is a non-goal.</li>
+<li>Fail rule: if 3/5 cannot start within five minutes, do not build pre-fill this sprint. Fix findability.</li>
+<li>Only if findability holds, Wizard-of-Oz a pre-fill (a human pastes values) as a works-like/experience hybrid — still not an MVP.</li>
+</ol>
+<p><strong>Answer / result:</strong> You might kill the AI-helper fantasy in an afternoon. That is a successful prototype. A polished Figma of the helper would have been a looks-like of the wrong risk.</p>
+<h2>Key Terms</h2>
+<table><thead><tr><th>Term</th><th>Definition</th></tr></thead><tbody>
+<tr><td>Fidelity</td><td>How finished the artifact looks or behaves</td></tr>
+<tr><td>Low-fidelity</td><td>Cheap, ugly on purpose; tests the job</td></tr>
+<tr><td>Mid-fidelity</td><td>Structured but unfinished; tests the steps</td></tr>
+<tr><td>High-fidelity</td><td>Close to real texture; tests trust, timing, load</td></tr>
+<tr><td>Looks-like</td><td>Tests appearance and recognition</td></tr>
+<tr><td>Works-like</td><td>Tests mechanism; may look like junk</td></tr>
+<tr><td>Experience prototype</td><td>Tests the episode in time</td></tr>
+<tr><td>Pretotype</td><td>Fake of the experience before the mechanism exists</td></tr>
+<tr><td>Prototype</td><td>Artifact built to answer a question; should be able to fail</td></tr>
+<tr><td>MVP</td><td>Smallest shipped test of a hypothesis in the real system</td></tr>
+<tr><td>Smallest testable slice</td><td>Audience + task + fail rule + stop condition</td></tr>
+<tr><td>Riskiest assumption first</td><td>Test the high-impact unknown, not the comforting one</td></tr>
+</tbody></table>
+<h2>Misconception inventory</h2>
+<table><thead><tr><th>Misconception</th><th>Reality</th></tr></thead><tbody>
+<tr><td>“Higher fidelity is always more professional.”</td><td>Early polish persuades and freezes. Match the question.</td></tr>
+<tr><td>“MVP is a prototype we put on a domain.”</td><td>MVP is shipped and measured. Prototype may never ship.</td></tr>
+<tr><td>“If it looks unfinished, stakeholders will not take it seriously.”</td><td>Tell them the question. If they still need polish, you are demoing, not testing.</td></tr>
+<tr><td>“Works-like can wait until after the pretty shell.”</td><td>If mechanism is the risk, the shell is theater.</td></tr>
+<tr><td>“Pretotype means lie to users forever.”</td><td>It is a short, disclosed or obviously-fake test of demand/comprehension.</td></tr>
+<tr><td>“Test the assumption we are ready to build.”</td><td>That is comfort. Rank by ignorance × impact.</td></tr>
+<tr><td>“A demo that cannot fail is a good prototype.”</td><td>If it cannot fail, it is sales.</td></tr>
+<tr><td>“Smallest slice means fewest screens of the full product.”</td><td>It means the cheapest path to a kill/keep signal.</td></tr>
+</tbody></table>
+<h2>Summary</h2>
+<ul>
+<li>Fidelity is a budget. Spend it on the question.</li>
+<li>Looks-like, works-like, and experience answer different risks.</li>
+<li>Pretotype vs prototype vs MVP is about how real the test is, not how proud the deck is.</li>
+<li>Riskiest assumption first; smallest slice includes a stop rule.</li>
+<li>A prototype that cannot fail is not a test.</li>
+</ul>
+<h2>Practice</h2>
+<h3>Retrieval</h3>
+<ul>
+<li>When is low-fi the professional choice?</li>
+<li>Pretotype vs MVP in one sentence each.</li>
+<li>What four parts make a smallest testable slice?</li>
+<li>Why can a works-like look like junk?</li>
+</ul>
+<h3>Near transfer</h3>
+<p>Stakeholders want a “realistic demo” next week. The riskiest assumption is legal, not visual. What do you prototype, and what do you refuse?</p>
+<h3>Far transfer</h3>
+<p>You are testing this Atlas pack. What is the riskiest assumption, and what pretotype would you run in 48 hours?</p>
+<h2>Spaced retrieval notes</h2>
+<ul>
+<li>Day 0: list three assumptions on a live project; mark the riskiest.</li>
+<li>Day 2: write a fail rule and a stop condition for one assumption.</li>
+<li>Day 7: run or observe a lo-fi test; note whether polish snuck in.</li>
+<li>Day 21: catch a demo that could not fail; rename it sales.</li>
+</ul>
+<h2>Difficulty tiers</h2>
+<ul>
+<li><strong>Novice:</strong> lo/mid/hi and pretotype vs MVP.</li>
+<li><strong>Working:</strong> pick looks/works/experience; write a smallest slice.</li>
+<li><strong>Expert:</strong> hold a VP to paper when paper is the honest rung.</li>
+</ul>
+<h2>Domain scaffolds</h2>
+<p>Professional products: disclose pretotypes when deception would harm trust. Safety-critical fakes that teach a dangerous action are forbidden. Complicated compliance work may need a rehearsal (high-fi of the real procedure), not a cute paper app.</p>
+<h2>Learn more</h2>
+<ul>
+<li><a class="ext" href="https://www.designcouncil.org.uk/our-resources/framework-for-innovation/" target="_blank" rel="noopener noreferrer">Design Council — Framework for Innovation</a> — develop/deliver as the home of making and testing.</li>
+<li><a class="ext" href="https://agilemanifesto.org/" target="_blank" rel="noopener noreferrer">Agile Manifesto</a> — working software over comprehensive documentation; a prototype is not automatically working software.</li>
+<li><a class="ext" href="https://scrumguides.org/scrum-guide.html" target="_blank" rel="noopener noreferrer">Scrum Guide</a> — Increment must meet DoD; a prototype is not an increment unless you say it is.</li>
+</ul>
+<div class="footer">Offline study pack. Progress is stored in this browser only. Optional “Learn more” links open the public homes of named methods.</div>
+</article>
+</div>
+<script src="../assets/theme.js"></script>
+</body></html>

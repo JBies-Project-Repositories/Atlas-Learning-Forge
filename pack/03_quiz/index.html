@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atlas of the Build Loop — Practice Quiz</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="header-top">
+        <p class="subtitle" style="margin-bottom:.35rem"><a href="../index.html">Cover</a> · <a href="../contents.html">Contents</a> · <a href="../decks.html">Deck chooser</a> · <button type="button" class="btn btn-ghost" data-theme-toggle style="display:inline;padding:.2rem .55rem">Dim mode</button></p>
+        <h1>Practice Quiz</h1>
+        <p class="subtitle">7 decks · 56 questions · All / one / multi-select via Deck Chooser</p>
+      </div>
+      <div class="toolbar">
+        <label class="field"><span>Deck</span>
+          <select id="lessonFilter" aria-label="Filter by deck"></select>
+        </label>
+        <label class="field"><span>Mode</span>
+          <select id="modeSelect">
+            <option value="practice">Practice (instant feedback)</option>
+            <option value="exam">Exam (score on submit)</option>
+          </select>
+        </label>
+        <label class="field"><span>Timer</span>
+          <select id="timerSelect">
+            <option value="0">Off</option>
+            <option value="15">15 minutes</option>
+            <option value="30">30 minutes</option>
+            <option value="45">45 minutes</option>
+            <option value="60">60 minutes</option>
+          </select>
+        </label>
+        <label class="field field-narrow"><span>Exam size</span>
+          <select id="examSizeSelect">
+            <option value="0" selected>All filtered</option>
+            <option value="8">8</option>
+            <option value="16">16</option>
+            <option value="32">32</option>
+            <option value="56">56</option>
+          </select>
+        </label>
+        <div class="stats" aria-live="polite">
+          <span id="timerDisplay" class="timer-display is-hidden">—</span>
+          <span id="progressText">0 / 0 answered</span>
+          <span class="dot">·</span>
+          <span id="scoreText">0 correct</span>
+        </div>
+        <div class="toolbar-actions">
+          <button type="button" id="btnStartExam" class="btn btn-secondary is-hidden">Start exam</button>
+          <button type="button" id="btnSubmitExam" class="btn btn-accent is-hidden" disabled>Submit exam</button>
+          <button type="button" id="btnReshuffle" class="btn btn-secondary">Reshuffle</button>
+          <button type="button" id="btnReset" class="btn btn-ghost">Clear answers</button>
+          <button type="button" id="btnWeakReport" class="btn btn-ghost">Weak areas</button>
+        </div>
+      </div>
+      <p class="hint" id="modeHint">
+        Deck filter = one lesson or all. Multi-select: <a href="../decks.html" style="color:inherit;font-weight:700">Deck Chooser</a>.
+      </p>
+    </header>
+    <section id="weakPanel" class="weak-panel is-hidden" aria-live="polite"></section>
+    <section id="examResults" class="exam-results is-hidden" aria-live="polite"></section>
+    <main id="quiz" class="quiz" aria-live="polite"></main>
+    <footer class="footer">
+      <p>Atlas of the Build Loop · offline · <a href="../index.html">Cover</a> · <a href="../contents.html">Contents</a> · <a href="../dashboard.html">Dashboard</a></p>
+    </footer>
+  </div>
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+  <script src="../assets/theme.js"></script>
+</body>
+</html>

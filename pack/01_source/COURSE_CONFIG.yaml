@@ -1,0 +1,99 @@
+# Atlas of the Build Loop — COURSE CONFIG (filled run)
+material_name: "the Build Loop"
+course_name: "Atlas of the Build Loop"
+pack_subtitle: "Study Pack"
+audience:
+  prior_knowledge: mixed
+  constraints: "Educational field guide for builders. Not a certified PM/Scrum credential. Not legal or military doctrine."
+subject_domain: professional
+
+parent_dir: "/mnt/c/Users/jbies/OneDrive/Desktop"
+force_new_folder: true
+allow_write_into_existing_course_root: false
+course_root_override: "/mnt/c/Users/jbies/OneDrive/Desktop/Atlas of the Build Loop — Study Pack"
+desktop_delivery: true
+repo_mirror: "/home/jbies/Atlas-Learning-Forge/pack"
+
+input_mode: source_locked
+sources:
+  - type: syllabus
+    path: "/home/jbies/Atlas-Learning-Forge/intake/target.txt"
+    label: "Build-loop field guide seed"
+spine_policy: auto_from_sources
+auto_confirm_spine: true
+lessons: []
+authored_topic: "the Build Loop"
+
+grounding:
+  invent_facts: false
+  invent_citations: false
+  require_learn_more_per_lesson: true
+  require_source_notes: true
+  web_research: false
+  note_uncertainty: true
+  saturate_on_deep: false
+
+pedagogy:
+  density_profile: standard
+  min_sections_per_lesson: 6
+  min_paragraphs_per_section: 2
+  min_body_words_per_lesson: 900
+  min_learning_objectives: 4
+  min_worked_examples: 1
+  min_key_terms: 8
+  min_misconceptions: 6
+  min_retrieval_items: 4
+  min_near_transfer: 1
+  min_far_transfer: 1
+  min_summary_bullets: 4
+  require_worked_examples: true
+  require_misconception_inventory: true
+  require_near_far_transfer: true
+  require_spaced_retrieval_notes: true
+  require_difficulty_tiers: true
+  domain_matched_scaffolds: true
+  require_field_level_detail: true
+  require_multiple_worked_contexts: true
+  forbid_outline_only: true
+  forbid_bullet_only_body: true
+  quiz_items_per_lesson: 8
+  quiz_options: 4
+  lesson_count_target: 7
+
+build_flags:
+  click_to_begin: true
+  cover_home: true
+  contents_map: true
+  lesson_html: true
+  lesson_md: true
+  deck_chooser: true
+  dashboard: true
+  quiz: true
+  labs: true
+  profile: false
+  figures: true
+  launchers: true
+  readme: true
+
+theme:
+  default: light
+  allow_toggle: true
+  max_width: "78rem"
+  edge_cushion: true
+
+labs_preset: learning_field
+profile_style: none
+
+storage_keys:
+  progress: "atlas_build_loop_progress_v1"
+  weak: "atlas_build_loop_weak_v1"
+  srs: "atlas_build_loop_srs_v1"
+  theme: "atlas_build_loop_theme_v1"
+
+reference_dirs:
+  quiz_template: "/mnt/c/Users/jbies/OneDrive/Desktop/Altas Courses/Staging/Atlas of Cardiovascular Systems/03_quiz"
+  atlas_shell_example: "/mnt/c/Users/jbies/OneDrive/Desktop/Altas Courses/Staging/Atlas of Cardiovascular Systems"
+
+demo_profile: ""
+model: "grok-4.6"
+use_lesson_builder: false

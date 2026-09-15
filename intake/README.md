@@ -49,3 +49,11 @@ sources:
 ## Next process step
 
 Confirm `material_name` and `parent_dir`, then either refine the prompt or begin Phase 0.
+
+## Status after first run (2026-09-15)
+
+Pack name: **Atlas of the Build Loop**.  
+Desktop: `/mnt/c/Users/jbies/OneDrive/Desktop/Atlas of the Build Loop — Study Pack`  
+Mirror: `pack/` in this repo.  
+COURSE CONFIG filled. Phase 0–3 of Master v3 executed (`source_locked`, spine freeze 7).
+

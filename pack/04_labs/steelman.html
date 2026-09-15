@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../assets/pack.css" />
+  <title>Misconception Steelman Studio — Atlas of the Build Loop</title>
+  <style>
+    
+    *{box-sizing:border-box} body{margin:0;font-family:system-ui,sans-serif;background:var(--bg);color:var(--text)}
+    .wrap{max-width:78rem;margin:0 auto;padding:1.5rem 1.4rem 3rem} a{color:var(--accent);text-decoration:none}
+    h1{font-size:1.4rem}.muted{color:var(--muted)}.panel{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.1rem;margin:1rem 0}
+    .weak{color:var(--bad);font-style:italic} textarea{width:100%;min-height:8rem;background:var(--inset, #eef4f8);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:.7rem;margin-top:.5rem}
+    button{border:0;background:linear-gradient(180deg,#7ee8d4,#2bb89a);color:#062f2c;padding:.6rem 1rem;border-radius:10px;font-weight:700;cursor:pointer;margin-top:.6rem;margin-right:.4rem}
+    .score{font-size:1.3rem;color:var(--gold);font-weight:700} .checks label{display:block;margin:.35rem 0;cursor:pointer}
+    .model{margin-top:1rem;padding:.8rem;background:var(--inset, #eef4f8);border-radius:10px;border:1px solid var(--border);font-size:.92rem}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p><a href="../index.html">Cover</a> · <a href="../contents.html">Contents</a> · <a href="index.html">Labs</a> · <button type="button" class="theme-btn" data-theme-toggle>Dim mode</button></p>
+    <h1>Misconception Steelman Studio</h1>
+    <p class="muted">Rewrite the weak take into the strongest fair version an intelligent opponent could mean. Then self-score with the rubric.</p>
+    <div class="panel">
+      <div class="muted">Weak take</div>
+      <p class="weak" id="weak"></p>
+      <label class="muted">Your steelman</label>
+      <textarea id="text" placeholder="In the strongest fair form, the claim is… because… Evidence would include… The best objection is…"></textarea>
+      <div class="checks" id="checks"></div>
+      <button id="scoreBtn">Score rubric</button>
+      <button id="next" style="background:var(--btn, #e8eef3)">New prompt</button>
+      <p class="score" id="score"></p>
+      <div class="model" id="model"></div>
+    </div>
+    <div id="grok-grader"></div>
+  </div>
+  <script src="shared.js"></script>
+  <script>
+            const ITEMS = [
+      {
+        "weak": "“Loops mean we never decide.”",
+        "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: Convergence is half the loop. A loop without a kill/keep step is stalling.",
+        "lessonId": "bl-01-loop",
+        "title": "The Loop"
+      },
+      {
+        "weak": "“PDCA, OODA, and Agile are the same circle.”",
+        "model": "Fair form, then the limit. Same spine, different jobs and clocks. Mixing labels hides which job you skipped.",
+        "lessonId": "bl-01-loop",
+        "title": "The Loop"
+      },
+      {
+        "weak": "“If we move faster we are doing OODA.”",
+        "model": "Fair form, then the limit. Speed without Orient is panic. Orient is the scarce step.",
+        "lessonId": "bl-01-loop",
+        "title": "The Loop"
+      },
+      {
+        "weak": "“Agile means no plan.”",
+        "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: Agile assumes a plan that can change. No plan is just drift.",
+        "lessonId": "bl-02-methods",
+        "title": "Project Management Methodology"
+      },
+      {
+        "weak": "“Scrum is Agile, so any standup counts.”",
+        "model": "Fair form, then the limit. Scrum is a specific wrapper. A standup without a done increment is a meeting.",
+        "lessonId": "bl-02-methods",
+        "title": "Project Management Methodology"
+      },
+      {
+        "weak": "“Waterfall is always wrong.”",
+        "model": "Fair form, then the limit. It is honest when cause and effect are known. It is wrong as a freeze on a guess.",
+        "lessonId": "bl-02-methods",
+        "title": "Project Management Methodology"
+      },
+      {
+        "weak": "“If I specify every step, I have communicated.”",
+        "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: You instructed. Complex work still needs intent when the steps change.",
+        "lessonId": "bl-03-intent",
+        "title": "Communicating Intent"
+      },
+      {
+        "weak": "“Vision is enough.”",
+        "model": "Fair form, then the limit. Vision without this-round success criteria is a poster.",
+        "lessonId": "bl-03-intent",
+        "title": "Communicating Intent"
+      },
+      {
+        "weak": "“How Might We can start from a solution we like.”",
+        "model": "Fair form, then the limit. Then it is a leading question, not a HMW.",
+        "lessonId": "bl-03-intent",
+        "title": "Communicating Intent"
+      },
+      {
+        "weak": "“Brainstorming is just talking.”",
+        "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: Without deferred judgment and a method, it is a status contest.",
+        "lessonId": "bl-04-brainstorm",
+        "title": "Brainstorming"
+      },
+      {
+        "weak": "“Quality in the room saves time.”",
+        "model": "Fair form, then the limit. Early quality is undeclared converge. You lose the weird test.",
+        "lessonId": "bl-04-brainstorm",
+        "title": "Brainstorming"
+      },
+      {
+        "weak": "“The director should steer so we stay realistic.”",
+        "model": "Fair form, then the limit. Steering mid-diverge is how you get last year’s idea.",
+        "lessonId": "bl-04-brainstorm",
+        "title": "Brainstorming"
+      },
+      {
+        "weak": "“Higher fidelity is always more professional.”",
+        "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: Early polish persuades and freezes. Match the question.",
+        "lessonId": "bl-05-prototype",
+        "title": "Prototyping"
+      },
+      {
+        "weak": "“MVP is a prototype we put on a domain.”",
+        "model": "Fair form, then the limit. MVP is shipped and measured. Prototype may never ship.",
+        "lessonId": "bl-05-prototype",
+        "title": "Prototyping"
+      },
+      {
+        "weak": "“If it looks unfinished, stakeholders will not take it seriously.”",
+        "model": "Fair form, then the limit. Tell them the question. If they still need polish, you are demoing, not testing.",
+        "lessonId": "bl-05-prototype",
+        "title": "Prototyping"
+      },
+      {
+        "weak": "“Critique means being nice.”",
+        "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: It means being specific to the brief. Niceness without a move is stalling.",
+        "lessonId": "bl-06-review",
+        "title": "Review"
+      },
+      {
+        "weak": "“Stakeholders speaking is user testing.”",
+        "model": "Fair form, then the limit. Different truths. Do not mix the meetings if power will fake success.",
+        "lessonId": "bl-06-review",
+        "title": "Review"
+      },
+      {
+        "weak": "“A pre-mortem is negative.”",
+        "model": "Fair form, then the limit. Unowned pessimism is negative. Owned failure stories are cheap.",
+        "lessonId": "bl-06-review",
+        "title": "Review"
+      },
+      {
+        "weak": "“We iterated, so we delivered.”",
+        "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: Iteration can be learning with zero ship. Report both.",
+        "lessonId": "bl-07-ship",
+        "title": "Iteration and Shipping"
+      },
+      {
+        "weak": "“Shipping proves the idea.”",
+        "model": "Fair form, then the limit. Shipping proves you can operate a slice. The idea still needs evidence.",
+        "lessonId": "bl-07-ship",
+        "title": "Iteration and Shipping"
+      },
+      {
+        "weak": "“Pivot is a nicer word for fail.”",
+        "model": "Fair form, then the limit. Kill is fail-the-job. Pivot is change-the-approach. Do not blur them to save face.",
+        "lessonId": "bl-07-ship",
+        "title": "Iteration and Shipping"
+      }
+    ];
+    const RUBRIC = [
+      "States opponent’s claim without mockery",
+      "Gives strongest reasons (not weakest)",
+      "Mentions evidence or conditions of truth",
+      "Acknowledges limits / doesn’t overclaim",
+      "Is something a smart critic might actually endorse",
+    ];
+    let i = 0;
+    const checks = document.getElementById("checks");
+    RUBRIC.forEach((r, idx) => {
+      const id = "r"+idx;
+      checks.innerHTML += `<label><input type="checkbox" id="${id}" /> ${r}</label>`;
+    });
+    let grader = { refresh() {} };
+    function fillValues() {
+      const weak = document.getElementById("weak").textContent.trim() || "(no weak take loaded)";
+      const steel = document.getElementById("text").value.trim() || "(I have not written anything yet.)";
+      const rubric = RUBRIC.map((r, idx) => {
+        const on = document.getElementById("r" + idx) && document.getElementById("r" + idx).checked;
+        return (on ? "[x] " : "[ ] ") + r;
+      }).join("\n");
+      return { WEAK: weak, STEELMAN: steel, RUBRIC: rubric };
+    }
+    function load() {
+      document.getElementById("weak").textContent = ITEMS[i].weak;
+      document.getElementById("text").value = "";
+      document.getElementById("score").textContent = "";
+      document.getElementById("model").textContent = "Sample steelman appears after you score (for comparison—not the only valid one).";
+      RUBRIC.forEach((_, idx) => document.getElementById("r"+idx).checked = false);
+      grader.refresh();
+    }
+    document.getElementById("scoreBtn").onclick = () => {
+      const text = document.getElementById("text").value.trim();
+      if (text.length < 40) {
+        document.getElementById("score").textContent = "Write a fuller steelman (≥ ~40 chars) before scoring.";
+        grader.refresh();
+        return;
+      }
+      let s = 0;
+      RUBRIC.forEach((_, idx) => { if (document.getElementById("r"+idx).checked) s++; });
+      document.getElementById("score").textContent = `Rubric score: ${s}/5`;
+      document.getElementById("model").textContent = ITEMS[i].model;
+      AtlasProgress.touchLab("steelman", { actions: 1, score: s * 20 });
+      grader.refresh();
+    };
+    document.getElementById("next").onclick = () => { i = (i+1) % ITEMS.length; load(); };
+    document.getElementById("text").addEventListener("input", () => grader.refresh());
+    RUBRIC.forEach((_, idx) => {
+      document.getElementById("r" + idx).addEventListener("change", () => grader.refresh());
+    });
+    AtlasProgress.touchLab("steelman", { visit: true });
+    load();
+    if (window.AtlasLabGrader) {
+      grader = AtlasLabGrader.mount("grok-grader", "steelman", {
+        how: "Your steelman and checked boxes fill in automatically. Copy prompt → new Grok chat → send. Ask it to teach the steelman move, not to polish your prose.",
+        fillValues,
+      });
+      grader.refresh();
+    }
+  </script>
+
+  <script src="../assets/theme.js"></script>
+</body>
+</html>

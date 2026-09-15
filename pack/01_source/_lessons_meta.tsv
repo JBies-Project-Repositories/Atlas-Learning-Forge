@@ -1,0 +1,8 @@
+id	stem	num	title	arc	focus
+bl-01-loop	01_The_Loop	L01	The Loop	A — Door	Divergent vs convergent thinking; complex vs complicated; PDCA; OODA; Build–Measure–Learn; Double Diamond; Design Thinking stages
+bl-02-methods	02_Project_Management_Methodology	L02	Project Management Methodology	B — Methods and intent	Design Thinking; Lean Startup; Agile; Scrum; dual-track; Waterfall; discovery vs delivery; cadence; scope; WIP; definition of done
+bl-03-intent	03_Communicating_Intent	L03	Communicating Intent	B — Methods and intent	Commander's intent; purpose; end state; constraints; problem statements; How Might We; non-goals; success criteria; vision; briefs; alignment vs instruction
+bl-04-brainstorm	04_Brainstorming	L04	Brainstorming	C — Tools	Deferred judgment; quantity before quality; brainwriting; Crazy 8s; SCAMPER; constraint-based ideation; HMW; Socratic and devil's-advocate review; idea progression
+bl-05-prototype	05_Prototyping	L05	Prototyping	C — Tools	Fidelity; lo/mid/hi-fi; looks-like / works-like / experience prototypes; pretotype; MVP; smallest testable slice; riskiest assumption first
+bl-06-review	06_Review	L06	Review	D — Guardrails and ship	Design critique; I like / I wish / What if; assumption mapping; RAT; pre-mortem; steelman; user testing; task success; stakeholder and expert review; redesign / solidify / kill / pivot / ship
+bl-07-ship	07_Iteration_and_Shipping	L07	Iteration and Shipping	D — Guardrails and ship	Learning vs feature velocity; pivot vs persevere; evidence thresholds; retrospective; launch; quality; operations; mode switch from learning to delivery

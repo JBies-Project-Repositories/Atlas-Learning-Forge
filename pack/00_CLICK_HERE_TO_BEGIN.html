@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CLICK HERE TO BEGIN — Atlas of the Build Loop</title>
+  <link rel="stylesheet" href="assets/pack.css" />
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      background:
+        radial-gradient(700px 380px at 20% 0%, var(--hero-from) 0%, transparent 55%),
+        var(--bg);
+    }
+    .panel {
+      width: min(36rem, 100%);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.85rem 1.5rem 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .begin {
+      display: block;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: #062f2c;
+      background: linear-gradient(180deg, #7ee8d4, #2bb89a);
+      border: 1px solid #9af0dc;
+      border-radius: 14px;
+      padding: 1.05rem 1rem;
+      margin: 0 0 0.85rem;
+      box-shadow: 0 8px 24px rgba(43, 184, 154, 0.25);
+    }
+    .begin:hover { filter: brightness(1.04); color: #062f2c; }
+    .begin small { display: block; font-weight: 600; font-size: 0.82rem; opacity: 0.85; margin-top: 0.25rem; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem; }
+    @media (max-width: 480px) { .grid { grid-template-columns: 1fr; } }
+    a.sec {
+      display: block; text-decoration: none; color: var(--text);
+      background: var(--inset); border: 1px solid var(--border);
+      border-radius: 12px; padding: 0.75rem 0.85rem; font-weight: 700; font-size: 0.92rem;
+    }
+    a.sec:hover { border-color: var(--accent); color: var(--accent); }
+    a.sec span { display: block; font-weight: 500; font-size: 0.78rem; color: var(--muted); margin-top: 0.15rem; }
+    .top-row { display: flex; justify-content: flex-end; margin-bottom: 0.4rem; }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <div class="top-row"><button type="button" class="theme-btn" data-theme-toggle>Dim mode</button></div>
+    <div class="tag">When this folder opens · start here</div>
+    <h1>Atlas of the Build Loop</h1>
+    <p class="lead" style="margin-bottom:1.15rem">A field guide from messy thinking to shipped work: loops, methods, intent, prototypes, review, and the mode switch to delivery.</p>
+    <a class="begin" href="index.html">
+      Open the cover
+      <small>Introduction to the pack</small>
+    </a>
+    <div class="grid">
+      <a class="sec" href="contents.html">Contents<span>Lesson list and path</span></a>
+      <a class="sec" href="02_lessons/01_The_Loop.html">Lesson 1<span>Start reading</span></a>
+      <a class="sec" href="decks.html">Quiz decks<span>56 questions</span></a>
+      <a class="sec" href="04_labs/index.html">Labs<span>Practice tools</span></a>
+    </div>
+    <p class="note"><strong>If a link does nothing:</strong> right-click this file → Open with → Chrome, Edge, or Firefox. Or use <code>00_CLICK_HERE_TO_BEGIN.bat</code>.</p>
+  </div>
+  <script src="assets/theme.js"></script>
+</body>
+</html>

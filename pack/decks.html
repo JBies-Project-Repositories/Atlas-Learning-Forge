@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Deck Chooser — Atlas of the Build Loop</title>
+  <link rel="stylesheet" href="assets/pack.css"/>
+  <style>
+    .deck{display:flex;gap:.65rem;align-items:flex-start;background:linear-gradient(90deg,rgba(28,93,104,.08),var(--card) 40%);border:1px solid var(--border);border-left:5px solid var(--accent);border-radius:12px;padding:.75rem 1rem;margin:.45rem 0;cursor:pointer;box-shadow:var(--shadow)}
+    .deck input{width:1.1rem;height:1.1rem;flex:0 0 auto;margin-top:.2rem}
+    .deck span{flex:1;color:var(--text);font-size:.95rem}
+    .row{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+    button,.btn{border:1px solid var(--border);background:var(--btn);color:var(--text);border-radius:10px;padding:.55rem .9rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
+    .btn.primary{background:linear-gradient(180deg,#7ee8d4,#2bb89a);border-color:#9af0dc;color:#062f2c}
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html">the Build Loop</a>
+    <nav><a href="index.html">Cover</a> <a href="contents.html">Contents</a> <a href="04_labs/index.html">Labs</a> <a href="dashboard.html">Dashboard</a></nav>
+    <button type="button" class="theme-btn" data-theme-toggle>Dim mode</button>
+  </div>
+</header>
+<div class="wrap">
+<h1>Deck Chooser</h1>
+<p class="lead">Select lesson decks (8 questions each), then start.</p>
+<div class="row">
+  <button type="button" id="all">Select all</button>
+  <button type="button" id="none">Select none</button>
+  <button type="button" id="door">Arc A–B door + methods</button>
+  <button type="button" id="tools">Arc C–D tools + ship</button>
+</div>
+<form id="f">
+  <label class="deck"><input type="checkbox" value="bl-01-loop" checked /><span><strong>L01</strong> — The Loop</span></label>
+  <label class="deck"><input type="checkbox" value="bl-02-methods" checked /><span><strong>L02</strong> — Project Management Methodology</span></label>
+  <label class="deck"><input type="checkbox" value="bl-03-intent" checked /><span><strong>L03</strong> — Communicating Intent</span></label>
+  <label class="deck"><input type="checkbox" value="bl-04-brainstorm" checked /><span><strong>L04</strong> — Brainstorming</span></label>
+  <label class="deck"><input type="checkbox" value="bl-05-prototype" checked /><span><strong>L05</strong> — Prototyping</span></label>
+  <label class="deck"><input type="checkbox" value="bl-06-review" checked /><span><strong>L06</strong> — Review</span></label>
+  <label class="deck"><input type="checkbox" value="bl-07-ship" checked /><span><strong>L07</strong> — Iteration and Shipping</span></label>
+</form>
+<div class="row">
+  <a class="btn primary" id="go" href="03_quiz/index.html?decks=all">Start selected decks</a>
+  <a class="btn" href="03_quiz/index.html?decks=all">All 56 exam path</a>
+</div>
+</div>
+<script src="assets/theme.js"></script>
+<script>
+const boxes = [...document.querySelectorAll('input[type=checkbox]')];
+function sync() {
+  const ids = boxes.filter(b=>b.checked).map(b=>b.value);
+  const q = ids.length === boxes.length || ids.length === 0 ? 'all' : ids.join(',');
+  document.getElementById('go').href = '03_quiz/index.html?decks=' + encodeURIComponent(q);
+}
+boxes.forEach(b=>b.addEventListener('change', sync));
+document.getElementById('all').onclick = () => { boxes.forEach(b=>b.checked=true); sync(); };
+document.getElementById('none').onclick = () => { boxes.forEach(b=>b.checked=false); sync(); };
+document.getElementById('door').onclick = () => {
+  const keep = new Set(['bl-01-loop','bl-02-methods','bl-03-intent']);
+  boxes.forEach(b => b.checked = keep.has(b.value));
+  sync();
+};
+document.getElementById('tools').onclick = () => {
+  const keep = new Set(['bl-04-brainstorm','bl-05-prototype','bl-06-review','bl-07-ship']);
+  boxes.forEach(b => b.checked = keep.has(b.value));
+  sync();
+};
+sync();
+</script>
+</body>
+</html>

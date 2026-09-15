@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Communicating Intent — Atlas of the Build Loop</title>
+<link rel="stylesheet" href="../assets/pack.css"/>
+</head><body>
+<div class="lesson-wrap">
+<nav class="lesson-nav"><a href="../index.html">Cover</a> <a href="../contents.html">Contents</a> <a href="../decks.html">Quiz</a> <a href="../04_labs/index.html">Labs</a> <a href="../dashboard.html">Dashboard</a> <a href="02_Project_Management_Methodology.html">← Prev</a> <a href="04_Brainstorming.html">Next →</a> <button type="button" class="theme-btn" data-theme-toggle>Dim mode</button><div class="mark">Atlas of the Build Loop</div></nav>
+<figure class="lesson-hero"><img src="../assets/arc-b.jpg" alt="A brief and a compass on a worktable"/></figure>
+<article class="lesson">
+<div class="badge">Dense lesson · professional practice · educational only</div>
+<h1>Communicating Intent</h1>
+<h2>Learning Objectives</h2>
+<ul>
+<li>Write commander’s intent as purpose + end state + constraints, not as a task list.</li>
+<li>Turn a complaint into a problem statement and a How Might We without smuggling the solution.</li>
+<li>Use non-goals, success criteria, and vision as alignment tools, and tell alignment apart from instruction.</li>
+<li>Produce a brief that a competent teammate could execute without you in the room.</li>
+</ul>
+<h2>Prerequisites</h2>
+<ul>
+<li>Lessons 1–2: you can name the loop and the methodology coat.</li>
+<li>You have given or received a request that failed because the “why” was missing.</li>
+</ul>
+<h2>Lesson Content</h2>
+<h3>Alignment is not a longer instruction</h3>
+<p><strong>Instruction</strong> tells someone the steps. It is correct for complicated, low-variance work: a runbook, a statute, a deploy checklist. <strong>Alignment</strong> tells someone the purpose, the end state, and the constraints so they can choose steps you did not foresee. Most build-loop work needs alignment and only a little instruction. Teams that only instruct create bottlenecks and silent rebellion. Teams that only “align” with slogans create seven products.</p>
+<p>The syllabus names <strong>commander’s intent</strong> because it is the cleanest professional pattern for alignment: a subordinate who loses contact with you should still be able to act in your interest. That is not militarism. That is what you want when Slack is down, the vendor lies, or the user does something weird.</p>
+<h3>Commander’s intent: purpose, end state, constraints</h3>
+<p><strong>Purpose</strong> is why this work exists for a human or a system. “So night-shift nurses can find the dosing note in under a minute” is a purpose. “Build a dashboard” is not.</p>
+<p><strong>End state</strong> is what true looks like when you walk in later. Observable. “A nurse can complete the task on a phone without calling the day shift” is an end state. “Modern UX” is not.</p>
+<p><strong>Constraints</strong> are the hard walls: time, money, regulation, non-goals, safety vetoes. Constraints are not preferences. “No PHI in the model vendor” is a constraint. “Make it pop” is a preference and does not belong here.</p>
+<p>If you omit any of the three, people invent it. Missing purpose → they optimize a metric you did not care about. Missing end state → they never know they are done. Missing constraints → they ship a clever thing you must undo.</p>
+<h3>Problem statements and How Might We</h3>
+<p>A <strong>problem statement</strong> names the who, the job, and the evidence of pain, without a solution noun. “On-call engineers lose 20 minutes finding the last good config, and two incidents last quarter started there” is a problem statement. “We need Kubernetes” is a solution smuggled in.</p>
+<p><strong>How Might We (HMW)</strong> is a bridge from problem to ideation. It keeps the who and the job, and it opens solution space: “How might we get the last good config into an on-call engineer’s hands in one minute?” Bad HMWs are either too broad (“how might we be a better team?”) or too narrow (“how might we build a red button on page 3?”). The test: a HMW should allow at least three structurally different answers, including one that is not software.</p>
+<p>Write the problem statement before the HMW. Teams that start at HMW brainstorm decorations for an unstated problem.</p>
+<h3>Non-goals, success criteria, vision, briefs</h3>
+<p><strong>Non-goals</strong> are in-scope-looking work you are explicitly not doing this round. They prevent polite scope creep. “Not building SSO this quarter” is a non-goal. If it is not written, someone will start it on Thursday.</p>
+<p><strong>Success criteria</strong> are how you will know the end state happened. Prefer user or system behavior over feelings. “Five on-call drills retrieve the config without a second person” beats “stakeholders are excited.”</p>
+<p><strong>Vision</strong> is the longer directional picture. It is allowed to be qualitative. It is not allowed to replace this-round success criteria. Vision without a round is a poster. A round without vision is a random walk.</p>
+<p>A <strong>brief</strong> packages intent for a working group: purpose, problem, HMW, end state, constraints, non-goals, success criteria, loop/method (from L01–L02), and who decides. If the brief cannot be read in three minutes, it is a document pretending to be alignment.</p>
+<figure class="fig">
+<svg class="lesson-chart" viewBox="0 0 720 200" role="img" aria-label="Intent stack from purpose down to tasks">
+  <rect x="40" y="20" width="640" height="36" rx="8" fill="#1c5d68"/>
+  <text x="360" y="44" text-anchor="middle" fill="#fff6d6" font-size="14" font-weight="700">Purpose — why a human should care</text>
+  <rect x="70" y="64" width="580" height="36" rx="8" fill="#2bb89a"/>
+  <text x="360" y="88" text-anchor="middle" fill="#062f2c" font-size="14" font-weight="700">End state — what true looks like later</text>
+  <rect x="100" y="108" width="520" height="36" rx="8" fill="var(--card)" stroke="var(--border)"/>
+  <text x="360" y="132" text-anchor="middle" font-size="14" font-weight="700">Constraints + non-goals — the walls</text>
+  <rect x="160" y="152" width="400" height="36" rx="8" fill="var(--inset)" stroke="var(--border)"/>
+  <text x="360" y="176" text-anchor="middle" font-size="14">Tasks / instruction — only after the stack</text>
+</svg>
+<figcaption>Write the stack top-down. Tasks without the stack are instruction. The stack without any next action is a poster.</figcaption>
+</figure>
+<h3>Alignment vs instruction in the room</h3>
+<p>Use instruction when variance is expensive: production deploy, dosing, a legal filing. Use alignment when variance is the point: a prototype week, a discovery track, a complex product bet. Mixing them is a common injury. A manager “aligns” on a vision then micromanages the CSS. A team “takes initiative” on a constraint they were not allowed to touch.</p>
+<p>A practical tell: if you disappeared for two days, could a competent teammate still move toward the end state without violating a constraint? If no, you instructed poorly or you never aligned. If yes, you wrote intent.</p>
+<p><strong>Uncertainty:</strong> “Commander’s intent” is military language. This pack uses it as a civilian alignment pattern. It does not teach military decision-making or claim a specific field-manual text from the syllabus.</p>
+<h2>Worked example(s)</h2>
+<p><strong>Problem:</strong> “Make the onboarding nicer.” Product, design, and engineering each heard a different request. A two-week sprint starts Monday.</p>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>Refuse the noun. Ask who fails today. New contractors cannot complete tax forms without Slack-DMing a human.</li>
+<li>Purpose: contractors finish required forms without a human unblock.</li>
+<li>End state: a new contractor completes the packet in one sitting, on their phone, with zero staff messages in a observed trial of five people.</li>
+<li>Constraints: no new vendor this sprint; existing identity provider; accessibility of the current stack. Non-goal: marketing site rewrite.</li>
+<li>HMW: “How might we get a new contractor through required forms in one sitting without DMing staff?”</li>
+<li>Brief on one page. Success criterion: 4/5 trial users finish unassisted. Method: dual-track — pretotype the flow (L05) before polishing UI.</li>
+</ol>
+<p><strong>Answer / result:</strong> The sprint is no longer “nicer onboarding.” It is an intent stack plus a measure. Instruction (which CSS) can now be local. Alignment is already done.</p>
+<h2>Key Terms</h2>
+<table><thead><tr><th>Term</th><th>Definition</th></tr></thead><tbody>
+<tr><td>Commander’s intent</td><td>Purpose + end state + constraints so others can act without you</td></tr>
+<tr><td>Purpose</td><td>Why the work exists for a human or system</td></tr>
+<tr><td>End state</td><td>Observable picture of “true” when you walk in later</td></tr>
+<tr><td>Constraints</td><td>Hard walls (time, law, safety, budget), not preferences</td></tr>
+<tr><td>Problem statement</td><td>Who, job, evidence of pain; no smuggled solution</td></tr>
+<tr><td>How Might We</td><td>Ideation prompt that keeps the job and allows multiple solution types</td></tr>
+<tr><td>Non-goals</td><td>Plausible work explicitly out of this round</td></tr>
+<tr><td>Success criteria</td><td>Observable tests that the end state happened</td></tr>
+<tr><td>Vision</td><td>Longer directional picture; does not replace this-round criteria</td></tr>
+<tr><td>Brief</td><td>Short package of intent a working group can execute</td></tr>
+<tr><td>Alignment</td><td>Shared purpose/end state/constraints</td></tr>
+<tr><td>Instruction</td><td>Specified steps for low-variance work</td></tr>
+</tbody></table>
+<h2>Misconception inventory</h2>
+<table><thead><tr><th>Misconception</th><th>Reality</th></tr></thead><tbody>
+<tr><td>“If I specify every step, I have communicated.”</td><td>You instructed. Complex work still needs intent when the steps change.</td></tr>
+<tr><td>“Vision is enough.”</td><td>Vision without this-round success criteria is a poster.</td></tr>
+<tr><td>“How Might We can start from a solution we like.”</td><td>Then it is a leading question, not a HMW.</td></tr>
+<tr><td>“Non-goals are negative and kill morale.”</td><td>Unwritten non-goals kill morale later, in the scope fight.</td></tr>
+<tr><td>“Constraints are for project managers.”</td><td>Builders who ignore walls build undo-work.</td></tr>
+<tr><td>“Alignment means consensus on every detail.”</td><td>Alignment is the stack. Details can disagree inside the walls.</td></tr>
+<tr><td>“A long document is a brief.”</td><td>A brief is readable in minutes. Length is not rigor.</td></tr>
+<tr><td>“Purpose can be ‘deliver the epic.’”</td><td>That is a task. Purpose names a human or system outcome.</td></tr>
+</tbody></table>
+<h2>Summary</h2>
+<ul>
+<li>Alignment (intent) and instruction (steps) are different jobs.</li>
+<li>Commander’s intent = purpose + end state + constraints.</li>
+<li>Problem statements forbid smuggled solutions; HMWs open more than one kind of answer.</li>
+<li>Non-goals and success criteria keep a round honest; vision does not replace them.</li>
+<li>A brief is the portable form. If it needs you in the room, it is not a brief yet.</li>
+</ul>
+<h2>Practice</h2>
+<h3>Retrieval</h3>
+<ul>
+<li>Name the three parts of commander’s intent.</li>
+<li>What must a problem statement not include?</li>
+<li>Alignment vs instruction: give one tell for each.</li>
+<li>Why write non-goals instead of “we’ll see”?</li>
+</ul>
+<h3>Near transfer</h3>
+<p>Rewrite “build a dashboard for leadership” as purpose, end state, one constraint, one non-goal, and one HMW.</p>
+<h3>Far transfer</h3>
+<p>You are handing this Atlas pack to a tester who was not in the chat. Write a six-line brief they could execute without you.</p>
+<h2>Spaced retrieval notes</h2>
+<ul>
+<li>Day 0: take one Slack request and write purpose + end state only.</li>
+<li>Day 2: add constraints and a non-goal.</li>
+<li>Day 7: convert a solution-noun request into a problem statement + HMW.</li>
+<li>Day 21: check a live brief: could someone act if you disappeared for two days?</li>
+</ul>
+<h2>Difficulty tiers</h2>
+<ul>
+<li><strong>Novice:</strong> purpose, end state, one constraint.</li>
+<li><strong>Working:</strong> full brief including HMW, non-goals, success criteria.</li>
+<li><strong>Expert:</strong> choose when to instruct vs align mid-incident without collapsing to either extreme.</li>
+</ul>
+<h2>Domain scaffolds</h2>
+<p>Professional briefs: one page. Safety/legal constraints at the top, not in a footnote. If the domain is healthcare, finance, or law, the purpose line includes “educational / not advice” when that is true.</p>
+<h2>Learn more</h2>
+<ul>
+<li><a class="ext" href="https://agilemanifesto.org/" target="_blank" rel="noopener noreferrer">Agile Manifesto</a> — customer collaboration and responding to change as alignment values.</li>
+<li><a class="ext" href="https://scrumguides.org/scrum-guide.html" target="_blank" rel="noopener noreferrer">Scrum Guide</a> — Product Goal as a named intent artifact.</li>
+<li><a class="ext" href="https://www.designcouncil.org.uk/our-resources/framework-for-innovation/" target="_blank" rel="noopener noreferrer">Design Council — Framework for Innovation</a> — define stage as the home of the problem statement.</li>
+</ul>
+<div class="footer">Offline study pack. Progress is stored in this browser only. Optional “Learn more” links open the public homes of named methods.</div>
+</article>
+</div>
+<script src="../assets/theme.js"></script>
+</body></html>

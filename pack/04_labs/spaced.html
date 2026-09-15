@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spaced Repetition Lab — Atlas of the Build Loop</title>
+  <link rel="stylesheet" href="../assets/pack.css" />
+  <style>
+    .lab-lead { max-width: none; margin: 0 0 1rem; }
+    .pick {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.65rem 1rem;
+      margin: 0 0 1.15rem;
+    }
+    .pick label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .pick select {
+      flex: 1 1 18rem;
+      max-width: 36rem;
+      font: inherit;
+      font-weight: 650;
+      padding: 0.7rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--card);
+      color: var(--text);
+      box-shadow: var(--shadow);
+    }
+    .srs-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.2rem;
+      margin: 1rem 0;
+      min-height: 10rem;
+      box-shadow: var(--shadow);
+    }
+    .front { font-size: 1.15rem; font-weight: 600; }
+    .back { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display: none; }
+    .back.show { display: block; }
+    .row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+    .row button {
+      border: 1px solid var(--border);
+      background: var(--btn);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 0.55rem 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .row button.primary {
+      background: linear-gradient(180deg, #7ee8d4, #2bb89a);
+      border-color: #9af0dc;
+      color: #062f2c;
+    }
+    .row button.ok { background: #d9f3e6; border-color: #157a4b; color: #0d4b2e; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin: 1rem 0; }
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.7rem;
+      text-align: center;
+    }
+    .stat b { display: block; color: var(--gold); font-size: 1.2rem; }
+    .stat span { font-size: 0.75rem; color: var(--muted); }
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="../index.html">the Build Loop</a>
+      <nav>
+        <a href="../index.html">Cover</a>
+        <a href="../contents.html">Contents</a>
+        <a href="index.html">Labs</a>
+        <a href="../dashboard.html">Dashboard</a>
+      </nav>
+      <button type="button" class="theme-btn" data-theme-toggle>Dim mode</button>
+    </div>
+  </header>
+  <div class="wrap">
+    <p class="tag">Lab 01 · Memory</p>
+    <h1>Spaced Repetition Lab</h1>
+    <p class="lead lab-lead">Choose a lesson. That lesson’s full deck — every key term and every misconception — is due until you rate it. Honesty over ego. Progress stays in this browser.</p>
+
+    <div class="pick">
+      <label for="deck">Lesson</label>
+      <select id="deck">
+        <option value="">Choose a lesson…</option>
+      </select>
+    </div>
+
+    <div id="work" class="hidden">
+      <div class="stats">
+        <div class="stat"><b id="due">0</b><span>Due now</span></div>
+        <div class="stat"><b id="total">0</b><span>Cards in this deck</span></div>
+        <div class="stat"><b id="done">0</b><span>Reviews this session</span></div>
+      </div>
+      <div class="srs-card" id="panel">
+        <div class="front" id="front"></div>
+        <div class="back" id="back"></div>
+      </div>
+      <div class="row" id="actions"></div>
+      <p class="muted" id="meta"></p>
+    </div>
+  </div>
+  <script src="shared.js"></script>
+  <script src="../assets/theme.js"></script>
+  <script>
+            const DECKS = [
+      {
+        "id": "bl-01-loop",
+        "num": "L01",
+        "title": "The Loop",
+        "terms": [
+          [
+            "Divergent thinking",
+            "Increasing the number of live options; adding before scoring"
+          ],
+          [
+            "Convergent thinking",
+            "Reducing options against a named criterion"
+          ],
+          [
+            "Complicated work",
+            "Many parts, but cause and effect can be known in advance by experts"
+          ],
+          [
+            "Complex work",
+            "Cause and effect are clearer after probes; the system talks back"
+          ],
+          [
+            "PDCA",
+            "Plan–Do–Check–Act: improve an observable process with a named check"
+          ],
+          [
+            "OODA",
+            "Observe–Orient–Decide–Act: a tempo loop whose scarce step is Orient"
+          ],
+          [
+            "Build–Measure–Learn",
+            "Lean Startup loop; intellectual order is Learn → Measure → Build"
+          ],
+          [
+            "Double Diamond",
+            "Two diverge–converge pairs: problem, then solution"
+          ],
+          [
+            "Design Thinking stages",
+            "Named doors on the same spine (empathize, define, ideate, prototype, test)"
+          ],
+          [
+            "Orient",
+            "Updating the model after an observation, including disconfirming facts"
+          ]
+        ],
+        "misc": [
+          [
+            "“Loops mean we never decide.”",
+            "Convergence is half the loop. A loop without a kill/keep step is stalling."
+          ],
+          [
+            "“PDCA, OODA, and Agile are the same circle.”",
+            "Same spine, different jobs and clocks. Mixing labels hides which job you skipped."
+          ],
+          [
+            "“If we move faster we are doing OODA.”",
+            "Speed without Orient is panic. Orient is the scarce step."
+          ],
+          [
+            "“Build–Measure–Learn means build first.”",
+            "Write the learning and the measure before the build."
+          ],
+          [
+            "“Design Thinking is only for designers.”",
+            "It is a problem-framing loop. Engineers skip diamond 1 at the same cost."
+          ],
+          [
+            "“Complex work just needs a better Gantt.”",
+            "A Gantt assumes known cause and effect. Probes come first."
+          ],
+          [
+            "“Divergent and convergent should happen at once to save time.”",
+            "Simultaneous scoring kills options early and fake-converges."
+          ],
+          [
+            "“We already know the problem, so skip to delivery.”",
+            "That sentence is the usual way diamond 1 dies. Prove it with a user-recognizable problem statement."
+          ]
+        ]
+      },
+      {
+        "id": "bl-02-methods",
+        "num": "L02",
+        "title": "Project Management Methodology",
+        "terms": [
+          [
+            "Design Thinking",
+            "Structured problem-framing and testing; fails as sticky-note theater"
+          ],
+          [
+            "Lean Startup",
+            "Hypothesis, smallest falsifying slice, measure, pivot or persevere"
+          ],
+          [
+            "Agile",
+            "Values for responding to late information; not a board"
+          ],
+          [
+            "Scrum",
+            "Named empirical wrapper: backlog, sprint, increment, DoD, inspect-and-adapt"
+          ],
+          [
+            "Dual-track",
+            "Discovery and delivery in parallel, talking, with separate capacities"
+          ],
+          [
+            "Waterfall",
+            "Sequential specify-then-build bet; honest for stable complicated work"
+          ],
+          [
+            "Discovery",
+            "Work that produces a decision about what is worth building"
+          ],
+          [
+            "Delivery",
+            "Work that produces an increment to the definition of done"
+          ],
+          [
+            "Cadence",
+            "A regular inspect interval; a heartbeat, not a pressure pump"
+          ],
+          [
+            "Scope",
+            "Work allowed into the current cadence"
+          ],
+          [
+            "Work in progress (WIP)",
+            "Started-not-done items; high WIP is usually delay"
+          ],
+          [
+            "Definition of done",
+            "The checklist that makes “done” fail-able"
+          ]
+        ],
+        "misc": [
+          [
+            "“Agile means no plan.”",
+            "Agile assumes a plan that can change. No plan is just drift."
+          ],
+          [
+            "“Scrum is Agile, so any standup counts.”",
+            "Scrum is a specific wrapper. A standup without a done increment is a meeting."
+          ],
+          [
+            "“Waterfall is always wrong.”",
+            "It is honest when cause and effect are known. It is wrong as a freeze on a guess."
+          ],
+          [
+            "“MVP means ship a worse version of the full product.”",
+            "MVP is the smallest test of a hypothesis, not a discount SKU."
+          ],
+          [
+            "“Discovery is optional if we are experienced.”",
+            "Experience without contact still guesses. Dual-track exists because experience lies."
+          ],
+          [
+            "“More WIP means we are faster.”",
+            "More starts usually mean later finishes. Limit WIP."
+          ],
+          [
+            "“Definition of done is for QA at the end.”",
+            "If DoD is late, every metric lies."
+          ],
+          [
+            "“One methodology should cover the whole department.”",
+            "Split complicated cores from complex bets. Coats, not identities."
+          ]
+        ]
+      },
+      {
+        "id": "bl-03-intent",
+        "num": "L03",
+        "title": "Communicating Intent",
+        "terms": [
+          [
+            "Commander’s intent",
+            "Purpose + end state + constraints so others can act without you"
+          ],
+          [
+            "Purpose",
+            "Why the work exists for a human or system"
+          ],
+          [
+            "End state",
+            "Observable picture of “true” when you walk in later"
+          ],
+          [
+            "Constraints",
+            "Hard walls (time, law, safety, budget), not preferences"
+          ],
+          [
+            "Problem statement",
+            "Who, job, evidence of pain; no smuggled solution"
+          ],
+          [
+            "How Might We",
+            "Ideation prompt that keeps the job and allows multiple solution types"
+          ],
+          [
+            "Non-goals",
+            "Plausible work explicitly out of this round"
+          ],
+          [
+            "Success criteria",
+            "Observable tests that the end state happened"
+          ],
+          [
+            "Vision",
+            "Longer directional picture; does not replace this-round criteria"
+          ],
+          [
+            "Brief",
+            "Short package of intent a working group can execute"
+          ],
+          [
+            "Alignment",
+            "Shared purpose/end state/constraints"
+          ],
+          [
+            "Instruction",
+            "Specified steps for low-variance work"
+          ]
+        ],
+        "misc": [
+          [
+            "“If I specify every step, I have communicated.”",
+            "You instructed. Complex work still needs intent when the steps change."
+          ],
+          [
+            "“Vision is enough.”",
+            "Vision without this-round success criteria is a poster."
+          ],
+          [
+            "“How Might We can start from a solution we like.”",
+            "Then it is a leading question, not a HMW."
+          ],
+          [
+            "“Non-goals are negative and kill morale.”",
+            "Unwritten non-goals kill morale later, in the scope fight."
+          ],
+          [
+            "“Constraints are for project managers.”",
+            "Builders who ignore walls build undo-work."
+          ],
+          [
+            "“Alignment means consensus on every detail.”",
+            "Alignment is the stack. Details can disagree inside the walls."
+          ],
+          [
+            "“A long document is a brief.”",
+            "A brief is readable in minutes. Length is not rigor."
+          ],
+          [
+            "“Purpose can be ‘deliver the epic.’”",
+            "That is a task. Purpose names a human or system outcome."
+          ]
+        ]
+      },
+      {
+        "id": "bl-04-brainstorm",
+        "num": "L04",
+        "title": "Brainstorming",
+        "terms": [
+          [
+            "Deferred judgment",
+            "No scoring or killing during generation"
+          ],
+          [
+            "Quantity before quality",
+            "Volume and variety first; selection later"
+          ],
+          [
+            "Brainwriting",
+            "Silent written generation to reduce first-speaker monopoly"
+          ],
+          [
+            "Crazy 8s",
+            "Fast multi-sketch diverge to force variety"
+          ],
+          [
+            "SCAMPER",
+            "Prompt list to attack an existing artifact"
+          ],
+          [
+            "Constraint-based ideation",
+            "Added walls that increase, not decrease, variety"
+          ],
+          [
+            "How Might We",
+            "Problem-shaped prompt that allows multiple solution types"
+          ],
+          [
+            "Socratic review",
+            "Questions that expose missing who/job/constraint"
+          ],
+          [
+            "Devil’s-advocate review",
+            "Scheduled argument of the strongest case against a cluster"
+          ],
+          [
+            "Idea progression",
+            "Capture → cluster → testable claim → park/kill"
+          ]
+        ],
+        "misc": [
+          [
+            "“Brainstorming is just talking.”",
+            "Without deferred judgment and a method, it is a status contest."
+          ],
+          [
+            "“Quality in the room saves time.”",
+            "Early quality is undeclared converge. You lose the weird test."
+          ],
+          [
+            "“The director should steer so we stay realistic.”",
+            "Steering mid-diverge is how you get last year’s idea."
+          ],
+          [
+            "“Devil’s advocate during generation keeps us honest.”",
+            "It keeps you quiet. Schedule it after clustering."
+          ],
+          [
+            "“Dot voting picks the best idea.”",
+            "It often picks the most familiar wording. Vote on what to test."
+          ],
+          [
+            "“More methods in one hour means more creativity.”",
+            "One method, done. Stacking is noise."
+          ],
+          [
+            "“SCAMPER is for blank-page problems.”",
+            "It is for attacking an existing artifact."
+          ],
+          [
+            "“If we have fun we brainstormed.”",
+            "Fun is optional. A testable claim is not."
+          ]
+        ]
+      },
+      {
+        "id": "bl-05-prototype",
+        "num": "L05",
+        "title": "Prototyping",
+        "terms": [
+          [
+            "Fidelity",
+            "How finished the artifact looks or behaves"
+          ],
+          [
+            "Low-fidelity",
+            "Cheap, ugly on purpose; tests the job"
+          ],
+          [
+            "Mid-fidelity",
+            "Structured but unfinished; tests the steps"
+          ],
+          [
+            "High-fidelity",
+            "Close to real texture; tests trust, timing, load"
+          ],
+          [
+            "Looks-like",
+            "Tests appearance and recognition"
+          ],
+          [
+            "Works-like",
+            "Tests mechanism; may look like junk"
+          ],
+          [
+            "Experience prototype",
+            "Tests the episode in time"
+          ],
+          [
+            "Pretotype",
+            "Fake of the experience before the mechanism exists"
+          ],
+          [
+            "Prototype",
+            "Artifact built to answer a question; should be able to fail"
+          ],
+          [
+            "MVP",
+            "Smallest shipped test of a hypothesis in the real system"
+          ],
+          [
+            "Smallest testable slice",
+            "Audience + task + fail rule + stop condition"
+          ],
+          [
+            "Riskiest assumption first",
+            "Test the high-impact unknown, not the comforting one"
+          ]
+        ],
+        "misc": [
+          [
+            "“Higher fidelity is always more professional.”",
+            "Early polish persuades and freezes. Match the question."
+          ],
+          [
+            "“MVP is a prototype we put on a domain.”",
+            "MVP is shipped and measured. Prototype may never ship."
+          ],
+          [
+            "“If it looks unfinished, stakeholders will not take it seriously.”",
+            "Tell them the question. If they still need polish, you are demoing, not testing."
+          ],
+          [
+            "“Works-like can wait until after the pretty shell.”",
+            "If mechanism is the risk, the shell is theater."
+          ],
+          [
+            "“Pretotype means lie to users forever.”",
+            "It is a short, disclosed or obviously-fake test of demand/comprehension."
+          ],
+          [
+            "“Test the assumption we are ready to build.”",
+            "That is comfort. Rank by ignorance × impact."
+          ],
+          [
+            "“A demo that cannot fail is a good prototype.”",
+            "If it cannot fail, it is sales."
+          ],
+          [
+            "“Smallest slice means fewest screens of the full product.”",
+            "It means the cheapest path to a kill/keep signal."
+          ]
+        ]
+      },
+      {
+        "id": "bl-06-review",
+        "num": "L06",
+        "title": "Review",
+        "terms": [
+          [
+            "Design critique",
+            "Structured look at an artifact against the brief"
+          ],
+          [
+            "I like / I wish / What if",
+            "Speech protocol: specific praise, desired change, experiment"
+          ],
+          [
+            "Assumption mapping",
+            "Claims placed on ignorance × impact"
+          ],
+          [
+            "Riskiest assumption test",
+            "Stop/go test of the fatal unknown"
+          ],
+          [
+            "Pre-mortem",
+            "Assume failure, write how, assign owners"
+          ],
+          [
+            "Steelman",
+            "Strongest fair form of the opposing view"
+          ],
+          [
+            "User testing",
+            "People with the job attempt the job"
+          ],
+          [
+            "Task success",
+            "Whether they completed the job by a named rule"
+          ],
+          [
+            "Stakeholder review",
+            "Payers, blockers, integrators"
+          ],
+          [
+            "Expert review",
+            "Domain method (legal, safety, a11y, security)"
+          ],
+          [
+            "Redesign / solidify / kill / pivot / ship",
+            "Named end-moves of a review"
+          ]
+        ],
+        "misc": [
+          [
+            "“Critique means being nice.”",
+            "It means being specific to the brief. Niceness without a move is stalling."
+          ],
+          [
+            "“Stakeholders speaking is user testing.”",
+            "Different truths. Do not mix the meetings if power will fake success."
+          ],
+          [
+            "“A pre-mortem is negative.”",
+            "Unowned pessimism is negative. Owned failure stories are cheap."
+          ],
+          [
+            "“Steelman means agree with the critic.”",
+            "It means you can state their best case. Then you may still kill or keep."
+          ],
+          [
+            "“If task success is low we just need better onboarding copy in the demo.”",
+            "You may need to kill the approach. Do not polish a failed job."
+          ],
+          [
+            "“Ship is a feeling of excitement.”",
+            "Ship is DoD + evidence. Excitement is optional."
+          ],
+          [
+            "“Kill is a career threat.”",
+            "If kill is unsayable, your reviews are fake."
+          ],
+          [
+            "“What if is a brainstorm.”",
+            "In critique, What if is a proposed experiment, not a new diverge session."
+          ]
+        ]
+      },
+      {
+        "id": "bl-07-ship",
+        "num": "L07",
+        "title": "Iteration and Shipping",
+        "terms": [
+          [
+            "Learning velocity",
+            "Rate of kill/keep on assumptions (tests, not tickets)"
+          ],
+          [
+            "Feature velocity",
+            "Rate of DoD-passing increments users can touch"
+          ],
+          [
+            "Pivot",
+            "Job alive, approach wrong; change the bet"
+          ],
+          [
+            "Persevere",
+            "Bet holds; keep the approach, maybe raise fidelity"
+          ],
+          [
+            "Evidence threshold",
+            "Pre-written signal for pivot / persevere / kill"
+          ],
+          [
+            "Retrospective",
+            "Inspect the loop; one change to the next cycle"
+          ],
+          [
+            "Launch",
+            "Mode switch from learning to delivery for a slice"
+          ],
+          [
+            "Quality",
+            "DoD + brief constraints at ship time, not a later phase"
+          ],
+          [
+            "Operations",
+            "On-call, rollback, support, vendor-fail behavior after launch"
+          ],
+          [
+            "Mode switch",
+            "Learning (change cheap) vs delivery (change expensive)"
+          ]
+        ],
+        "misc": [
+          [
+            "“We iterated, so we delivered.”",
+            "Iteration can be learning with zero ship. Report both."
+          ],
+          [
+            "“Shipping proves the idea.”",
+            "Shipping proves you can operate a slice. The idea still needs evidence."
+          ],
+          [
+            "“Pivot is a nicer word for fail.”",
+            "Kill is fail-the-job. Pivot is change-the-approach. Do not blur them to save face."
+          ],
+          [
+            "“We’ll know the threshold when we see the data.”",
+            "Then you will pick the story that saves the plan."
+          ],
+          [
+            "“Retrospective is about who slipped.”",
+            "It is about the loop. People theater is not a retro."
+          ],
+          [
+            "“Stay in beta so we can keep learning.”",
+            "Eternal beta is often a way to skip operations."
+          ],
+          [
+            "“Quality is a hardening sprint after launch.”",
+            "If it is after, it was never in DoD."
+          ],
+          [
+            "“Launch is a party.”",
+            "Launch is a mode switch. The party is optional."
+          ]
+        ]
+      }
+    ];
+
+    const STORE = "atlas_build_loop_srs_v1";
+    const deckSel = document.getElementById("deck");
+    DECKS.forEach((d) => {
+      const o = document.createElement("option");
+      o.value = d.id;
+      o.textContent = d.num + " — " + d.title + " (" + (d.terms.length + d.misc.length) + " cards)";
+      deckSel.appendChild(o);
+    });
+    const allOpt = document.createElement("option");
+    allOpt.value = "all";
+    allOpt.textContent = "All lessons (complete pack)";
+    deckSel.appendChild(allOpt);
+
+    function pairsOf(d) {
+      return [
+        ...d.terms.map((p) => ({ kind: "term", front: p[0], back: p[1] })),
+        ...d.misc.map((p) => ({ kind: "misc", front: p[0], back: p[1] })),
+      ];
+    }
+
+    function freshCard(lessonId, i, spec) {
+      return {
+        id: lessonId + "-" + i,
+        lessonId,
+        kind: spec.kind,
+        front: spec.front,
+        back: spec.back,
+        ef: 2.5,
+        reps: 0,
+        interval: 0,
+        due: Date.now(),
+      };
+    }
+
+    function syncDeck(saved, spec) {
+      const pairs = pairsOf(spec);
+      const byId = Object.fromEntries((saved || []).map((c) => [c.id, c]));
+      return pairs.map((p, i) => {
+        const id = spec.id + "-" + i;
+        const old = byId[id];
+        if (old && old.front === p.front) {
+          old.back = p.back;
+          old.kind = p.kind;
+          old.lessonId = spec.id;
+          return old;
+        }
+        return freshCard(spec.id, i, p);
+      });
+    }
+
+    function loadState() {
+      let raw;
+      try { raw = JSON.parse(localStorage.getItem(STORE) || "null"); } catch { raw = null; }
+      const decks = {};
+      const savedDecks = raw && raw.v === 2 && raw.decks ? raw.decks : {};
+      DECKS.forEach((spec) => {
+        decks[spec.id] = syncDeck(savedDecks[spec.id], spec);
+      });
+      return decks;
+    }
+
+    function saveState() {
+      localStorage.setItem(STORE, JSON.stringify({ v: 2, decks: state }));
+    }
+
+    function schedule(card, grade) {
+      if (grade === 0) { card.reps = 0; card.interval = 0; }
+      else {
+        if (card.reps === 0) card.interval = 1;
+        else if (card.reps === 1) card.interval = 3;
+        else card.interval = Math.round(card.interval * card.ef);
+        card.reps += 1;
+        card.ef = Math.max(1.3, card.ef + (0.1 - (3 - grade) * (0.08 + (3 - grade) * 0.02)));
+      }
+      const day = 24 * 60 * 60 * 1000;
+      card.due = Date.now() + (card.interval <= 0 ? 60 * 1000 : card.interval * day);
+    }
+
+    let state = loadState();
+    saveState();
+    let sel = "";
+    let current = null;
+    let session = 0;
+
+    const work = document.getElementById("work");
+    const front = document.getElementById("front");
+    const back = document.getElementById("back");
+    const actions = document.getElementById("actions");
+    const meta = document.getElementById("meta");
+
+    function activeCards() {
+      if (sel === "all") return DECKS.flatMap((d) => state[d.id]);
+      return state[sel] || [];
+    }
+
+    function dueCards() {
+      return activeCards().filter((c) => c.due <= Date.now()).sort((a, b) => a.due - b.due);
+    }
+
+    function showCard() {
+      const pile = activeCards();
+      const due = dueCards();
+      document.getElementById("due").textContent = String(due.length);
+      document.getElementById("total").textContent = String(pile.length);
+      document.getElementById("done").textContent = String(session);
+      back.classList.remove("show");
+      if (!due.length) {
+        current = null;
+        front.textContent = "This deck is clear. Come back later, pick another lesson, or reset this deck.";
+        back.textContent = "";
+        actions.innerHTML = `<button class="primary" id="reset">Reset this deck</button>`;
+        document.getElementById("reset").onclick = resetDeck;
+        meta.textContent = pile.length + " cards in the complete deck. Spaced repetition works when you leave and return.";
+        return;
+      }
+      current = due[0];
+      front.textContent = current.front;
+      back.textContent = current.back;
+      actions.innerHTML = `<button class="primary" id="reveal">Show answer</button>`;
+      document.getElementById("reveal").onclick = () => {
+        back.classList.add("show");
+        actions.innerHTML = `
+          <button id="g0">Again</button>
+          <button id="g1">Hard</button>
+          <button class="ok" id="g2">Good</button>
+          <button class="primary" id="g3">Easy</button>`;
+        [0, 1, 2, 3].forEach((g) => {
+          document.getElementById("g" + g).onclick = () => rate(g);
+        });
+      };
+      const tag = current.kind === "misc" ? "Misconception" : "Term";
+      meta.textContent = tag + " · EF " + current.ef.toFixed(2) + " · reps " + current.reps + " · interval " + current.interval + "d";
+    }
+
+    function rate(g) {
+      schedule(current, g);
+      saveState();
+      session += 1;
+      AtlasProgress.touchLab("spaced", { actions: 1, score: session });
+      showCard();
+    }
+
+    function resetDeck() {
+      if (sel === "all") {
+        DECKS.forEach((d) => { state[d.id] = syncDeck([], d); });
+      } else {
+        const spec = DECKS.find((d) => d.id === sel);
+        state[sel] = syncDeck([], spec);
+      }
+      saveState();
+      session = 0;
+      showCard();
+    }
+
+    function openDeck(id) {
+      sel = id;
+      session = 0;
+      if (!sel) {
+        work.classList.add("hidden");
+        return;
+      }
+      work.classList.remove("hidden");
+      showCard();
+    }
+
+    deckSel.onchange = () => {
+      const url = new URL(location.href);
+      if (!deckSel.value) url.searchParams.delete("decks");
+      else url.searchParams.set("decks", deckSel.value);
+      history.replaceState(null, "", url);
+      openDeck(deckSel.value);
+    };
+
+    AtlasProgress.touchLab("spaced", { visit: true });
+    const q = new URLSearchParams(location.search).get("decks");
+    if (q && (q === "all" || DECKS.some((d) => d.id === q))) {
+      deckSel.value = q;
+      openDeck(q);
+    }
+  </script>
+</body>
+</html>
