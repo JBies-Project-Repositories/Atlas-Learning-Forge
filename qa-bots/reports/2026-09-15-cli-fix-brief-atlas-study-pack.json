@@ -1,0 +1,158 @@
+{
+  "product": "Atlas of the Build Loop \u2014 Study Pack",
+  "date": "2026-09-15",
+  "pack_root_windows": "C:\\Users\\jbies\\OneDrive\\Desktop\\Atlas of the Build Loop \u2014 Study Pack",
+  "brief_markdown": "CLI_FIX_BRIEF_Atlas_Study_Pack.md",
+  "tasks": [
+    {
+      "id": "FIX-01",
+      "priority": "P0",
+      "title": "Empty deck selection must not start all decks",
+      "files": [
+        "decks.html"
+      ]
+    },
+    {
+      "id": "FIX-02",
+      "priority": "P0",
+      "title": "Rewrite Steelman grader prompt to Build Loop domain",
+      "files": [
+        "04_labs/shared.js"
+      ]
+    },
+    {
+      "id": "FIX-03",
+      "priority": "P0",
+      "title": "Fix quiz level badge contrast",
+      "files": [
+        "03_quiz/styles.css"
+      ]
+    },
+    {
+      "id": "FIX-04",
+      "priority": "P0",
+      "title": "Quiz progress counting integrity",
+      "files": [
+        "03_quiz/app.js",
+        "dashboard.html",
+        "04_labs/shared.js"
+      ]
+    },
+    {
+      "id": "FIX-05",
+      "priority": "P1",
+      "title": "HTTP launcher / file:// progress warning",
+      "files": [
+        "README.md",
+        "START HERE.txt",
+        "00_CLICK_HERE_TO_BEGIN.bat"
+      ]
+    },
+    {
+      "id": "FIX-06",
+      "priority": "P1",
+      "title": "Wire or remove lesson markLesson progress",
+      "files": [
+        "02_lessons/*.html",
+        "04_labs/shared.js",
+        "dashboard.html"
+      ]
+    },
+    {
+      "id": "FIX-07",
+      "priority": "P1",
+      "title": "Reset preserves theme; confirm copy matches",
+      "files": [
+        "dashboard.html"
+      ]
+    },
+    {
+      "id": "FIX-08",
+      "priority": "P1",
+      "title": "Consistent nav + Dashboard from Begin/Cover",
+      "files": [
+        "00_CLICK_HERE_TO_BEGIN.html",
+        "index.html",
+        "04_labs/steelman.html"
+      ]
+    },
+    {
+      "id": "FIX-09",
+      "priority": "P1",
+      "title": "Arc-head + Steelman dim contrast; associate label",
+      "files": [
+        "assets/pack.css",
+        "04_labs/steelman.html"
+      ]
+    },
+    {
+      "id": "FIX-10",
+      "priority": "P1",
+      "title": "Quiz aria-live narrow; announce feedback; name lock-copy",
+      "files": [
+        "03_quiz/index.html",
+        "03_quiz/app.js",
+        "04_labs/bias.html"
+      ]
+    },
+    {
+      "id": "FIX-11",
+      "priority": "P2",
+      "title": "Weak Areas UI immediate refresh",
+      "files": [
+        "03_quiz/"
+      ]
+    },
+    {
+      "id": "FIX-12",
+      "priority": "P2",
+      "title": "Steelman empty validation visible",
+      "files": [
+        "04_labs/steelman.html"
+      ]
+    },
+    {
+      "id": "FIX-13",
+      "priority": "P2",
+      "title": "SRS rating + lab action copy",
+      "files": [
+        "04_labs/spaced.html",
+        "dashboard.html"
+      ]
+    },
+    {
+      "id": "FIX-14",
+      "priority": "P2",
+      "title": "Align timer hint with options",
+      "files": [
+        "03_quiz/"
+      ]
+    },
+    {
+      "id": "FIX-15",
+      "priority": "P2",
+      "title": "Skip link, main landmarks, focus-visible",
+      "files": [
+        "assets/pack.css",
+        "*.html"
+      ]
+    }
+  ],
+  "execution_order": [
+    "FIX-01",
+    "FIX-02",
+    "FIX-03",
+    "FIX-04",
+    "FIX-07",
+    "FIX-09",
+    "FIX-10",
+    "FIX-05",
+    "FIX-06",
+    "FIX-08",
+    "FIX-11",
+    "FIX-12",
+    "FIX-13",
+    "FIX-14",
+    "FIX-15"
+  ]
+}
