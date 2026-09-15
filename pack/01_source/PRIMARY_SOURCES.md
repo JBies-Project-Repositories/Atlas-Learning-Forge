@@ -12,7 +12,14 @@ Educational field guide. These are the public homes of **named** methods. Not a 
 | Usability heuristics | Nielsen, 10 Usability Heuristics (NN/g) | https://www.nngroup.com/articles/ten-usability-heuristics/ |
 | Mission command / intent | U.S. Army ADP 6-0 (command and control; commander’s intent) | https://armypubs.army.mil/ |
 | OODA (essay) | Boyd, “Destruction and Creation” (1976) — only paper; loop is in later briefings | cite as essay + Discourse on Winning and Losing briefings |
-| PDCA | Shewhart cycle / Deming PDSA teaching — pack teaches the **move** (Plan–Do–Check–Act with a named Check) | no single canonical URL in the syllabus; do not invent a paper |
-| BML / Lean Startup | Ries popularized Build–Measure–Learn; pack teaches intellectual order Learn→Measure→Build | book; do not invent a paper |
+| PDCA / PDSA | Shewhart circle; Japanese PDCA; Deming later insisted on **PDSA (Study)** and called PDCA a “corruption” | Moen history (quotes Shewhart/Deming): see RESEARCH_PASS.md |
+| BML / Lean Startup | Operating order Build–Measure–Learn; intellectual order Learn→Measure→Build; validated learning as progress | https://theleanstartup.com/principles |
+| Dual-track | Two *kinds* of work (discovery vs delivery), not two teams | https://jpattonassociates.com/dual-track-development/ |
+| Kanban WIP | Explicit control of items in workflow; pull, not push | https://kanbanguides.org/english/ |
+| Pretotype | Cheap simulated core experience: “the right it” before “can we build it” | https://www.pretotyping.org/uploads/1/4/0/9/14099067/pretotype_it_2nd_pretotype_edition-2.pdf |
+| Prototype kinds | Houde & Hill: role / look-and-feel / implementation (pack “looks-like / works-like / experience” is a teaching overlay) | https://hci.stanford.edu/courses/cs247/2012/readings/WhatDoPrototypesPrototype.pdf |
+| Premortem | Klein, HBR Sep 2007 — assume it already failed; write reasons while dissent is still cheap | https://hbr.org/2007/09/performing-a-project-premortem |
+| Launch ops example | Google SRE launch coordination checklist (organization-specific, not a universal scorecard) | https://sre.google/sre-book/launch-checklist/ |
+| Boyd | “Destruction and Creation” (1976); later briefings for the full OODA diagram | https://upload.wikimedia.org/wikipedia/commons/a/a6/Destruction_%26_Creation.pdf |
 
-**Uncertainty kept in body:** vendor overlays (SAFe and cousins) are out of scope. Origin stories for PDCA/OODA diagrams are contested; this atlas teaches the professional **move**.
+**Uncertainty kept in body:** vendor overlays (SAFe and cousins) are out of scope. Origin stories for PDCA/OODA diagrams are contested; this atlas teaches the professional **move**. Cross-model “pick this loop this week” is pack teaching, not a single author’s rule. Facilitation minute-counts in lessons are field-guide overlays unless a primary is cited.
