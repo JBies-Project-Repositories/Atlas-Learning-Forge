@@ -11,13 +11,22 @@ LESSONS = ROOT / "02_lessons"
 PACK = "Atlas of the Build Loop"
 
 NAV = [
-    ("01_The_Loop", "L01 Loop"),
-    ("02_Project_Management_Methodology", "L02 Methods"),
-    ("03_Communicating_Intent", "L03 Intent"),
-    ("04_Brainstorming", "L04 Brainstorm"),
-    ("05_Prototyping", "L05 Prototype"),
-    ("06_Review", "L06 Review"),
-    ("07_Iteration_and_Shipping", "L07 Ship"),
+    ("01_Divergent_and_Convergent", "L01 Diverge"),
+    ("02_Complicated_and_Complex", "L02 Cynefin"),
+    ("03_PDCA_and_OODA", "L03 PDCA/OODA"),
+    ("04_BML_and_Double_Diamond", "L04 Diamond"),
+    ("05_Discovery_and_Delivery", "L05 Dual-track"),
+    ("06_Agile_Scrum_Waterfall", "L06 Coats"),
+    ("07_Cadence_WIP_DoD", "L07 Levers"),
+    ("08_Commanders_Intent", "L08 Intent"),
+    ("09_Brainstorm_Protocol", "L09 Protocol"),
+    ("10_Generation_and_Review", "L10 Generate"),
+    ("11_Fidelity_and_Kinds", "L11 Fidelity"),
+    ("12_Smallest_Honest_Test", "L12 Test"),
+    ("13_Critique_and_Assumptions", "L13 Critique"),
+    ("14_Three_Reviews", "L14 Reviews"),
+    ("15_Pivot_and_Evidence", "L15 Evidence"),
+    ("16_Launch_and_Operations", "L16 Launch"),
 ]
 
 
@@ -194,13 +203,22 @@ def convert(md: str) -> str:
 
 
 HERO = {
-    "01_The_Loop": ("arc-a.jpg", "A builder at a whiteboard drawing a loop in morning light"),
-    "02_Project_Management_Methodology": ("arc-b.jpg", "Two tracks on a table: a calendar and a brief"),
-    "03_Communicating_Intent": ("arc-b.jpg", "A brief and a compass on a worktable"),
-    "04_Brainstorming": ("arc-c.jpg", "Paper, notes, and analog generation tools"),
-    "05_Prototyping": ("arc-c.jpg", "Cardboard and clay on a workbench"),
-    "06_Review": ("arc-d.jpg", "Notebook and a closed package in late light"),
-    "07_Iteration_and_Shipping": ("arc-d.jpg", "A package ready to leave the bench"),
+    "01_Divergent_and_Convergent": ("arc-a.jpg", "A builder at a whiteboard drawing a loop in morning light"),
+    "02_Complicated_and_Complex": ("arc-a.jpg", "A builder at a whiteboard drawing a loop in morning light"),
+    "03_PDCA_and_OODA": ("arc-a.jpg", "A builder at a whiteboard drawing a loop in morning light"),
+    "04_BML_and_Double_Diamond": ("arc-a.jpg", "A builder at a whiteboard drawing a loop in morning light"),
+    "05_Discovery_and_Delivery": ("arc-b.jpg", "Two tracks on a table: a calendar and a brief"),
+    "06_Agile_Scrum_Waterfall": ("arc-b.jpg", "Two tracks on a table: a calendar and a brief"),
+    "07_Cadence_WIP_DoD": ("arc-b.jpg", "Two tracks on a table: a calendar and a brief"),
+    "08_Commanders_Intent": ("arc-b.jpg", "A brief and a compass on a worktable"),
+    "09_Brainstorm_Protocol": ("arc-c.jpg", "Paper, notes, and analog generation tools"),
+    "10_Generation_and_Review": ("arc-c.jpg", "Paper, notes, and analog generation tools"),
+    "11_Fidelity_and_Kinds": ("arc-c.jpg", "Cardboard and clay on a workbench"),
+    "12_Smallest_Honest_Test": ("arc-c.jpg", "Cardboard and clay on a workbench"),
+    "13_Critique_and_Assumptions": ("arc-d.jpg", "Notebook and a closed package in late light"),
+    "14_Three_Reviews": ("arc-d.jpg", "Notebook and a closed package in late light"),
+    "15_Pivot_and_Evidence": ("arc-d.jpg", "A package ready to leave the bench"),
+    "16_Launch_and_Operations": ("arc-d.jpg", "A package ready to leave the bench"),
 }
 
 

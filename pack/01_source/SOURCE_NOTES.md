@@ -16,14 +16,13 @@ No transcripts, PDFs, or web harvest. No YouTube. Research tools were **not** us
 
 Copied the syllabus text verbatim into `normalized/target.txt`. The file is a heading + bullet outline of named methods and distinctions. It contains **no** worked procedures, word counts, citations, or examples.
 
-## Spine decision (rule 19)
+## Spine decision (reconstruction)
 
-- **Seed count:** 7 named H2 units in the syllabus.
-- **Candidates:** each H2 is a distinct skill (loop literacy, method choice, intent, ideation, prototyping, review, ship). None is a restated slogan of another.
-- **Policy:** `auto_from_sources`. Target `auto` = 6–10. Seed already sits inside the band.
-- **Expand/freeze:** **freeze at 7.** Do not pad an 8th–10th unit (that would sprawl into credential cram or a second product). Do not collapse to one mega-lesson.
-- **Honest short subject?** No. Seven units can each carry a worked example, ≥8 terms, and ≥6 misconception rows.
-- **Arcs:** A door (L01) → B methods and intent (L02–L03) → C tools (L04–L05) → D guardrails and ship (L06–L07).
+- **Seed:** 7 named H2 units in the syllabus (the subject).
+- **First edition:** freeze at 7 primer lessons (speaking-and-decision map).
+- **This edition:** each *arc* is a four-lesson mini-pack (16 lessons). The syllabus is not a second subject; it is taught at atlas depth (facilitation scripts, primary citations, case dossier, ops checklist).
+- **Honest short subject?** No.
+- **Arcs:** A L01–L04 · B L05–L08 · C L09–L12 · D L13–L16.
 
 ## Coverage-gap note (`source_locked`)
 

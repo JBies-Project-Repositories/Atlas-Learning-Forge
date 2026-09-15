@@ -1,8 +1,17 @@
 id	stem	num	title	arc	focus
-bl-01-loop	01_The_Loop	L01	The Loop	A — Door	Divergent vs convergent thinking; complex vs complicated; PDCA; OODA; Build–Measure–Learn; Double Diamond; Design Thinking stages
-bl-02-methods	02_Project_Management_Methodology	L02	Project Management Methodology	B — Methods and intent	Design Thinking; Lean Startup; Agile; Scrum; dual-track; Waterfall; discovery vs delivery; cadence; scope; WIP; definition of done
-bl-03-intent	03_Communicating_Intent	L03	Communicating Intent	B — Methods and intent	Commander's intent; purpose; end state; constraints; problem statements; How Might We; non-goals; success criteria; vision; briefs; alignment vs instruction
-bl-04-brainstorm	04_Brainstorming	L04	Brainstorming	C — Tools	Deferred judgment; quantity before quality; brainwriting; Crazy 8s; SCAMPER; constraint-based ideation; HMW; Socratic and devil's-advocate review; idea progression
-bl-05-prototype	05_Prototyping	L05	Prototyping	C — Tools	Fidelity; lo/mid/hi-fi; looks-like / works-like / experience prototypes; pretotype; MVP; smallest testable slice; riskiest assumption first
-bl-06-review	06_Review	L06	Review	D — Guardrails and ship	Design critique; I like / I wish / What if; assumption mapping; RAT; pre-mortem; steelman; user testing; task success; stakeholder and expert review; redesign / solidify / kill / pivot / ship
-bl-07-ship	07_Iteration_and_Shipping	L07	Iteration and Shipping	D — Guardrails and ship	Learning vs feature velocity; pivot vs persevere; evidence thresholds; retrospective; launch; quality; operations; mode switch from learning to delivery
+bl-a1-diverge	01_Divergent_and_Convergent	L01	Divergent and Convergent Thinking	A — The door	Modes, not people; name the mode; failure of simultaneous scoring
+bl-a2-cynefin	02_Complicated_and_Complex	L02	Complicated, Complex, and Cynefin	A — The door	Snowden/Boone domains; probe-sense-respond vs sense-analyze-respond
+bl-a3-pdca-ooda	03_PDCA_and_OODA	L03	PDCA and OODA	A — The door	Deming/Shewhart Check; Boyd Orient as Schwerpunkt
+bl-a4-bml-diamond	04_BML_and_Double_Diamond	L04	Build–Measure–Learn and Double Diamond	A — The door	Ries intellectual order; Design Council Discover-Define-Develop-Deliver
+bl-b1-discovery	05_Discovery_and_Delivery	L05	Discovery, Delivery, and Dual-Track	B — Methods and intent	What each track produces; sandwich projects
+bl-b2-coats	06_Agile_Scrum_Waterfall	L06	Agile, Scrum, and Honest Waterfall	B — Methods and intent	Manifesto values; Scrum Guide empiricism; sequence for known work
+bl-b3-levers	07_Cadence_WIP_DoD	L07	Cadence, Scope, WIP, and Definition of Done	B — Methods and intent	Heartbeat vs pressure; started-not-done; fail-able quality
+bl-b4-intent	08_Commanders_Intent	L08	Commander’s Intent and the Brief	B — Methods and intent	Purpose, end state, constraints; HMW; alignment vs instruction
+bl-c1-protocol	09_Brainstorm_Protocol	L09	Brainstorming as a Protocol	C — Tools	Deferred judgment; quantity; cancel rules; HiPPO
+bl-c2-generate	10_Generation_and_Review	L10	Generation Methods and Converge Reviews	C — Tools	Brainwriting, Crazy 8s, SCAMPER; Socratic and devil’s-advocate later
+bl-c3-fidelity	11_Fidelity_and_Kinds	L11	Fidelity and Kinds of Prototype	C — Tools	Lo/mid/hi; looks-like, works-like, experience
+bl-c4-test	12_Smallest_Honest_Test	L12	Pretotype, MVP, and the Riskiest Assumption	C — Tools	Fail rule; stop condition; when not to fake
+bl-d1-critique	13_Critique_and_Assumptions	L13	Critique, RAT, and Pre-mortem	D — Guardrails and ship	I like / I wish / What if; assumption map; named end-moves
+bl-d2-reviews	14_Three_Reviews	L14	User, Stakeholder, and Expert Review	D — Guardrails and ship	Task success; Nielsen heuristics as expert overlay; power mixing
+bl-d3-evidence	15_Pivot_and_Evidence	L15	Pivot, Persevere, and Evidence Thresholds	D — Guardrails and ship	Two velocities; write the bar before the data
+bl-d4-launch	16_Launch_and_Operations	L16	Launch, Quality, Operations, Mode Switch	D — Guardrails and ship	DoD at ship; rollback; support; per-slice mode switch

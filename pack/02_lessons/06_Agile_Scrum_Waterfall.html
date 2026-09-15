@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Agile, Scrum, and Honest Waterfall — Atlas of the Build Loop</title>
+<link rel="stylesheet" href="../assets/pack.css"/>
+</head><body>
+<a class="skip-link" href="#lesson">Skip to lesson</a>
+<div class="lesson-wrap">
+<nav class="lesson-nav"><a href="../index.html">Cover</a> <a href="../contents.html">Contents</a> <a href="../decks.html">Quiz</a> <a href="../04_labs/index.html">Labs</a> <a href="../dashboard.html">Dashboard</a> <a href="05_Discovery_and_Delivery.html">← Prev</a> <a href="07_Cadence_WIP_DoD.html">Next →</a> <button type="button" class="theme-btn" data-theme-toggle>Dim mode</button><div class="mark">Atlas of the Build Loop</div></nav>
+<figure class="lesson-hero"><img src="../assets/arc-b.jpg" alt="Two tracks on a table: a calendar and a brief"/></figure>
+<main>
+<article class="lesson" id="lesson">
+<div class="badge">Dense lesson · professional practice · educational only</div>
+<h1>Agile, Scrum, and Honest Waterfall</h1>
+<h2>Learning Objectives</h2>
+<ul>
+<li>Recite the four 2001 Manifesto values as comparisons (left over right, with value still on the right) and use them as tests, not as wallpaper.</li>
+<li>Apply at least four of the twelve Agile principles as pass/fail tests on a live cadence (working software as measure, welcome late change, sustainable pace, reflect-and-tune).</li>
+<li>Describe Scrum from the <a class="ext" href="https://scrumguides.org/scrum-guide.html" target="_blank" rel="noopener noreferrer">2020 Scrum Guide</a>: empiricism, Increment, Definition of Done, Sprint as heartbeat.</li>
+<li>Run Sprint Review as a working session (not a slide show) and Retrospective as an inspect of the <strong>loop</strong>, not of the people.</li>
+<li>Choose an honest Waterfall-ish <strong>sequence</strong> when cause and effect are known (payroll cutover, statute-shaped file) without apologizing.</li>
+<li>Detect costume mismatch: Scrum theater on a one-way legal door; a Gantt freeze on a product guess.</li>
+<li>Match coats to a sandwich without declaring a departmental identity.</li>
+</ul>
+<h2>Prerequisites</h2>
+<ul>
+<li>L05: you can split discovery from delivery and name a sandwich.</li>
+<li>Arc A: complicated vs complex, and a loop picked for the week.</li>
+<li>You have seen a board, a standup, or a Gantt used as proof that a team “is” Agile or “is not.”</li>
+</ul>
+<h2>Lesson Content</h2>
+<h3>A methodology is a coat, not an identity</h3>
+<p>A <strong>methodology</strong> is a pre-packed answer to three questions: when do we learn, when do we commit, and how do we see unfinished work? It is a coat you put on because of the weather — the information problem — not a personality, a moral identity, or a vendor. If you cannot say what information the coat is designed to produce, you are collecting posters.</p>
+<p>This lesson names three coats the syllabus actually uses. <strong>Agile</strong> is a 2001 value stance about late-breaking information. <strong>Scrum</strong> is a 2020 empirical wrapper that assumes you can produce a Done increment on a heartbeat. <strong>Waterfall-ish sequence</strong> is an honest plan-then-build when cause and effect are already known. They nest and they split. A department can wear sequence on the payroll core and Scrum on earned portal slices in the same month. A department that “is Agile” as an identity will put the legal cutover into a Sprint Review and call the statute a change request.</p>
+<p>Coat choice sits on L05. Discovery vs delivery tells you <strong>what product</strong> this week produces. The coat tells you <strong>how you inspect</strong>. Dual-track is not a fourth coat; it is how you stop one coat from covering the sandwich. Vendor scaling overlays are out of this atlas on purpose.</p>
+<h3>Agile is four values from 2001, not a board</h3>
+<p>The public text is the <a class="ext" href="https://agilemanifesto.org/" target="_blank" rel="noopener noreferrer">Manifesto for Agile Software Development</a> (2001). The authors wrote that they were uncovering better ways of developing software by doing it, and that through that work they had come to value:</p>
+<ul>
+<li><strong>Individuals and interactions</strong> over processes and tools</li>
+<li><strong>Working software</strong> over comprehensive documentation</li>
+<li><strong>Customer collaboration</strong> over contract negotiation</li>
+<li><strong>Responding to change</strong> over following a plan</li>
+</ul>
+<p>The last line of the manifesto is the one costumes delete: <em>while there is value in the items on the right, we value the items on the left more.</em> Agile is not “no process, no docs, no contract, no plan.” It is a comparison. A team with no plan is not Agile; it is drift. A team that cannot change the plan when the world talks back is not Agile no matter how many stickies it has. A board is a tool (right-hand side). If the board is the identity, you have already inverted the first value.</p>
+<p>Use the four values as tests, not as a mural. Individuals and interactions: can a competent human still move if Jira is down? Working software: is the primary measure something a user could touch, or a count of tickets moved? Customer collaboration: is there a real user or customer in the loop, or only a contract interpretation? Responding to change: when findability fails, can scope change this cadence, or is the AI demo frozen because the date is printed?</p>
+<p>The mechanism is <strong>late-breaking information</strong>. Agile is for work where the map will be wrong and you still have to move. It is a poor coat for a one-way legal door whose cause and effect are already written in a statute. You can still value working software and collaboration there; you should not use “responding to change” as a reason to improvise a payroll file on Thursday.</p>
+<h3>Twelve principles as tests, not wallpaper</h3>
+<p>The <a class="ext" href="https://agilemanifesto.org/principles.html" target="_blank" rel="noopener noreferrer">principles behind the Manifesto</a> are twelve sentences. Teams hang them and then violate four before lunch. Teach them as pass/fail, not as a recitation contest. A selection that actually steers:</p>
+<p><strong>Working software is the primary measure of progress.</strong> A board of started tickets is not progress. A slide of a pre-fill model is not progress. An increment that meets Done is. If your dashboard cannot show a user-touchable slice, you are measuring motion.</p>
+<p><strong>Welcome changing requirements, even late in development.</strong> If a failed findability probe cannot change what you build this month, you are following a plan with extra meetings. “Welcome” is not “absorb infinite scope.” It is permission to change the plan without a shame ritual.</p>
+<p><strong>Deliver working software frequently, with a preference for the shorter timescale.</strong> Frequent delivery is how empiricism gets a clock. Compressing the timescale because a date slipped is not this principle; that is a pressure pump (L07).</p>
+<p><strong>Agile processes promote sustainable development; sponsors, developers, and users should be able to maintain a constant pace indefinitely.</strong> Heroics to hit a demo are a tell that the coat is off. Sustainable pace is not softness. It is how you still have a Check next week.</p>
+<p><strong>At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.</strong> That sentence is the ancestor of a real retrospective. A retro that produces no change to the loop is a vibe session.</p>
+<p><strong>Simplicity — the art of maximizing the amount of work not done — is essential.</strong> Non-goals (L08) live here. Not building the AI helper this round can be the most Agile sentence in the brief.</p>
+<p>Other principles (daily business-and-developer collaboration, motivated individuals, face-to-face, technical excellence, self-organizing teams, early and continuous delivery of value) are the same idea from other angles: put the humans who know in contact, keep the slice small, do not substitute a process for trust. If you cannot name which principle last week’s injury violated, the poster is decoration.</p>
+<h3>Scrum is a 2020 empirical wrapper</h3>
+<p>The <a class="ext" href="https://scrumguides.org/scrum-guide.html" target="_blank" rel="noopener noreferrer">2020 Scrum Guide</a> (Schwaber and Sutherland) defines Scrum as a lightweight framework for generating value through adaptive solutions to <strong>complex</strong> problems. It is founded on <strong>empiricism</strong> (knowledge from experience and from what is observed) and lean thinking. The empirical pillars are <strong>transparency, inspection, and adaptation</strong>. Inspection without transparency is misleading. Inspection without adaptation is pointless.</p>
+<p>In a nutshell the Guide’s own nutshell holds: a Product Owner orders work into a Product Backlog; the Scrum Team turns a selection into an <strong>Increment of value</strong> during a Sprint; the team and stakeholders inspect the result and adjust; repeat. Scrum is purposefully incomplete. It is also, in the Guide’s closing note, <strong>immutable as a definition</strong>: implementing only parts is possible, but the result is not Scrum. This atlas cares about that sentence as a honesty check, not as a purity contest. If you keep the words and drop the Increment, say you are running a cadence with meetings. Do not say you are running Scrum.</p>
+<p>Three accountabilities, one team: Product Owner (value, Product Goal, ordered backlog), Developers (usable Increment, Definition of Done, daily plan toward the Sprint Goal), Scrum Master (effectiveness of Scrum, impediments, timeboxes that stay useful). There are no sub-teams or hierarchies inside the Scrum Team. The whole team is accountable for a valuable, useful Increment every Sprint. If your “PO” is a committee, or your “Developers” cannot produce anything Done because the work is a single six-month filing, the wrapper does not fit.</p>
+<p>Artifacts come with commitments. Product Backlog ↔ <strong>Product Goal</strong>. Sprint Backlog ↔ <strong>Sprint Goal</strong>. Increment ↔ <strong>Definition of Done</strong>. Those commitments exist to make empiricism visible. A backlog without a Product Goal is a list. A sprint without a Sprint Goal is a timebox of chores. An “increment” without Done is a demo.</p>
+<h3>Sprint as heartbeat; Review as working session; Retro as loop inspection</h3>
+<p><strong>Sprints are the heartbeat of Scrum, where ideas are turned into value.</strong> They are fixed length, one month or less. A new Sprint starts immediately after the previous. During the Sprint, quality does not decrease, the Sprint Goal is not endangered, and scope may be clarified and renegotiated with the Product Owner as more is learned. The Sprint is a container for Planning, Daily Scrum, Review, and Retrospective. Cadence here is a <strong>heartbeat</strong>, not a pressure pump. Compressing a Sprint because a date slipped destroys the only instrument that told you the truth about throughput. That injury is L07; the Guide already forbids the quality drop.</p>
+<p><strong>Sprint Review</strong> inspects the outcome of the Sprint and determines future adaptations. The Guide’s sentence that kills most corporate reviews: <em>the Sprint Review is a working session and the Scrum Team should avoid limiting it to a presentation.</em> Stakeholders and the team collaborate on what to do next. The Product Backlog may be adjusted. The Review is not a gate to releasing value; an Increment may be delivered before the end of the Sprint. If the room is watching slides of an AI helper that does not meet Done, you are not in Review. You are in theater. If the item does not meet the Definition of Done, the Guide says it cannot be released or even presented at the Sprint Review; it returns to the Product Backlog.</p>
+<p><strong>Sprint Retrospective</strong> inspects how the last Sprint went with regard to individuals, interactions, processes, tools, and their Definition of Done. The purpose is to plan ways to increase quality and effectiveness. One change to the next loop is a passing retro. Twelve actions is a wishlist. A retro that inspects the people instead of the loop is a blame session with snacks. Assumptions that led the team astray are identified. That is Orient (Arc A) wearing a Scrum event.</p>
+<p><strong>Daily Scrum</strong> is a 15-minute event for the Developers to inspect progress toward the Sprint Goal and adapt the next day’s plan. The three-question status round is not in the 2020 Guide. If the Daily Scrum is a report to a manager, the coat is inside-out. L07 will steal this event as a WIP-limit standup that only talks about finishing; that is a tactic inside the timebox, not a replacement for Scrum.</p>
+<h3>Honest Waterfall-ish sequence</h3>
+<p><strong>Waterfall</strong> in this atlas is a sequential bet: you can know enough up front to specify, then design, then build, then test, then operate. It is a <strong>sequence coat</strong>. It is honest for <strong>complicated</strong> work with stable requirements — a known integration, a statute-shaped process, a construction sequence, a payroll cutover with a legal date. Cause and effect can be written in advance. Rehearsal is cheaper than discovery theater. A Definition of Done still exists; it just lives at named gates (dry run, match to statute, rollback named) instead of at a Sprint boundary.</p>
+<p>Waterfall is dishonest as a moral opposite of Agile. The injury is using Waterfall documents to <strong>freeze a complex product bet</strong>, then calling every learning a change request. A six-month specification for a portal nobody has used is not professionalism. It is an Orient-skip with letterhead. The opposite injury is also real: putting a one-way legal door into two-week Sprints so that “inspect and adapt” becomes a way to arrive at the statutory date with a file that has never been dry-run.</p>
+<p>Call it <strong>Waterfall-ish sequence</strong> when you mean the honest move rather than a 1970s cartoon. You may keep Agile values (working software, collaboration, humans) while still sequencing the core. You may not keep Scrum words on a piece of work that cannot produce a Done increment this month. Sequence plus rehearsal is not an apology. It is the coat that matches known cause and effect.</p>
+<h3>Costume mismatch is the injury</h3>
+<p>Costume mismatch is wearing the coat that cannot see the work.</p>
+<p><strong>Scrum theater on a one-way door.</strong> Story points on a payroll file. Sprint Reviews of a statutory cutover. A “Product Backlog” that cannot change because the law already wrote it. The empirical pillars have nothing to inspect except whether the rehearsal happened. Use sequence. Keep a heartbeat for risk if you want; do not call the timebox a Sprint if nothing Done can emerge.</p>
+<p><strong>Gantt freeze on a guess.</strong> A six-month plan for findability, pre-fill, and AI summaries, with change-control on every user surprise. Complex work will talk back. The Gantt will be used as a blame map. Use discovery (L05) and, if you can produce increments, Scrum or another empirical cadence.</p>
+<p><strong>Agile as no plan.</strong> “We are Agile” used to skip a brief, a DoD, and a discovery decision. The manifesto values a plan less than responding to change; it does not value a plan at zero.</p>
+<p><strong>Board as identity.</strong> Standups, story points, and a tool vendor as proof of Agile. The left-hand values are not visible in the work.</p>
+<p><strong>Review as slide show.</strong> Leadership watches a demo of undone work because the date arrived. The Guide already forbade presenting undone items as an Increment.</p>
+<p><strong>Retro as people-inspection.</strong> The loop (WIP, DoD, cadence, talk artifact) is never named. One person is named instead.</p>
+<p><strong>One coat for the sandwich.</strong> The department “is Scrum” or “is Waterfall.” Payroll and portal share a ritual that fits neither.</p>
+<p><strong>Uncertainty:</strong> vendor overlays that scale Scrum into a portfolio operating system are <strong>out of scope</strong>. This pack does not teach them and does not dummy-fire at them. If your organization mandates one, you can still name discovery vs delivery, write a DoD, and refuse costume mismatch on the sandwich in front of you.</p>
+<h3>Decision rule for the next coat</h3>
+<p>Coat choice is a weather report, not a conversion. You ask what information problem is in front of you this cadence, then you pick the coat that can see it. Starting from the coat name (“we are Scrum”) is how costume mismatch gets a budget. Starting from the sandwich inventory (L05) is how two coats share one brief without a holy war. Agile values can still sit on work you have sequenced; they do not force Scrum words onto a one-way door.</p>
+<p>Walk the list in order. Stop at the first honest match for each live item. Do not average the sandwich into one answer.</p>
+<ol>
+<li>If cause and effect are known and the output is specified → <strong>Waterfall-ish sequence</strong> + DoD + rehearsal. Do not apologize. Do not put it in a Sprint Review as a toy.</li>
+<li>If the work is complex <strong>and</strong> you can produce a usable Done increment on a cadence of a month or less → <strong>Scrum</strong> as written, or admit you are borrowing pieces (heartbeat, DoD, inspect-and-adapt) and not running Scrum.</li>
+<li>If the work is complex and you <strong>cannot</strong> yet produce a Done increment (the job is still unnamed) → <strong>discovery first</strong> (L05). Do not wear Scrum until an Increment is possible. Agile values still apply: collaboration, small slices, welcome the finding.</li>
+<li>If the bet is “will anyone use this?” → a Lean/BML measure (Arc A, Arc C) inside discovery. A feature roadmap is the wrong artifact.</li>
+<li>If the program is a sandwich → <strong>two coats</strong>, one brief. Sequence on the core. Empirical cadence on earned edge slices. Dual-track capacities so the empirical coat has something earned to build.</li>
+<li>If someone wants one method for the whole company → they are buying identity. Split the sandwich.</li>
+</ol>
+<p>A practical tell after the choice: could you explain, in one minute, what information this coat will produce by Friday? If the answer is “velocity” or “alignment,” you have not chosen yet. Write the coat names on the brief the same day, next to the discovery floor and the sequence gates, so the Friday meeting cannot quietly put on a third costume.</p>
+<h3>Facilitation: 25-minute coat-matching for a sandwich</h3>
+<p>Invite the people who own the legal date and the people who own the portal bet. Bring the L05 inventory (core vs edge). Ban the sentence “we are an Agile shop” for the whole meeting. The output is two coat names on the brief, plus one costume you refuse.</p>
+<p><strong>0:00–0:05 — Information problem, not method name.</strong> For each live item, write only: what would we know by Friday if this coat worked? Payroll: whether the file matches the statute in a dry run. Portal: whether findability is the next probe, not whether Jira is updated.</p>
+<p><strong>0:05–0:12 — Manifesto tests.</strong> Four questions on a wall, yes/no, for the <strong>edge</strong> and for the <strong>core</strong> separately. Can we change the plan this month? Is working software (or a working file, or a working probe) the primary measure? Is there a real user or statutory customer in the loop? Are we valuing individuals over the tool? Two no’s on the edge means you are not Agile on the edge, whatever the posters say. Two no’s on the core may be acceptable if you are in honest sequence — then say so.</p>
+<p><strong>0:12–0:18 — Scrum fit test.</strong> Can this team produce a Done Increment on a heartbeat of a month or less? If no, you do not wear Scrum. You may still inspect and adapt. For the payroll core the honest answer is usually no (the increment is a one-way cutover, not a product slice). For the portal edge the answer is “not until discovery earns a slice.” Write that sentence down. It will save you from Sprint 1 theater.</p>
+<p><strong>0:18–0:22 — Sequence test.</strong> Is cause and effect known? Is there a one-way door? If yes, write the gates: specify, build, dry-run, cutover, rollback. That is Waterfall-ish and allowed. If someone is ashamed, they are having an identity feeling. Let it pass.</p>
+<p><strong>0:22–0:25 — Name the coats and the costume you refuse.</strong> Example that passes: “Sequence + rehearsal on payroll. Discovery this cadence on findability; Scrum or a Scrum-like heartbeat only after a slice is earned. Costume refused: one Sprint Review that demos the AI helper and the statutory file as if they were the same Increment.” Read it in one minute. If you need a narrator, cut.</p>
+<figure class="fig">
+<div class="domain-row">
+<div class="domain-card light"><div class="k">Agile (2001)</div><p><strong>What it is:</strong> four values and twelve principles about late information.<br/><strong>Not:</strong> a board, a standup, a vendor, an identity.<br/><strong>Test:</strong> can the plan change, and is working software the measure?</p></div>
+<div class="domain-card mod"><div class="k">Scrum (2020)</div><p><strong>What it is:</strong> empiricism + Increment + DoD + Sprint heartbeat.<br/><strong>Review:</strong> working session, not a slide show.<br/><strong>Retro:</strong> inspects the loop (and the DoD), not the people.</p></div>
+<div class="domain-card vig"><div class="k">Sequence</div><p><strong>What it is:</strong> specify → build → test when cause and effect are known.<br/><strong>Honest on:</strong> payroll cutover, statute-shaped files, one-way doors.<br/><strong>Injury:</strong> using the Gantt to freeze a guess; using Scrum words on a door that cannot increment.</p></div>
+</div>
+<figcaption>Coats, not identities. A sandwich wears two. Costume mismatch is the usual injury, not “insufficient Agile.”</figcaption>
+</figure>
+<figure class="fig">
+<svg class="lesson-chart" viewBox="0 0 720 220" role="img" aria-label="Coat choice: sequence when known, Scrum when a Done increment is possible, discovery when the job is unnamed">
+  <rect x="16" y="20" width="220" height="100" rx="10" fill="#1c5d68"/>
+  <text x="126" y="52" text-anchor="middle" fill="#fff6d6" font-size="13" font-weight="700">Cause &amp; effect known?</text>
+  <text x="126" y="78" text-anchor="middle" fill="#c5eef2" font-size="12">Yes → sequence + DoD</text>
+  <text x="126" y="100" text-anchor="middle" fill="#c5eef2" font-size="12">Payroll file · statute</text>
+  <rect x="250" y="20" width="220" height="100" rx="10" fill="#2bb89a"/>
+  <text x="360" y="52" text-anchor="middle" fill="#062f2c" font-size="13" font-weight="700">Done increment possible?</text>
+  <text x="360" y="78" text-anchor="middle" fill="#062f2c" font-size="12">Yes → Scrum heartbeat</text>
+  <text x="360" y="100" text-anchor="middle" fill="#062f2c" font-size="12">Earned portal slices</text>
+  <rect x="484" y="20" width="220" height="100" rx="10" fill="var(--card)" stroke="var(--border)"/>
+  <text x="594" y="52" text-anchor="middle" font-size="13" font-weight="700">Job still unnamed?</text>
+  <text x="594" y="78" text-anchor="middle" class="muted" font-size="12">Yes → discovery first</text>
+  <text x="594" y="100" text-anchor="middle" font-size="12">Findability · pre-fill</text>
+  <path d="M40 160 H680" class="axis" fill="none"/>
+  <circle cx="126" cy="160" r="8" class="peak"/>
+  <circle cx="360" cy="160" r="8" class="peak"/>
+  <circle cx="594" cy="160" r="8" class="peak"/>
+  <text x="360" y="198" text-anchor="middle" class="muted" font-size="12">One sandwich, three questions. Identity answers “we are Agile” before asking them.</text>
+</svg>
+<figcaption>Ask left to right. Known work gets sequence. Increment-capable complex work gets Scrum. Unnamed jobs get discovery. Do not start at the coat name.</figcaption>
+</figure>
+<h2>Worked example(s)</h2>
+<p><strong>Problem:</strong> The same contractor-onboarding program as L05. Payroll cutover has a fixed legal date. New contractors cannot finish tax forms without Slack-DMing staff. Leadership asked for “AI summaries / nicer onboarding” and a demo. After the capacity split, someone still wants the whole department to “be Agile,” which in this building means two-week Sprints, a combined board, and a Friday slide show called Sprint Review. A Gantt for the portal already exists because a vendor onboarding packet was copied from last year’s rollout.</p>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>Run the three questions on the sandwich, not on the department. Payroll file: cause and effect known, one-way door → <strong>sequence + rehearsal + DoD</strong>. Portal job: still unnamed (findability untested, pre-fill unearned) → <strong>discovery first</strong>, Agile values on, Scrum wrapper off until an Increment is possible. AI helper: not a coat problem; it is a non-goal this round (L08).</li>
+<li>Manifesto tests on the edge. Working software as measure: a findability decision and, later, a usable packet path — not a slide. Responding to change: if the probe shows contractors cannot find the link, the pre-fill plan dies this cadence. Customer collaboration: five contractors, not a steering committee interpreting the contract. Individuals and interactions: the talk artifact from L05 beats the HR Digital board.</li>
+<li>Scrum fit test. Can we produce a Done Increment this Sprint on the portal? Not yet: we have not earned a slice. Wearing Scrum now would make the Review a presentation of undone work, which the Guide forbids. On payroll, a Sprint increment is the wrong shape; the “increment” is a dry-run file that must match a statute. Do not put that in the same Review as a product demo.</li>
+<li>Sequence the core without shame. Gates: specify the file against the statute, build the transform, dry-run, name rollback, cutover. Daily risk huddle allowed. Story points not allowed. The coat is Waterfall-ish and honest.</li>
+<li>Refuse the costume in writing. “We will not hold a Sprint Review that is a slide show of the AI helper. We will not Gantt-freeze findability. We will not call a standup proof of Agile.” The Friday leadership meeting, if it exists, is a working session on the <strong>decision</strong> (findability is the next probe; pre-fill unearned) and on cutover <strong>risk</strong>, in two agenda blocks.</li>
+<li>Principles as cuts. Simplicity: maximize work not done — no AI helper this round. Sustainable pace: no heroics to mint a fake increment for the demo date. Reflect-and-tune: the first retro inspects the combined board and kills it if it still ranks the legal date against AI stories.</li>
+</ol>
+<p><strong>Answer / result:</strong> Two coats, one program. Sequence on payroll. Discovery-with-Agile-values on the portal edge; Scrum available only after a slice is earned and Done is fail-able. Costume mismatch named before it ships. The department is not “Agile” or “Waterfall.” It is wearing the weather. Pre-fill quality is still unknown; the coat choice is what stops that unknown from becoming Sprint 1.</p>
+<h2>Key Terms</h2>
+<table><thead><tr><th>Term</th><th>Definition</th></tr></thead><tbody>
+<tr><td>Agile</td><td>2001 Manifesto values and twelve principles; a stance about late information, not a board</td></tr>
+<tr><td>Manifesto values</td><td>Individuals/interactions, working software, customer collaboration, responding to change — over the right-hand items, which still have value</td></tr>
+<tr><td>Scrum</td><td>2020 Guide framework: empiricism, Increment, DoD, Sprint heartbeat, inspect-and-adapt events</td></tr>
+<tr><td>Empiricism</td><td>Knowledge from what is observed; pillars transparency, inspection, adaptation</td></tr>
+<tr><td>Increment</td><td>Concrete, usable, additive stepping stone; exists only if it meets Done</td></tr>
+<tr><td>Sprint</td><td>Fixed-length heartbeat (month or less) that contains the other Scrum events</td></tr>
+<tr><td>Sprint Review</td><td>Working session to inspect the Increment and adapt; not a presentation</td></tr>
+<tr><td>Sprint Retrospective</td><td>Inspect of individuals, interactions, processes, tools, and DoD; one change to the next loop</td></tr>
+<tr><td>Waterfall-ish sequence</td><td>Specify-then-build when cause and effect are known; honest on complicated cores</td></tr>
+<tr><td>Costume mismatch</td><td>A coat that cannot see the work (Scrum on a one-way door; Gantt on a guess)</td></tr>
+<tr><td>Product Goal</td><td>Commitment of the Product Backlog; future state the team plans against</td></tr>
+<tr><td>Sprint Goal</td><td>Single objective of the Sprint; scope may flex, the goal does not get quietly swapped</td></tr>
+</tbody></table>
+<h2>Misconception inventory</h2>
+<table><thead><tr><th>Misconception</th><th>Reality</th></tr></thead><tbody>
+<tr><td>“Agile means no plan.”</td><td>Agile values responding to change over following a plan. No plan is drift.</td></tr>
+<tr><td>“Scrum is Agile, so any standup counts.”</td><td>Scrum is a specific wrapper. A standup without a Done increment is a meeting.</td></tr>
+<tr><td>“Waterfall is always wrong.”</td><td>It is honest when cause and effect are known. It is wrong as a freeze on a guess.</td></tr>
+<tr><td>“The board is how we are Agile.”</td><td>A board is a tool (right-hand Manifesto item). Values live in whether working software is the measure.</td></tr>
+<tr><td>“Sprint Review is the demo for leadership.”</td><td>Review is a working session. Undone work is not presented as an Increment.</td></tr>
+<tr><td>“Retrospective is where we talk about feelings and people.”</td><td>Retro inspects the loop and the DoD, then changes one thing.</td></tr>
+<tr><td>“We can start Scrum on Monday while the job is still unnamed.”</td><td>Scrum assumes a useful Increment each Sprint. Unnamed jobs need discovery first.</td></tr>
+<tr><td>“One methodology should cover the whole department.”</td><td>Split the sandwich. Coats, not identities.</td></tr>
+<tr><td>“If we drop a Scrum event we are still doing Scrum.”</td><td>The Guide says the framework is immutable as a definition. Borrowing pieces is allowed; calling it Scrum is not.</td></tr>
+<tr><td>“Sequence is shameful in an Agile company.”</td><td>Shame is identity. Payroll cutover wants sequence.</td></tr>
+</tbody></table>
+<h2>Summary</h2>
+<ul>
+<li>Agile is the 2001 values and twelve principles — comparisons about late information, not a board or a vendor.</li>
+<li>Scrum is the 2020 empirical wrapper: Increment, Definition of Done, Sprint as heartbeat, Review as working session, Retro as loop inspection.</li>
+<li>Waterfall-ish sequence is honest when cause and effect are known. It is not a moral opposite of Agile.</li>
+<li>Costume mismatch (Scrum on a one-way door, Gantt on a product guess, Review as slide show) is the usual injury.</li>
+<li>A sandwich wears two coats and one brief. Identity wants one coat.</li>
+<li>If you cannot produce a Done increment this cadence, do not wear Scrum; discover, or sequence, depending on the information problem.</li>
+<li>Vendor scaling overlays are out of this atlas. You can still name the coat in front of you.</li>
+</ul>
+<h2>Practice</h2>
+<h3>Retrieval</h3>
+<ul>
+<li>Recite the four Manifesto values as comparisons, including what the last line of the manifesto does.</li>
+<li>What does the 2020 Guide say a Sprint Review is not?</li>
+<li>What three artifact commitments does Scrum name?</li>
+<li>When is Waterfall-ish sequence the honest coat?</li>
+<li>What is costume mismatch? Give one sandwich example.</li>
+<li>Why is a standup not proof of Agile?</li>
+<li>What has to be true before Scrum is a fit?</li>
+</ul>
+<h3>Near transfer</h3>
+<p>A team runs two-week Sprints. Friday “Review” is a slide deck of an AI onboarding helper that does not meet Done. Monday they start the payroll cutover stories in the same backlog. Which coat is mismatched where, and what two-agenda-block meeting replaces Friday?</p>
+<h3>Far transfer</h3>
+<p>A school must rewrite a state-exam curriculum to a published standard by a statutory date, and also wants “Agile classrooms” for a new advisory period nobody has run. Split the coats without a holy war. What would a costume look like on each side?</p>
+<h2>Spaced retrieval notes</h2>
+<ul>
+<li>Day 0: write the four Manifesto values from memory as comparisons. Check the last line.</li>
+<li>Day 2: watch one meeting. Is it a working session or a slide show? Label it.</li>
+<li>Day 7: for one live program, answer the three coat questions (known? increment possible? job unnamed?).</li>
+<li>Day 21: catch one costume (standup as identity, Gantt on a guess, Scrum words on a one-way door) and name the honest coat in one sentence.</li>
+</ul>
+<h2>Difficulty tiers</h2>
+<ul>
+<li><strong>Novice:</strong> four values as tests; Scrum ≠ standup; sequence allowed on known work.</li>
+<li><strong>Working:</strong> match all three coats to a sandwich; refuse a slide-show Review; write the costume you will not wear.</li>
+<li><strong>Expert:</strong> run two coats in one department without a holy war; borrow inspect-and-adapt without lying that partial Scrum is Scrum.</li>
+</ul>
+<h2>Domain scaffolds</h2>
+<p>Safety, payroll, and legal one-way doors default to sequence + rehearsal even if the posters say Agile. If you borrow Daily Scrum as a risk huddle on a cutover, do not also borrow “undone work in Review.” Software product slices that can ship every week are the home of Scrum-as-written. Public-sector statutory deliveries are often sandwiches: sequence the filing, discover the citizen path.</p>
+<h2>Learn more</h2>
+<ul>
+<li><a class="ext" href="https://agilemanifesto.org/" target="_blank" rel="noopener noreferrer">Manifesto for Agile Software Development (2001)</a></li>
+<li><a class="ext" href="https://agilemanifesto.org/principles.html" target="_blank" rel="noopener noreferrer">Principles behind the Agile Manifesto</a></li>
+<li><a class="ext" href="https://scrumguides.org/scrum-guide.html" target="_blank" rel="noopener noreferrer">The 2020 Scrum Guide</a></li>
+<li><a class="ext" href="https://www.designcouncil.org.uk/our-resources/framework-for-innovation/" target="_blank" rel="noopener noreferrer">Design Council — Framework for Innovation</a> — Deliver is a diamond, not a costume; Discover still exists.</li>
+<li><a class="ext" href="https://hbr.org/2007/11/a-leaders-framework-for-decision-making" target="_blank" rel="noopener noreferrer">Snowden &amp; Boone, HBR</a> — complicated vs complex as the coat-choice input.</li>
+</ul>
+<div class="footer">Offline study pack. Progress is stored in this browser only. Optional “Learn more” links open the public homes of named methods.</div>
+</article>
+</main>
+</div>
+<script src="../04_labs/shared.js"></script>
+<script src="../assets/theme.js"></script>
+<script>if (window.AtlasProgress) AtlasProgress.markLesson("06_Agile_Scrum_Waterfall");</script>
+</body></html>

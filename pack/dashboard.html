@@ -59,13 +59,22 @@
     document.getElementById("qAns").textContent = answered;
     document.getElementById("qLast").textContent = q.lastAt ? ("Last: " + new Date(q.lastAt).toLocaleString()) : "No quiz answers yet";
     const lessonMeta = [
-      ["01_The_Loop", "L01 The Loop"],
-      ["02_Project_Management_Methodology", "L02 Methodology"],
-      ["03_Communicating_Intent", "L03 Intent"],
-      ["04_Brainstorming", "L04 Brainstorming"],
-      ["05_Prototyping", "L05 Prototyping"],
-      ["06_Review", "L06 Review"],
-      ["07_Iteration_and_Shipping", "L07 Shipping"],
+      ["01_Divergent_and_Convergent", "L01 Diverge"],
+      ["02_Complicated_and_Complex", "L02 Cynefin"],
+      ["03_PDCA_and_OODA", "L03 PDCA/OODA"],
+      ["04_BML_and_Double_Diamond", "L04 Diamond"],
+      ["05_Discovery_and_Delivery", "L05 Dual-track"],
+      ["06_Agile_Scrum_Waterfall", "L06 Coats"],
+      ["07_Cadence_WIP_DoD", "L07 Levers"],
+      ["08_Commanders_Intent", "L08 Intent"],
+      ["09_Brainstorm_Protocol", "L09 Protocol"],
+      ["10_Generation_and_Review", "L10 Generate"],
+      ["11_Fidelity_and_Kinds", "L11 Fidelity"],
+      ["12_Smallest_Honest_Test", "L12 Test"],
+      ["13_Critique_and_Assumptions", "L13 Critique"],
+      ["14_Three_Reviews", "L14 Reviews"],
+      ["15_Pivot_and_Evidence", "L15 Evidence"],
+      ["16_Launch_and_Operations", "L16 Launch"],
     ];
     const reads = data.lessons || {};
     const readHost = document.getElementById("reads");

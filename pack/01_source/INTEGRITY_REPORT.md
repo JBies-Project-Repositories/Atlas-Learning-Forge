@@ -1,8 +1,10 @@
 # INTEGRITY_REPORT — Atlas of the Build Loop
 
-**Date:** 2026-09-15  
+**Date:** 2026-09-15 (reconstruction: 16-lesson atlas)  
 **course_root:** `/mnt/c/Users/jbies/OneDrive/Desktop/Atlas of the Build Loop — Study Pack`  
 **mirror:** `/home/jbies/Atlas-Learning-Forge/pack`
+
+Primer 7-lesson density table is superseded. Live spine: 16 lessons, 8 quiz items each (128), labs keyed to `bl-a1-diverge` … `bl-d4-launch`. See `_lessons_meta.tsv` and `Curriculum.md`.
 
 ## Gate 0
 

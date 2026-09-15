@@ -24,8 +24,8 @@ then open `http://127.0.0.1:8765/00_CLICK_HERE_TO_BEGIN.html`.
 | --- | --- |
 | `index.html` | Cover |
 | `contents.html` | Lesson map and suggested path |
-| `02_lessons/` | Seven dense lessons (markdown + HTML) |
-| `decks.html` / `03_quiz/` | 8 questions × 7 lessons |
+| `02_lessons/` | Sixteen lessons in four arc-packs (markdown + HTML) |
+| `decks.html` / `03_quiz/` | 8 questions × 16 lessons |
 | `04_labs/` | SRS, Scenario Audit, Term Match, Steelman |
 | `dashboard.html` | This-browser progress |
 | `01_source/` | Config, curriculum, integrity, wrap.py |

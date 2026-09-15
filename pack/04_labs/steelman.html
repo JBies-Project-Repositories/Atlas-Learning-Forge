@@ -52,132 +52,294 @@
   </main>
   <script src="shared.js"></script>
   <script>
-            const ITEMS = [
+                const ITEMS = [
       {
-        "weak": "“Loops mean we never decide.”",
-        "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: Convergence is half the loop. A loop without a kill/keep step is stalling.",
-        "lessonId": "bl-01-loop",
-        "title": "The Loop"
+        "weak": "Some people are divergers and some are convergers.",
+        "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: Modes are coats. The same person should do both. Identity split wrecks the handshake.",
+        "lessonId": "bl-a1-diverge",
+        "title": "Divergent and Convergent Thinking"
       },
       {
-        "weak": "“PDCA, OODA, and Agile are the same circle.”",
-        "model": "Fair form, then the limit. Same spine, different jobs and clocks. Mixing labels hides which job you skipped.",
-        "lessonId": "bl-01-loop",
-        "title": "The Loop"
+        "weak": "Scoring while we brainstorm saves time.",
+        "model": "Fair form, then the limit. Simultaneous scoring elects the first plausible noun and deletes the option that was the test.",
+        "lessonId": "bl-a1-diverge",
+        "title": "Divergent and Convergent Thinking"
       },
       {
-        "weak": "“If we move faster we are doing OODA.”",
-        "model": "Fair form, then the limit. Speed without Orient is panic. Orient is the scarce step.",
-        "lessonId": "bl-01-loop",
-        "title": "The Loop"
+        "weak": "Diverge means be creative and defer all decisions forever.",
+        "model": "Fair form, then the limit. Diverge has a clock. Converge is half the move. Lifestyle diverge is stalling.",
+        "lessonId": "bl-a1-diverge",
+        "title": "Divergent and Convergent Thinking"
       },
       {
-        "weak": "“Agile means no plan.”",
-        "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: Agile assumes a plan that can change. No plan is just drift.",
-        "lessonId": "bl-02-methods",
-        "title": "Project Management Methodology"
+        "weak": "Cynefin types our team.",
+        "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: It classifies **contexts of work**. People are not domains.",
+        "lessonId": "bl-a2-cynefin",
+        "title": "Complicated, Complex, and Cynefin"
       },
       {
-        "weak": "“Scrum is Agile, so any standup counts.”",
-        "model": "Fair form, then the limit. Scrum is a specific wrapper. A standup without a done increment is a meeting.",
-        "lessonId": "bl-02-methods",
-        "title": "Project Management Methodology"
+        "weak": "Complex is more evolved than complicated.",
+        "model": "Fair form, then the limit. There is no maturity ladder. A statute is not junior. A portal is not senior.",
+        "lessonId": "bl-a2-cynefin",
+        "title": "Complicated, Complex, and Cynefin"
       },
       {
-        "weak": "“Waterfall is always wrong.”",
+        "weak": "If it’s hard, it’s complex.",
+        "model": "Fair form, then the limit. Gearboxes are hard and complicated. Classrooms are hard and complex. Hard is not the distinction.",
+        "lessonId": "bl-a2-cynefin",
+        "title": "Complicated, Complex, and Cynefin"
+      },
+      {
+        "weak": "PDCA, OODA, and Agile are the same circle.",
+        "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: Same spine, different jobs and clocks. Mixing labels hides the skipped scarce step.",
+        "lessonId": "bl-a3-pdca-ooda",
+        "title": "PDCA and OODA"
+      },
+      {
+        "weak": "If we move faster we are doing OODA.",
+        "model": "Fair form, then the limit. Speed without Orient is panic. Orient is the Schwerpunkt.",
+        "lessonId": "bl-a3-pdca-ooda",
+        "title": "PDCA and OODA"
+      },
+      {
+        "weak": "Check can be ‘see how the demo feels.’",
+        "model": "Fair form, then the limit. Check is a comparison named in Plan. Applause is not a measure.",
+        "lessonId": "bl-a3-pdca-ooda",
+        "title": "PDCA and OODA"
+      },
+      {
+        "weak": "Build–Measure–Learn means build first.",
+        "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: Intellectual order is Learn → Measure → Build. The name is the visible motion, not the plan.",
+        "lessonId": "bl-a4-bml-diamond",
+        "title": "Build–Measure–Learn and Double Diamond"
+      },
+      {
+        "weak": "Double Diamond is a four-stage waterfall.",
+        "model": "Fair form, then the limit. It is two loops. Iterate. A failed Deliver returns to Define or Discover.",
+        "lessonId": "bl-a4-bml-diamond",
+        "title": "Build–Measure–Learn and Double Diamond"
+      },
+      {
+        "weak": "Design Thinking is only for designers.",
+        "model": "Fair form, then the limit. It is a problem-framing spine. Engineers and ops skip diamond 1 at the same cost.",
+        "lessonId": "bl-a4-bml-diamond",
+        "title": "Build–Measure–Learn and Double Diamond"
+      },
+      {
+        "weak": "Discovery is research; delivery is engineering.",
+        "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: Both are products of work. Engineers discover; researchers can deliver a decision. Titles are not tracks.",
+        "lessonId": "bl-b1-discovery",
+        "title": "Discovery, Delivery, and Dual-Track"
+      },
+      {
+        "weak": "Dual-track means two teams.",
+        "model": "Fair form, then the limit. Two teams that never meet is the costume. Dual-track is two capacities that talk.",
+        "lessonId": "bl-b1-discovery",
+        "title": "Discovery, Delivery, and Dual-Track"
+      },
+      {
+        "weak": "If we are experienced we can skip discovery.",
+        "model": "Fair form, then the limit. Experience without contact still guesses. Dual-track exists because experience lies.",
+        "lessonId": "bl-b1-discovery",
+        "title": "Discovery, Delivery, and Dual-Track"
+      },
+      {
+        "weak": "Agile means no plan.",
+        "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: Agile values responding to change over following a plan. No plan is drift.",
+        "lessonId": "bl-b2-coats",
+        "title": "Agile, Scrum, and Honest Waterfall"
+      },
+      {
+        "weak": "Scrum is Agile, so any standup counts.",
+        "model": "Fair form, then the limit. Scrum is a specific wrapper. A standup without a Done increment is a meeting.",
+        "lessonId": "bl-b2-coats",
+        "title": "Agile, Scrum, and Honest Waterfall"
+      },
+      {
+        "weak": "Waterfall is always wrong.",
         "model": "Fair form, then the limit. It is honest when cause and effect are known. It is wrong as a freeze on a guess.",
-        "lessonId": "bl-02-methods",
-        "title": "Project Management Methodology"
+        "lessonId": "bl-b2-coats",
+        "title": "Agile, Scrum, and Honest Waterfall"
       },
       {
-        "weak": "“If I specify every step, I have communicated.”",
+        "weak": "More WIP means we are faster.",
+        "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: More starts usually mean later finishes. Limit WIP.",
+        "lessonId": "bl-b3-levers",
+        "title": "Cadence, Scope, WIP, and Definition of Done"
+      },
+      {
+        "weak": "Cadence is how we apply deadline pressure.",
+        "model": "Fair form, then the limit. Cadence is how we see. Pressure pumps destroy the instrument.",
+        "lessonId": "bl-b3-levers",
+        "title": "Cadence, Scope, WIP, and Definition of Done"
+      },
+      {
+        "weak": "Scope is whatever leadership asked for this morning.",
+        "model": "Fair form, then the limit. Scope is a permission for this interval. New asks displace, or they wait.",
+        "lessonId": "bl-b3-levers",
+        "title": "Cadence, Scope, WIP, and Definition of Done"
+      },
+      {
+        "weak": "If I specify every step, I have communicated.",
         "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: You instructed. Complex work still needs intent when the steps change.",
-        "lessonId": "bl-03-intent",
-        "title": "Communicating Intent"
+        "lessonId": "bl-b4-intent",
+        "title": "Commander’s Intent and the Brief"
       },
       {
-        "weak": "“Vision is enough.”",
+        "weak": "Vision is enough.",
         "model": "Fair form, then the limit. Vision without this-round success criteria is a poster.",
-        "lessonId": "bl-03-intent",
-        "title": "Communicating Intent"
+        "lessonId": "bl-b4-intent",
+        "title": "Commander’s Intent and the Brief"
       },
       {
-        "weak": "“How Might We can start from a solution we like.”",
+        "weak": "How Might We can start from a solution we like.",
         "model": "Fair form, then the limit. Then it is a leading question, not a HMW.",
-        "lessonId": "bl-03-intent",
-        "title": "Communicating Intent"
+        "lessonId": "bl-b4-intent",
+        "title": "Commander’s Intent and the Brief"
       },
       {
-        "weak": "“Brainstorming is just talking.”",
-        "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: Without deferred judgment and a method, it is a status contest.",
-        "lessonId": "bl-04-brainstorm",
-        "title": "Brainstorming"
+        "weak": "Brainstorming is just talking.",
+        "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: Without deferred judgment, capture, and a cancel rule, it is a status contest.",
+        "lessonId": "bl-c1-protocol",
+        "title": "Brainstorming as a Protocol"
       },
       {
-        "weak": "“Quality in the room saves time.”",
+        "weak": "Quality in the room saves time.",
         "model": "Fair form, then the limit. Early quality is undeclared converge. You lose the weird test.",
-        "lessonId": "bl-04-brainstorm",
-        "title": "Brainstorming"
+        "lessonId": "bl-c1-protocol",
+        "title": "Brainstorming as a Protocol"
       },
       {
-        "weak": "“The director should steer so we stay realistic.”",
-        "model": "Fair form, then the limit. Steering mid-diverge is how you get last year’s idea.",
-        "lessonId": "bl-04-brainstorm",
-        "title": "Brainstorming"
+        "weak": "The director should steer so we stay realistic.",
+        "model": "Fair form, then the limit. Steering mid-diverge is how you get last year’s idea with new nouns.",
+        "lessonId": "bl-c1-protocol",
+        "title": "Brainstorming as a Protocol"
       },
       {
-        "weak": "“Higher fidelity is always more professional.”",
+        "weak": "More methods in one hour means more creativity.",
+        "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: One method, done. Stacking is noise.",
+        "lessonId": "bl-c2-generate",
+        "title": "Generation Methods and Converge Reviews"
+      },
+      {
+        "weak": "SCAMPER is for blank-page problems.",
+        "model": "Fair form, then the limit. It is for attacking an existing artifact.",
+        "lessonId": "bl-c2-generate",
+        "title": "Generation Methods and Converge Reviews"
+      },
+      {
+        "weak": "Devil’s advocate during generation keeps us honest.",
+        "model": "Fair form, then the limit. It keeps you quiet. Schedule it after clustering.",
+        "lessonId": "bl-c2-generate",
+        "title": "Generation Methods and Converge Reviews"
+      },
+      {
+        "weak": "Higher fidelity is always more professional.",
         "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: Early polish persuades and freezes. Match the question.",
-        "lessonId": "bl-05-prototype",
-        "title": "Prototyping"
+        "lessonId": "bl-c3-fidelity",
+        "title": "Fidelity and Kinds of Prototype"
       },
       {
-        "weak": "“MVP is a prototype we put on a domain.”",
-        "model": "Fair form, then the limit. MVP is shipped and measured. Prototype may never ship.",
-        "lessonId": "bl-05-prototype",
-        "title": "Prototyping"
-      },
-      {
-        "weak": "“If it looks unfinished, stakeholders will not take it seriously.”",
+        "weak": "If it looks unfinished, stakeholders will not take it seriously.",
         "model": "Fair form, then the limit. Tell them the question. If they still need polish, you are demoing, not testing.",
-        "lessonId": "bl-05-prototype",
-        "title": "Prototyping"
+        "lessonId": "bl-c3-fidelity",
+        "title": "Fidelity and Kinds of Prototype"
       },
       {
-        "weak": "“Critique means being nice.”",
+        "weak": "Works-like can wait until after the pretty shell.",
+        "model": "Fair form, then the limit. If mechanism is the risk, the shell is theater.",
+        "lessonId": "bl-c3-fidelity",
+        "title": "Fidelity and Kinds of Prototype"
+      },
+      {
+        "weak": "MVP is a prototype we put on a domain.",
+        "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: MVP is shipped and measured, with a kill criterion. Prototype may never ship.",
+        "lessonId": "bl-c4-test",
+        "title": "Pretotype, MVP, and the Riskiest Assumption"
+      },
+      {
+        "weak": "Smallest slice means fewest screens of the full product.",
+        "model": "Fair form, then the limit. It means the cheapest path to a kill/keep signal.",
+        "lessonId": "bl-c4-test",
+        "title": "Pretotype, MVP, and the Riskiest Assumption"
+      },
+      {
+        "weak": "Test the assumption we are ready to build.",
+        "model": "Fair form, then the limit. That is comfort. Rank by ignorance × impact.",
+        "lessonId": "bl-c4-test",
+        "title": "Pretotype, MVP, and the Riskiest Assumption"
+      },
+      {
+        "weak": "Critique means being nice.",
         "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: It means being specific to the brief. Niceness without a move is stalling.",
-        "lessonId": "bl-06-review",
-        "title": "Review"
+        "lessonId": "bl-d1-critique",
+        "title": "Critique, RAT, and Pre-mortem"
       },
       {
-        "weak": "“Stakeholders speaking is user testing.”",
-        "model": "Fair form, then the limit. Different truths. Do not mix the meetings if power will fake success.",
-        "lessonId": "bl-06-review",
-        "title": "Review"
+        "weak": "A quick look without a brief is harmless.",
+        "model": "Fair form, then the limit. People will critique their imaginary product. Cancel.",
+        "lessonId": "bl-d1-critique",
+        "title": "Critique, RAT, and Pre-mortem"
       },
       {
-        "weak": "“A pre-mortem is negative.”",
-        "model": "Fair form, then the limit. Unowned pessimism is negative. Owned failure stories are cheap.",
-        "lessonId": "bl-06-review",
-        "title": "Review"
+        "weak": "What if is a brainstorm.",
+        "model": "Fair form, then the limit. In critique, What if is a proposed experiment, not a new diverge session.",
+        "lessonId": "bl-d1-critique",
+        "title": "Critique, RAT, and Pre-mortem"
       },
       {
-        "weak": "“We iterated, so we delivered.”",
-        "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: Iteration can be learning with zero ship. Report both.",
-        "lessonId": "bl-07-ship",
-        "title": "Iteration and Shipping"
+        "weak": "They said it was nice, so the test passed.",
+        "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: Task success is the named rule. Compliments are extra.",
+        "lessonId": "bl-d2-reviews",
+        "title": "User, Stakeholder, and Expert Review"
       },
       {
-        "weak": "“Shipping proves the idea.”",
+        "weak": "Stakeholders speaking is user testing.",
+        "model": "Fair form, then the limit. Different truths. Payers cannot complete the contractor’s job by talking.",
+        "lessonId": "bl-d2-reviews",
+        "title": "User, Stakeholder, and Expert Review"
+      },
+      {
+        "weak": "We should put users and leadership together for alignment.",
+        "model": "Fair form, then the limit. Power fakes success. Separate the rooms.",
+        "lessonId": "bl-d2-reviews",
+        "title": "User, Stakeholder, and Expert Review"
+      },
+      {
+        "weak": "We iterated, so we delivered.",
+        "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: Iteration can be learning with zero ship. Report both scoreboards.",
+        "lessonId": "bl-d3-evidence",
+        "title": "Pivot, Persevere, and Evidence Thresholds"
+      },
+      {
+        "weak": "Shipping proves the idea.",
         "model": "Fair form, then the limit. Shipping proves you can operate a slice. The idea still needs evidence.",
-        "lessonId": "bl-07-ship",
-        "title": "Iteration and Shipping"
+        "lessonId": "bl-d3-evidence",
+        "title": "Pivot, Persevere, and Evidence Thresholds"
       },
       {
-        "weak": "“Pivot is a nicer word for fail.”",
+        "weak": "Pivot is a nicer word for fail.",
         "model": "Fair form, then the limit. Kill is fail-the-job. Pivot is change-the-approach. Do not blur them to save face.",
-        "lessonId": "bl-07-ship",
-        "title": "Iteration and Shipping"
+        "lessonId": "bl-d3-evidence",
+        "title": "Pivot, Persevere, and Evidence Thresholds"
+      },
+      {
+        "weak": "Launch is a party.",
+        "model": "Steelman: name the fear or incentive underneath, then the fair condition, then the limit. Reality from the lesson: Launch is a mode switch. The party is optional.",
+        "lessonId": "bl-d4-launch",
+        "title": "Launch, Quality, Operations, Mode Switch"
+      },
+      {
+        "weak": "Quality is a hardening sprint after launch.",
+        "model": "Fair form, then the limit. If it is after, it was never in DoD.",
+        "lessonId": "bl-d4-launch",
+        "title": "Launch, Quality, Operations, Mode Switch"
+      },
+      {
+        "weak": "Stay in beta so we can keep learning.",
+        "model": "Fair form, then the limit. Eternal beta is often a way to skip operations. Dependence sets the mode.",
+        "lessonId": "bl-d4-launch",
+        "title": "Launch, Quality, Operations, Mode Switch"
       }
     ];
     const RUBRIC = [

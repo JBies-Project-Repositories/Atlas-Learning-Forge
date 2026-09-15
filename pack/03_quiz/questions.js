@@ -1,1682 +1,3842 @@
-/** Atlas of the Build Loop — multi-deck bank (56) */
+/** Atlas of the Build Loop — multi-deck bank (128) */
 window.QUESTIONS = [
   {
-    "id": "bl-01-loop-1",
-    "lesson": "The Loop",
-    "lessonId": "bl-01-loop",
-    "objective": "Diverge vs converge",
+    "id": "bl-a1-diverge-1",
+    "lesson": "Divergent and Convergent Thinking",
+    "lessonId": "bl-a1-diverge",
+    "objective": "Divergent thinking",
+    "level": "Remember",
+    "stem": "Which definition matches “Divergent thinking” in this lesson?",
+    "options": [
+      {
+        "text": "Mode that increases the number of live options; add before score",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Mode that reduces options against a named criterion; kill, merge, or keep",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "An idea still eligible for a later test or a later kill; not already loved",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Observable wall used to kill or keep: constraint, measure, non-goal, user-recognizable problem",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-a1-diverge-2",
+    "lesson": "Divergent and Convergent Thinking",
+    "lessonId": "bl-a1-diverge",
+    "objective": "Convergent thinking",
+    "level": "Remember",
+    "stem": "Which definition matches “Convergent thinking” in this lesson?",
+    "options": [
+      {
+        "text": "Mode that reduces options against a named criterion; kill, merge, or keep",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Mode that increases the number of live options; add before score",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "An idea still eligible for a later test or a later kill; not already loved",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Observable wall used to kill or keep: constraint, measure, non-goal, user-recognizable problem",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-a1-diverge-3",
+    "lesson": "Divergent and Convergent Thinking",
+    "lessonId": "bl-a1-diverge",
+    "objective": "Live option",
+    "level": "Remember",
+    "stem": "Which definition matches “Live option” in this lesson?",
+    "options": [
+      {
+        "text": "An idea still eligible for a later test or a later kill; not already loved",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Mode that increases the number of live options; add before score",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Mode that reduces options against a named criterion; kill, merge, or keep",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Observable wall used to kill or keep: constraint, measure, non-goal, user-recognizable problem",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-a1-diverge-4",
+    "lesson": "Divergent and Convergent Thinking",
+    "lessonId": "bl-a1-diverge",
+    "objective": "Criterion",
+    "level": "Remember",
+    "stem": "Which definition matches “Criterion” in this lesson?",
+    "options": [
+      {
+        "text": "Observable wall used to kill or keep: constraint, measure, non-goal, user-recognizable problem",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Mode that increases the number of live options; add before score",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Mode that reduces options against a named criterion; kill, merge, or keep",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "An idea still eligible for a later test or a later kill; not already loved",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-a1-diverge-5",
+    "lesson": "Divergent and Convergent Thinking",
+    "lessonId": "bl-a1-diverge",
+    "objective": "Misconception",
     "level": "Understand",
-    "stem": "A room scores every idea as it is spoken. Which mode is actually running?",
+    "stem": "A teammate says: Some people are divergers and some are convergers. What is the field-guide correction?",
     "options": [
       {
-        "text": "Undeclared converge — simultaneous scoring kills diverge",
+        "text": "Modes are coats. The same person should do both. Identity split wrecks the handshake.",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "True diverge, because many people are talking",
+        "text": "Simultaneous scoring elects the first plausible noun and deletes the option that was the test.",
         "correct": false,
-        "feedback": "Talk volume is not the mode. Scoring while generating is converge."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "PDCA Check, because they are evaluating",
+        "text": "Diverge has a clock. Converge is half the move. Lifestyle diverge is stalling.",
         "correct": false,
-        "feedback": "Check is a named comparison after Do, not live scoring of a brainstorm."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "OODA Orient, because they are updating a model",
+        "text": "A six-month Gantt is always the professional next artifact",
         "correct": false,
-        "feedback": "Orient updates a model after an observation, not a status contest in generation."
+        "feedback": "That is not the correction this lesson teaches."
       }
     ]
   },
   {
-    "id": "bl-01-loop-2",
-    "lesson": "The Loop",
-    "lessonId": "bl-01-loop",
-    "objective": "Complex vs complicated",
-    "level": "Apply",
-    "stem": "You can honestly write cause-and-effect in advance and an expert checklist finishes the job. What class is this?",
+    "id": "bl-a1-diverge-6",
+    "lesson": "Divergent and Convergent Thinking",
+    "lessonId": "bl-a1-diverge",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Scoring while we brainstorm saves time. What is the field-guide correction?",
     "options": [
       {
-        "text": "Complicated work",
+        "text": "Simultaneous scoring elects the first plausible noun and deletes the option that was the test.",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "Complex work",
+        "text": "Modes are coats. The same person should do both. Identity split wrecks the handshake.",
         "correct": false,
-        "feedback": "Complex work is clearer after probes; checklists assume known cause and effect."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "Chaotic work that needs a slogan",
+        "text": "Diverge has a clock. Converge is half the move. Lifestyle diverge is stalling.",
         "correct": false,
-        "feedback": "The lesson does not use chaos as a third dumping ground here."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "Always Agile, because there are many parts",
+        "text": "Score every idea as it is spoken to save time",
         "correct": false,
-        "feedback": "Many parts can still be complicated. Agile is a coat, not a class."
+        "feedback": "That is not the correction this lesson teaches."
       }
     ]
   },
   {
-    "id": "bl-01-loop-3",
-    "lesson": "The Loop",
-    "lessonId": "bl-01-loop",
+    "id": "bl-a1-diverge-7",
+    "lesson": "Divergent and Convergent Thinking",
+    "lessonId": "bl-a1-diverge",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Diverge means be creative and defer all decisions forever. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Diverge has a clock. Converge is half the move. Lifestyle diverge is stalling.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Modes are coats. The same person should do both. Identity split wrecks the handshake.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Simultaneous scoring elects the first plausible noun and deletes the option that was the test.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Ship the pretty demo because leadership has a date",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-a1-diverge-8",
+    "lesson": "Divergent and Convergent Thinking",
+    "lessonId": "bl-a1-diverge",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Converge means the senior person picks. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Converge means kill/keep against a criterion. Rank is not a criterion.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Modes are coats. The same person should do both. Identity split wrecks the handshake.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Simultaneous scoring elects the first plausible noun and deletes the option that was the test.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "More work in progress means we are faster",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-a2-cynefin-1",
+    "lesson": "Complicated, Complex, and Cynefin",
+    "lessonId": "bl-a2-cynefin",
+    "objective": "Complicated work",
+    "level": "Remember",
+    "stem": "Which definition matches “Complicated work” in this lesson?",
+    "options": [
+      {
+        "text": "Many parts; cause and effect knowable in advance with expertise; good practice",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Parts change each other; cause and effect clearer after probes; emergent practice",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Cause and effect obvious; sense–categorize–respond; best practice",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Cause and effect unclear; act–sense–respond to stabilize; do not live here",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-a2-cynefin-2",
+    "lesson": "Complicated, Complex, and Cynefin",
+    "lessonId": "bl-a2-cynefin",
+    "objective": "Complex work",
+    "level": "Remember",
+    "stem": "Which definition matches “Complex work” in this lesson?",
+    "options": [
+      {
+        "text": "Parts change each other; cause and effect clearer after probes; emergent practice",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Many parts; cause and effect knowable in advance with expertise; good practice",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Cause and effect obvious; sense–categorize–respond; best practice",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Cause and effect unclear; act–sense–respond to stabilize; do not live here",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-a2-cynefin-3",
+    "lesson": "Complicated, Complex, and Cynefin",
+    "lessonId": "bl-a2-cynefin",
+    "objective": "Clear (HBR: simple)",
+    "level": "Remember",
+    "stem": "Which definition matches “Clear (HBR: simple)” in this lesson?",
+    "options": [
+      {
+        "text": "Cause and effect obvious; sense–categorize–respond; best practice",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Many parts; cause and effect knowable in advance with expertise; good practice",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Parts change each other; cause and effect clearer after probes; emergent practice",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Cause and effect unclear; act–sense–respond to stabilize; do not live here",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-a2-cynefin-4",
+    "lesson": "Complicated, Complex, and Cynefin",
+    "lessonId": "bl-a2-cynefin",
+    "objective": "Chaotic",
+    "level": "Remember",
+    "stem": "Which definition matches “Chaotic” in this lesson?",
+    "options": [
+      {
+        "text": "Cause and effect unclear; act–sense–respond to stabilize; do not live here",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Many parts; cause and effect knowable in advance with expertise; good practice",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Parts change each other; cause and effect clearer after probes; emergent practice",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Cause and effect obvious; sense–categorize–respond; best practice",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-a2-cynefin-5",
+    "lesson": "Complicated, Complex, and Cynefin",
+    "lessonId": "bl-a2-cynefin",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Cynefin types our team. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "It classifies **contexts of work**. People are not domains.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "There is no maturity ladder. A statute is not junior. A portal is not senior.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Gearboxes are hard and complicated. Classrooms are hard and complex. Hard is not the distinction.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "A six-month Gantt is always the professional next artifact",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-a2-cynefin-6",
+    "lesson": "Complicated, Complex, and Cynefin",
+    "lessonId": "bl-a2-cynefin",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Complex is more evolved than complicated. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "There is no maturity ladder. A statute is not junior. A portal is not senior.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "It classifies **contexts of work**. People are not domains.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Gearboxes are hard and complicated. Classrooms are hard and complex. Hard is not the distinction.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Score every idea as it is spoken to save time",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-a2-cynefin-7",
+    "lesson": "Complicated, Complex, and Cynefin",
+    "lessonId": "bl-a2-cynefin",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: If it’s hard, it’s complex. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Gearboxes are hard and complicated. Classrooms are hard and complex. Hard is not the distinction.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "It classifies **contexts of work**. People are not domains.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "There is no maturity ladder. A statute is not junior. A portal is not senior.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Ship the pretty demo because leadership has a date",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-a2-cynefin-8",
+    "lesson": "Complicated, Complex, and Cynefin",
+    "lessonId": "bl-a2-cynefin",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Experts make work complicated, so skip them and probe. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Complicated work **needs** experts. Skipping analysis on a payroll file is harm.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "It classifies **contexts of work**. People are not domains.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "There is no maturity ladder. A statute is not junior. A portal is not senior.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "More work in progress means we are faster",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-a3-pdca-ooda-1",
+    "lesson": "PDCA and OODA",
+    "lessonId": "bl-a3-pdca-ooda",
     "objective": "PDCA",
     "level": "Remember",
-    "stem": "What does Check add to Plan–Do that ‘we felt good about it’ does not?",
+    "stem": "Which definition matches “PDCA” in this lesson?",
     "options": [
       {
-        "text": "A comparison to a measure named while you were still honest in Plan",
+        "text": "Plan–Do–Check–Act: improve an observable process; Check is named in Plan",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "A stakeholder smile",
+        "text": "Predicted vs actual on a measure chosen before Do; not mood, not applause",
         "correct": false,
-        "feedback": "Smiles are not Check."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "A longer Gantt",
+        "text": "Adopt, adjust, or drop because of Check — not “add more tickets”",
         "correct": false,
-        "feedback": "That is more Plan, not Check."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "A retrospective about who slipped",
+        "text": "The quality cycle as a professional move; this pack does not invent a paper or URL",
         "correct": false,
-        "feedback": "Blame is not the PDCA Check."
+        "feedback": "That definition belongs to a different term in this lesson."
       }
     ]
   },
   {
-    "id": "bl-01-loop-4",
-    "lesson": "The Loop",
-    "lessonId": "bl-01-loop",
-    "objective": "OODA",
-    "level": "Understand",
-    "stem": "In OODA, which step is scarce, and what does skipping it look like?",
-    "options": [
-      {
-        "text": "Orient — the task list updates but the model does not",
-        "correct": true,
-        "feedback": "That matches this lesson."
-      },
-      {
-        "text": "Act — moving slower than competitors",
-        "correct": false,
-        "feedback": "Speed without Orient is panic, not the scarce step."
-      },
-      {
-        "text": "Observe — refusing to look at dashboards",
-        "correct": false,
-        "feedback": "Observation without Orient still fails, but the lesson names Orient as scarce."
-      },
-      {
-        "text": "Decide — consensus voting",
-        "correct": false,
-        "feedback": "Voting is not the named scarce step."
-      }
-    ]
-  },
-  {
-    "id": "bl-01-loop-5",
-    "lesson": "The Loop",
-    "lessonId": "bl-01-loop",
-    "objective": "BML order",
+    "id": "bl-a3-pdca-ooda-2",
+    "lesson": "PDCA and OODA",
+    "lessonId": "bl-a3-pdca-ooda",
+    "objective": "Named Check",
     "level": "Remember",
-    "stem": "Intellectual order of Build–Measure–Learn in this pack?",
+    "stem": "Which definition matches “Named Check” in this lesson?",
     "options": [
       {
-        "text": "Learn (what would change our mind) → Measure → Build",
+        "text": "Predicted vs actual on a measure chosen before Do; not mood, not applause",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "Build first because the name starts with Build",
+        "text": "Plan–Do–Check–Act: improve an observable process; Check is named in Plan",
         "correct": false,
-        "feedback": "The name is the trap."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "Measure → Build → Learn only if the sprint is even",
+        "text": "Adopt, adjust, or drop because of Check — not “add more tickets”",
         "correct": false,
-        "feedback": "Even sprints do not change the intellectual order."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "Orient → Decide → Act",
+        "text": "The quality cycle as a professional move; this pack does not invent a paper or URL",
         "correct": false,
-        "feedback": "That is OODA, not BML."
+        "feedback": "That definition belongs to a different term in this lesson."
       }
     ]
   },
   {
-    "id": "bl-01-loop-6",
-    "lesson": "The Loop",
-    "lessonId": "bl-01-loop",
-    "objective": "Double Diamond",
-    "level": "Understand",
-    "stem": "Skipping the first diamond usually means what?",
+    "id": "bl-a3-pdca-ooda-3",
+    "lesson": "PDCA and OODA",
+    "lessonId": "bl-a3-pdca-ooda",
+    "objective": "Act (PDCA)",
+    "level": "Remember",
+    "stem": "Which definition matches “Act (PDCA)” in this lesson?",
     "options": [
       {
-        "text": "A solution diamond aimed at an unstated job",
+        "text": "Adopt, adjust, or drop because of Check — not “add more tickets”",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "Faster delivery with no cost",
+        "text": "Plan–Do–Check–Act: improve an observable process; Check is named in Plan",
         "correct": false,
-        "feedback": "The cost is building the wrong thing."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "PDCA with extra stickies",
+        "text": "Predicted vs actual on a measure chosen before Do; not mood, not applause",
         "correct": false,
-        "feedback": "PDCA is a process-improvement loop, not diamond 1."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "You have already converged legally",
+        "text": "The quality cycle as a professional move; this pack does not invent a paper or URL",
         "correct": false,
-        "feedback": "Legal freeze is a constraint, not a skipped diamond."
+        "feedback": "That definition belongs to a different term in this lesson."
       }
     ]
   },
   {
-    "id": "bl-01-loop-7",
-    "lesson": "The Loop",
-    "lessonId": "bl-01-loop",
-    "objective": "Choose a loop",
-    "level": "Apply",
-    "stem": "A process exists, you can measure it, and you want it less wrong next week. Which loop?",
+    "id": "bl-a3-pdca-ooda-4",
+    "lesson": "PDCA and OODA",
+    "lessonId": "bl-a3-pdca-ooda",
+    "objective": "Shewhart / Deming move",
+    "level": "Remember",
+    "stem": "Which definition matches “Shewhart / Deming move” in this lesson?",
     "options": [
       {
-        "text": "PDCA on a reversible slice",
+        "text": "The quality cycle as a professional move; this pack does not invent a paper or URL",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "OODA because everything is a fight",
+        "text": "Plan–Do–Check–Act: improve an observable process; Check is named in Plan",
         "correct": false,
-        "feedback": "Tempo is not the job here."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "Double Diamond because all work is design",
+        "text": "Predicted vs actual on a measure chosen before Do; not mood, not applause",
         "correct": false,
-        "feedback": "The problem is already a process, not an unstated job."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "Build–Measure–Learn with no measure",
+        "text": "Adopt, adjust, or drop because of Check — not “add more tickets”",
         "correct": false,
-        "feedback": "BML without a measure is a feature factory."
+        "feedback": "That definition belongs to a different term in this lesson."
       }
     ]
   },
   {
-    "id": "bl-01-loop-8",
-    "lesson": "The Loop",
-    "lessonId": "bl-01-loop",
+    "id": "bl-a3-pdca-ooda-5",
+    "lesson": "PDCA and OODA",
+    "lessonId": "bl-a3-pdca-ooda",
     "objective": "Misconception",
-    "level": "Analyze",
-    "stem": "“If we move faster we are doing OODA.” What is wrong?",
-    "options": [
-      {
-        "text": "Speed without Orient is panic; Orient is the scarce step",
-        "correct": true,
-        "feedback": "That matches this lesson."
-      },
-      {
-        "text": "OODA forbids speed",
-        "correct": false,
-        "feedback": "Tempo is part of OODA; unoriented speed is the error."
-      },
-      {
-        "text": "OODA is only for designers",
-        "correct": false,
-        "feedback": "The lesson places OODA in high-feedback competitive settings."
-      },
-      {
-        "text": "They should have used a weighted decision matrix",
-        "correct": false,
-        "feedback": "This pack does not use a matrix for that choice."
-      }
-    ]
-  },
-  {
-    "id": "bl-02-methods-1",
-    "lesson": "Project Management Methodology",
-    "lessonId": "bl-02-methods",
-    "objective": "What a method is",
     "level": "Understand",
-    "stem": "A methodology is best described as what?",
+    "stem": "A teammate says: PDCA, OODA, and Agile are the same circle. What is the field-guide correction?",
     "options": [
       {
-        "text": "A bet about when you learn, when you commit, and how you see unfinished work",
+        "text": "Same spine, different jobs and clocks. Mixing labels hides the skipped scarce step.",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "A personality type for hiring",
+        "text": "Speed without Orient is panic. Orient is the Schwerpunkt.",
         "correct": false,
-        "feedback": "Methods are coats, not identities."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "A vendor tool stack",
+        "text": "Check is a comparison named in Plan. Applause is not a measure.",
         "correct": false,
-        "feedback": "Tools can change; the information problem remains."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "A moral opposite of Waterfall",
+        "text": "A six-month Gantt is always the professional next artifact",
         "correct": false,
-        "feedback": "Waterfall is a sequence coat, not a villain."
+        "feedback": "That is not the correction this lesson teaches."
       }
     ]
   },
   {
-    "id": "bl-02-methods-2",
-    "lesson": "Project Management Methodology",
-    "lessonId": "bl-02-methods",
-    "objective": "Discovery vs delivery",
+    "id": "bl-a3-pdca-ooda-6",
+    "lesson": "PDCA and OODA",
+    "lessonId": "bl-a3-pdca-ooda",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: If we move faster we are doing OODA. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Speed without Orient is panic. Orient is the Schwerpunkt.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Same spine, different jobs and clocks. Mixing labels hides the skipped scarce step.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Check is a comparison named in Plan. Applause is not a measure.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Score every idea as it is spoken to save time",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-a3-pdca-ooda-7",
+    "lesson": "PDCA and OODA",
+    "lessonId": "bl-a3-pdca-ooda",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Check can be ‘see how the demo feels.’ What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Check is a comparison named in Plan. Applause is not a measure.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Same spine, different jobs and clocks. Mixing labels hides the skipped scarce step.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Speed without Orient is panic. Orient is the Schwerpunkt.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Ship the pretty demo because leadership has a date",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-a3-pdca-ooda-8",
+    "lesson": "PDCA and OODA",
+    "lessonId": "bl-a3-pdca-ooda",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: We can name the metric after we see the data. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "That flatters the Do. Name Check in Plan or leave PDCA.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Same spine, different jobs and clocks. Mixing labels hides the skipped scarce step.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Speed without Orient is panic. Orient is the Schwerpunkt.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "More work in progress means we are faster",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-a4-bml-diamond-1",
+    "lesson": "Build–Measure–Learn and Double Diamond",
+    "lessonId": "bl-a4-bml-diamond",
+    "objective": "Build–Measure–Learn",
     "level": "Remember",
-    "stem": "What does discovery produce?",
+    "stem": "Which definition matches “Build–Measure–Learn” in this lesson?",
     "options": [
       {
-        "text": "A decision about what is worth building",
+        "text": "Named product-bet loop; visible motion after a Build exists",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "A DoD-passing increment",
+        "text": "Learn → Measure → Build: write the mind-changer and the signal before the artifact",
         "correct": false,
-        "feedback": "That is delivery."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "A longer backlog of unvalidated guesses",
+        "text": "The belief and what would change your mind; pivot or persevere is its output",
         "correct": false,
-        "feedback": "That is discovery failing."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "Story points",
+        "text": "The signal and fail rule named before Build; not applause",
         "correct": false,
-        "feedback": "Points are not the output of discovery."
+        "feedback": "That definition belongs to a different term in this lesson."
       }
     ]
   },
   {
-    "id": "bl-02-methods-3",
-    "lesson": "Project Management Methodology",
-    "lessonId": "bl-02-methods",
-    "objective": "Scrum",
-    "level": "Understand",
-    "stem": "Scrum assumes you can produce what on a cadence?",
-    "options": [
-      {
-        "text": "A done increment that meets the definition of done",
-        "correct": true,
-        "feedback": "That matches this lesson."
-      },
-      {
-        "text": "A standup with honest feelings",
-        "correct": false,
-        "feedback": "A meeting is not an increment."
-      },
-      {
-        "text": "A six-month regulatory filing each sprint",
-        "correct": false,
-        "feedback": "If you cannot produce done, Scrum is the wrong coat."
-      },
-      {
-        "text": "Unlimited WIP as a sign of passion",
-        "correct": false,
-        "feedback": "WIP is a lever to limit, not a virtue."
-      }
-    ]
-  },
-  {
-    "id": "bl-02-methods-4",
-    "lesson": "Project Management Methodology",
-    "lessonId": "bl-02-methods",
-    "objective": "Waterfall",
-    "level": "Apply",
-    "stem": "When is a Waterfall-ish sequence the honest coat?",
-    "options": [
-      {
-        "text": "When cause and effect are known and the output is specified",
-        "correct": true,
-        "feedback": "That matches this lesson."
-      },
-      {
-        "text": "Never; it is always malpractice",
-        "correct": false,
-        "feedback": "The lesson rejects that holy war."
-      },
-      {
-        "text": "Whenever the org wants a Gantt",
-        "correct": false,
-        "feedback": "Appetite for a chart is not the information problem."
-      },
-      {
-        "text": "For every product bet with users",
-        "correct": false,
-        "feedback": "That is usually complex; probes first."
-      }
-    ]
-  },
-  {
-    "id": "bl-02-methods-5",
-    "lesson": "Project Management Methodology",
-    "lessonId": "bl-02-methods",
-    "objective": "WIP",
+    "id": "bl-a4-bml-diamond-2",
+    "lesson": "Build–Measure–Learn and Double Diamond",
+    "lessonId": "bl-a4-bml-diamond",
+    "objective": "Intellectual order",
     "level": "Remember",
-    "stem": "High work in progress usually means what?",
+    "stem": "Which definition matches “Intellectual order” in this lesson?",
     "options": [
       {
-        "text": "Delay — many starts, later finishes",
+        "text": "Learn → Measure → Build: write the mind-changer and the signal before the artifact",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "Speed — more parallel heroes",
+        "text": "Named product-bet loop; visible motion after a Build exists",
         "correct": false,
-        "feedback": "The lesson treats high WIP as delay."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "A healthy dual-track",
+        "text": "The belief and what would change your mind; pivot or persevere is its output",
         "correct": false,
-        "feedback": "Dual-track still needs WIP limits."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "That DoD is working",
+        "text": "The signal and fail rule named before Build; not applause",
         "correct": false,
-        "feedback": "DoD is a different lever."
+        "feedback": "That definition belongs to a different term in this lesson."
       }
     ]
   },
   {
-    "id": "bl-02-methods-6",
-    "lesson": "Project Management Methodology",
-    "lessonId": "bl-02-methods",
-    "objective": "DoD",
+    "id": "bl-a4-bml-diamond-3",
+    "lesson": "Build–Measure–Learn and Double Diamond",
+    "lessonId": "bl-a4-bml-diamond",
+    "objective": "Learn (BML)",
+    "level": "Remember",
+    "stem": "Which definition matches “Learn (BML)” in this lesson?",
+    "options": [
+      {
+        "text": "The belief and what would change your mind; pivot or persevere is its output",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Named product-bet loop; visible motion after a Build exists",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Learn → Measure → Build: write the mind-changer and the signal before the artifact",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "The signal and fail rule named before Build; not applause",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-a4-bml-diamond-4",
+    "lesson": "Build–Measure–Learn and Double Diamond",
+    "lessonId": "bl-a4-bml-diamond",
+    "objective": "Measure (BML)",
+    "level": "Remember",
+    "stem": "Which definition matches “Measure (BML)” in this lesson?",
+    "options": [
+      {
+        "text": "The signal and fail rule named before Build; not applause",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Named product-bet loop; visible motion after a Build exists",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Learn → Measure → Build: write the mind-changer and the signal before the artifact",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "The belief and what would change your mind; pivot or persevere is its output",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-a4-bml-diamond-5",
+    "lesson": "Build–Measure–Learn and Double Diamond",
+    "lessonId": "bl-a4-bml-diamond",
+    "objective": "Misconception",
     "level": "Understand",
-    "stem": "If definition of done is missing, what happens?",
+    "stem": "A teammate says: Build–Measure–Learn means build first. What is the field-guide correction?",
     "options": [
       {
-        "text": "Scrum metrics lie and ‘MVPs’ ship as accidents",
+        "text": "Intellectual order is Learn → Measure → Build. The name is the visible motion, not the plan.",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "QA will catch it at the end, which is the point",
+        "text": "It is two loops. Iterate. A failed Deliver returns to Define or Discover.",
         "correct": false,
-        "feedback": "Late DoD is the failure mode."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "Agile forbids checklists",
+        "text": "It is a problem-framing spine. Engineers and ops skip diamond 1 at the same cost.",
         "correct": false,
-        "feedback": "DoD is a checklist on purpose."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "Discovery automatically fills it",
+        "text": "A six-month Gantt is always the professional next artifact",
         "correct": false,
-        "feedback": "Discovery produces decisions, not DoD."
+        "feedback": "That is not the correction this lesson teaches."
       }
     ]
   },
   {
-    "id": "bl-02-methods-7",
-    "lesson": "Project Management Methodology",
-    "lessonId": "bl-02-methods",
+    "id": "bl-a4-bml-diamond-6",
+    "lesson": "Build–Measure–Learn and Double Diamond",
+    "lessonId": "bl-a4-bml-diamond",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Double Diamond is a four-stage waterfall. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "It is two loops. Iterate. A failed Deliver returns to Define or Discover.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Intellectual order is Learn → Measure → Build. The name is the visible motion, not the plan.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "It is a problem-framing spine. Engineers and ops skip diamond 1 at the same cost.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Score every idea as it is spoken to save time",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-a4-bml-diamond-7",
+    "lesson": "Build–Measure–Learn and Double Diamond",
+    "lessonId": "bl-a4-bml-diamond",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Design Thinking is only for designers. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "It is a problem-framing spine. Engineers and ops skip diamond 1 at the same cost.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Intellectual order is Learn → Measure → Build. The name is the visible motion, not the plan.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "It is two loops. Iterate. A failed Deliver returns to Define or Discover.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Ship the pretty demo because leadership has a date",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-a4-bml-diamond-8",
+    "lesson": "Build–Measure–Learn and Double Diamond",
+    "lessonId": "bl-a4-bml-diamond",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: We already know the problem, so skip to Deliver. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "That sentence is the usual death of diamond 1. Prove a user-recognizable problem.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Intellectual order is Learn → Measure → Build. The name is the visible motion, not the plan.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "It is two loops. Iterate. A failed Deliver returns to Define or Discover.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "More work in progress means we are faster",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-b1-discovery-1",
+    "lesson": "Discovery, Delivery, and Dual-Track",
+    "lessonId": "bl-b1-discovery",
+    "objective": "Discovery",
+    "level": "Remember",
+    "stem": "Which definition matches “Discovery” in this lesson?",
+    "options": [
+      {
+        "text": "Work that produces a decision about what is worth building, killing, or still not knowing",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Work that produces a usable increment that meets a Definition of Done",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Discovery and delivery in the same cadence with separate capacities that still talk",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "The dated decision, earned slice, or constraint note that moves between tracks",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-b1-discovery-2",
+    "lesson": "Discovery, Delivery, and Dual-Track",
+    "lessonId": "bl-b1-discovery",
+    "objective": "Delivery",
+    "level": "Remember",
+    "stem": "Which definition matches “Delivery” in this lesson?",
+    "options": [
+      {
+        "text": "Work that produces a usable increment that meets a Definition of Done",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Work that produces a decision about what is worth building, killing, or still not knowing",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Discovery and delivery in the same cadence with separate capacities that still talk",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "The dated decision, earned slice, or constraint note that moves between tracks",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-b1-discovery-3",
+    "lesson": "Discovery, Delivery, and Dual-Track",
+    "lessonId": "bl-b1-discovery",
     "objective": "Dual-track",
-    "level": "Apply",
-    "stem": "Delivery is building unearned guesses. What is dual-track protecting?",
-    "options": [
-      {
-        "text": "Discovery capacity so you do not commit the next increment on an unvalidated bet",
-        "correct": true,
-        "feedback": "That matches this lesson."
-      },
-      {
-        "text": "Two teams that never meet",
-        "correct": false,
-        "feedback": "Tracks must talk."
-      },
-      {
-        "text": "A Waterfall phase gate named Agile",
-        "correct": false,
-        "feedback": "That is a costume."
-      },
-      {
-        "text": "Unlimited parallel epics",
-        "correct": false,
-        "feedback": "That is WIP, not dual-track."
-      }
-    ]
-  },
-  {
-    "id": "bl-02-methods-8",
-    "lesson": "Project Management Methodology",
-    "lessonId": "bl-02-methods",
-    "objective": "MVP",
-    "level": "Analyze",
-    "stem": "“MVP means ship a worse version of the full product.” Why is that wrong?",
-    "options": [
-      {
-        "text": "MVP is the smallest test of a hypothesis, not a discount SKU",
-        "correct": true,
-        "feedback": "That matches this lesson."
-      },
-      {
-        "text": "Because MVPs must look high-fi",
-        "correct": false,
-        "feedback": "Looks are a fidelity choice, not the definition."
-      },
-      {
-        "text": "Because Scrum forbids shipping small",
-        "correct": false,
-        "feedback": "Scrum wants a done increment, which can be small."
-      },
-      {
-        "text": "Because Waterfall already shipped the full product",
-        "correct": false,
-        "feedback": "Non sequitur."
-      }
-    ]
-  },
-  {
-    "id": "bl-03-intent-1",
-    "lesson": "Communicating Intent",
-    "lessonId": "bl-03-intent",
-    "objective": "Intent stack",
     "level": "Remember",
-    "stem": "Commander’s intent in this pack is which trio?",
+    "stem": "Which definition matches “Dual-track” in this lesson?",
     "options": [
       {
-        "text": "Purpose + end state + constraints",
+        "text": "Discovery and delivery in the same cadence with separate capacities that still talk",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "Vision + roadmap + standups",
+        "text": "Work that produces a decision about what is worth building, killing, or still not knowing",
         "correct": false,
-        "feedback": "Those are not the trio."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "Tasks + owners + dates",
+        "text": "Work that produces a usable increment that meets a Definition of Done",
         "correct": false,
-        "feedback": "That is instruction."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "HMW + SCAMPER + Crazy 8s",
+        "text": "The dated decision, earned slice, or constraint note that moves between tracks",
         "correct": false,
-        "feedback": "Those are ideation tools."
+        "feedback": "That definition belongs to a different term in this lesson."
       }
     ]
   },
   {
-    "id": "bl-03-intent-2",
-    "lesson": "Communicating Intent",
-    "lessonId": "bl-03-intent",
+    "id": "bl-b1-discovery-4",
+    "lesson": "Discovery, Delivery, and Dual-Track",
+    "lessonId": "bl-b1-discovery",
+    "objective": "Talk artifact",
+    "level": "Remember",
+    "stem": "Which definition matches “Talk artifact” in this lesson?",
+    "options": [
+      {
+        "text": "The dated decision, earned slice, or constraint note that moves between tracks",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Work that produces a decision about what is worth building, killing, or still not knowing",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Work that produces a usable increment that meets a Definition of Done",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Discovery and delivery in the same cadence with separate capacities that still talk",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-b1-discovery-5",
+    "lesson": "Discovery, Delivery, and Dual-Track",
+    "lessonId": "bl-b1-discovery",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Discovery is research; delivery is engineering. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Both are products of work. Engineers discover; researchers can deliver a decision. Titles are not tracks.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Two teams that never meet is the costume. Dual-track is two capacities that talk.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Experience without contact still guesses. Dual-track exists because experience lies.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "A six-month Gantt is always the professional next artifact",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-b1-discovery-6",
+    "lesson": "Discovery, Delivery, and Dual-Track",
+    "lessonId": "bl-b1-discovery",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Dual-track means two teams. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Two teams that never meet is the costume. Dual-track is two capacities that talk.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Both are products of work. Engineers discover; researchers can deliver a decision. Titles are not tracks.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Experience without contact still guesses. Dual-track exists because experience lies.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Score every idea as it is spoken to save time",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-b1-discovery-7",
+    "lesson": "Discovery, Delivery, and Dual-Track",
+    "lessonId": "bl-b1-discovery",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: If we are experienced we can skip discovery. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Experience without contact still guesses. Dual-track exists because experience lies.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Both are products of work. Engineers discover; researchers can deliver a decision. Titles are not tracks.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Two teams that never meet is the costume. Dual-track is two capacities that talk.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Ship the pretty demo because leadership has a date",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-b1-discovery-8",
+    "lesson": "Discovery, Delivery, and Dual-Track",
+    "lessonId": "bl-b1-discovery",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: A filled backlog means we decided. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "A backlog dump is unvalidated work wearing a rank.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Both are products of work. Engineers discover; researchers can deliver a decision. Titles are not tracks.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Two teams that never meet is the costume. Dual-track is two capacities that talk.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "More work in progress means we are faster",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-b2-coats-1",
+    "lesson": "Agile, Scrum, and Honest Waterfall",
+    "lessonId": "bl-b2-coats",
+    "objective": "Agile",
+    "level": "Remember",
+    "stem": "Which definition matches “Agile” in this lesson?",
+    "options": [
+      {
+        "text": "2001 Manifesto values and twelve principles; a stance about late information, not a board",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Individuals/interactions, working software, customer collaboration, responding to change — over the right-hand items, which still have value",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "2020 Guide framework: empiricism, Increment, DoD, Sprint heartbeat, inspect-and-adapt events",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Knowledge from what is observed; pillars transparency, inspection, adaptation",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-b2-coats-2",
+    "lesson": "Agile, Scrum, and Honest Waterfall",
+    "lessonId": "bl-b2-coats",
+    "objective": "Manifesto values",
+    "level": "Remember",
+    "stem": "Which definition matches “Manifesto values” in this lesson?",
+    "options": [
+      {
+        "text": "Individuals/interactions, working software, customer collaboration, responding to change — over the right-hand items, which still have value",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "2001 Manifesto values and twelve principles; a stance about late information, not a board",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "2020 Guide framework: empiricism, Increment, DoD, Sprint heartbeat, inspect-and-adapt events",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Knowledge from what is observed; pillars transparency, inspection, adaptation",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-b2-coats-3",
+    "lesson": "Agile, Scrum, and Honest Waterfall",
+    "lessonId": "bl-b2-coats",
+    "objective": "Scrum",
+    "level": "Remember",
+    "stem": "Which definition matches “Scrum” in this lesson?",
+    "options": [
+      {
+        "text": "2020 Guide framework: empiricism, Increment, DoD, Sprint heartbeat, inspect-and-adapt events",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "2001 Manifesto values and twelve principles; a stance about late information, not a board",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Individuals/interactions, working software, customer collaboration, responding to change — over the right-hand items, which still have value",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Knowledge from what is observed; pillars transparency, inspection, adaptation",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-b2-coats-4",
+    "lesson": "Agile, Scrum, and Honest Waterfall",
+    "lessonId": "bl-b2-coats",
+    "objective": "Empiricism",
+    "level": "Remember",
+    "stem": "Which definition matches “Empiricism” in this lesson?",
+    "options": [
+      {
+        "text": "Knowledge from what is observed; pillars transparency, inspection, adaptation",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "2001 Manifesto values and twelve principles; a stance about late information, not a board",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Individuals/interactions, working software, customer collaboration, responding to change — over the right-hand items, which still have value",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "2020 Guide framework: empiricism, Increment, DoD, Sprint heartbeat, inspect-and-adapt events",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-b2-coats-5",
+    "lesson": "Agile, Scrum, and Honest Waterfall",
+    "lessonId": "bl-b2-coats",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Agile means no plan. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Agile values responding to change over following a plan. No plan is drift.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Scrum is a specific wrapper. A standup without a Done increment is a meeting.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "It is honest when cause and effect are known. It is wrong as a freeze on a guess.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "A six-month Gantt is always the professional next artifact",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-b2-coats-6",
+    "lesson": "Agile, Scrum, and Honest Waterfall",
+    "lessonId": "bl-b2-coats",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Scrum is Agile, so any standup counts. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Scrum is a specific wrapper. A standup without a Done increment is a meeting.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Agile values responding to change over following a plan. No plan is drift.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "It is honest when cause and effect are known. It is wrong as a freeze on a guess.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Score every idea as it is spoken to save time",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-b2-coats-7",
+    "lesson": "Agile, Scrum, and Honest Waterfall",
+    "lessonId": "bl-b2-coats",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Waterfall is always wrong. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "It is honest when cause and effect are known. It is wrong as a freeze on a guess.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Agile values responding to change over following a plan. No plan is drift.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Scrum is a specific wrapper. A standup without a Done increment is a meeting.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Ship the pretty demo because leadership has a date",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-b2-coats-8",
+    "lesson": "Agile, Scrum, and Honest Waterfall",
+    "lessonId": "bl-b2-coats",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: The board is how we are Agile. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "A board is a tool (right-hand Manifesto item). Values live in whether working software is the measure.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Agile values responding to change over following a plan. No plan is drift.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Scrum is a specific wrapper. A standup without a Done increment is a meeting.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "More work in progress means we are faster",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-b3-levers-1",
+    "lesson": "Cadence, Scope, WIP, and Definition of Done",
+    "lessonId": "bl-b3-levers",
+    "objective": "Cadence",
+    "level": "Remember",
+    "stem": "Which definition matches “Cadence” in this lesson?",
+    "options": [
+      {
+        "text": "A regular, protected inspect interval; a heartbeat, not a pressure pump",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Shortening the interval, skipping inspect, or adding heroics to make a date comply",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Work allowed into this cadence; cut, defer, or split — never “we’ll try”",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Count of started-not-done items, including shadow work",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-b3-levers-2",
+    "lesson": "Cadence, Scope, WIP, and Definition of Done",
+    "lessonId": "bl-b3-levers",
+    "objective": "Pressure pump",
+    "level": "Remember",
+    "stem": "Which definition matches “Pressure pump” in this lesson?",
+    "options": [
+      {
+        "text": "Shortening the interval, skipping inspect, or adding heroics to make a date comply",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "A regular, protected inspect interval; a heartbeat, not a pressure pump",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Work allowed into this cadence; cut, defer, or split — never “we’ll try”",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Count of started-not-done items, including shadow work",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-b3-levers-3",
+    "lesson": "Cadence, Scope, WIP, and Definition of Done",
+    "lessonId": "bl-b3-levers",
+    "objective": "Scope",
+    "level": "Remember",
+    "stem": "Which definition matches “Scope” in this lesson?",
+    "options": [
+      {
+        "text": "Work allowed into this cadence; cut, defer, or split — never “we’ll try”",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "A regular, protected inspect interval; a heartbeat, not a pressure pump",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Shortening the interval, skipping inspect, or adding heroics to make a date comply",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Count of started-not-done items, including shadow work",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-b3-levers-4",
+    "lesson": "Cadence, Scope, WIP, and Definition of Done",
+    "lessonId": "bl-b3-levers",
+    "objective": "Work in progress (WIP)",
+    "level": "Remember",
+    "stem": "Which definition matches “Work in progress (WIP)” in this lesson?",
+    "options": [
+      {
+        "text": "Count of started-not-done items, including shadow work",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "A regular, protected inspect interval; a heartbeat, not a pressure pump",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Shortening the interval, skipping inspect, or adding heroics to make a date comply",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Work allowed into this cadence; cut, defer, or split — never “we’ll try”",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-b3-levers-5",
+    "lesson": "Cadence, Scope, WIP, and Definition of Done",
+    "lessonId": "bl-b3-levers",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: More WIP means we are faster. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "More starts usually mean later finishes. Limit WIP.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Cadence is how we see. Pressure pumps destroy the instrument.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Scope is a permission for this interval. New asks displace, or they wait.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "A six-month Gantt is always the professional next artifact",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-b3-levers-6",
+    "lesson": "Cadence, Scope, WIP, and Definition of Done",
+    "lessonId": "bl-b3-levers",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Cadence is how we apply deadline pressure. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Cadence is how we see. Pressure pumps destroy the instrument.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "More starts usually mean later finishes. Limit WIP.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Scope is a permission for this interval. New asks displace, or they wait.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Score every idea as it is spoken to save time",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-b3-levers-7",
+    "lesson": "Cadence, Scope, WIP, and Definition of Done",
+    "lessonId": "bl-b3-levers",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Scope is whatever leadership asked for this morning. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Scope is a permission for this interval. New asks displace, or they wait.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "More starts usually mean later finishes. Limit WIP.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Cadence is how we see. Pressure pumps destroy the instrument.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Ship the pretty demo because leadership has a date",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-b3-levers-8",
+    "lesson": "Cadence, Scope, WIP, and Definition of Done",
+    "lessonId": "bl-b3-levers",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Definition of Done is for QA at the end. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "If DoD is late, every metric lies. No Done, no Increment.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "More starts usually mean later finishes. Limit WIP.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Cadence is how we see. Pressure pumps destroy the instrument.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "More work in progress means we are faster",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-b4-intent-1",
+    "lesson": "Commander’s Intent and the Brief",
+    "lessonId": "bl-b4-intent",
+    "objective": "Commander’s intent",
+    "level": "Remember",
+    "stem": "Which definition matches “Commander’s intent” in this lesson?",
+    "options": [
+      {
+        "text": "Purpose + end state + constraints so others can act without further orders from you",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Why the work exists for a human or system",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Observable picture of “true” when you walk in later",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Hard walls (time, law, safety, budget, vendor), not preferences",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-b4-intent-2",
+    "lesson": "Commander’s Intent and the Brief",
+    "lessonId": "bl-b4-intent",
     "objective": "Purpose",
-    "level": "Understand",
-    "stem": "Which line is a purpose rather than a task?",
-    "options": [
-      {
-        "text": "So night-shift nurses can find the dosing note in under a minute",
-        "correct": true,
-        "feedback": "That matches this lesson."
-      },
-      {
-        "text": "Build a dashboard",
-        "correct": false,
-        "feedback": "A noun is a task/solution."
-      },
-      {
-        "text": "Deliver the epic by Friday",
-        "correct": false,
-        "feedback": "A date is not a human outcome."
-      },
-      {
-        "text": "Modern UX",
-        "correct": false,
-        "feedback": "A slogan is not a purpose."
-      }
-    ]
-  },
-  {
-    "id": "bl-03-intent-3",
-    "lesson": "Communicating Intent",
-    "lessonId": "bl-03-intent",
-    "objective": "Problem statement",
-    "level": "Apply",
-    "stem": "What must a problem statement not smuggle?",
-    "options": [
-      {
-        "text": "A solution noun",
-        "correct": true,
-        "feedback": "That matches this lesson."
-      },
-      {
-        "text": "Evidence of pain",
-        "correct": false,
-        "feedback": "Evidence belongs."
-      },
-      {
-        "text": "Who has the job",
-        "correct": false,
-        "feedback": "Who belongs."
-      },
-      {
-        "text": "Constraints later put on the brief",
-        "correct": false,
-        "feedback": "Constraints are a different artifact."
-      }
-    ]
-  },
-  {
-    "id": "bl-03-intent-4",
-    "lesson": "Communicating Intent",
-    "lessonId": "bl-03-intent",
-    "objective": "HMW",
-    "level": "Understand",
-    "stem": "A good How Might We should allow what?",
-    "options": [
-      {
-        "text": "At least three structurally different answers, including one that is not software",
-        "correct": true,
-        "feedback": "That matches this lesson."
-      },
-      {
-        "text": "Only the solution leadership already likes",
-        "correct": false,
-        "feedback": "That is a leading question."
-      },
-      {
-        "text": "No constraints at all",
-        "correct": false,
-        "feedback": "Constraints live on the brief; HMW still has a job."
-      },
-      {
-        "text": "A 40-page vision",
-        "correct": false,
-        "feedback": "Vision is a different artifact."
-      }
-    ]
-  },
-  {
-    "id": "bl-03-intent-5",
-    "lesson": "Communicating Intent",
-    "lessonId": "bl-03-intent",
-    "objective": "Non-goals",
     "level": "Remember",
-    "stem": "Why write non-goals?",
+    "stem": "Which definition matches “Purpose” in this lesson?",
     "options": [
       {
-        "text": "To stop polite scope creep on plausible work you are not doing this round",
+        "text": "Why the work exists for a human or system",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "To lower morale with negativity",
+        "text": "Purpose + end state + constraints so others can act without further orders from you",
         "correct": false,
-        "feedback": "Unwritten non-goals cause the later fight."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "To replace success criteria",
+        "text": "Observable picture of “true” when you walk in later",
         "correct": false,
-        "feedback": "Different job."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "To instruct every CSS step",
+        "text": "Hard walls (time, law, safety, budget, vendor), not preferences",
         "correct": false,
-        "feedback": "That is instruction."
+        "feedback": "That definition belongs to a different term in this lesson."
       }
     ]
   },
   {
-    "id": "bl-03-intent-6",
-    "lesson": "Communicating Intent",
-    "lessonId": "bl-03-intent",
-    "objective": "Alignment vs instruction",
-    "level": "Analyze",
-    "stem": "If you disappeared for two days, a competent teammate can still move toward the end state without violating a wall. What did you write?",
-    "options": [
-      {
-        "text": "Alignment (intent)",
-        "correct": true,
-        "feedback": "That matches this lesson."
-      },
-      {
-        "text": "A complete instruction runbook and nothing else",
-        "correct": false,
-        "feedback": "Runbooks are instruction; the tell is they can choose unforeseen steps."
-      },
-      {
-        "text": "A vision poster",
-        "correct": false,
-        "feedback": "Vision without a round is not enough."
-      },
-      {
-        "text": "A WIP limit only",
-        "correct": false,
-        "feedback": "WIP is a method lever, not intent."
-      }
-    ]
-  },
-  {
-    "id": "bl-03-intent-7",
-    "lesson": "Communicating Intent",
-    "lessonId": "bl-03-intent",
-    "objective": "Brief",
-    "level": "Understand",
-    "stem": "If a brief cannot be read in about three minutes, what is it?",
-    "options": [
-      {
-        "text": "A document pretending to be alignment",
-        "correct": true,
-        "feedback": "That matches this lesson."
-      },
-      {
-        "text": "More rigorous by definition",
-        "correct": false,
-        "feedback": "Length is not rigor."
-      },
-      {
-        "text": "A valid PDCA Check",
-        "correct": false,
-        "feedback": "Check is a measure comparison."
-      },
-      {
-        "text": "A definition of done",
-        "correct": false,
-        "feedback": "DoD is a quality checklist."
-      }
-    ]
-  },
-  {
-    "id": "bl-03-intent-8",
-    "lesson": "Communicating Intent",
-    "lessonId": "bl-03-intent",
+    "id": "bl-b4-intent-3",
+    "lesson": "Commander’s Intent and the Brief",
+    "lessonId": "bl-b4-intent",
     "objective": "End state",
-    "level": "Apply",
-    "stem": "Which is an end state?",
-    "options": [
-      {
-        "text": "A nurse completes the task on a phone without calling the day shift",
-        "correct": true,
-        "feedback": "That matches this lesson."
-      },
-      {
-        "text": "Modernize the platform",
-        "correct": false,
-        "feedback": "Not observable."
-      },
-      {
-        "text": "Be the best onboarding in the industry",
-        "correct": false,
-        "feedback": "Vision-ish, not this-round true."
-      },
-      {
-        "text": "Schedule a workshop",
-        "correct": false,
-        "feedback": "A task."
-      }
-    ]
-  },
-  {
-    "id": "bl-04-brainstorm-1",
-    "lesson": "Brainstorming",
-    "lessonId": "bl-04-brainstorm",
-    "objective": "Hard rules",
     "level": "Remember",
-    "stem": "The two hard rules of generation in this pack?",
+    "stem": "Which definition matches “End state” in this lesson?",
     "options": [
       {
-        "text": "Deferred judgment and quantity before quality",
+        "text": "Observable picture of “true” when you walk in later",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "Dot voting and HiPPO steer",
+        "text": "Purpose + end state + constraints so others can act without further orders from you",
         "correct": false,
-        "feedback": "Those kill diverge."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "Socratic review and devil’s advocate in minute two",
+        "text": "Why the work exists for a human or system",
         "correct": false,
-        "feedback": "Those are later converge tools."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "SCAMPER and Waterfall",
+        "text": "Hard walls (time, law, safety, budget, vendor), not preferences",
         "correct": false,
-        "feedback": "Methods, not the two rules."
+        "feedback": "That definition belongs to a different term in this lesson."
       }
     ]
   },
   {
-    "id": "bl-04-brainstorm-2",
-    "lesson": "Brainstorming",
-    "lessonId": "bl-04-brainstorm",
-    "objective": "Brainwriting",
+    "id": "bl-b4-intent-4",
+    "lesson": "Commander’s Intent and the Brief",
+    "lessonId": "bl-b4-intent",
+    "objective": "Constraints",
+    "level": "Remember",
+    "stem": "Which definition matches “Constraints” in this lesson?",
+    "options": [
+      {
+        "text": "Hard walls (time, law, safety, budget, vendor), not preferences",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Purpose + end state + constraints so others can act without further orders from you",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Why the work exists for a human or system",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Observable picture of “true” when you walk in later",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-b4-intent-5",
+    "lesson": "Commander’s Intent and the Brief",
+    "lessonId": "bl-b4-intent",
+    "objective": "Misconception",
     "level": "Understand",
-    "stem": "When is brainwriting the better generation method?",
+    "stem": "A teammate says: If I specify every step, I have communicated. What is the field-guide correction?",
     "options": [
       {
-        "text": "When a few voices usually fill the air",
+        "text": "You instructed. Complex work still needs intent when the steps change.",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "When the problem is only visual",
+        "text": "Vision without this-round success criteria is a poster.",
         "correct": false,
-        "feedback": "Crazy 8s is the visual-forcing tool."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "When you are attacking an existing artifact with prompts",
+        "text": "Then it is a leading question, not a HMW.",
         "correct": false,
-        "feedback": "That is SCAMPER."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "During devil’s-advocate review",
+        "text": "A six-month Gantt is always the professional next artifact",
         "correct": false,
-        "feedback": "Review is not generation."
+        "feedback": "That is not the correction this lesson teaches."
       }
     ]
   },
   {
-    "id": "bl-04-brainstorm-3",
-    "lesson": "Brainstorming",
-    "lessonId": "bl-04-brainstorm",
+    "id": "bl-b4-intent-6",
+    "lesson": "Commander’s Intent and the Brief",
+    "lessonId": "bl-b4-intent",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Vision is enough. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Vision without this-round success criteria is a poster.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "You instructed. Complex work still needs intent when the steps change.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Then it is a leading question, not a HMW.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Score every idea as it is spoken to save time",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-b4-intent-7",
+    "lesson": "Commander’s Intent and the Brief",
+    "lessonId": "bl-b4-intent",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: How Might We can start from a solution we like. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Then it is a leading question, not a HMW.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "You instructed. Complex work still needs intent when the steps change.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Vision without this-round success criteria is a poster.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Ship the pretty demo because leadership has a date",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-b4-intent-8",
+    "lesson": "Commander’s Intent and the Brief",
+    "lessonId": "bl-b4-intent",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Non-goals are negative and kill morale. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Unwritten non-goals kill morale later, in the scope fight.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "You instructed. Complex work still needs intent when the steps change.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Vision without this-round success criteria is a poster.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "More work in progress means we are faster",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-c1-protocol-1",
+    "lesson": "Brainstorming as a Protocol",
+    "lessonId": "bl-c1-protocol",
+    "objective": "Brainstorm (this pack)",
+    "level": "Remember",
+    "stem": "Which definition matches “Brainstorm (this pack)” in this lesson?",
+    "options": [
+      {
+        "text": "Time-boxed diverge protocol: mode, deferred judgment, quantity, capture, cancel",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Rules you can enforce in the room without a particular personality",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "No scoring, killing, improving, or eye-rolls during generation; critiques go to Later",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Volume and variety first; selection is a later mode",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-c1-protocol-2",
+    "lesson": "Brainstorming as a Protocol",
+    "lessonId": "bl-c1-protocol",
+    "objective": "Protocol",
+    "level": "Remember",
+    "stem": "Which definition matches “Protocol” in this lesson?",
+    "options": [
+      {
+        "text": "Rules you can enforce in the room without a particular personality",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Time-boxed diverge protocol: mode, deferred judgment, quantity, capture, cancel",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "No scoring, killing, improving, or eye-rolls during generation; critiques go to Later",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Volume and variety first; selection is a later mode",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-c1-protocol-3",
+    "lesson": "Brainstorming as a Protocol",
+    "lessonId": "bl-c1-protocol",
+    "objective": "Deferred judgment",
+    "level": "Remember",
+    "stem": "Which definition matches “Deferred judgment” in this lesson?",
+    "options": [
+      {
+        "text": "No scoring, killing, improving, or eye-rolls during generation; critiques go to Later",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Time-boxed diverge protocol: mode, deferred judgment, quantity, capture, cancel",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Rules you can enforce in the room without a particular personality",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Volume and variety first; selection is a later mode",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-c1-protocol-4",
+    "lesson": "Brainstorming as a Protocol",
+    "lessonId": "bl-c1-protocol",
+    "objective": "Quantity before quality",
+    "level": "Remember",
+    "stem": "Which definition matches “Quantity before quality” in this lesson?",
+    "options": [
+      {
+        "text": "Volume and variety first; selection is a later mode",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Time-boxed diverge protocol: mode, deferred judgment, quantity, capture, cancel",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Rules you can enforce in the room without a particular personality",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "No scoring, killing, improving, or eye-rolls during generation; critiques go to Later",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-c1-protocol-5",
+    "lesson": "Brainstorming as a Protocol",
+    "lessonId": "bl-c1-protocol",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Brainstorming is just talking. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Without deferred judgment, capture, and a cancel rule, it is a status contest.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Early quality is undeclared converge. You lose the weird test.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Steering mid-diverge is how you get last year’s idea with new nouns.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "A six-month Gantt is always the professional next artifact",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-c1-protocol-6",
+    "lesson": "Brainstorming as a Protocol",
+    "lessonId": "bl-c1-protocol",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Quality in the room saves time. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Early quality is undeclared converge. You lose the weird test.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Without deferred judgment, capture, and a cancel rule, it is a status contest.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Steering mid-diverge is how you get last year’s idea with new nouns.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Score every idea as it is spoken to save time",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-c1-protocol-7",
+    "lesson": "Brainstorming as a Protocol",
+    "lessonId": "bl-c1-protocol",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: The director should steer so we stay realistic. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Steering mid-diverge is how you get last year’s idea with new nouns.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Without deferred judgment, capture, and a cancel rule, it is a status contest.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Early quality is undeclared converge. You lose the weird test.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Ship the pretty demo because leadership has a date",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-c1-protocol-8",
+    "lesson": "Brainstorming as a Protocol",
+    "lessonId": "bl-c1-protocol",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: If we have fun we brainstormed. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Fun is optional. A visible set that survived scoring is not.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Without deferred judgment, capture, and a cancel rule, it is a status contest.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Early quality is undeclared converge. You lose the weird test.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "More work in progress means we are faster",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-c2-generate-1",
+    "lesson": "Generation Methods and Converge Reviews",
+    "lessonId": "bl-c2-generate",
+    "objective": "Brainwriting",
+    "level": "Remember",
+    "stem": "Which definition matches “Brainwriting” in this lesson?",
+    "options": [
+      {
+        "text": "Silent written generation to reduce first-speaker monopoly",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Named brainwriting pattern: several people, several ideas, timed silent passes",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Fast multi-sketch (or multi-move) diverge; variety by starvation of polish",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Substitute, Combine, Adapt, Modify, Put to another use, Eliminate, Reverse — prompts for an existing artifact",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-c2-generate-2",
+    "lesson": "Generation Methods and Converge Reviews",
+    "lessonId": "bl-c2-generate",
+    "objective": "6-3-5-style rounds",
+    "level": "Remember",
+    "stem": "Which definition matches “6-3-5-style rounds” in this lesson?",
+    "options": [
+      {
+        "text": "Named brainwriting pattern: several people, several ideas, timed silent passes",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Silent written generation to reduce first-speaker monopoly",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Fast multi-sketch (or multi-move) diverge; variety by starvation of polish",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Substitute, Combine, Adapt, Modify, Put to another use, Eliminate, Reverse — prompts for an existing artifact",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-c2-generate-3",
+    "lesson": "Generation Methods and Converge Reviews",
+    "lessonId": "bl-c2-generate",
+    "objective": "Crazy 8s",
+    "level": "Remember",
+    "stem": "Which definition matches “Crazy 8s” in this lesson?",
+    "options": [
+      {
+        "text": "Fast multi-sketch (or multi-move) diverge; variety by starvation of polish",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Silent written generation to reduce first-speaker monopoly",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Named brainwriting pattern: several people, several ideas, timed silent passes",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Substitute, Combine, Adapt, Modify, Put to another use, Eliminate, Reverse — prompts for an existing artifact",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-c2-generate-4",
+    "lesson": "Generation Methods and Converge Reviews",
+    "lessonId": "bl-c2-generate",
     "objective": "SCAMPER",
     "level": "Remember",
-    "stem": "SCAMPER is for what?",
+    "stem": "Which definition matches “SCAMPER” in this lesson?",
     "options": [
       {
-        "text": "Attacking an existing artifact with a prompt list",
+        "text": "Substitute, Combine, Adapt, Modify, Put to another use, Eliminate, Reverse — prompts for an existing artifact",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "Blank-page problems with no artifact",
+        "text": "Silent written generation to reduce first-speaker monopoly",
         "correct": false,
-        "feedback": "The lesson says not for a blank problem."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "Scoring ideas live",
+        "text": "Named brainwriting pattern: several people, several ideas, timed silent passes",
         "correct": false,
-        "feedback": "That is undeclared converge."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "Writing a DoD",
+        "text": "Fast multi-sketch (or multi-move) diverge; variety by starvation of polish",
         "correct": false,
-        "feedback": "Wrong lesson."
+        "feedback": "That definition belongs to a different term in this lesson."
       }
     ]
   },
   {
-    "id": "bl-04-brainstorm-4",
-    "lesson": "Brainstorming",
-    "lessonId": "bl-04-brainstorm",
-    "objective": "Devil’s advocate",
-    "level": "Apply",
-    "stem": "A director starts devil’s-advocating in minute two of generation. What do you do?",
-    "options": [
-      {
-        "text": "Park it — judgment is illegal during diverge; schedule it after clustering",
-        "correct": true,
-        "feedback": "That matches this lesson."
-      },
-      {
-        "text": "Encourage it so the room stays realistic",
-        "correct": false,
-        "feedback": "Realistic is undeclared converge."
-      },
-      {
-        "text": "Cancel Design Thinking forever",
-        "correct": false,
-        "feedback": "Overkill."
-      },
-      {
-        "text": "Switch to Waterfall immediately",
-        "correct": false,
-        "feedback": "Wrong coat."
-      }
-    ]
-  },
-  {
-    "id": "bl-04-brainstorm-5",
-    "lesson": "Brainstorming",
-    "lessonId": "bl-04-brainstorm",
-    "objective": "Progression",
+    "id": "bl-c2-generate-5",
+    "lesson": "Generation Methods and Converge Reviews",
+    "lessonId": "bl-c2-generate",
+    "objective": "Misconception",
     "level": "Understand",
-    "stem": "What is the output of a good brainstorm in this pack?",
+    "stem": "A teammate says: More methods in one hour means more creativity. What is the field-guide correction?",
     "options": [
       {
-        "text": "Testable claims (who, action, measure) — not a photo of stickies",
+        "text": "One method, done. Stacking is noise.",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "A winner chosen by dots on slogans",
+        "text": "It is for attacking an existing artifact.",
         "correct": false,
-        "feedback": "Dots often pick familiar wording."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "A shipped MVP",
+        "text": "It keeps you quiet. Schedule it after clustering.",
         "correct": false,
-        "feedback": "Too soon."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "A six-month roadmap",
+        "text": "A six-month Gantt is always the professional next artifact",
         "correct": false,
-        "feedback": "That is fake diamond 2."
+        "feedback": "That is not the correction this lesson teaches."
       }
     ]
   },
   {
-    "id": "bl-04-brainstorm-6",
-    "lesson": "Brainstorming",
-    "lessonId": "bl-04-brainstorm",
-    "objective": "Constraints",
+    "id": "bl-c2-generate-6",
+    "lesson": "Generation Methods and Converge Reviews",
+    "lessonId": "bl-c2-generate",
+    "objective": "Misconception",
     "level": "Understand",
-    "stem": "Constraint-based ideation adds walls on purpose because they usually what?",
+    "stem": "A teammate says: SCAMPER is for blank-page problems. What is the field-guide correction?",
     "options": [
       {
-        "text": "Increase variety more than ‘think outside the box’",
+        "text": "It is for attacking an existing artifact.",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "Always reduce options to one vendor",
+        "text": "One method, done. Stacking is noise.",
         "correct": false,
-        "feedback": "That is a smuggled solution."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "Replace the HMW",
+        "text": "It keeps you quiet. Schedule it after clustering.",
         "correct": false,
-        "feedback": "HMW is still the prompt."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "Satisfy legal without a later converge",
+        "text": "Score every idea as it is spoken to save time",
         "correct": false,
-        "feedback": "Legal walls still need a real owner later."
+        "feedback": "That is not the correction this lesson teaches."
       }
     ]
   },
   {
-    "id": "bl-04-brainstorm-7",
-    "lesson": "Brainstorming",
-    "lessonId": "bl-04-brainstorm",
-    "objective": "Cancel",
-    "level": "Apply",
-    "stem": "There is no HMW and a senior person is there to steer. What does the lesson say?",
+    "id": "bl-c2-generate-7",
+    "lesson": "Generation Methods and Converge Reviews",
+    "lessonId": "bl-c2-generate",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Devil’s advocate during generation keeps us honest. What is the field-guide correction?",
     "options": [
       {
-        "text": "Cancel — a fake brainstorm poisons later critique",
+        "text": "It keeps you quiet. Schedule it after clustering.",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "Run faster so steering has less time",
+        "text": "One method, done. Stacking is noise.",
         "correct": false,
-        "feedback": "Speed does not fix the protocol."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "Switch to a high-fi prototype",
+        "text": "It is for attacking an existing artifact.",
         "correct": false,
-        "feedback": "Wrong phase."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "Take minutes of only the liked ideas",
+        "text": "Ship the pretty demo because leadership has a date",
         "correct": false,
-        "feedback": "That is a listed failure."
+        "feedback": "That is not the correction this lesson teaches."
       }
     ]
   },
   {
-    "id": "bl-04-brainstorm-8",
-    "lesson": "Brainstorming",
-    "lessonId": "bl-04-brainstorm",
-    "objective": "Socratic",
-    "level": "Analyze",
-    "stem": "Socratic review is for what?",
+    "id": "bl-c2-generate-8",
+    "lesson": "Generation Methods and Converge Reviews",
+    "lessonId": "bl-c2-generate",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Dot voting picks the best idea. What is the field-guide correction?",
     "options": [
       {
-        "text": "Questions that expose missing who/job/constraint after clustering",
+        "text": "It often picks the most familiar wording. Vote on what to test.",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "Humiliating the author in generation",
+        "text": "One method, done. Stacking is noise.",
         "correct": false,
-        "feedback": "That is status, not Socratic."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "Replacing user testing",
+        "text": "It is for attacking an existing artifact.",
         "correct": false,
-        "feedback": "Different review type (Lesson 6)."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "Writing code comments",
+        "text": "More work in progress means we are faster",
         "correct": false,
-        "feedback": "Non sequitur."
+        "feedback": "That is not the correction this lesson teaches."
       }
     ]
   },
   {
-    "id": "bl-05-prototype-1",
-    "lesson": "Prototyping",
-    "lessonId": "bl-05-prototype",
+    "id": "bl-c3-fidelity-1",
+    "lesson": "Fidelity and Kinds of Prototype",
+    "lessonId": "bl-c3-fidelity",
     "objective": "Fidelity",
-    "level": "Understand",
-    "stem": "Fidelity should match what?",
-    "options": [
-      {
-        "text": "The question you need answered, not the stakeholder’s rank",
-        "correct": true,
-        "feedback": "That matches this lesson."
-      },
-      {
-        "text": "Always high, because polish is professional",
-        "correct": false,
-        "feedback": "Early polish persuades and freezes."
-      },
-      {
-        "text": "Always low, because Agile forbids pixels",
-        "correct": false,
-        "feedback": "High-fi is valid when texture/trust is the risk."
-      },
-      {
-        "text": "The number of sprints remaining",
-        "correct": false,
-        "feedback": "Calendar is not the question."
-      }
-    ]
-  },
-  {
-    "id": "bl-05-prototype-2",
-    "lesson": "Prototyping",
-    "lessonId": "bl-05-prototype",
-    "objective": "Looks vs works",
     "level": "Remember",
-    "stem": "A pretty shell with no mechanism is which kind of prototype?",
+    "stem": "Which definition matches “Fidelity” in this lesson?",
     "options": [
       {
-        "text": "Looks-like — allowed only if appearance is the risk",
+        "text": "How finished the artifact looks or behaves; an attention budget",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "Works-like",
+        "text": "Cheap, ugly on purpose; tests the job and comprehension",
         "correct": false,
-        "feedback": "Works-like tests mechanism and may look like junk."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "MVP",
+        "text": "Structured but unfinished; tests whether a person can get through the steps",
         "correct": false,
-        "feedback": "MVP is shipped."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "PDCA Check",
+        "text": "Close to real texture; tests trust, timing, accessibility, load",
         "correct": false,
-        "feedback": "Wrong loop artifact."
+        "feedback": "That definition belongs to a different term in this lesson."
       }
     ]
   },
   {
-    "id": "bl-05-prototype-3",
-    "lesson": "Prototyping",
-    "lessonId": "bl-05-prototype",
-    "objective": "Pretotype vs MVP",
-    "level": "Understand",
-    "stem": "How does a pretotype differ from an MVP here?",
-    "options": [
-      {
-        "text": "Pretotype fakes the experience before the mechanism; MVP is a shipped test in the real system",
-        "correct": true,
-        "feedback": "That matches this lesson."
-      },
-      {
-        "text": "They are synonyms for a domain name on a prototype",
-        "correct": false,
-        "feedback": "The lesson rejects that blur."
-      },
-      {
-        "text": "Pretotype is always illegal deception",
-        "correct": false,
-        "feedback": "It is a short demand/comprehension test."
-      },
-      {
-        "text": "MVP must look unfinished",
-        "correct": false,
-        "feedback": "Looks are a fidelity choice."
-      }
-    ]
-  },
-  {
-    "id": "bl-05-prototype-4",
-    "lesson": "Prototyping",
-    "lessonId": "bl-05-prototype",
-    "objective": "Riskiest first",
-    "level": "Apply",
-    "stem": "Teams love testing the assumption they already believe. What should they test instead?",
-    "options": [
-      {
-        "text": "The high-impact unknown (ignorance × impact)",
-        "correct": true,
-        "feedback": "That matches this lesson."
-      },
-      {
-        "text": "The prettiest Figma",
-        "correct": false,
-        "feedback": "Comfort."
-      },
-      {
-        "text": "Whatever fits the sprint length",
-        "correct": false,
-        "feedback": "Calendar is not rank."
-      },
-      {
-        "text": "Only legal assumptions",
-        "correct": false,
-        "feedback": "Legal may be the riskiest — then ask counsel, don’t pretty-demo."
-      }
-    ]
-  },
-  {
-    "id": "bl-05-prototype-5",
-    "lesson": "Prototyping",
-    "lessonId": "bl-05-prototype",
-    "objective": "Smallest slice",
+    "id": "bl-c3-fidelity-2",
+    "lesson": "Fidelity and Kinds of Prototype",
+    "lessonId": "bl-c3-fidelity",
+    "objective": "Low-fidelity",
     "level": "Remember",
-    "stem": "A smallest testable slice must include which stop-related piece?",
+    "stem": "Which definition matches “Low-fidelity” in this lesson?",
     "options": [
       {
-        "text": "A fail rule and what you will stop if it fails",
+        "text": "Cheap, ugly on purpose; tests the job and comprehension",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "A full backlog",
+        "text": "How finished the artifact looks or behaves; an attention budget",
         "correct": false,
-        "feedback": "Opposite of smallest."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "A launch party",
+        "text": "Structured but unfinished; tests whether a person can get through the steps",
         "correct": false,
-        "feedback": "Launch is Lesson 7."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "Dot votes",
+        "text": "Close to real texture; tests trust, timing, accessibility, load",
         "correct": false,
-        "feedback": "Lesson 4 failure mode."
+        "feedback": "That definition belongs to a different term in this lesson."
       }
     ]
   },
   {
-    "id": "bl-05-prototype-6",
-    "lesson": "Prototyping",
-    "lessonId": "bl-05-prototype",
-    "objective": "Cannot fail",
-    "level": "Analyze",
-    "stem": "A demo that cannot fail is what?",
-    "options": [
-      {
-        "text": "Sales, not a test",
-        "correct": true,
-        "feedback": "That matches this lesson."
-      },
-      {
-        "text": "A strong MVP",
-        "correct": false,
-        "feedback": "MVPs must be able to falsify a hypothesis."
-      },
-      {
-        "text": "Experience prototype by definition",
-        "correct": false,
-        "feedback": "Experience tests can fail."
-      },
-      {
-        "text": "OODA Act",
-        "correct": false,
-        "feedback": "Wrong lesson."
-      }
-    ]
-  },
-  {
-    "id": "bl-05-prototype-7",
-    "lesson": "Prototyping",
-    "lessonId": "bl-05-prototype",
-    "objective": "Climb the ladder",
-    "level": "Understand",
-    "stem": "When do you climb fidelity?",
-    "options": [
-      {
-        "text": "When the cheaper rung cannot kill the assumption",
-        "correct": true,
-        "feedback": "That matches this lesson."
-      },
-      {
-        "text": "When a VP asks for a real demo",
-        "correct": false,
-        "feedback": "Tell them the question; paper can be professional."
-      },
-      {
-        "text": "When the stickies look messy",
-        "correct": false,
-        "feedback": "Mess is a feature of lo-fi."
-      },
-      {
-        "text": "After launch only",
-        "correct": false,
-        "feedback": "Launch is a mode switch, not a fidelity rule."
-      }
-    ]
-  },
-  {
-    "id": "bl-05-prototype-8",
-    "lesson": "Prototyping",
-    "lessonId": "bl-05-prototype",
-    "objective": "Safety",
-    "level": "Apply",
-    "stem": "Which prototype is forbidden in this pack?",
-    "options": [
-      {
-        "text": "A cute fake that could teach a dangerous action on a one-way safety door",
-        "correct": true,
-        "feedback": "That matches this lesson."
-      },
-      {
-        "text": "Paper maps of a findability problem",
-        "correct": false,
-        "feedback": "That is a listed honest test."
-      },
-      {
-        "text": "Wizard-of-Oz pre-fill after findability holds",
-        "correct": false,
-        "feedback": "Allowed as a later rung."
-      },
-      {
-        "text": "Works-like junk for a mechanism risk",
-        "correct": false,
-        "feedback": "Allowed."
-      }
-    ]
-  },
-  {
-    "id": "bl-06-review-1",
-    "lesson": "Review",
-    "lessonId": "bl-06-review",
-    "objective": "Critique",
+    "id": "bl-c3-fidelity-3",
+    "lesson": "Fidelity and Kinds of Prototype",
+    "lessonId": "bl-c3-fidelity",
+    "objective": "Mid-fidelity",
     "level": "Remember",
-    "stem": "In a design critique, what is on trial?",
+    "stem": "Which definition matches “Mid-fidelity” in this lesson?",
     "options": [
       {
-        "text": "The artifact against the brief — not the author",
+        "text": "Structured but unfinished; tests whether a person can get through the steps",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "The author’s competence",
+        "text": "How finished the artifact looks or behaves; an attention budget",
         "correct": false,
-        "feedback": "Status contest."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "The stakeholder’s taste only",
+        "text": "Cheap, ugly on purpose; tests the job and comprehension",
         "correct": false,
-        "feedback": "Taste without the brief is a salon."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "The sprint points",
+        "text": "Close to real texture; tests trust, timing, accessibility, load",
         "correct": false,
-        "feedback": "Wrong instrument."
+        "feedback": "That definition belongs to a different term in this lesson."
       }
     ]
   },
   {
-    "id": "bl-06-review-2",
-    "lesson": "Review",
-    "lessonId": "bl-06-review",
-    "objective": "Speech protocol",
+    "id": "bl-c3-fidelity-4",
+    "lesson": "Fidelity and Kinds of Prototype",
+    "lessonId": "bl-c3-fidelity",
+    "objective": "High-fidelity",
+    "level": "Remember",
+    "stem": "Which definition matches “High-fidelity” in this lesson?",
+    "options": [
+      {
+        "text": "Close to real texture; tests trust, timing, accessibility, load",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "How finished the artifact looks or behaves; an attention budget",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Cheap, ugly on purpose; tests the job and comprehension",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Structured but unfinished; tests whether a person can get through the steps",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-c3-fidelity-5",
+    "lesson": "Fidelity and Kinds of Prototype",
+    "lessonId": "bl-c3-fidelity",
+    "objective": "Misconception",
     "level": "Understand",
-    "stem": "I like / I wish / What if maps to which trio?",
+    "stem": "A teammate says: Higher fidelity is always more professional. What is the field-guide correction?",
     "options": [
       {
-        "text": "Specific praise, desired change, proposed experiment",
+        "text": "Early polish persuades and freezes. Match the question.",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "Diverge, SCAMPER, ship",
+        "text": "Tell them the question. If they still need polish, you are demoing, not testing.",
         "correct": false,
-        "feedback": "Wrong."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "Observe, Orient, Act",
+        "text": "If mechanism is the risk, the shell is theater.",
         "correct": false,
-        "feedback": "OODA, and missing Decide."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "Nice, nicer, nicest",
+        "text": "A six-month Gantt is always the professional next artifact",
         "correct": false,
-        "feedback": "Niceness without a move is stalling."
+        "feedback": "That is not the correction this lesson teaches."
       }
     ]
   },
   {
-    "id": "bl-06-review-3",
-    "lesson": "Review",
-    "lessonId": "bl-06-review",
-    "objective": "RAT",
+    "id": "bl-c3-fidelity-6",
+    "lesson": "Fidelity and Kinds of Prototype",
+    "lessonId": "bl-c3-fidelity",
+    "objective": "Misconception",
     "level": "Understand",
-    "stem": "A riskiest assumption test is what kind of gate?",
+    "stem": "A teammate says: If it looks unfinished, stakeholders will not take it seriously. What is the field-guide correction?",
     "options": [
       {
-        "text": "Stop/go — do not spend the next increment until there is a kill/keep signal",
+        "text": "Tell them the question. If they still need polish, you are demoing, not testing.",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "A canvas you admire in a workshop",
+        "text": "Early polish persuades and freezes. Match the question.",
         "correct": false,
-        "feedback": "The lesson rejects canvas-as-work."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "A stakeholder smile",
+        "text": "If mechanism is the risk, the shell is theater.",
         "correct": false,
-        "feedback": "Not a test."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "A definition of done",
+        "text": "Score every idea as it is spoken to save time",
         "correct": false,
-        "feedback": "DoD is quality of an increment."
+        "feedback": "That is not the correction this lesson teaches."
       }
     ]
   },
   {
-    "id": "bl-06-review-4",
-    "lesson": "Review",
-    "lessonId": "bl-06-review",
-    "objective": "User vs stakeholder",
-    "level": "Apply",
-    "stem": "Why separate user testing from stakeholder review when power mixes?",
+    "id": "bl-c3-fidelity-7",
+    "lesson": "Fidelity and Kinds of Prototype",
+    "lessonId": "bl-c3-fidelity",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Works-like can wait until after the pretty shell. What is the field-guide correction?",
     "options": [
       {
-        "text": "A user will not fail a task honestly in front of the boss who championed the design",
+        "text": "If mechanism is the risk, the shell is theater.",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "Because users never have useful opinions",
+        "text": "Early polish persuades and freezes. Match the question.",
         "correct": false,
-        "feedback": "Opinions after the task are extra, not forbidden."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "Because stakeholders are always wrong",
+        "text": "Tell them the question. If they still need polish, you are demoing, not testing.",
         "correct": false,
-        "feedback": "They pay/block/integrate — different truth."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "Because experts replace both",
+        "text": "Ship the pretty demo because leadership has a date",
         "correct": false,
-        "feedback": "Expert review is a third type."
+        "feedback": "That is not the correction this lesson teaches."
       }
     ]
   },
   {
-    "id": "bl-06-review-5",
-    "lesson": "Review",
-    "lessonId": "bl-06-review",
+    "id": "bl-c3-fidelity-8",
+    "lesson": "Fidelity and Kinds of Prototype",
+    "lessonId": "bl-c3-fidelity",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: A vice president requires high-fi. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "A VP can read paper. Rank is not a fidelity rule.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Early polish persuades and freezes. Match the question.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Tell them the question. If they still need polish, you are demoing, not testing.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "More work in progress means we are faster",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-c4-test-1",
+    "lesson": "Pretotype, MVP, and the Riskiest Assumption",
+    "lessonId": "bl-c4-test",
+    "objective": "Pretotype",
+    "level": "Remember",
+    "stem": "Which definition matches “Pretotype” in this lesson?",
+    "options": [
+      {
+        "text": "Pre-mechanism fake of the experience that tests demand or comprehension",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Artifact built to answer a design or technical question; should be able to fail; may never ship",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Smallest shipped, measured test of a hypothesis in the real system of record",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "High ignorance × high impact; test this first",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-c4-test-2",
+    "lesson": "Pretotype, MVP, and the Riskiest Assumption",
+    "lessonId": "bl-c4-test",
+    "objective": "Prototype",
+    "level": "Remember",
+    "stem": "Which definition matches “Prototype” in this lesson?",
+    "options": [
+      {
+        "text": "Artifact built to answer a design or technical question; should be able to fail; may never ship",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Pre-mechanism fake of the experience that tests demand or comprehension",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Smallest shipped, measured test of a hypothesis in the real system of record",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "High ignorance × high impact; test this first",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-c4-test-3",
+    "lesson": "Pretotype, MVP, and the Riskiest Assumption",
+    "lessonId": "bl-c4-test",
+    "objective": "MVP",
+    "level": "Remember",
+    "stem": "Which definition matches “MVP” in this lesson?",
+    "options": [
+      {
+        "text": "Smallest shipped, measured test of a hypothesis in the real system of record",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Pre-mechanism fake of the experience that tests demand or comprehension",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Artifact built to answer a design or technical question; should be able to fail; may never ship",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "High ignorance × high impact; test this first",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-c4-test-4",
+    "lesson": "Pretotype, MVP, and the Riskiest Assumption",
+    "lessonId": "bl-c4-test",
+    "objective": "Riskiest assumption",
+    "level": "Remember",
+    "stem": "Which definition matches “Riskiest assumption” in this lesson?",
+    "options": [
+      {
+        "text": "High ignorance × high impact; test this first",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Pre-mechanism fake of the experience that tests demand or comprehension",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Artifact built to answer a design or technical question; should be able to fail; may never ship",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Smallest shipped, measured test of a hypothesis in the real system of record",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-c4-test-5",
+    "lesson": "Pretotype, MVP, and the Riskiest Assumption",
+    "lessonId": "bl-c4-test",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: MVP is a prototype we put on a domain. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "MVP is shipped and measured, with a kill criterion. Prototype may never ship.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "It means the cheapest path to a kill/keep signal.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "That is comfort. Rank by ignorance × impact.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "A six-month Gantt is always the professional next artifact",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-c4-test-6",
+    "lesson": "Pretotype, MVP, and the Riskiest Assumption",
+    "lessonId": "bl-c4-test",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Smallest slice means fewest screens of the full product. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "It means the cheapest path to a kill/keep signal.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "MVP is shipped and measured, with a kill criterion. Prototype may never ship.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "That is comfort. Rank by ignorance × impact.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Score every idea as it is spoken to save time",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-c4-test-7",
+    "lesson": "Pretotype, MVP, and the Riskiest Assumption",
+    "lessonId": "bl-c4-test",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Test the assumption we are ready to build. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "That is comfort. Rank by ignorance × impact.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "MVP is shipped and measured, with a kill criterion. Prototype may never ship.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "It means the cheapest path to a kill/keep signal.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Ship the pretty demo because leadership has a date",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-c4-test-8",
+    "lesson": "Pretotype, MVP, and the Riskiest Assumption",
+    "lessonId": "bl-c4-test",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: A demo that cannot fail is a good prototype. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "If it cannot fail, it is sales.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "MVP is shipped and measured, with a kill criterion. Prototype may never ship.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "It means the cheapest path to a kill/keep signal.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "More work in progress means we are faster",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-d1-critique-1",
+    "lesson": "Critique, RAT, and Pre-mortem",
+    "lessonId": "bl-d1-critique",
+    "objective": "Design critique",
+    "level": "Remember",
+    "stem": "Which definition matches “Design critique” in this lesson?",
+    "options": [
+      {
+        "text": "Structured look at an artifact against the brief; artifact on trial, not the author",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Specific appreciation tied to a part of the artifact and a part of the brief",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Desired change tied to the brief, not a new epic",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Proposed experiment you could run this week, not a second brainstorm",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-d1-critique-2",
+    "lesson": "Critique, RAT, and Pre-mortem",
+    "lessonId": "bl-d1-critique",
+    "objective": "I like",
+    "level": "Remember",
+    "stem": "Which definition matches “I like” in this lesson?",
+    "options": [
+      {
+        "text": "Specific appreciation tied to a part of the artifact and a part of the brief",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Structured look at an artifact against the brief; artifact on trial, not the author",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Desired change tied to the brief, not a new epic",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Proposed experiment you could run this week, not a second brainstorm",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-d1-critique-3",
+    "lesson": "Critique, RAT, and Pre-mortem",
+    "lessonId": "bl-d1-critique",
+    "objective": "I wish",
+    "level": "Remember",
+    "stem": "Which definition matches “I wish” in this lesson?",
+    "options": [
+      {
+        "text": "Desired change tied to the brief, not a new epic",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Structured look at an artifact against the brief; artifact on trial, not the author",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Specific appreciation tied to a part of the artifact and a part of the brief",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Proposed experiment you could run this week, not a second brainstorm",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-d1-critique-4",
+    "lesson": "Critique, RAT, and Pre-mortem",
+    "lessonId": "bl-d1-critique",
+    "objective": "What if",
+    "level": "Remember",
+    "stem": "Which definition matches “What if” in this lesson?",
+    "options": [
+      {
+        "text": "Proposed experiment you could run this week, not a second brainstorm",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Structured look at an artifact against the brief; artifact on trial, not the author",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Specific appreciation tied to a part of the artifact and a part of the brief",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Desired change tied to the brief, not a new epic",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-d1-critique-5",
+    "lesson": "Critique, RAT, and Pre-mortem",
+    "lessonId": "bl-d1-critique",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Critique means being nice. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "It means being specific to the brief. Niceness without a move is stalling.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "People will critique their imaginary product. Cancel.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "In critique, What if is a proposed experiment, not a new diverge session.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "A six-month Gantt is always the professional next artifact",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-d1-critique-6",
+    "lesson": "Critique, RAT, and Pre-mortem",
+    "lessonId": "bl-d1-critique",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: A quick look without a brief is harmless. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "People will critique their imaginary product. Cancel.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "It means being specific to the brief. Niceness without a move is stalling.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "In critique, What if is a proposed experiment, not a new diverge session.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Score every idea as it is spoken to save time",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-d1-critique-7",
+    "lesson": "Critique, RAT, and Pre-mortem",
+    "lessonId": "bl-d1-critique",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: What if is a brainstorm. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "In critique, What if is a proposed experiment, not a new diverge session.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "It means being specific to the brief. Niceness without a move is stalling.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "People will critique their imaginary product. Cancel.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Ship the pretty demo because leadership has a date",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-d1-critique-8",
+    "lesson": "Critique, RAT, and Pre-mortem",
+    "lessonId": "bl-d1-critique",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: The author should defend in real time. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Author listens, then answers facts, then decides. Live defense kills noticing.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "It means being specific to the brief. Niceness without a move is stalling.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "People will critique their imaginary product. Cancel.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "More work in progress means we are faster",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-d2-reviews-1",
+    "lesson": "User, Stakeholder, and Expert Review",
+    "lessonId": "bl-d2-reviews",
+    "objective": "User testing",
+    "level": "Remember",
+    "stem": "Which definition matches “User testing” in this lesson?",
+    "options": [
+      {
+        "text": "A person who has the job attempts the job under a named rule",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Whether they completed the job by a criterion written before they sat",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Who, task, observable success/fail, and help policy",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Someone who pays, blocks, or integrates — not “anyone with an opinion”",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-d2-reviews-2",
+    "lesson": "User, Stakeholder, and Expert Review",
+    "lessonId": "bl-d2-reviews",
     "objective": "Task success",
     "level": "Remember",
-    "stem": "Task success is primarily what?",
+    "stem": "Which definition matches “Task success” in this lesson?",
     "options": [
       {
-        "text": "Whether they completed the job by a named rule",
+        "text": "Whether they completed the job by a criterion written before they sat",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "Whether they said it was nice",
+        "text": "A person who has the job attempts the job under a named rule",
         "correct": false,
-        "feedback": "Opinion instead of the task is not a test."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "Whether leadership nodded",
+        "text": "Who, task, observable success/fail, and help policy",
         "correct": false,
-        "feedback": "Stakeholder review."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "Whether the Figma was high-fi",
+        "text": "Someone who pays, blocks, or integrates — not “anyone with an opinion”",
         "correct": false,
-        "feedback": "Fidelity is not success."
+        "feedback": "That definition belongs to a different term in this lesson."
       }
     ]
   },
   {
-    "id": "bl-06-review-6",
-    "lesson": "Review",
-    "lessonId": "bl-06-review",
-    "objective": "End move",
-    "level": "Analyze",
-    "stem": "The meeting ends with ‘let’s keep thinking.’ What happened?",
+    "id": "bl-d2-reviews-3",
+    "lesson": "User, Stakeholder, and Expert Review",
+    "lessonId": "bl-d2-reviews",
+    "objective": "Named rule",
+    "level": "Remember",
+    "stem": "Which definition matches “Named rule” in this lesson?",
     "options": [
       {
-        "text": "You stalled — that is not redesign, solidify, kill, pivot, or ship",
+        "text": "Who, task, observable success/fail, and help policy",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "A valid PDCA Act",
+        "text": "A person who has the job attempts the job under a named rule",
         "correct": false,
-        "feedback": "Act is adopt/adjust/drop, not fog."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "A passing retrospective",
+        "text": "Whether they completed the job by a criterion written before they sat",
         "correct": false,
-        "feedback": "Retros are Lesson 7 and need one change."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "Steelman",
+        "text": "Someone who pays, blocks, or integrates — not “anyone with an opinion”",
         "correct": false,
-        "feedback": "Steelman is a fairness move, not an end-state of the meeting."
+        "feedback": "That definition belongs to a different term in this lesson."
       }
     ]
   },
   {
-    "id": "bl-06-review-7",
-    "lesson": "Review",
-    "lessonId": "bl-06-review",
-    "objective": "Pre-mortem",
+    "id": "bl-d2-reviews-4",
+    "lesson": "User, Stakeholder, and Expert Review",
+    "lessonId": "bl-d2-reviews",
+    "objective": "Stakeholder",
+    "level": "Remember",
+    "stem": "Which definition matches “Stakeholder” in this lesson?",
+    "options": [
+      {
+        "text": "Someone who pays, blocks, or integrates — not “anyone with an opinion”",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "A person who has the job attempts the job under a named rule",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Whether they completed the job by a criterion written before they sat",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Who, task, observable success/fail, and help policy",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-d2-reviews-5",
+    "lesson": "User, Stakeholder, and Expert Review",
+    "lessonId": "bl-d2-reviews",
+    "objective": "Misconception",
     "level": "Understand",
-    "stem": "A pre-mortem that is only gallows humor fails because it lacks what?",
+    "stem": "A teammate says: They said it was nice, so the test passed. What is the field-guide correction?",
     "options": [
       {
-        "text": "Owners on the plausible failure stories",
+        "text": "Task success is the named rule. Compliments are extra.",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "Enough jokes",
+        "text": "Different truths. Payers cannot complete the contractor’s job by talking.",
         "correct": false,
-        "feedback": "Entertainment is the failure mode."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "A high-fi prototype",
+        "text": "Power fakes success. Separate the rooms.",
         "correct": false,
-        "feedback": "Wrong phase."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "Dot votes",
+        "text": "A six-month Gantt is always the professional next artifact",
         "correct": false,
-        "feedback": "Wrong tool."
+        "feedback": "That is not the correction this lesson teaches."
       }
     ]
   },
   {
-    "id": "bl-06-review-8",
-    "lesson": "Review",
-    "lessonId": "bl-06-review",
-    "objective": "Steelman",
+    "id": "bl-d2-reviews-6",
+    "lesson": "User, Stakeholder, and Expert Review",
+    "lessonId": "bl-d2-reviews",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Stakeholders speaking is user testing. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Different truths. Payers cannot complete the contractor’s job by talking.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Task success is the named rule. Compliments are extra.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Power fakes success. Separate the rooms.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Score every idea as it is spoken to save time",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-d2-reviews-7",
+    "lesson": "User, Stakeholder, and Expert Review",
+    "lessonId": "bl-d2-reviews",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: We should put users and leadership together for alignment. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Power fakes success. Separate the rooms.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Task success is the named rule. Compliments are extra.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Different truths. Payers cannot complete the contractor’s job by talking.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Ship the pretty demo because leadership has a date",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-d2-reviews-8",
+    "lesson": "User, Stakeholder, and Expert Review",
+    "lessonId": "bl-d2-reviews",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Nielsen’s ten are an accessibility compliance audit. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "They are usability rules of thumb, not WCAG. Book an a11y expert for a11y.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Task success is the named rule. Compliments are extra.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Different truths. Payers cannot complete the contractor’s job by talking.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "More work in progress means we are faster",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-d3-evidence-1",
+    "lesson": "Pivot, Persevere, and Evidence Thresholds",
+    "lessonId": "bl-d3-evidence",
+    "objective": "Learning velocity",
     "level": "Remember",
-    "stem": "To steelman in review is to do what?",
+    "stem": "Which definition matches “Learning velocity” in this lesson?",
     "options": [
       {
-        "text": "State the strongest fair form of the case for killing your favorite idea",
+        "text": "Rate of kill/keep on assumptions; units are tests, not tickets",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "Sarcastically straw-man the critic",
+        "text": "Rate of DoD-passing increments a user can touch",
         "correct": false,
-        "feedback": "The lesson forbids that prefix."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "Agree and stop the project always",
+        "text": "Pre-written threshold, named audience, stop/go — not a meeting",
         "correct": false,
-        "feedback": "You may still keep after you understand the risk."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "Replace user testing",
+        "text": "Slice that meets the quality bar in the real hands of a user",
         "correct": false,
-        "feedback": "Different instrument."
+        "feedback": "That definition belongs to a different term in this lesson."
       }
     ]
   },
   {
-    "id": "bl-07-ship-1",
-    "lesson": "Iteration and Shipping",
-    "lessonId": "bl-07-ship",
-    "objective": "Two velocities",
-    "level": "Remember",
-    "stem": "Learning velocity is measured in what?",
-    "options": [
-      {
-        "text": "Tests — how fast you kill or keep assumptions",
-        "correct": true,
-        "feedback": "That matches this lesson."
-      },
-      {
-        "text": "Story points",
-        "correct": false,
-        "feedback": "That is a delivery costume."
-      },
-      {
-        "text": "Headcount",
-        "correct": false,
-        "feedback": "Not a velocity here."
-      },
-      {
-        "text": "Number of loops on a slide",
-        "correct": false,
-        "feedback": "Diagrams are not tests."
-      }
-    ]
-  },
-  {
-    "id": "bl-07-ship-2",
-    "lesson": "Iteration and Shipping",
-    "lessonId": "bl-07-ship",
+    "id": "bl-d3-evidence-2",
+    "lesson": "Pivot, Persevere, and Evidence Thresholds",
+    "lessonId": "bl-d3-evidence",
     "objective": "Feature velocity",
-    "level": "Understand",
-    "stem": "Twelve ‘in progress’ AI ideas and zero done increments is what?",
-    "options": [
-      {
-        "text": "WIP, not feature velocity",
-        "correct": true,
-        "feedback": "That matches this lesson."
-      },
-      {
-        "text": "High learning velocity",
-        "correct": false,
-        "feedback": "No tests were named."
-      },
-      {
-        "text": "A successful launch",
-        "correct": false,
-        "feedback": "Nothing shipped."
-      },
-      {
-        "text": "OODA tempo",
-        "correct": false,
-        "feedback": "Unoriented starts are not tempo."
-      }
-    ]
-  },
-  {
-    "id": "bl-07-ship-3",
-    "lesson": "Iteration and Shipping",
-    "lessonId": "bl-07-ship",
-    "objective": "Threshold",
-    "level": "Apply",
-    "stem": "You write the pivot/persevere threshold after seeing the data. What are you doing?",
-    "options": [
-      {
-        "text": "Storytelling — you will pick the story that saves the plan",
-        "correct": true,
-        "feedback": "That matches this lesson."
-      },
-      {
-        "text": "Proper Orient",
-        "correct": false,
-        "feedback": "Orient is honest model update, not post-hoc thresholds."
-      },
-      {
-        "text": "A definition of done",
-        "correct": false,
-        "feedback": "DoD is not an evidence threshold."
-      },
-      {
-        "text": "Operations",
-        "correct": false,
-        "feedback": "Ops is after the mode switch."
-      }
-    ]
-  },
-  {
-    "id": "bl-07-ship-4",
-    "lesson": "Iteration and Shipping",
-    "lessonId": "bl-07-ship",
-    "objective": "Pivot vs kill",
-    "level": "Understand",
-    "stem": "Pivot vs kill in this pack?",
-    "options": [
-      {
-        "text": "Pivot: job alive, approach wrong. Kill: the job is dead",
-        "correct": true,
-        "feedback": "That matches this lesson."
-      },
-      {
-        "text": "They are nicer words for the same fail",
-        "correct": false,
-        "feedback": "Do not blur them to save face."
-      },
-      {
-        "text": "Pivot means ship anyway",
-        "correct": false,
-        "feedback": "That is persevere without evidence."
-      },
-      {
-        "text": "Kill means fire the team",
-        "correct": false,
-        "feedback": "The lesson inspects the loop, not the people."
-      }
-    ]
-  },
-  {
-    "id": "bl-07-ship-5",
-    "lesson": "Iteration and Shipping",
-    "lessonId": "bl-07-ship",
-    "objective": "Retro",
     "level": "Remember",
-    "stem": "A passing retrospective produces what?",
+    "stem": "Which definition matches “Feature velocity” in this lesson?",
     "options": [
       {
-        "text": "One change to the next loop",
+        "text": "Rate of DoD-passing increments a user can touch",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "Twelve actions and a blame chart",
+        "text": "Rate of kill/keep on assumptions; units are tests, not tickets",
         "correct": false,
-        "feedback": "Wishlist + people theater."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "A launch party",
+        "text": "Pre-written threshold, named audience, stop/go — not a meeting",
         "correct": false,
-        "feedback": "Optional."
+        "feedback": "That definition belongs to a different term in this lesson."
       },
       {
-        "text": "A new methodology identity",
+        "text": "Slice that meets the quality bar in the real hands of a user",
         "correct": false,
-        "feedback": "Coats, not identities."
+        "feedback": "That definition belongs to a different term in this lesson."
       }
     ]
   },
   {
-    "id": "bl-07-ship-6",
-    "lesson": "Iteration and Shipping",
-    "lessonId": "bl-07-ship",
-    "objective": "Mode switch",
+    "id": "bl-d3-evidence-3",
+    "lesson": "Pivot, Persevere, and Evidence Thresholds",
+    "lessonId": "bl-d3-evidence",
+    "objective": "Test (as a unit)",
+    "level": "Remember",
+    "stem": "Which definition matches “Test (as a unit)” in this lesson?",
+    "options": [
+      {
+        "text": "Pre-written threshold, named audience, stop/go — not a meeting",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Rate of kill/keep on assumptions; units are tests, not tickets",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Rate of DoD-passing increments a user can touch",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Slice that meets the quality bar in the real hands of a user",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-d3-evidence-4",
+    "lesson": "Pivot, Persevere, and Evidence Thresholds",
+    "lessonId": "bl-d3-evidence",
+    "objective": "DoD increment",
+    "level": "Remember",
+    "stem": "Which definition matches “DoD increment” in this lesson?",
+    "options": [
+      {
+        "text": "Slice that meets the quality bar in the real hands of a user",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Rate of kill/keep on assumptions; units are tests, not tickets",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Rate of DoD-passing increments a user can touch",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Pre-written threshold, named audience, stop/go — not a meeting",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-d3-evidence-5",
+    "lesson": "Pivot, Persevere, and Evidence Thresholds",
+    "lessonId": "bl-d3-evidence",
+    "objective": "Misconception",
     "level": "Understand",
-    "stem": "Launch is described as what?",
+    "stem": "A teammate says: We iterated, so we delivered. What is the field-guide correction?",
     "options": [
       {
-        "text": "A mode switch from learning (change cheap) to delivery (change expensive) for a slice",
+        "text": "Iteration can be learning with zero ship. Report both scoreboards.",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "A company-wide freeze forever",
+        "text": "Shipping proves you can operate a slice. The idea still needs evidence.",
         "correct": false,
-        "feedback": "The switch is local to a slice."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "A party that proves the idea",
+        "text": "Kill is fail-the-job. Pivot is change-the-approach. Do not blur them to save face.",
         "correct": false,
-        "feedback": "Shipping proves you can operate a slice."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "Eternal beta",
+        "text": "A six-month Gantt is always the professional next artifact",
         "correct": false,
-        "feedback": "Eternal beta often skips operations."
+        "feedback": "That is not the correction this lesson teaches."
       }
     ]
   },
   {
-    "id": "bl-07-ship-7",
-    "lesson": "Iteration and Shipping",
-    "lessonId": "bl-07-ship",
-    "objective": "Quality",
-    "level": "Apply",
-    "stem": "Quality as a hardening sprint after launch means what?",
+    "id": "bl-d3-evidence-6",
+    "lesson": "Pivot, Persevere, and Evidence Thresholds",
+    "lessonId": "bl-d3-evidence",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Shipping proves the idea. What is the field-guide correction?",
     "options": [
       {
-        "text": "It was never in the definition of done",
+        "text": "Shipping proves you can operate a slice. The idea still needs evidence.",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "A healthy dual-track",
+        "text": "Iteration can be learning with zero ship. Report both scoreboards.",
         "correct": false,
-        "feedback": "Dual-track is discovery/delivery, not late quality."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "Operations excellence",
+        "text": "Kill is fail-the-job. Pivot is change-the-approach. Do not blur them to save face.",
         "correct": false,
-        "feedback": "Ops is separate and also belongs in the brief."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "High learning velocity",
+        "text": "Score every idea as it is spoken to save time",
         "correct": false,
-        "feedback": "Unrelated."
+        "feedback": "That is not the correction this lesson teaches."
       }
     ]
   },
   {
-    "id": "bl-07-ship-8",
-    "lesson": "Iteration and Shipping",
-    "lessonId": "bl-07-ship",
-    "objective": "Demo",
-    "level": "Analyze",
-    "stem": "Leadership wants the learning-mode AI pretotype on the all-hands stage as if it shipped. What do you offer instead?",
+    "id": "bl-d3-evidence-7",
+    "lesson": "Pivot, Persevere, and Evidence Thresholds",
+    "lessonId": "bl-d3-evidence",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Pivot is a nicer word for fail. What is the field-guide correction?",
     "options": [
       {
-        "text": "A task-success table for the slice that actually met evidence, and keep the rest in the lab",
+        "text": "Kill is fail-the-job. Pivot is change-the-approach. Do not blur them to save face.",
         "correct": true,
         "feedback": "That matches this lesson."
       },
       {
-        "text": "The pretty shell because morale is a constraint that vetoes truth",
+        "text": "Iteration can be learning with zero ship. Report both scoreboards.",
         "correct": false,
-        "feedback": "Morale is not a veto on lying about mode."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "Nothing — never speak to leadership",
+        "text": "Shipping proves you can operate a slice. The idea still needs evidence.",
         "correct": false,
-        "feedback": "They need a signal; give a true one."
+        "feedback": "That is not the correction this lesson teaches."
       },
       {
-        "text": "A weighted decision matrix of feelings vs dates",
+        "text": "Ship the pretty demo because leadership has a date",
         "correct": false,
-        "feedback": "This pack does not use that matrix."
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-d3-evidence-8",
+    "lesson": "Pivot, Persevere, and Evidence Thresholds",
+    "lessonId": "bl-d3-evidence",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: We’ll know the threshold when we see the data. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Then you will pick the story that saves the plan. Write it first.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Iteration can be learning with zero ship. Report both scoreboards.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Shipping proves you can operate a slice. The idea still needs evidence.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "More work in progress means we are faster",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-d4-launch-1",
+    "lesson": "Launch, Quality, Operations, Mode Switch",
+    "lessonId": "bl-d4-launch",
+    "objective": "Launch",
+    "level": "Remember",
+    "stem": "Which definition matches “Launch” in this lesson?",
+    "options": [
+      {
+        "text": "Per-slice mode switch from learning to delivery",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Learning (change cheap) vs delivery (change expensive)",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Tests, pretotypes, kill/pivot; reversal is cheap",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "DoD, quality, operations; reversal has blast radius",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-d4-launch-2",
+    "lesson": "Launch, Quality, Operations, Mode Switch",
+    "lessonId": "bl-d4-launch",
+    "objective": "Mode switch",
+    "level": "Remember",
+    "stem": "Which definition matches “Mode switch” in this lesson?",
+    "options": [
+      {
+        "text": "Learning (change cheap) vs delivery (change expensive)",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Per-slice mode switch from learning to delivery",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Tests, pretotypes, kill/pivot; reversal is cheap",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "DoD, quality, operations; reversal has blast radius",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-d4-launch-3",
+    "lesson": "Launch, Quality, Operations, Mode Switch",
+    "lessonId": "bl-d4-launch",
+    "objective": "Learning mode",
+    "level": "Remember",
+    "stem": "Which definition matches “Learning mode” in this lesson?",
+    "options": [
+      {
+        "text": "Tests, pretotypes, kill/pivot; reversal is cheap",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Per-slice mode switch from learning to delivery",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Learning (change cheap) vs delivery (change expensive)",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "DoD, quality, operations; reversal has blast radius",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-d4-launch-4",
+    "lesson": "Launch, Quality, Operations, Mode Switch",
+    "lessonId": "bl-d4-launch",
+    "objective": "Delivery mode",
+    "level": "Remember",
+    "stem": "Which definition matches “Delivery mode” in this lesson?",
+    "options": [
+      {
+        "text": "DoD, quality, operations; reversal has blast radius",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Per-slice mode switch from learning to delivery",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Learning (change cheap) vs delivery (change expensive)",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      },
+      {
+        "text": "Tests, pretotypes, kill/pivot; reversal is cheap",
+        "correct": false,
+        "feedback": "That definition belongs to a different term in this lesson."
+      }
+    ]
+  },
+  {
+    "id": "bl-d4-launch-5",
+    "lesson": "Launch, Quality, Operations, Mode Switch",
+    "lessonId": "bl-d4-launch",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Launch is a party. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Launch is a mode switch. The party is optional.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "If it is after, it was never in DoD.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Eternal beta is often a way to skip operations. Dependence sets the mode.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "A six-month Gantt is always the professional next artifact",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-d4-launch-6",
+    "lesson": "Launch, Quality, Operations, Mode Switch",
+    "lessonId": "bl-d4-launch",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Quality is a hardening sprint after launch. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "If it is after, it was never in DoD.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Launch is a mode switch. The party is optional.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Eternal beta is often a way to skip operations. Dependence sets the mode.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Score every idea as it is spoken to save time",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-d4-launch-7",
+    "lesson": "Launch, Quality, Operations, Mode Switch",
+    "lessonId": "bl-d4-launch",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Stay in beta so we can keep learning. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Eternal beta is often a way to skip operations. Dependence sets the mode.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Launch is a mode switch. The party is optional.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "If it is after, it was never in DoD.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "Ship the pretty demo because leadership has a date",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      }
+    ]
+  },
+  {
+    "id": "bl-d4-launch-8",
+    "lesson": "Launch, Quality, Operations, Mode Switch",
+    "lessonId": "bl-d4-launch",
+    "objective": "Misconception",
+    "level": "Understand",
+    "stem": "A teammate says: Lock everything on day one so production is safe. What is the field-guide correction?",
+    "options": [
+      {
+        "text": "Then you skip learning. Switch per slice; new unknowns get new briefs.",
+        "correct": true,
+        "feedback": "That matches this lesson."
+      },
+      {
+        "text": "Launch is a mode switch. The party is optional.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "If it is after, it was never in DoD.",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
+      },
+      {
+        "text": "More work in progress means we are faster",
+        "correct": false,
+        "feedback": "That is not the correction this lesson teaches."
       }
     ]
   }

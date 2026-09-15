@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Pretotype, MVP, and the Riskiest Assumption — Atlas of the Build Loop</title>
+<link rel="stylesheet" href="../assets/pack.css"/>
+</head><body>
+<a class="skip-link" href="#lesson">Skip to lesson</a>
+<div class="lesson-wrap">
+<nav class="lesson-nav"><a href="../index.html">Cover</a> <a href="../contents.html">Contents</a> <a href="../decks.html">Quiz</a> <a href="../04_labs/index.html">Labs</a> <a href="../dashboard.html">Dashboard</a> <a href="11_Fidelity_and_Kinds.html">← Prev</a> <a href="13_Critique_and_Assumptions.html">Next →</a> <button type="button" class="theme-btn" data-theme-toggle>Dim mode</button><div class="mark">Atlas of the Build Loop</div></nav>
+<figure class="lesson-hero"><img src="../assets/arc-c.jpg" alt="Cardboard and clay on a workbench"/></figure>
+<main>
+<article class="lesson" id="lesson">
+<div class="badge">Dense lesson · professional practice · educational only</div>
+<h1>Pretotype, MVP, and the Riskiest Assumption</h1>
+<h2>Learning Objectives</h2>
+<ul>
+<li>Tell pretotype, prototype, and MVP apart by how real the test is: pre-mechanism demand or comprehension, a failing artifact, or the smallest <strong>shipped</strong> measured test.</li>
+<li>Rank assumptions by ignorance × impact and put the riskiest assumption first, not the one the team is ready to build.</li>
+<li>Write a smallest testable slice as audience + task + fail rule + STOP, and refuse a slice that has no stop.</li>
+<li>Choose pretotype vs prototype vs MVP from the riskiest assumption and from L11’s kind and rung, not from pride or a domain name.</li>
+<li>Refuse to fake a one-way safety door, or any probe that would teach a dangerous action or extract unpaid labor on a known-broken mechanism.</li>
+<li>Facilitate a 30-minute assumption ranking and test design that leaves a card L13 can review.</li>
+<li>Continue the contractor-onboarding thread: treat findability as riskier than pre-fill until a test says otherwise.</li>
+</ul>
+<h2>Prerequisites</h2>
+<ul>
+<li>L08: a brief with purpose, end state, constraints, non-goals, and success criteria. A test without a brief will discover a product nobody asked to kill.</li>
+<li>L10: a testable claim, clustered by mechanism — not a slogan, not a crowned helper.</li>
+<li>L11: a named kind (looks / works / experience) and a named rung (low / mid / high), plus a refuse-the-climb sentence. This lesson decides how <em>real</em> the test is, not how pretty.</li>
+<li>L01 / L04: intellectual order is Learn → Measure → Build. If you Build first because building is comforting, you have a feature factory. Ries popularized Build–Measure–Learn as a product loop; this pack keeps that intellectual order and does not invent a paper.</li>
+<li>You can tolerate a result that stops the work. If stop is unsayable, you are not testing.</li>
+</ul>
+<h2>Lesson Content</h2>
+<h3>What the move is for</h3>
+<p>The smallest honest test is how Arc C <strong>earns</strong> the next spend. L09 kept options alive. L10 turned a cluster into a claim. L11 picked a kind and a rung. This lesson puts that claim on trial in the cheapest truthful way: a <strong>fail rule</strong>, a <strong>STOP</strong>, and a name for how real the trial is. The move is for learning that can kill, not for a demo that has to go well.</p>
+<p>Honesty is the scarce part. Teams will run a “test” that cannot fail (the helper is shown to friendly staff who already know the path), or a “MVP” that is a prototype with a domain name and no measure, or a fake door that teaches a dangerous click. Those are not small. They are cheap theater. Small means the <strong>slice</strong> is the cheapest path to a kill/keep signal. Honest means the slice can fail, the audience is the people who have the job, and you will actually stop.</p>
+<p>Build–Measure–Learn as a slogan puts Build first. The intellectual order is the reverse: what would change our mind (Learn), what signal would we trust (Measure), what is the smallest object that can produce that signal (Build). Pretotype, prototype, and MVP are three answers to that last question, at three different distances from the system of record.</p>
+<h3>Decision rule: pretotype vs prototype vs MVP</h3>
+<p>List the assumptions under the claim. Score each by <strong>how little you know</strong> (ignorance) times <strong>how bad it is if you are wrong</strong> (impact). The top cell is the riskiest assumption. Then:</p>
+<p><strong>If the riskiest assumption is “people want this” or “people understand this” and the mechanism does not need to exist yet</strong>, run a <strong>pretotype</strong>: a fake of the experience that tests demand or comprehension <strong>before</strong> you build the mechanism. Fake door (with care), paper service, concierge, a scripted walkthrough of a path that does not work. The point is to see if anyone cares or can follow.</p>
+<p><strong>If the riskiest assumption is a design or technical question</strong> — can the join hold, can a person complete the steps, does the ranking work — run a <strong>prototype</strong>: an artifact built to answer that question. It may never ship. It <strong>should be able to fail</strong>. L11’s kind and rung apply here.</p>
+<p><strong>If the riskiest assumption is “we can operate this in the real system of record with real users at a small scale,”</strong> run a carefully scoped <strong>MVP</strong>: the smallest <strong>shipped</strong> thing that tests a business or usage hypothesis with a measure and a kill criterion. It is not a prototype with a domain name. If it has no measure and no STOP, it is just v0.1.</p>
+<p>If two assumptions tie, pick the one that is <strong>upstream</strong>: the one that, if false, makes the other test meaningless. In contractor onboarding, findability is upstream of pre-fill. If they cannot find the packet, pre-fill never runs. That is a decision rule, not a taste. Do not pick the assumption you already believe because it feels like progress. That is theater.</p>
+<h3>Pretotype — pre-mechanism demand and comprehension</h3>
+<p><strong>Pretotype</strong>, as used in this field guide, is a fake of the experience that tests demand or comprehension <strong>before</strong> the mechanism exists. The packet URL is not in the offer email yet; you print the current maze and watch someone hunt. The matcher does not exist; you offer a “notify me” button and count who clicks, then tell them it was a test. A concierge plays the future system for a week. A paper service completes the job by hand.</p>
+<p>The honesty requirements are sharp. Disclose when deception would harm trust, especially if the product <em>is</em> trust. Keep the fake short. Do not collect payment or personal data you cannot legally hold just to “see if they would.” Do not leave a fake door up so long that it becomes a dark pattern. A pretotype that trains people to click a control that will later be a one-way safety action is forbidden — see the safety rule below.</p>
+<p>Pretotype is not a trademarked process in this pack, and the syllabus does not hand us a canonical paper. It is a name for <strong>pre-mechanism</strong> tests. If you find yourself building the mechanism “just a little” so the fake feels nicer, you have quietly started a prototype. Name it. If you find yourself shipping the fake to production as if it were the product, you have started an MVP without a measure. Name that too, or stop.</p>
+<h3>Prototype — an artifact that can fail</h3>
+<p>A <strong>prototype</strong> answers a design or technical question. It may be L11 low, mid, or high; looks-like, works-like, or experience. It may never ship. The one non-negotiable: <strong>it should be able to fail</strong>. If the session is staged so that the contractor is walked to the submit button by a smiling host, you did not prototype. You hosted.</p>
+<p>Failure is not cruelty. Failure is the signal. Write it in advance: what the person is asked to do, what counts as a miss, how many misses kill the claim for this round. Then shut up while they try. Help rules belong in the script (“we will not help unless you stop for two minutes”), not in the host’s anxiety. Afterward, opinions are extra. Opinions instead of the task are not a test (L14 will separate user, stakeholder, and expert review).</p>
+<p>A prototype is not an Increment in the Scrum sense unless you declare it one and it meets the Definition of Done. Most should not. Calling a failing spike “the increment” is how DoD dies. Calling a polished demo “the prototype” is how kill rules die. Keep the coats on the right hooks.</p>
+<h3>MVP — smallest shipped measured test</h3>
+<p><strong>MVP (minimum viable product)</strong> is the smallest <strong>shipped</strong> thing that tests a hypothesis in the real system of record. Shipped means real users, real data path, real support burden, even if the audience is five contractors and the feature flag is on for them only. Measured means you named the signal before the data (L15 will push evidence thresholds; this lesson requires that the signal exist). Kill criterion means you will turn it off or not expand it if the signal fails.</p>
+<p>MVP is not “the smallest pile of features we are willing to be seen with.” That is a v0.1 of the full fantasy, and it usually includes the helper, the pre-fill, the dashboard, and the branding — which means you still have not tested findability. Smallest is the slice that isolates the riskiest assumption, not the fewest screens of the full product. Viable is “can produce a measure in the real system,” not “can win a demo.”</p>
+<p>If you cannot operate it — support, rollback, a person to answer the Slack DMs the test was supposed to kill — you are not ready for MVP. Stay in pretotype or prototype. Dual-track (L05) exists so discovery can remain honest while delivery ships something else. Do not launder a discovery probe through production to make it feel serious.</p>
+<h3>Riskiest assumption first — ignorance × impact</h3>
+<p>Write assumptions as sentences that can be false. “Contractors can find the packet from the offer email.” “Pre-fill from HRIS is correct enough that people will not DM staff about the errors.” “A helper at the moment of stuck beats deleting a form.” “Legal will block HRIS pre-fill.” Score two axes: <strong>ignorance</strong> (how little we know — have we watched even one person?) and <strong>impact</strong> (if wrong, does the rest of the work become waste?). The riskiest is high on both. Test that one.</p>
+<p>Teams love testing the assumption they already believe, because the test is easy to instrument and the demo will go well. That is why helpers get prototypes and findability does not: the helper is a product story; the maze is an embarrassment. Rank anyway. Upstream unknowns beat downstream cleverness. A legal assumption that is both unknown and fatal is not a prototype problem; it is a counsel problem, then a test of the remainder.</p>
+<p>Assumption mapping as a wall exercise belongs with L13. This lesson only needs the ranking and the first test. If you cannot rank, you cannot slice. If everything is “high impact,” you have not named the work; return to L08.</p>
+<h3>Smallest testable slice = audience + task + fail rule + STOP</h3>
+<p>A slice is not a set of screens. It is four parts, written before anyone is recruited:</p>
+<ol>
+<li><strong>Audience</strong> — who has the job. New contractors, not the director’s favorite power user, not the designer who drew the map, not staff who already know the three logins.</li>
+<li><strong>Task</strong> — the job in their words. “Finish the packet.” “Start the packet.” Not “explore the helper.”</li>
+<li><strong>Fail rule</strong> — a threshold you will not negotiate after you like the participants. “If 3/5 cannot start within five minutes, the claim fails this round.”</li>
+<li><strong>STOP</strong> — what you will not spend if it fails. “Do not build pre-fill this sprint. Do not spike the helper. Fix findability or kill the claim.”</li>
+</ol>
+<p>If you cannot name the STOP, you are not testing. You are demoing. If you cannot name the fail rule, you will move the goalposts when a friendly contractor chats their way through. If the audience is wrong, you will get polite chrome opinions. The slice can sit on any L11 rung and any of the three reality names (pretotype / prototype / MVP). The four parts are the honesty check for all of them.</p>
+<figure class="fig">
+<svg class="lesson-chart" viewBox="0 0 720 250" role="img" aria-label="Three reality names and a four-part slice: audience, task, fail rule, STOP">
+  <rect x="16" y="18" width="220" height="86" rx="10" fill="var(--card)" stroke="var(--border)"/>
+  <text x="126" y="50" text-anchor="middle" font-size="14" font-weight="700">Pretotype</text>
+  <text x="126" y="72" text-anchor="middle" class="muted" font-size="11">Demand / comprehension</text>
+  <text x="126" y="90" text-anchor="middle" class="muted" font-size="11">before the mechanism</text>
+  <rect x="250" y="18" width="220" height="86" rx="10" fill="#7eb8c4"/>
+  <text x="360" y="50" text-anchor="middle" fill="#14343c" font-size="14" font-weight="700">Prototype</text>
+  <text x="360" y="72" text-anchor="middle" fill="#14343c" font-size="11">Can fail; may never ship</text>
+  <text x="360" y="90" text-anchor="middle" fill="#14343c" font-size="11">answers a design/tech Q</text>
+  <rect x="484" y="18" width="220" height="86" rx="10" fill="#1c5d68"/>
+  <text x="594" y="50" text-anchor="middle" fill="#fff6d6" font-size="14" font-weight="700">MVP</text>
+  <text x="594" y="72" text-anchor="middle" fill="#c5eef2" font-size="11">Smallest shipped</text>
+  <text x="594" y="90" text-anchor="middle" fill="#c5eef2" font-size="11">measured test</text>
+  <rect x="16" y="124" width="166" height="70" rx="8" fill="var(--card)" stroke="var(--border)"/>
+  <text x="99" y="154" text-anchor="middle" font-size="13" font-weight="700">Audience</text>
+  <text x="99" y="176" text-anchor="middle" class="muted" font-size="11">who has the job</text>
+  <rect x="190" y="124" width="166" height="70" rx="8" fill="var(--card)" stroke="var(--border)"/>
+  <text x="273" y="154" text-anchor="middle" font-size="13" font-weight="700">Task</text>
+  <text x="273" y="176" text-anchor="middle" class="muted" font-size="11">the job in their words</text>
+  <rect x="364" y="124" width="166" height="70" rx="8" fill="var(--card)" stroke="var(--border)"/>
+  <text x="447" y="154" text-anchor="middle" font-size="13" font-weight="700">Fail rule</text>
+  <text x="447" y="176" text-anchor="middle" class="muted" font-size="11">threshold, pre-committed</text>
+  <rect x="538" y="124" width="166" height="70" rx="8" fill="#9b1c14"/>
+  <text x="621" y="154" text-anchor="middle" fill="#fff6d6" font-size="13" font-weight="700">STOP</text>
+  <text x="621" y="176" text-anchor="middle" fill="#f3cc74" font-size="11">what you will not spend</text>
+  <text x="360" y="222" text-anchor="middle" font-size="12">Rank assumptions by ignorance × impact. Test the upstream unknown. Never fake a one-way safety door.</text>
+</svg>
+<figcaption>Reality name (top) is how shipped and how fake. Slice (bottom) is how honest. Missing STOP means you are demoing.</figcaption>
+</figure>
+<h3>Never fake a one-way safety door</h3>
+<p>Some actions cannot be rehearsed as cute fakes. A control that deletes, pays, sends, doses, unlocks, or submits a legal filing in the real world is a <strong>one-way door</strong> if it cannot be undone by the person who just used it. Do not pretotype that door with a clickable dummy that looks like the real control if the dummy could teach the dangerous action. People learn motor patterns and trust patterns from fakes. A high looks-like of an unsafe pattern is a better teacher of the unsafe pattern (L11).</p>
+<p>The rule is not “never pretotype anything serious.” It is: <strong>do not use a fake that can be mistaken for the real irreversible action</strong>, and do not use people as crash-test dummies for a mechanism you already know is broken. Safety-critical work gets a rehearsal with a safety owner, or a works-like on a non-production path, or a tabletop. It does not get a dark-pattern fake door. Legal-irreversible work (tax filing, identity attestation) gets counsel, then a probe of the <em>path</em>, not a fake Submit that might actually submit.</p>
+<p>If you are unsure whether a door is one-way, treat it as one-way until a domain owner says otherwise. This pack is educational. It does not replace a specialist review.</p>
+<h3>Failure catalog</h3>
+<p>Theater tests share a shape: they protect the favorite spend.</p>
+<ul>
+<li>Testing the assumption you are <strong>ready to build</strong>, not the one that is unknown and fatal.</li>
+<li><strong>MVP as a prototype with a domain name</strong>, no measure, no STOP.</li>
+<li><strong>Pretotype as a lie to users forever</strong>, or a fake door left up as growth hack.</li>
+<li><strong>No STOP.</strong> The helper will be built anyway. Then the test was content.</li>
+<li><strong>Wrong audience:</strong> staff, friends, the director. Polite success.</li>
+<li><strong>Fail rule written after</strong> seeing the data. Goalposts on wheels.</li>
+<li><strong>Downstream test first</strong> (pre-fill quality) while the upstream maze is unwatched.</li>
+<li><strong>Faking a one-way safety door</strong>, or extracting unpaid labor on a known-broken mechanism.</li>
+<li>Calling a <strong>demo that cannot fail</strong> a prototype (L11’s sales artifact, now with users).</li>
+</ul>
+<p>Two of these and you cancel the test, not the week. Redesigning the slice is cheaper than laundering a favorite.</p>
+<h3>Facilitation script: thirty minutes to rank and design</h3>
+<p>This meeting produces a card, not a build. Invite the people who can name assumptions and the person who can actually STOP spend. If the HiPPO can only attend to “make sure we still do the helper,” you have L09’s cancel problem in a new coat. Either they agree that STOP is live, or you do not call this a test design.</p>
+<p>Put two axes on the wall (ignorance, impact) or a simple 1–3 score each. Put a blank four-part slice. Put the three reality names. Put L11’s kind and rung so you do not renegotiate paper vs Figma for twenty of the thirty minutes. Then run the clock.</p>
+<p>Minute-by-minute:</p>
+<ul>
+<li><strong>0:00–0:08 — List assumptions as false-able sentences.</strong> Under the L10 claim, write five to nine. Include the embarrassing ones (they cannot find it; they do not want it; legal blocks it; HRIS is wrong 30% of the time; DMs are a load-bearing social system). No solutions on this list.</li>
+<li><strong>0:08–0:15 — Score ignorance × impact.</strong> Silent scores first (brainwriting the numbers, L10’s airtime move), then a short reveal. Circle the top. If pre-fill beats findability in the room’s heart but not on the scores, say that out loud. Upstream tie-break: if A being false makes B’s test meaningless, A wins.</li>
+<li><strong>0:15–0:25 — Design the slice.</strong> Audience, task, fail rule, STOP. Reality name: pretotype / prototype / MVP. Kind and rung from L11, confirmed not climbed. Help rule. How you will disclose a pretotype. Safety check: is any control a one-way door? If yes, change the artifact.</li>
+<li><strong>0:25–0:30 — Read the card back.</strong> “If this fails, we will not do X this sprint.” Get the person with budget to say it. Schedule the actual sessions. Hand L13 a copy: this is what critique and RAT will look at. Do not add a second test “while we are at it.”</li>
+</ul>
+<p>If the thirty minutes produce a helper spike and a vague “we’ll watch a couple people,” you failed the script. Run it again with the STOP line first.</p>
+<p><strong>Uncertainty:</strong> “Pretotype” is popular jargon; this pack treats it as pre-mechanism demand/comprehension tests, not as a trademarked process. MVP has been stretched to mean “small launch.” Here it means shipped + measured + killable. There is no canonical URL in the syllabus for pretotype or MVP; do not invent one. Cynefin-style labeling still applies: a statutory form can be complicated; the path to it is often complex and wants a probe, not a Gantt.</p>
+<h2>Worked example(s)</h2>
+<p><strong>Problem:</strong> Claim 1 from L10–L11: a new contractor can start the required packet within five minutes of opening the offer email, without DMing staff. Kind/rung: low-fidelity experience (paper or literal map of the current maze; real inbox if possible). The director’s helper and the HRIS pre-fill spike are still hovering. Leadership Friday still wants a demo. Someone says “let’s just ship a thin MVP of the helper and measure completion.”</p>
+<p><strong>Steps:</strong></p>
+<ol>
+<li><strong>List assumptions.</strong> (a) Contractors can find the packet from current email/login/zip. (b) They understand they must finish in one sitting. (c) Pre-fill would be accurate enough not to create new DMs. (d) A helper at stuck-moment would be used. (e) Legal will allow HRIS pre-fill. (f) Staff DMs are the pain we think they are. (g) Phone completion is possible on the current forms.</li>
+<li><strong>Score ignorance × impact.</strong> (a) is high ignorance (nobody has watched a new contractor; staff already know the maze) and high impact (if false, every downstream product is waste). (c) and (d) are medium-high impact but lower urgency until (a) holds. (e) is high impact, unknown — that is counsel, not a helper spike. (a) wins. Findability is riskier than pre-fill.</li>
+<li><strong>Reality name.</strong> Mechanism of a new product does not need to exist to test (a). This is a <strong>pretotype</strong> of the current experience (and a low experience prototype of the path): watch the maze as it is. Not an MVP of a helper. Shipping a helper to measure completion would confound findability with help-at-stuck and burn the non-goal (no new vendor) or the sprint.</li>
+<li><strong>Slice.</strong> Audience: five <em>new</em> contractors, not staff. Task: “Finish the packet. Talk aloud.” Fail rule: if 3/5 cannot <strong>start</strong> within five minutes, Claim 1 fails this round. STOP: do not build pre-fill this sprint; do not spike the helper; Friday’s artifact, if it exists, is a captioned demo, not evidence. Help rule: no help unless they stop for two minutes. Disclose: “We are watching the current path to see where it breaks; this is not a new product.”</li>
+<li><strong>Safety / one-way check.</strong> Starting a tax packet is not a cute fake of a one-way legal submit if they use the <strong>real</strong> current forms they were already going to use. Do not add a dummy Submit that might post. Do not pretotype e-file. Path only.</li>
+<li><strong>Only if findability holds</strong>, design the next slice (Claim 2): Wizard-of-Oz pre-fill (human pastes HRIS values) as a works-like/experience prototype — still not MVP. Fail rule and STOP for that slice get their own card.</li>
+</ol>
+<p><strong>Answer / result:</strong> You might kill the AI-helper fantasy in an afternoon. That is a successful test. A polished Figma of the helper would have been a looks-like of the wrong risk. An “MVP helper” would have been v0.1 theater. Findability first; pre-fill second; helper only if it is still a live mechanism after both. Arc C ends when the card exists and the STOP is sayable. Arc D (L13–L16) critiques, reviews, and decides whether to pivot, persevere, or ship a later slice.</p>
+<h2>Key Terms</h2>
+<table><thead><tr><th>Term</th><th>Definition</th></tr></thead><tbody>
+<tr><td>Pretotype</td><td>Pre-mechanism fake of the experience that tests demand or comprehension</td></tr>
+<tr><td>Prototype</td><td>Artifact built to answer a design or technical question; should be able to fail; may never ship</td></tr>
+<tr><td>MVP</td><td>Smallest shipped, measured test of a hypothesis in the real system of record</td></tr>
+<tr><td>Riskiest assumption</td><td>High ignorance × high impact; test this first</td></tr>
+<tr><td>Upstream unknown</td><td>If it is false, downstream tests are meaningless</td></tr>
+<tr><td>Smallest testable slice</td><td>Audience + task + fail rule + STOP</td></tr>
+<tr><td>Fail rule</td><td>Pre-committed threshold that makes the claim false this round</td></tr>
+<tr><td>STOP</td><td>The spend you will not make if the test fails</td></tr>
+<tr><td>One-way door</td><td>Action the person cannot undo; do not cute-fake it</td></tr>
+<tr><td>Honest test</td><td>Can fail; right audience; named STOP; no goalpost moving</td></tr>
+<tr><td>Theater test</td><td>Protects a favorite spend; cannot fail or will not stop</td></tr>
+<tr><td>v0.1</td><td>Shipped pile without measure or kill criterion; not an MVP</td></tr>
+<tr><td>Concierge / Wizard-of-Oz</td><td>Human plays the system; pretotype or prototype depending on the question</td></tr>
+<tr><td>Intellectual order</td><td>Learn → Measure → Build, even when the slogan is Build–Measure–Learn</td></tr>
+</tbody></table>
+<h2>Misconception inventory</h2>
+<table><thead><tr><th>Misconception</th><th>Reality</th></tr></thead><tbody>
+<tr><td>“MVP is a prototype we put on a domain.”</td><td>MVP is shipped and measured, with a kill criterion. Prototype may never ship.</td></tr>
+<tr><td>“Smallest slice means fewest screens of the full product.”</td><td>It means the cheapest path to a kill/keep signal.</td></tr>
+<tr><td>“Test the assumption we are ready to build.”</td><td>That is comfort. Rank by ignorance × impact.</td></tr>
+<tr><td>“A demo that cannot fail is a good prototype.”</td><td>If it cannot fail, it is sales.</td></tr>
+<tr><td>“Pretotype means lie to users forever.”</td><td>It is a short, disclosed-when-needed test of demand/comprehension.</td></tr>
+<tr><td>“If we cannot name STOP, we can still learn.”</td><td>Then you will not stop. You are demoing.</td></tr>
+<tr><td>“Findability can wait; the helper is the product.”</td><td>If they cannot find the packet, the helper never runs. Upstream first.</td></tr>
+<tr><td>“Fake doors are always cheap and clever.”</td><td>Not if they teach a dangerous action or rot trust.</td></tr>
+<tr><td>“Shipping makes it honest.”</td><td>Shipping without a measure is v0.1. Honesty is the fail rule.</td></tr>
+<tr><td>“Legal risk is a prototype.”</td><td>Ask counsel; pretotype the remainder. Do not fake a one-way filing.</td></tr>
+</tbody></table>
+<h2>Summary</h2>
+<ul>
+<li>Pretotype tests demand/comprehension before mechanism. Prototype can fail and may never ship. MVP is the smallest shipped measured test.</li>
+<li>Rank assumptions by ignorance × impact. Test the riskiest, and the upstream one when they compete.</li>
+<li>A smallest testable slice is audience + task + fail rule + STOP. Missing STOP means you are demoing.</li>
+<li>Never fake a one-way safety door. Never use people to pretty a known-broken mechanism.</li>
+<li>Do not call v0.1 an MVP. Do not call a captioned leadership picture a test.</li>
+<li>Facilitate 30 minutes: list, score, slice, read back the STOP with the person who owns spend.</li>
+<li>In contractor onboarding, findability is riskier than pre-fill until a test says otherwise.</li>
+<li>Arc C’s job is a claim that can die. Arc D decides what to do after it lives or dies.</li>
+</ul>
+<h2>Practice</h2>
+<h3>Retrieval</h3>
+<ul>
+<li>Pretotype vs prototype vs MVP in one sentence each.</li>
+<li>What two factors rank the riskiest assumption?</li>
+<li>What four parts make a smallest testable slice?</li>
+<li>Why is findability upstream of pre-fill in the continuing case?</li>
+<li>What is a one-way safety door, and what do you refuse to do with it?</li>
+<li>What is the intellectual order of Build–Measure–Learn in this pack?</li>
+</ul>
+<h3>Near transfer</h3>
+<p>Stakeholders want to “ship an MVP helper by Friday” to measure onboarding completion. You have never watched a contractor find the packet. Write the assumption list, the ranking, and the slice you run instead — including STOP.</p>
+<h3>Far transfer</h3>
+<p>You are testing this Atlas pack. Riskiest assumption: mixed-knowledge learners can find Arc C Lesson 12 from the cover without DMing Jenner. Design a 48-hour pretotype (audience, task, fail rule, STOP). Name one fake you would refuse because it would teach the wrong door.</p>
+<h2>Spaced retrieval notes</h2>
+<ul>
+<li>Day 0: list three assumptions on a live project; mark the riskiest (ignorance × impact) and the upstream one.</li>
+<li>Day 2: write audience, task, fail rule, and STOP for that assumption. Read the STOP to someone who could actually stop the spend.</li>
+<li>Day 7: run or observe the cheapest honest test; note whether the fail rule moved after seeing people.</li>
+<li>Day 21: catch a v0.1 called MVP, or a demo called a prototype; rename it; check for a one-way door you would not fake.</li>
+</ul>
+<h2>Difficulty tiers</h2>
+<ul>
+<li><strong>Novice:</strong> pretotype vs prototype vs MVP; four-part slice; findability before pre-fill in the case.</li>
+<li><strong>Working:</strong> rank ignorance × impact; write STOP; refuse a fake door; keep MVP shipped-and-measured.</li>
+<li><strong>Expert:</strong> hold a leadership demo and a real test on the same calendar without letting the demo eat the STOP; design the next slice only if the upstream claim holds.</li>
+</ul>
+<h2>Domain scaffolds</h2>
+<p>Professional products: disclose pretotypes when deception would harm trust; do not leave fake doors up as a growth habit. Safety-critical and medical: one-way doors (dose, unlock, delete, irreversible send) are rehearsed with a domain owner or not at all — never as a cute pretotype that looks like the real control. Payments and legal filings: counsel first; probe the path; do not dummy-submit. Complicated statutory packets (tax, identity): the fields may be a checklist; the findability of the packet is still a complex probe. Operations: if you cannot support even five real users, you are not at MVP; stay on pretotype/prototype and say so. This lesson does not replace specialist review.</p>
+<h2>Learn more</h2>
+<ul>
+<li><a class="ext" href="https://www.designcouncil.org.uk/our-resources/framework-for-innovation/" target="_blank" rel="noopener noreferrer">Design Council — Framework for Innovation</a> — Deliver is not “the pretty version of Develop.” A shipped test still has to be a test.</li>
+<li><a class="ext" href="https://agilemanifesto.org/" target="_blank" rel="noopener noreferrer">Manifesto for Agile Software Development</a> — working software over comprehensive documentation; an MVP is working enough to measure, not documented enough to demo.</li>
+<li><a class="ext" href="https://agilemanifesto.org/principles.html" target="_blank" rel="noopener noreferrer">Principles behind the Agile Manifesto</a> — simplicity as maximizing work not done; STOP is that principle with a date.</li>
+<li><a class="ext" href="https://scrumguides.org/scrum-guide.html" target="_blank" rel="noopener noreferrer">The 2020 Scrum Guide</a> — Increment and Definition of Done; a prototype is not an Increment unless you say it is, and an MVP that cannot be undone needs a real Done, not a flag you forgot.</li>
+<li><a class="ext" href="https://hbr.org/2007/11/a-leaders-framework-for-decision-making" target="_blank" rel="noopener noreferrer">Snowden &amp; Boone, “A Leader’s Framework for Decision Making,” HBR</a> — complicated work can take a checklist; complex work wants a probe. The smallest honest test is a probe, not a plan for a user who does not exist.</li>
+</ul>
+<div class="footer">Offline study pack. Progress is stored in this browser only. Optional “Learn more” links open the public homes of named methods.</div>
+</article>
+</main>
+</div>
+<script src="../04_labs/shared.js"></script>
+<script src="../assets/theme.js"></script>
+<script>if (window.AtlasProgress) AtlasProgress.markLesson("12_Smallest_Honest_Test");</script>
+</body></html>

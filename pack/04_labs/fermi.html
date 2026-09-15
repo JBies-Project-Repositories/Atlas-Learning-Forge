@@ -192,58 +192,295 @@
   <script src="shared.js"></script>
   <script src="../assets/theme.js"></script>
   <script>
-            const DECKS = [
+                const DECKS = [
       {
-        "id": "bl-01-loop",
+        "id": "bl-a1-diverge",
         "num": "L01",
-        "title": "The Loop",
+        "title": "Divergent and Convergent Thinking",
         "pairs": [
           {
             "id": "t0",
             "left": "Divergent thinking",
-            "right": "Increasing the number of live options; adding before scoring",
+            "right": "Mode that increases the number of live options; add before score",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t1",
             "left": "Convergent thinking",
-            "right": "Reducing options against a named criterion",
+            "right": "Mode that reduces options against a named criterion; kill, merge, or keep",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t2",
-            "left": "Complicated work",
-            "right": "Many parts, but cause and effect can be known in advance by experts",
+            "left": "Live option",
+            "right": "An idea still eligible for a later test or a later kill; not already loved",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t3",
-            "left": "Complex work",
-            "right": "Cause and effect are clearer after probes; the system talks back",
+            "left": "Criterion",
+            "right": "Observable wall used to kill or keep: constraint, measure, non-goal, user-recognizable problem",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t4",
-            "left": "PDCA",
-            "right": "Plan–Do–Check–Act: improve an observable process with a named check",
+            "left": "Simultaneous scoring",
+            "right": "Judging while generating; a quiet trial that kills diverge",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t5",
+            "left": "Name the mode on the wall",
+            "right": "One-sentence rule a late arrival could obey: which verb is legal until which minute",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t6",
+            "left": "Structurally different",
+            "right": "Options that fail in different ways, not the same mechanism with new nouns",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t7",
+            "left": "Seam / cluster",
+            "right": "Grouping by mechanism without merit-killing; the join between add and score",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t8",
+            "left": "Cancel rule",
+            "right": "Stop a fake diverge rather than launder a pre-decision as “we brainstormed”",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t9",
+            "left": "Coat, not identity",
+            "right": "The same people run both modes; hiring “creatives vs operators” is not the handshake",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t10",
+            "left": "Parking list",
+            "right": "Scores and constraints captured during generate for later converge, not used as mid-add vetoes",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t11",
+            "left": "Handshake",
+            "right": "Diverge produces variety; converge produces a smaller set plus reasons; both required",
+            "why": "From this lesson’s Key Terms table."
+          }
+        ]
+      },
+      {
+        "id": "bl-a2-cynefin",
+        "num": "L02",
+        "title": "Complicated, Complex, and Cynefin",
+        "pairs": [
+          {
+            "id": "t0",
+            "left": "Complicated work",
+            "right": "Many parts; cause and effect knowable in advance with expertise; good practice",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t1",
+            "left": "Complex work",
+            "right": "Parts change each other; cause and effect clearer after probes; emergent practice",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t2",
+            "left": "Clear (HBR: simple)",
+            "right": "Cause and effect obvious; sense–categorize–respond; best practice",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t3",
+            "left": "Chaotic",
+            "right": "Cause and effect unclear; act–sense–respond to stabilize; do not live here",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t4",
+            "left": "Disorder",
+            "right": "Not knowing which domain the slice is in; default meeting state until you slice",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t5",
+            "left": "Sense–analyze–respond",
+            "right": "Complicated decision pattern: expertise, decomposition, then action",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t6",
+            "left": "Probe–sense–respond",
+            "right": "Complex decision pattern: safe-to-fail experiment, then read the system, then respond",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t7",
+            "left": "Sense–categorize–respond",
+            "right": "Clear decision pattern: match to a known category and apply best practice",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t8",
+            "left": "Act–sense–respond",
+            "right": "Chaotic decision pattern: stabilize first, then take stock",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t9",
+            "left": "Sandwich project",
+            "right": "One program that mixes a complicated core with a complex edge; must be split in writing",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t10",
+            "left": "Domain shift",
+            "right": "Reclassification after evidence (probe earned a spec; rehearsal revealed a human pattern)",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t11",
+            "left": "Comfort domain",
+            "right": "The context a person retreats to under stress; a risk, not a type",
+            "why": "From this lesson’s Key Terms table."
+          }
+        ]
+      },
+      {
+        "id": "bl-a3-pdca-ooda",
+        "num": "L03",
+        "title": "PDCA and OODA",
+        "pairs": [
+          {
+            "id": "t0",
+            "left": "PDCA",
+            "right": "Plan–Do–Check–Act: improve an observable process; Check is named in Plan",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t1",
+            "left": "Named Check",
+            "right": "Predicted vs actual on a measure chosen before Do; not mood, not applause",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t2",
+            "left": "Act (PDCA)",
+            "right": "Adopt, adjust, or drop because of Check — not “add more tickets”",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t3",
+            "left": "Shewhart / Deming move",
+            "right": "The quality cycle as a professional move; this pack does not invent a paper or URL",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t4",
             "left": "OODA",
             "right": "Observe–Orient–Decide–Act: a tempo loop whose scarce step is Orient",
             "why": "From this lesson’s Key Terms table."
           },
           {
+            "id": "t5",
+            "left": "Orient",
+            "right": "Updating the mental model after observation, including disconfirming facts",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
             "id": "t6",
-            "left": "Build–Measure–Learn",
-            "right": "Lean Startup loop; intellectual order is Learn → Measure → Build",
+            "left": "Schwerpunkt",
+            "right": "Focal point of the loop; in OODA, Orient",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t7",
+            "left": "*Destruction and Creation* (1976)",
+            "right": "Boyd’s only paper: break a failing model and make a better one",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t8",
+            "left": "*Discourse on Winning and Losing*",
+            "right": "Later Boyd briefings where the OODA loop is taught; not a second invented paper",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t9",
+            "left": "Model update",
+            "right": "After-action Orient: a paragraph of what we now believe",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t10",
+            "left": "Task-list update",
+            "right": "After-action Act without Orient: more tickets, same belief",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t11",
+            "left": "Panic tempo",
+            "right": "Speed without Orient; shorter cycles on a false model",
+            "why": "From this lesson’s Key Terms table."
+          }
+        ]
+      },
+      {
+        "id": "bl-a4-bml-diamond",
+        "num": "L04",
+        "title": "Build–Measure–Learn and Double Diamond",
+        "pairs": [
+          {
+            "id": "t0",
+            "left": "Build–Measure–Learn",
+            "right": "Named product-bet loop; visible motion after a Build exists",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t1",
+            "left": "Intellectual order",
+            "right": "Learn → Measure → Build: write the mind-changer and the signal before the artifact",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t2",
+            "left": "Learn (BML)",
+            "right": "The belief and what would change your mind; pivot or persevere is its output",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t3",
+            "left": "Measure (BML)",
+            "right": "The signal and fail rule named before Build; not applause",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t4",
+            "left": "Build (BML)",
+            "right": "Smallest artifact that can produce the Measure",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t5",
             "left": "Double Diamond",
-            "right": "Two diverge–converge pairs: problem, then solution",
+            "right": "Design Council: Discover / Define / Develop / Deliver — two diverge–converge pairs",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t6",
+            "left": "Discover / Define",
+            "right": "Diamond 1: diverge then converge on the problem",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t7",
+            "left": "Develop / Deliver",
+            "right": "Diamond 2: diverge then converge on a solution; illegal if diamond 1 was skipped",
             "why": "From this lesson’s Key Terms table."
           },
           {
@@ -254,100 +491,270 @@
           },
           {
             "id": "t9",
-            "left": "Orient",
-            "right": "Updating the model after an observation, including disconfirming facts",
-            "why": "From this lesson’s Key Terms table."
-          }
-        ]
-      },
-      {
-        "id": "bl-02-methods",
-        "num": "L02",
-        "title": "Project Management Methodology",
-        "pairs": [
-          {
-            "id": "t0",
-            "left": "Design Thinking",
-            "right": "Structured problem-framing and testing; fails as sticky-note theater",
-            "why": "From this lesson’s Key Terms table."
-          },
-          {
-            "id": "t1",
-            "left": "Lean Startup",
-            "right": "Hypothesis, smallest falsifying slice, measure, pivot or persevere",
-            "why": "From this lesson’s Key Terms table."
-          },
-          {
-            "id": "t2",
-            "left": "Agile",
-            "right": "Values for responding to late information; not a board",
-            "why": "From this lesson’s Key Terms table."
-          },
-          {
-            "id": "t3",
-            "left": "Scrum",
-            "right": "Named empirical wrapper: backlog, sprint, increment, DoD, inspect-and-adapt",
-            "why": "From this lesson’s Key Terms table."
-          },
-          {
-            "id": "t4",
-            "left": "Dual-track",
-            "right": "Discovery and delivery in parallel, talking, with separate capacities",
-            "why": "From this lesson’s Key Terms table."
-          },
-          {
-            "id": "t5",
-            "left": "Waterfall",
-            "right": "Sequential specify-then-build bet; honest for stable complicated work",
-            "why": "From this lesson’s Key Terms table."
-          },
-          {
-            "id": "t6",
-            "left": "Discovery",
-            "right": "Work that produces a decision about what is worth building",
-            "why": "From this lesson’s Key Terms table."
-          },
-          {
-            "id": "t7",
-            "left": "Delivery",
-            "right": "Work that produces an increment to the definition of done",
-            "why": "From this lesson’s Key Terms table."
-          },
-          {
-            "id": "t8",
-            "left": "Cadence",
-            "right": "A regular inspect interval; a heartbeat, not a pressure pump",
-            "why": "From this lesson’s Key Terms table."
-          },
-          {
-            "id": "t9",
-            "left": "Scope",
-            "right": "Work allowed into the current cadence",
+            "left": "Choose-one-loop-for-the-week",
+            "right": "One named loop per slice on the brief; nest only when outer/inner are written",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t10",
-            "left": "Work in progress (WIP)",
-            "right": "Started-not-done items; high WIP is usually delay",
+            "left": "Iterate, not linear",
+            "right": "Failed Test/Measure/Check returns left; coloring chevrons once is a gate lie",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t11",
-            "left": "Definition of done",
-            "right": "The checklist that makes “done” fail-able",
+            "left": "Week card",
+            "right": "One-page artifact: slice, domain, loop, first step, non-goals, next observe date",
             "why": "From this lesson’s Key Terms table."
           }
         ]
       },
       {
-        "id": "bl-03-intent",
-        "num": "L03",
-        "title": "Communicating Intent",
+        "id": "bl-b1-discovery",
+        "num": "L05",
+        "title": "Discovery, Delivery, and Dual-Track",
+        "pairs": [
+          {
+            "id": "t0",
+            "left": "Discovery",
+            "right": "Work that produces a decision about what is worth building, killing, or still not knowing",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t1",
+            "left": "Delivery",
+            "right": "Work that produces a usable increment that meets a Definition of Done",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t2",
+            "left": "Dual-track",
+            "right": "Discovery and delivery in the same cadence with separate capacities that still talk",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t3",
+            "left": "Talk artifact",
+            "right": "The dated decision, earned slice, or constraint note that moves between tracks",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t4",
+            "left": "Sandwich",
+            "right": "A program with a complicated core and a complex edge",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t5",
+            "left": "Complicated core",
+            "right": "Known cause and effect; sequence, rehearsal, and a dry-run DoD are honest",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t6",
+            "left": "Complex edge",
+            "right": "Cause and effect clearer after probes; discovery must earn the slice",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t7",
+            "left": "Discovery floor",
+            "right": "Named hours this cadence that delivery is not allowed to steal",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t8",
+            "left": "Backlog dump",
+            "right": "Unvalidated guesses loaded as if they were committed delivery",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t9",
+            "left": "Increment",
+            "right": "A concrete, usable stepping stone; not a slide, not a talk",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t10",
+            "left": "Definition of Done",
+            "right": "The fail-able quality bar that makes “done” mean the same thing",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t11",
+            "left": "Capacity theft",
+            "right": "Demo or delivery urgency eating the discovery floor “just this once”",
+            "why": "From this lesson’s Key Terms table."
+          }
+        ]
+      },
+      {
+        "id": "bl-b2-coats",
+        "num": "L06",
+        "title": "Agile, Scrum, and Honest Waterfall",
+        "pairs": [
+          {
+            "id": "t0",
+            "left": "Agile",
+            "right": "2001 Manifesto values and twelve principles; a stance about late information, not a board",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t1",
+            "left": "Manifesto values",
+            "right": "Individuals/interactions, working software, customer collaboration, responding to change — over the right-hand items, which still have value",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t2",
+            "left": "Scrum",
+            "right": "2020 Guide framework: empiricism, Increment, DoD, Sprint heartbeat, inspect-and-adapt events",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t3",
+            "left": "Empiricism",
+            "right": "Knowledge from what is observed; pillars transparency, inspection, adaptation",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t4",
+            "left": "Increment",
+            "right": "Concrete, usable, additive stepping stone; exists only if it meets Done",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t5",
+            "left": "Sprint",
+            "right": "Fixed-length heartbeat (month or less) that contains the other Scrum events",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t6",
+            "left": "Sprint Review",
+            "right": "Working session to inspect the Increment and adapt; not a presentation",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t7",
+            "left": "Sprint Retrospective",
+            "right": "Inspect of individuals, interactions, processes, tools, and DoD; one change to the next loop",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t8",
+            "left": "Waterfall-ish sequence",
+            "right": "Specify-then-build when cause and effect are known; honest on complicated cores",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t9",
+            "left": "Costume mismatch",
+            "right": "A coat that cannot see the work (Scrum on a one-way door; Gantt on a guess)",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t10",
+            "left": "Product Goal",
+            "right": "Commitment of the Product Backlog; future state the team plans against",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t11",
+            "left": "Sprint Goal",
+            "right": "Single objective of the Sprint; scope may flex, the goal does not get quietly swapped",
+            "why": "From this lesson’s Key Terms table."
+          }
+        ]
+      },
+      {
+        "id": "bl-b3-levers",
+        "num": "L07",
+        "title": "Cadence, Scope, WIP, and Definition of Done",
+        "pairs": [
+          {
+            "id": "t0",
+            "left": "Cadence",
+            "right": "A regular, protected inspect interval; a heartbeat, not a pressure pump",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t1",
+            "left": "Pressure pump",
+            "right": "Shortening the interval, skipping inspect, or adding heroics to make a date comply",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t2",
+            "left": "Scope",
+            "right": "Work allowed into this cadence; cut, defer, or split — never “we’ll try”",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t3",
+            "left": "Work in progress (WIP)",
+            "right": "Count of started-not-done items, including shadow work",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t4",
+            "left": "WIP limit",
+            "right": "Decision rule: start nothing new until something finishes",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t5",
+            "left": "Definition of Done",
+            "right": "Fail-able quality bar; Scrum commitment that births an Increment",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t6",
+            "left": "Increment",
+            "right": "Usable stepping stone that exists only if it meets Done",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t7",
+            "left": "Discovery-done",
+            "right": "A dated decision sentence a teammate can act on without you",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t8",
+            "left": "Oldest item",
+            "right": "The started work with the most age; first object of a finishing standup",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t9",
+            "left": "Sprint Goal",
+            "right": "The objective that scope may flex around without a quality drop",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t10",
+            "left": "Sustainable pace",
+            "right": "Manifesto principle: a cadence you could hold indefinitely",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t11",
+            "left": "Displacement",
+            "right": "New mid-cadence work enters only by pushing something else out",
+            "why": "From this lesson’s Key Terms table."
+          }
+        ]
+      },
+      {
+        "id": "bl-b4-intent",
+        "num": "L08",
+        "title": "Commander’s Intent and the Brief",
         "pairs": [
           {
             "id": "t0",
             "left": "Commander’s intent",
-            "right": "Purpose + end state + constraints so others can act without you",
+            "right": "Purpose + end state + constraints so others can act without further orders from you",
             "why": "From this lesson’s Key Terms table."
           },
           {
@@ -365,7 +772,7 @@
           {
             "id": "t3",
             "left": "Constraints",
-            "right": "Hard walls (time, law, safety, budget), not preferences",
+            "right": "Hard walls (time, law, safety, budget, vendor), not preferences",
             "why": "From this lesson’s Key Terms table."
           },
           {
@@ -389,7 +796,7 @@
           {
             "id": "t7",
             "left": "Success criteria",
-            "right": "Observable tests that the end state happened",
+            "right": "Observable tests that the end state, or this round’s slice of it, happened",
             "why": "From this lesson’s Key Terms table."
           },
           {
@@ -401,123 +808,244 @@
           {
             "id": "t9",
             "left": "Brief",
-            "right": "Short package of intent a working group can execute",
+            "right": "Short package of intent a working group can execute in three minutes of reading",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t10",
             "left": "Alignment",
-            "right": "Shared purpose/end state/constraints",
+            "right": "Shared purpose, end state, and constraints",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t11",
             "left": "Instruction",
-            "right": "Specified steps for low-variance work",
+            "right": "Specified steps for low-variance, expensive-variance work",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t12",
+            "left": "Disciplined initiative",
+            "right": "Action without you, *inside* the walls — not around them",
             "why": "From this lesson’s Key Terms table."
           }
         ]
       },
       {
-        "id": "bl-04-brainstorm",
-        "num": "L04",
-        "title": "Brainstorming",
+        "id": "bl-c1-protocol",
+        "num": "L09",
+        "title": "Brainstorming as a Protocol",
         "pairs": [
           {
             "id": "t0",
-            "left": "Deferred judgment",
-            "right": "No scoring or killing during generation",
+            "left": "Brainstorm (this pack)",
+            "right": "Time-boxed diverge protocol: mode, deferred judgment, quantity, capture, cancel",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t1",
-            "left": "Quantity before quality",
-            "right": "Volume and variety first; selection later",
+            "left": "Protocol",
+            "right": "Rules you can enforce in the room without a particular personality",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t2",
+            "left": "Deferred judgment",
+            "right": "No scoring, killing, improving, or eye-rolls during generation; critiques go to Later",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t3",
+            "left": "Quantity before quality",
+            "right": "Volume and variety first; selection is a later mode",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t4",
+            "left": "Osborn-style subset",
+            "right": "Enforceable ancestor rules (defer criticism, go for quantity); no lab claim in this pack",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t5",
+            "left": "How Might We",
+            "right": "Job-shaped prompt that allows multiple solution types; input to the protocol, not the protocol",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t6",
+            "left": "HiPPO",
+            "right": "Highest-paid person’s opinion; fatal if it steers generation",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t7",
+            "left": "Capture",
+            "right": "Shared, visible record of every raw item in the speaker’s words",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t8",
+            "left": "Later list",
+            "right": "Parked critiques and possible constraints, copied verbatim, not used as a club",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t9",
+            "left": "Cancel rule",
+            "right": "Stop rather than run a fake diverge when a gate fails",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t10",
+            "left": "Mode on the wall",
+            "right": "Written DIVERGE (or CONVERGE) large enough to point at",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t11",
+            "left": "Visible set",
+            "right": "The only generation output that counts; a photo is a backup, not the set",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t12",
+            "left": "Mechanism (preview)",
+            "right": "How an idea would work; clustering by this is L10, not a diverge move",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t13",
+            "left": "Fake brainstorm",
+            "right": "A meeting called diverge that scores in real time or ratifies a HiPPO",
+            "why": "From this lesson’s Key Terms table."
+          }
+        ]
+      },
+      {
+        "id": "bl-c2-generate",
+        "num": "L10",
+        "title": "Generation Methods and Converge Reviews",
+        "pairs": [
+          {
+            "id": "t0",
             "left": "Brainwriting",
             "right": "Silent written generation to reduce first-speaker monopoly",
             "why": "From this lesson’s Key Terms table."
           },
           {
-            "id": "t3",
+            "id": "t1",
+            "left": "6-3-5-style rounds",
+            "right": "Named brainwriting pattern: several people, several ideas, timed silent passes",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t2",
             "left": "Crazy 8s",
-            "right": "Fast multi-sketch diverge to force variety",
+            "right": "Fast multi-sketch (or multi-move) diverge; variety by starvation of polish",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t3",
+            "left": "SCAMPER",
+            "right": "Substitute, Combine, Adapt, Modify, Put to another use, Eliminate, Reverse — prompts for an existing artifact",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t4",
-            "left": "SCAMPER",
-            "right": "Prompt list to attack an existing artifact",
+            "left": "Constraint-based ideation",
+            "right": "Temporary hard walls added to force a different mechanism family",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t5",
-            "left": "Constraint-based ideation",
-            "right": "Added walls that increase, not decrease, variety",
+            "left": "Mechanism",
+            "right": "How an idea would work; the correct clustering key",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t6",
-            "left": "How Might We",
-            "right": "Problem-shaped prompt that allows multiple solution types",
+            "left": "Socratic review",
+            "right": "Time-boxed questions that expose missing who/job/constraint/falsifier",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t7",
-            "left": "Socratic review",
-            "right": "Questions that expose missing who/job/constraint",
+            "left": "Devil’s-advocate review",
+            "right": "Scheduled, named argument of the strongest case against a cluster",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t8",
-            "left": "Devil’s-advocate review",
-            "right": "Scheduled argument of the strongest case against a cluster",
+            "left": "Idea progression",
+            "right": "Capture → cluster by mechanism → testable claim → park/kill",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t9",
-            "left": "Idea progression",
-            "right": "Capture → cluster → testable claim → park/kill",
+            "left": "Testable claim",
+            "right": "Who + action + measure; a sentence that can be false",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t10",
+            "left": "Park",
+            "right": "Keep without building; reason tied to a wall, a dependency, or a later test",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t11",
+            "left": "Kill (this round)",
+            "right": "Stop spending, with a brief-tied reason, not a taste reason",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t12",
+            "left": "Dot-vote injury",
+            "right": "Voting on slogans or pretty sketches; familiarity wins",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t13",
+            "left": "15 / 10 / 10 / 5",
+            "right": "Generate, cluster, review, promote — four clocks in one session",
             "why": "From this lesson’s Key Terms table."
           }
         ]
       },
       {
-        "id": "bl-05-prototype",
-        "num": "L05",
-        "title": "Prototyping",
+        "id": "bl-c3-fidelity",
+        "num": "L11",
+        "title": "Fidelity and Kinds of Prototype",
         "pairs": [
           {
             "id": "t0",
             "left": "Fidelity",
-            "right": "How finished the artifact looks or behaves",
+            "right": "How finished the artifact looks or behaves; an attention budget",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t1",
             "left": "Low-fidelity",
-            "right": "Cheap, ugly on purpose; tests the job",
+            "right": "Cheap, ugly on purpose; tests the job and comprehension",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t2",
             "left": "Mid-fidelity",
-            "right": "Structured but unfinished; tests the steps",
+            "right": "Structured but unfinished; tests whether a person can get through the steps",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t3",
             "left": "High-fidelity",
-            "right": "Close to real texture; tests trust, timing, load",
+            "right": "Close to real texture; tests trust, timing, accessibility, load",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t4",
             "left": "Looks-like",
-            "right": "Tests appearance and recognition",
+            "right": "Tests appearance, hierarchy, recognition",
             "why": "From this lesson’s Key Terms table."
           },
           {
@@ -529,185 +1057,500 @@
           {
             "id": "t6",
             "left": "Experience prototype",
-            "right": "Tests the episode in time",
+            "right": "Tests the episode in time (waiting, handoff, fatigue, emotion)",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t7",
-            "left": "Pretotype",
-            "right": "Fake of the experience before the mechanism exists",
+            "left": "Attention budget",
+            "right": "Hours of finish you are willing to spend before the question is answered",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t8",
-            "left": "Prototype",
-            "right": "Artifact built to answer a question; should be able to fail",
+            "left": "Climb rule",
+            "right": "Move up a rung only when the cheaper rung cannot kill the assumption",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t9",
-            "left": "MVP",
-            "right": "Smallest shipped test of a hypothesis in the real system",
+            "left": "Wizard-of-Oz",
+            "right": "A human pretending to be the system; usually mid, often experience",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t10",
-            "left": "Smallest testable slice",
-            "right": "Audience + task + fail rule + stop condition",
+            "left": "Demo (not a test)",
+            "right": "Artifact shown to persuade; may be necessary politically; must not steal the probe’s name",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t11",
-            "left": "Riskiest assumption first",
-            "right": "Test the high-impact unknown, not the comforting one",
+            "left": "Mute rung",
+            "right": "Current fidelity cannot make the question false; only then may you climb",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t12",
+            "left": "Paper briefing",
+            "right": "Telling a senior audience the question the paper is for, then using the paper",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t13",
+            "left": "Sales artifact",
+            "right": "High-finish object that cannot fail; not a prototype",
             "why": "From this lesson’s Key Terms table."
           }
         ]
       },
       {
-        "id": "bl-06-review",
-        "num": "L06",
-        "title": "Review",
+        "id": "bl-c4-test",
+        "num": "L12",
+        "title": "Pretotype, MVP, and the Riskiest Assumption",
         "pairs": [
           {
             "id": "t0",
-            "left": "Design critique",
-            "right": "Structured look at an artifact against the brief",
+            "left": "Pretotype",
+            "right": "Pre-mechanism fake of the experience that tests demand or comprehension",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t1",
-            "left": "I like / I wish / What if",
-            "right": "Speech protocol: specific praise, desired change, experiment",
+            "left": "Prototype",
+            "right": "Artifact built to answer a design or technical question; should be able to fail; may never ship",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t2",
-            "left": "Assumption mapping",
-            "right": "Claims placed on ignorance × impact",
+            "left": "MVP",
+            "right": "Smallest shipped, measured test of a hypothesis in the real system of record",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t3",
-            "left": "Riskiest assumption test",
-            "right": "Stop/go test of the fatal unknown",
+            "left": "Riskiest assumption",
+            "right": "High ignorance × high impact; test this first",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t4",
-            "left": "Pre-mortem",
-            "right": "Assume failure, write how, assign owners",
+            "left": "Upstream unknown",
+            "right": "If it is false, downstream tests are meaningless",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t5",
-            "left": "Steelman",
-            "right": "Strongest fair form of the opposing view",
+            "left": "Smallest testable slice",
+            "right": "Audience + task + fail rule + STOP",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t6",
-            "left": "User testing",
-            "right": "People with the job attempt the job",
+            "left": "Fail rule",
+            "right": "Pre-committed threshold that makes the claim false this round",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t7",
-            "left": "Task success",
-            "right": "Whether they completed the job by a named rule",
+            "left": "STOP",
+            "right": "The spend you will not make if the test fails",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t8",
-            "left": "Stakeholder review",
-            "right": "Payers, blockers, integrators",
+            "left": "One-way door",
+            "right": "Action the person cannot undo; do not cute-fake it",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t9",
-            "left": "Expert review",
-            "right": "Domain method (legal, safety, a11y, security)",
+            "left": "Honest test",
+            "right": "Can fail; right audience; named STOP; no goalpost moving",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t10",
-            "left": "Redesign / solidify / kill / pivot / ship",
-            "right": "Named end-moves of a review",
+            "left": "Theater test",
+            "right": "Protects a favorite spend; cannot fail or will not stop",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t11",
+            "left": "v0.1",
+            "right": "Shipped pile without measure or kill criterion; not an MVP",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t12",
+            "left": "Concierge / Wizard-of-Oz",
+            "right": "Human plays the system; pretotype or prototype depending on the question",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t13",
+            "left": "Intellectual order",
+            "right": "Learn → Measure → Build, even when the slogan is Build–Measure–Learn",
             "why": "From this lesson’s Key Terms table."
           }
         ]
       },
       {
-        "id": "bl-07-ship",
-        "num": "L07",
-        "title": "Iteration and Shipping",
+        "id": "bl-d1-critique",
+        "num": "L13",
+        "title": "Critique, RAT, and Pre-mortem",
         "pairs": [
           {
             "id": "t0",
-            "left": "Learning velocity",
-            "right": "Rate of kill/keep on assumptions (tests, not tickets)",
+            "left": "Design critique",
+            "right": "Structured look at an artifact against the brief; artifact on trial, not the author",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t1",
-            "left": "Feature velocity",
-            "right": "Rate of DoD-passing increments users can touch",
+            "left": "I like",
+            "right": "Specific appreciation tied to a part of the artifact and a part of the brief",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t2",
+            "left": "I wish",
+            "right": "Desired change tied to the brief, not a new epic",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t3",
+            "left": "What if",
+            "right": "Proposed experiment you could run this week, not a second brainstorm",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t4",
+            "left": "Assumption mapping",
+            "right": "Claims placed on ignorance × impact; circle the fatal unknowns",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t5",
+            "left": "Riskiest assumption test (RAT)",
+            "right": "Stop/go gate: no next increment until the fatal unknown has a kill/keep signal",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t6",
+            "left": "Pre-mortem",
+            "right": "Assume failure already happened; write how; assign owners",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t7",
+            "left": "Steelman",
+            "right": "Strongest fair form of the opposing view, especially the case for kill",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t8",
+            "left": "Redesign",
+            "right": "Job right, artifact wrong; stay in diamond 2",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t9",
+            "left": "Solidify",
+            "right": "Test held; freeze the slice and raise fidelity or DoD",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t10",
+            "left": "Kill",
+            "right": "Job or assumption dead; stop spending",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t11",
             "left": "Pivot",
             "right": "Job alive, approach wrong; change the bet",
             "why": "From this lesson’s Key Terms table."
           },
           {
+            "id": "t12",
+            "left": "Ship",
+            "right": "Evidence + DoD say this increment can leave the building",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t13",
+            "left": "Keep thinking",
+            "right": "Not a move; stalling with extra chairs",
+            "why": "From this lesson’s Key Terms table."
+          }
+        ]
+      },
+      {
+        "id": "bl-d2-reviews",
+        "num": "L14",
+        "title": "User, Stakeholder, and Expert Review",
+        "pairs": [
+          {
+            "id": "t0",
+            "left": "User testing",
+            "right": "A person who has the job attempts the job under a named rule",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t1",
+            "left": "Task success",
+            "right": "Whether they completed the job by a criterion written before they sat",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t2",
+            "left": "Named rule",
+            "right": "Who, task, observable success/fail, and help policy",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
             "id": "t3",
+            "left": "Stakeholder",
+            "right": "Someone who pays, blocks, or integrates — not “anyone with an opinion”",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t4",
+            "left": "Payer",
+            "right": "Funds or starves the next increment",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t5",
+            "left": "Blocker",
+            "right": "Can say no with force that survives a smile (legal, security, calendar, statute)",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t6",
+            "left": "Integrator",
+            "right": "Must plug the slice into a real system of record",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t7",
+            "left": "Expert review",
+            "right": "Domain method: legal, safety, accessibility, security, plus usability overlay",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t8",
+            "left": "Nielsen’s ten heuristics",
+            "right": "Rules of thumb for a usability look; not WCAG and not task success",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t9",
+            "left": "Power mix",
+            "right": "User and boss (or champion) in one room; fakes success",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t10",
+            "left": "Demo",
+            "right": "A tour that cannot fail; does not clear a RAT",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t11",
+            "left": "Veto",
+            "right": "Expert or blocker no that the brief must absorb as a constraint",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t12",
+            "left": "Contamination",
+            "right": "Averaging three truths into “the review said it went well”",
+            "why": "From this lesson’s Key Terms table."
+          }
+        ]
+      },
+      {
+        "id": "bl-d3-evidence",
+        "num": "L15",
+        "title": "Pivot, Persevere, and Evidence Thresholds",
+        "pairs": [
+          {
+            "id": "t0",
+            "left": "Learning velocity",
+            "right": "Rate of kill/keep on assumptions; units are tests, not tickets",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t1",
+            "left": "Feature velocity",
+            "right": "Rate of DoD-passing increments a user can touch",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t2",
+            "left": "Test (as a unit)",
+            "right": "Pre-written threshold, named audience, stop/go — not a meeting",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t3",
+            "left": "DoD increment",
+            "right": "Slice that meets the quality bar in the real hands of a user",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t4",
+            "left": "Pivot",
+            "right": "Job alive, approach wrong; change the bet in public",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t5",
             "left": "Persevere",
             "right": "Bet holds; keep the approach, maybe raise fidelity",
             "why": "From this lesson’s Key Terms table."
           },
           {
-            "id": "t4",
-            "left": "Evidence threshold",
-            "right": "Pre-written signal for pivot / persevere / kill",
-            "why": "From this lesson’s Key Terms table."
-          },
-          {
-            "id": "t5",
-            "left": "Retrospective",
-            "right": "Inspect the loop; one change to the next cycle",
-            "why": "From this lesson’s Key Terms table."
-          },
-          {
             "id": "t6",
-            "left": "Launch",
-            "right": "Mode switch from learning to delivery for a slice",
+            "left": "Kill",
+            "right": "Job or justifying assumption is dead; stop spending",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t7",
+            "left": "Evidence threshold",
+            "right": "Pre-written signal for persevere / pivot / kill, locked before data",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t8",
+            "left": "Door",
+            "right": "Cost of reversal if you are wrong; sets the height of the bar",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t9",
+            "left": "Retrospective",
+            "right": "Inspect the loop (cadence, WIP, DoD, review, threshold); adapt",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t10",
+            "left": "One-change retro",
+            "right": "A passing retro names exactly one next-loop rule with an owner",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t11",
+            "left": "Storytelling",
+            "right": "Writing the threshold after the data to save the plan",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t12",
+            "left": "We iterated",
+            "right": "Not a number; usually a costume for neither velocity",
+            "why": "From this lesson’s Key Terms table."
+          }
+        ]
+      },
+      {
+        "id": "bl-d4-launch",
+        "num": "L16",
+        "title": "Launch, Quality, Operations, Mode Switch",
+        "pairs": [
+          {
+            "id": "t0",
+            "left": "Launch",
+            "right": "Per-slice mode switch from learning to delivery",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t1",
+            "left": "Mode switch",
+            "right": "Learning (change cheap) vs delivery (change expensive)",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t2",
+            "left": "Learning mode",
+            "right": "Tests, pretotypes, kill/pivot; reversal is cheap",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t3",
+            "left": "Delivery mode",
+            "right": "DoD, quality, operations; reversal has blast radius",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t4",
             "left": "Quality",
             "right": "DoD + brief constraints at ship time, not a later phase",
             "why": "From this lesson’s Key Terms table."
           },
           {
-            "id": "t8",
+            "id": "t5",
             "left": "Operations",
-            "right": "On-call, rollback, support, vendor-fail behavior after launch",
+            "right": "On-call, rollback, support script, vendor-fail after launch",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t6",
+            "left": "On-call",
+            "right": "Named human or rota who can run rollback and the script",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t7",
+            "left": "Rollback",
+            "right": "Rehearsed revert with a time bound and a way to know it worked",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t8",
+            "left": "Support script",
+            "right": "Words and steps for the first tickets; what not to promise",
             "why": "From this lesson’s Key Terms table."
           },
           {
             "id": "t9",
-            "left": "Mode switch",
-            "right": "Learning (change cheap) vs delivery (change expensive)",
+            "left": "Vendor-fail",
+            "right": "Visible path when a dependency is down; no silent retry of harm",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t10",
+            "left": "Monitoring",
+            "right": "Live signal of working and of harm, with a page threshold",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t11",
+            "left": "Eternal beta",
+            "right": "Users depend on it, but you skipped ops by keeping a banner",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t12",
+            "left": "Go/no-go",
+            "right": "Timed launch review that can say no; checklist, not a pep rally",
+            "why": "From this lesson’s Key Terms table."
+          },
+          {
+            "id": "t13",
+            "left": "Soft launch",
+            "right": "Still delivery if people can depend on it; inherits the checklist",
             "why": "From this lesson’s Key Terms table."
           }
         ]
       }
     ];
 
-    const BODY = new Set(["bl-01-loop", "bl-02-methods", "bl-03-intent"]);
-    const BLOOD = new Set(["bl-04-brainstorm", "bl-05-prototype", "bl-06-review", "bl-07-ship"]);
+    const BODY = new Set(["bl-a1-diverge", "bl-a2-cynefin", "bl-a3-pdca-ooda", "bl-a4-bml-diamond", "bl-b1-discovery", "bl-b2-coats", "bl-b3-levers", "bl-b4-intent"]);
+    const BLOOD = new Set(["bl-c1-protocol", "bl-c2-generate", "bl-c3-fidelity", "bl-c4-test", "bl-d1-critique", "bl-d2-reviews", "bl-d3-evidence", "bl-d4-launch"]);
 
     const deckSel = document.getElementById("deck");
     const lessons = document.createElement("optgroup");

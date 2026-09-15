@@ -31,21 +31,32 @@
 <div class="row">
   <button type="button" id="all">Select all</button>
   <button type="button" id="none">Select none</button>
-  <button type="button" id="door">Arc A–B door + methods</button>
-  <button type="button" id="tools">Arc C–D tools + ship</button>
+  <button type="button" id="door">Arc A door</button>
+  <button type="button" id="methods">Arc B methods</button>
+  <button type="button" id="tools">Arc C tools</button>
+  <button type="button" id="ship">Arc D ship</button>
 </div>
 <form id="f">
-  <label class="deck"><input type="checkbox" value="bl-01-loop" checked /><span><strong>L01</strong> — The Loop</span></label>
-  <label class="deck"><input type="checkbox" value="bl-02-methods" checked /><span><strong>L02</strong> — Project Management Methodology</span></label>
-  <label class="deck"><input type="checkbox" value="bl-03-intent" checked /><span><strong>L03</strong> — Communicating Intent</span></label>
-  <label class="deck"><input type="checkbox" value="bl-04-brainstorm" checked /><span><strong>L04</strong> — Brainstorming</span></label>
-  <label class="deck"><input type="checkbox" value="bl-05-prototype" checked /><span><strong>L05</strong> — Prototyping</span></label>
-  <label class="deck"><input type="checkbox" value="bl-06-review" checked /><span><strong>L06</strong> — Review</span></label>
-  <label class="deck"><input type="checkbox" value="bl-07-ship" checked /><span><strong>L07</strong> — Iteration and Shipping</span></label>
+  <label class="deck"><input type="checkbox" value="bl-a1-diverge" checked /><span><strong>L01</strong> — Divergent and Convergent</span></label>
+  <label class="deck"><input type="checkbox" value="bl-a2-cynefin" checked /><span><strong>L02</strong> — Complicated, Complex, Cynefin</span></label>
+  <label class="deck"><input type="checkbox" value="bl-a3-pdca-ooda" checked /><span><strong>L03</strong> — PDCA and OODA</span></label>
+  <label class="deck"><input type="checkbox" value="bl-a4-bml-diamond" checked /><span><strong>L04</strong> — BML and Double Diamond</span></label>
+  <label class="deck"><input type="checkbox" value="bl-b1-discovery" checked /><span><strong>L05</strong> — Discovery and Delivery</span></label>
+  <label class="deck"><input type="checkbox" value="bl-b2-coats" checked /><span><strong>L06</strong> — Agile, Scrum, Waterfall</span></label>
+  <label class="deck"><input type="checkbox" value="bl-b3-levers" checked /><span><strong>L07</strong> — Cadence, WIP, DoD</span></label>
+  <label class="deck"><input type="checkbox" value="bl-b4-intent" checked /><span><strong>L08</strong> — Commander’s Intent</span></label>
+  <label class="deck"><input type="checkbox" value="bl-c1-protocol" checked /><span><strong>L09</strong> — Brainstorm Protocol</span></label>
+  <label class="deck"><input type="checkbox" value="bl-c2-generate" checked /><span><strong>L10</strong> — Generation and Review</span></label>
+  <label class="deck"><input type="checkbox" value="bl-c3-fidelity" checked /><span><strong>L11</strong> — Fidelity and Kinds</span></label>
+  <label class="deck"><input type="checkbox" value="bl-c4-test" checked /><span><strong>L12</strong> — Smallest Honest Test</span></label>
+  <label class="deck"><input type="checkbox" value="bl-d1-critique" checked /><span><strong>L13</strong> — Critique and Assumptions</span></label>
+  <label class="deck"><input type="checkbox" value="bl-d2-reviews" checked /><span><strong>L14</strong> — Three Reviews</span></label>
+  <label class="deck"><input type="checkbox" value="bl-d3-evidence" checked /><span><strong>L15</strong> — Pivot and Evidence</span></label>
+  <label class="deck"><input type="checkbox" value="bl-d4-launch" checked /><span><strong>L16</strong> — Launch and Operations</span></label>
 </form>
 <div class="row">
   <a class="btn primary" id="go" href="03_quiz/index.html?decks=all">Start selected decks</a>
-  <a class="btn" href="03_quiz/index.html?decks=all">All 56 exam path</a>
+  <a class="btn" href="03_quiz/index.html?decks=all">All decks exam path</a>
 </div>
 <p class="note is-hidden" id="deck-error" role="alert" tabindex="-1">Select at least one deck.</p>
 </main>
@@ -97,12 +108,22 @@ boxes.forEach(b=>b.addEventListener('change', sync));
 document.getElementById('all').onclick = () => { boxes.forEach(b=>b.checked=true); sync(); };
 document.getElementById('none').onclick = () => { boxes.forEach(b=>b.checked=false); sync(); };
 document.getElementById('door').onclick = () => {
-  const keep = new Set(['bl-01-loop','bl-02-methods','bl-03-intent']);
+  const keep = new Set(['bl-a1-diverge','bl-a2-cynefin','bl-a3-pdca-ooda','bl-a4-bml-diamond']);
+  boxes.forEach(b => b.checked = keep.has(b.value));
+  sync();
+};
+document.getElementById('methods').onclick = () => {
+  const keep = new Set(['bl-b1-discovery','bl-b2-coats','bl-b3-levers','bl-b4-intent']);
   boxes.forEach(b => b.checked = keep.has(b.value));
   sync();
 };
 document.getElementById('tools').onclick = () => {
-  const keep = new Set(['bl-04-brainstorm','bl-05-prototype','bl-06-review','bl-07-ship']);
+  const keep = new Set(['bl-c1-protocol','bl-c2-generate','bl-c3-fidelity','bl-c4-test']);
+  boxes.forEach(b => b.checked = keep.has(b.value));
+  sync();
+};
+document.getElementById('ship').onclick = () => {
+  const keep = new Set(['bl-d1-critique','bl-d2-reviews','bl-d3-evidence','bl-d4-launch']);
   boxes.forEach(b => b.checked = keep.has(b.value));
   sync();
 };
