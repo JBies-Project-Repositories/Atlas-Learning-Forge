@@ -1,0 +1,88 @@
+## The loop
+- Divergent vs convergent thinking
+- Complex vs complicated work
+- PDCA
+- OODA
+- Build–Measure–Learn
+- Double Diamond
+- Design Thinking stages
+
+## Project management methodology
+- Design Thinking
+- Lean Startup
+- Agile
+- Scrum
+- Dual-track discovery and delivery
+- Waterfall
+- Discovery vs delivery
+- Cadence
+- Scope
+- Work in progress
+- Definition of done
+
+## Communicating intent
+- Commander’s intent
+- Purpose
+- End state
+- Constraints
+- Problem statements
+- How Might We
+- Non-goals
+- Success criteria
+- Vision
+- Briefs
+- Alignment vs instruction
+
+## Brainstorming
+- Deferred judgment
+- Quantity before quality
+- Brainwriting
+- Crazy 8s
+- SCAMPER
+- Constraint-based ideation
+- How Might We
+- Socratic review
+- Devil’s-advocate review
+- Idea progression prompts
+
+## Prototyping
+- Fidelity
+- Low-fidelity
+- Mid-fidelity
+- High-fidelity
+- Looks-like prototypes
+- Works-like prototypes
+- Experience prototypes
+- Pretotype
+- Prototype
+- MVP
+- Smallest testable slice
+- Riskiest assumption first
+
+## Review
+- Design critique
+- I like / I wish / What if
+- Assumption mapping
+- Riskiest assumption test
+- Pre-mortem
+- Steelman
+- User testing
+- Task success
+- Stakeholder review
+- Expert review
+- Redesign
+- Solidify
+- Kill
+- Pivot
+- Ship
+
+## Iteration and shipping
+- Learning velocity
+- Feature velocity
+- Pivot vs persevere
+- Evidence thresholds
+- Retrospective
+- Launch
+- Quality
+- Operations
+- Mode switch from learning to delivery
