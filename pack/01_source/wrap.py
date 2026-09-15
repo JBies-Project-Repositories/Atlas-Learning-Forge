@@ -218,16 +218,21 @@ def wrap(stem: str, title: str, body_html: str) -> str:
 <title>{html.escape(title)} — {html.escape(PACK)}</title>
 <link rel="stylesheet" href="../assets/pack.css"/>
 </head><body>
+<a class="skip-link" href="#lesson">Skip to lesson</a>
 <div class="lesson-wrap">
 <nav class="lesson-nav"><a href="../index.html">Cover</a> <a href="../contents.html">Contents</a> <a href="../decks.html">Quiz</a> <a href="../04_labs/index.html">Labs</a> <a href="../dashboard.html">Dashboard</a> {prev_h} {next_h} <button type="button" class="theme-btn" data-theme-toggle>Dim mode</button><div class="mark">{html.escape(PACK)}</div></nav>
 {hero}
-<article class="lesson">
+<main>
+<article class="lesson" id="lesson">
 <div class="badge">Dense lesson · professional practice · educational only</div>
 {body_html}
 <div class="footer">Offline study pack. Progress is stored in this browser only. Optional “Learn more” links open the public homes of named methods.</div>
 </article>
+</main>
 </div>
+<script src="../04_labs/shared.js"></script>
 <script src="../assets/theme.js"></script>
+<script>if (window.AtlasProgress) AtlasProgress.markLesson("{stem}");</script>
 </body></html>
 """
 

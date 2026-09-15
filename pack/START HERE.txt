@@ -1,10 +1,15 @@
 Atlas of the Build Loop — Study Pack
 ====================================
 
-Open 00_CLICK_HERE_TO_BEGIN.html
-(or double-click 00_CLICK_HERE_TO_BEGIN.bat on Windows)
+Preferred: double-click 00_CLICK_HERE_TO_BEGIN.bat
+(starts http://127.0.0.1:8765/ if Python is installed so progress is shared)
 
-Cover → Contents or Lesson 1.
+Or: python -m http.server 8765
+then open http://127.0.0.1:8765/00_CLICK_HERE_TO_BEGIN.html
+
+File open (00_CLICK_HERE_TO_BEGIN.html) may not share progress across pages.
+
+Cover → Contents or Lesson 1. Dashboard is on the begin screen and the cover.
 
 Seven lessons. 56 quiz questions. Four labs.
 Progress stays in this browser only.

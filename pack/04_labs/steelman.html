@@ -12,23 +12,37 @@
     h1{font-size:1.4rem}.muted{color:var(--muted)}.panel{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.1rem;margin:1rem 0}
     .weak{color:var(--bad);font-style:italic} textarea{width:100%;min-height:8rem;background:var(--inset, #eef4f8);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:.7rem;margin-top:.5rem}
     button{border:0;background:linear-gradient(180deg,#7ee8d4,#2bb89a);color:#062f2c;padding:.6rem 1rem;border-radius:10px;font-weight:700;cursor:pointer;margin-top:.6rem;margin-right:.4rem}
+    #next{background:var(--btn);color:var(--text);border:1px solid var(--border)}
     .score{font-size:1.3rem;color:var(--gold);font-weight:700} .checks label{display:block;margin:.35rem 0;cursor:pointer}
+    #score-error{color:var(--bad);font-weight:700;min-height:1.3em;margin:.4rem 0 0}
     .model{margin-top:1rem;padding:.8rem;background:var(--inset, #eef4f8);border-radius:10px;border:1px solid var(--border);font-size:.92rem}
   </style>
 </head>
 <body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="../index.html">the Build Loop</a>
+      <nav>
+        <a href="../index.html">Cover</a>
+        <a href="../contents.html">Contents</a>
+        <a href="index.html">Labs</a>
+        <a href="../dashboard.html">Dashboard</a>
+      </nav>
+      <button type="button" class="theme-btn" data-theme-toggle>Dim mode</button>
+    </div>
+  </header>
   <div class="wrap">
-    <p><a href="../index.html">Cover</a> · <a href="../contents.html">Contents</a> · <a href="index.html">Labs</a> · <button type="button" class="theme-btn" data-theme-toggle>Dim mode</button></p>
     <h1>Misconception Steelman Studio</h1>
     <p class="muted">Rewrite the weak take into the strongest fair version an intelligent opponent could mean. Then self-score with the rubric.</p>
     <div class="panel">
       <div class="muted">Weak take</div>
       <p class="weak" id="weak"></p>
-      <label class="muted">Your steelman</label>
+      <label class="muted" for="text">Your steelman</label>
       <textarea id="text" placeholder="In the strongest fair form, the claim is… because… Evidence would include… The best objection is…"></textarea>
       <div class="checks" id="checks"></div>
       <button id="scoreBtn">Score rubric</button>
-      <button id="next" style="background:var(--btn, #e8eef3)">New prompt</button>
+      <button id="next">New prompt</button>
+      <p id="score-error" role="status"></p>
       <p class="score" id="score"></p>
       <div class="model" id="model"></div>
     </div>
@@ -198,10 +212,13 @@
     document.getElementById("scoreBtn").onclick = () => {
       const text = document.getElementById("text").value.trim();
       if (text.length < 40) {
-        document.getElementById("score").textContent = "Write a fuller steelman (≥ ~40 chars) before scoring.";
+        document.getElementById("score-error").textContent = "Write a fuller steelman (≥ ~40 chars) before scoring.";
+        document.getElementById("score").textContent = "";
+        document.getElementById("score-error").scrollIntoView({ behavior: "smooth", block: "nearest" });
         grader.refresh();
         return;
       }
+      document.getElementById("score-error").textContent = "";
       let s = 0;
       RUBRIC.forEach((_, idx) => { if (document.getElementById("r"+idx).checked) s++; });
       document.getElementById("score").textContent = `Rubric score: ${s}/5`;

@@ -76,7 +76,7 @@
     if (!correct) stats[id].wrong += 1;
     stats[id].lastAt = new Date().toISOString();
     saveStats(stats);
-    if (typeof recordProgressEvent === "function") recordProgressEvent("answer");
+    if (typeof recordProgressEvent === "function") recordProgressEvent("answer", { id: q.id });
   }
 
   function lessonsFromBank() {
@@ -137,9 +137,11 @@
     try {
       const key = "atlas_build_loop_progress_v1";
       const data = JSON.parse(localStorage.getItem(key) || "{}");
-      data.quiz = data.quiz || { sessions: 0, answered: 0, lastAt: null };
-      if (kind === "answer") {
-        data.quiz.answered = (data.quiz.answered || 0) + 1;
+      data.quiz = data.quiz || { sessions: 0, answered: 0, ids: [], lastAt: null };
+      data.quiz.ids = Array.isArray(data.quiz.ids) ? data.quiz.ids : [];
+      if (kind === "answer" && detail && detail.id) {
+        if (!data.quiz.ids.includes(detail.id)) data.quiz.ids.push(detail.id);
+        data.quiz.answered = data.quiz.ids.length;
         data.quiz.lastAt = new Date().toISOString();
       }
       localStorage.setItem(key, JSON.stringify(data));
@@ -230,7 +232,7 @@
     examSizeSelect.disabled = !exam;
     if (exam) {
       modeHint.textContent =
-        "Exam mode: answers stay hidden until you click Submit. Set Timer to Off or a 15-minute step (15–120). Start exam shuffles a set; Submit grades everything.";
+        "Exam mode: answers stay hidden until you click Submit. Set Timer to Off or 15 / 30 / 45 / 60 minutes. Start exam shuffles a set; Submit grades everything. Unanswered items are skipped (not counted as answers).";
     } else {
       modeHint.textContent =
         "Practice mode: instant feedback under each choice. Optional timer (15-minute steps) counts down if set—use Reshuffle to restart a timed practice block.";
@@ -362,6 +364,7 @@
           const fb = document.createElement("div");
           fb.className =
             "feedback is-visible " + (isCorrectChoice ? "correct" : "wrong");
+          fb.setAttribute("role", "status");
           fb.innerHTML = isCorrectChoice
             ? `<strong>Correct</strong>${escapeHtml(opt.feedback || "")}`
             : `<strong>Incorrect</strong>${escapeHtml(opt.feedback || "")}`;
@@ -405,7 +408,14 @@
       if (item.answerKey != null) return;
       item.answerKey = optionKey;
       const chosen = item.options.find((o) => o.key === optionKey);
-      recordAnswer(item.q, !!(chosen && chosen.correct));
+      const ok = !!(chosen && chosen.correct);
+      recordAnswer(item.q, ok);
+      const status = document.getElementById("quiz-status");
+      if (status) {
+        status.textContent = ok
+          ? "Correct. " + (chosen.feedback || "")
+          : "Incorrect. " + ((chosen && chosen.feedback) || "");
+      }
       render();
       const safe =
         typeof CSS !== "undefined" && CSS.escape
@@ -458,9 +468,6 @@
           byLesson[lid].c += 1;
         }
         recordAnswer(item.q, ok);
-      } else {
-        // unanswered counts as wrong for weak tracking optional
-        recordAnswer(item.q, false);
       }
     }
 
@@ -604,6 +611,17 @@
       if (confirm("Clear all weak-area history on this browser?")) {
         localStorage.removeItem(STORAGE_KEY);
         showWeakReport();
+        if (!Object.keys(loadStats()).length) {
+          weakPanel.classList.remove("is-hidden");
+          weakPanel.innerHTML = `
+            <div class="weak-head">
+              <h2>Weak areas</h2>
+              <button type="button" class="btn btn-ghost" id="btnCloseWeak">Close</button>
+            </div>
+            <p class="muted">History cleared. No weak-area stats on this browser.</p>`;
+          document.getElementById("btnCloseWeak").onclick = () =>
+            weakPanel.classList.add("is-hidden");
+        }
       }
     };
     weakPanel.scrollIntoView({ behavior: "smooth", block: "start" });

@@ -82,6 +82,25 @@ body {
 a { color: var(--accent); }
 a:hover { color: var(--accent-2); }
 
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+.skip-link {
+  position: absolute;
+  left: 0.8rem;
+  top: -3rem;
+  z-index: 20;
+  background: var(--card);
+  color: var(--text);
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
+  font-weight: 700;
+}
+.skip-link:focus {
+  top: 0.8rem;
+}
+
 code {
   background: var(--inset);
   padding: 0.1em 0.35em;
@@ -479,7 +498,7 @@ body.has-rail {
 }
 .arc-head .arc {
   margin: 0;
-  color: var(--gold);
+  color: #fff6d6;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }

@@ -85,15 +85,15 @@ Official key status:
     steelman: {
       title: "Grok 4.5 tutor — steelman craft",
       blurb: "Your draft and checked boxes fill in below as you write. Copy and send when you want teaching feedback.",
-      text: `You are a tutor for Atlas of the Build Loop. Help me learn to steelman misconceptions about cardio training, physiology, and bloodwork.
+      text: `You are a tutor for Atlas of the Build Loop. Help me learn to steelman misconceptions about loops, methods, intent, brainstorming, prototyping, review, iteration, and shipping.
 
 What a steelman is: the strongest fair form of the weak take — a version a smart critic could actually endorse — plus the conditions under which it would be true, and the limit that stops it overclaiming. It is not a rebuttal, a joke, or a slogan swap.
 
 How to teach me:
 - Be general: teach the move (fairness, strongest reason, conditions, limits). Do not grade me like a quiz key.
 - Be concrete: point at sentences I wrote. If a checked box is not earned by the writing, say so.
-- If my text is still a straw, a rebuttal, or the original slogan, name which one and why, using this topic.
-- Ignore spelling and style. Educational only — not medical advice. Do not invent motives I did not claim.
+- If my text is still a straw, a rebuttal, or the original slogan, name which one and why, using this topic (build loops and shipping practice).
+- Ignore spelling and style. Educational only. Do not invent motives I did not claim.
 
 Then write:
 1) Diagnosis — what I did well, and what the steelman is still missing (one short paragraph).
@@ -296,7 +296,7 @@ Material:
           <p class="atlas-grader-blurb">${lock.blurb}</p>
           <pre id="atlas-grader-lock-text">${escapeHtml(lock.text)}</pre>
           <div class="atlas-grader-actions">
-            <button type="button" class="atlas-grader-copy" id="atlas-grader-lock-copy">Copy LOCK grader prompt</button>
+            <button type="button" class="atlas-grader-copy" id="atlas-grader-lock-copy" aria-label="Copy LOCK grader prompt">Copy LOCK grader prompt</button>
             <span class="atlas-grader-status" id="atlas-grader-lock-status" role="status"></span>
           </div>
         </details>

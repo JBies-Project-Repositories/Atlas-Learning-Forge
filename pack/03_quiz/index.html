@@ -7,10 +7,11 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#quiz">Skip to questions</a>
   <div class="app">
     <header class="header">
       <div class="header-top">
-        <p class="subtitle" style="margin-bottom:.35rem"><a href="../index.html">Cover</a> · <a href="../contents.html">Contents</a> · <a href="../decks.html">Deck chooser</a> · <button type="button" class="btn btn-ghost" data-theme-toggle style="display:inline;padding:.2rem .55rem">Dim mode</button></p>
+        <p class="subtitle" style="margin-bottom:.35rem"><a href="../index.html">Cover</a> · <a href="../contents.html">Contents</a> · <a href="../decks.html">Deck chooser</a> · <a href="../dashboard.html">Dashboard</a> · <button type="button" class="btn btn-ghost" data-theme-toggle style="display:inline;padding:.2rem .55rem">Dim mode</button></p>
         <h1>Practice Quiz</h1>
         <p class="subtitle">7 decks · 56 questions · All / one / multi-select via Deck Chooser</p>
       </div>
@@ -62,7 +63,8 @@
     </header>
     <section id="weakPanel" class="weak-panel is-hidden" aria-live="polite"></section>
     <section id="examResults" class="exam-results is-hidden" aria-live="polite"></section>
-    <main id="quiz" class="quiz" aria-live="polite"></main>
+    <p id="quiz-status" class="visually-hidden" role="status" aria-live="polite"></p>
+    <main id="quiz" class="quiz"></main>
     <footer class="footer">
       <p>Atlas of the Build Loop · offline · <a href="../index.html">Cover</a> · <a href="../contents.html">Contents</a> · <a href="../dashboard.html">Dashboard</a></p>
     </footer>

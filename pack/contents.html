@@ -74,6 +74,18 @@
     </footer>
   </div>
   </div>
+  <script src="04_labs/shared.js"></script>
   <script src="assets/theme.js"></script>
+  <script>
+    const reads = (window.AtlasProgress && AtlasProgress.load().lessons) || {};
+    document.querySelectorAll("a.lesson").forEach(function (a) {
+      const href = a.getAttribute("href") || "";
+      const stem = href.replace(/^.*\//, "").replace(/\.html$/, "");
+      if (reads[stem]) {
+        const lab = a.querySelector(".label");
+        if (lab) lab.textContent = lab.textContent + " · visited";
+      }
+    });
+  </script>
 </body>
 </html>

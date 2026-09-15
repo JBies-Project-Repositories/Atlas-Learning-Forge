@@ -839,7 +839,8 @@
           <button id="g0">Again</button>
           <button id="g1">Hard</button>
           <button class="ok" id="g2">Good</button>
-          <button class="primary" id="g3">Easy</button>`;
+          <button class="primary" id="g3">Easy</button>
+          <p class="muted" style="flex-basis:100%;margin:.4rem 0 0">Again = reset soon. Hard = short interval. Good = normal SM-2 step. Easy = longer interval. Dashboard counts a rating, not Show answer.</p>`;
         [0, 1, 2, 3].forEach((g) => {
           document.getElementById("g" + g).onclick = () => rate(g);
         });

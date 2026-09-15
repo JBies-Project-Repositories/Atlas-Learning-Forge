@@ -12,6 +12,8 @@
     .row{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
     button,.btn{border:1px solid var(--border);background:var(--btn);color:var(--text);border-radius:10px;padding:.55rem .9rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
     .btn.primary{background:linear-gradient(180deg,#7ee8d4,#2bb89a);border-color:#9af0dc;color:#062f2c}
+    .btn.is-disabled{opacity:.45;pointer-events:none;cursor:not-allowed}
+    .is-hidden{display:none !important}
   </style>
 </head>
 <body>
@@ -44,15 +46,34 @@
   <a class="btn primary" id="go" href="03_quiz/index.html?decks=all">Start selected decks</a>
   <a class="btn" href="03_quiz/index.html?decks=all">All 56 exam path</a>
 </div>
+<p class="note is-hidden" id="deck-error" role="status">Select at least one deck.</p>
 </div>
 <script src="assets/theme.js"></script>
 <script>
 const boxes = [...document.querySelectorAll('input[type=checkbox]')];
+const go = document.getElementById('go');
+const err = document.getElementById('deck-error');
 function sync() {
   const ids = boxes.filter(b=>b.checked).map(b=>b.value);
-  const q = ids.length === boxes.length || ids.length === 0 ? 'all' : ids.join(',');
-  document.getElementById('go').href = '03_quiz/index.html?decks=' + encodeURIComponent(q);
+  if (ids.length === 0) {
+    go.removeAttribute('href');
+    go.setAttribute('aria-disabled', 'true');
+    go.classList.add('is-disabled');
+    err.classList.remove('is-hidden');
+    return;
+  }
+  err.classList.add('is-hidden');
+  go.removeAttribute('aria-disabled');
+  go.classList.remove('is-disabled');
+  const q = ids.length === boxes.length ? 'all' : ids.join(',');
+  go.href = '03_quiz/index.html?decks=' + encodeURIComponent(q);
 }
+go.addEventListener('click', function (ev) {
+  if (!go.getAttribute('href')) {
+    ev.preventDefault();
+    err.classList.remove('is-hidden');
+  }
+});
 boxes.forEach(b=>b.addEventListener('change', sync));
 document.getElementById('all').onclick = () => { boxes.forEach(b=>b.checked=true); sync(); };
 document.getElementById('none').onclick = () => { boxes.forEach(b=>b.checked=false); sync(); };
