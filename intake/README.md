@@ -6,8 +6,9 @@ Received from Jenner in the Grok Build session. Snapshot only. The pack has not 
 
 | Path | Source | Role |
 | --- | --- | --- |
-| `prompts/01_Atlas_Universal_Learning_OS_Master_v3.md` | `Grok Builder CLI 1.0 prompts/` | Create-only Atlas master prompt (v3.0.0) |
-| `intake/target.txt` | `Desktop/Base/target.txt` | Syllabus / spine seed for this run |
+| `intake/target.txt` | Desktop Base | Syllabus / spine seed for this run |
+
+The Atlas master prompt is **not** stored in this public repository. It is held in a private local folder and gitignored.
 
 ## Target syllabus (seed units)
 

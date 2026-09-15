@@ -1,0 +1,5 @@
+# Master prompt is private. Do not add it to this public repo.
+/prompts/*Master*.md
+/prompts/01_Atlas_Universal_Learning_OS_Master*.md
+/private/
+.private/

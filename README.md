@@ -9,7 +9,7 @@ Open the pack: double-click `00_CLICK_HERE_TO_BEGIN.html`.
 
 | Path | Role |
 | --- | --- |
-| `prompts/` | Master prompt versions |
+| `prompts/` | Placeholder only — master prompt is private and not in this repo |
 | `intake/` | Target syllabus and process notes |
 | `pack/` | Generated Atlas (mirrored from Desktop) |
 | `qa-bots/` | QA squad charter and reports |
