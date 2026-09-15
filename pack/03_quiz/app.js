@@ -122,6 +122,26 @@
     if (urlDeckSelection === "all") filterEl.value = "all";
     else if (Array.isArray(urlDeckSelection) && urlDeckSelection.length === 1) filterEl.value = urlDeckSelection[0];
     else if (Array.isArray(urlDeckSelection) && urlDeckSelection.length > 1) filterEl.value = "__multi__";
+    updateSubtitle();
+  }
+
+  function updateSubtitle() {
+    const el = document.getElementById("quiz-subtitle");
+    if (!el) return;
+    const qs = filteredBank();
+    const lessonIds = [...new Set(qs.map((q) => q.lessonId))];
+    const nDecks = lessonIds.length;
+    const nQ = qs.length;
+    const deckWord = nDecks === 1 ? "deck" : "decks";
+    const qWord = nQ === 1 ? "question" : "questions";
+    let names = "";
+    if (nDecks === 1) {
+      const title = qs[0] && qs[0].lesson ? qs[0].lesson : "Selected lesson";
+      names = " · " + title;
+    } else if (filterEl.value === "__multi__") {
+      names = " · selected decks";
+    }
+    el.textContent = nDecks + " " + deckWord + " · " + nQ + " " + qWord + names;
   }
 
   function filteredBank() {
@@ -281,12 +301,14 @@
       quizEl.innerHTML =
         '<p class="empty">Exam mode ready. Choose lesson filter, timer (or Off), exam size, then <strong>Start exam</strong>.</p>';
       updateStats();
+      updateSubtitle();
       return;
     }
 
     if (!session.length) {
       quizEl.innerHTML = '<p class="empty">No questions for this filter.</p>';
       updateStats();
+      updateSubtitle();
       return;
     }
 
@@ -397,6 +419,7 @@
     });
 
     updateStats();
+    updateSubtitle();
   }
 
   function onAnswer(qid, optionKey) {
@@ -410,13 +433,16 @@
       const chosen = item.options.find((o) => o.key === optionKey);
       const ok = !!(chosen && chosen.correct);
       recordAnswer(item.q, ok);
+      render();
       const status = document.getElementById("quiz-status");
       if (status) {
-        status.textContent = ok
+        const msg = ok
           ? "Correct. " + (chosen.feedback || "")
           : "Incorrect. " + ((chosen && chosen.feedback) || "");
+        status.textContent = "";
+        void status.offsetWidth;
+        status.textContent = msg;
       }
-      render();
       const safe =
         typeof CSS !== "undefined" && CSS.escape
           ? CSS.escape(qid)

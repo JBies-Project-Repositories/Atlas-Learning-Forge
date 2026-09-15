@@ -387,6 +387,26 @@ html[data-theme="dim"] body {
   border-color: var(--border);
 }
 
+html[data-theme="dim"] .badge {
+  background: #14343c;
+  color: #f4fbfc;
+  border-color: #8ee3ee;
+}
+
+html[data-theme="dim"] .badge-level {
+  background: var(--surface-2);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.quiz-live {
+  margin: 0 0 0.85rem;
+  min-height: 1.3em;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
 .q-num {
   font-size: 0.8rem;
   color: var(--muted);

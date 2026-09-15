@@ -5,6 +5,8 @@
     try { localStorage.setItem(KEY, mode === "dim" ? "dim" : "light"); } catch (e) {}
     document.querySelectorAll("[data-theme-toggle]").forEach(function (btn) {
       btn.textContent = mode === "dim" ? "Bright mode" : "Dim mode";
+      btn.setAttribute("aria-pressed", mode === "dim" ? "true" : "false");
+      btn.setAttribute("aria-label", mode === "dim" ? "Switch to bright mode" : "Switch to dim mode");
     });
   }
   var start = "light";

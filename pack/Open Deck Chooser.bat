@@ -1,3 +1,4 @@
 @echo off
+setlocal
 cd /d "%~dp0"
-powershell -NoProfile -ExecutionPolicy Bypass -Command "Start-Process (Join-Path '%~dp0' 'decks.html')"
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0open-http.ps1" -Page "decks.html"

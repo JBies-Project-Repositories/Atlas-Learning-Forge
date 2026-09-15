@@ -12,11 +12,12 @@
     .row{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
     button,.btn{border:1px solid var(--border);background:var(--btn);color:var(--text);border-radius:10px;padding:.55rem .9rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
     .btn.primary{background:linear-gradient(180deg,#7ee8d4,#2bb89a);border-color:#9af0dc;color:#062f2c}
-    .btn.is-disabled{opacity:.45;pointer-events:none;cursor:not-allowed}
+    .btn.is-disabled{opacity:.45;cursor:not-allowed}
     .is-hidden{display:none !important}
   </style>
 </head>
 <body>
+<a class="skip-link" href="#chooser">Skip to deck chooser</a>
 <header class="topbar">
   <div class="topbar-inner">
     <a class="brand" href="index.html">the Build Loop</a>
@@ -24,7 +25,7 @@
     <button type="button" class="theme-btn" data-theme-toggle>Dim mode</button>
   </div>
 </header>
-<div class="wrap">
+<main class="wrap" id="chooser">
 <h1>Deck Chooser</h1>
 <p class="lead">Select lesson decks (8 questions each), then start.</p>
 <div class="row">
@@ -46,32 +47,50 @@
   <a class="btn primary" id="go" href="03_quiz/index.html?decks=all">Start selected decks</a>
   <a class="btn" href="03_quiz/index.html?decks=all">All 56 exam path</a>
 </div>
-<p class="note is-hidden" id="deck-error" role="status">Select at least one deck.</p>
-</div>
+<p class="note is-hidden" id="deck-error" role="alert" tabindex="-1">Select at least one deck.</p>
+</main>
 <script src="assets/theme.js"></script>
 <script>
 const boxes = [...document.querySelectorAll('input[type=checkbox]')];
 const go = document.getElementById('go');
 const err = document.getElementById('deck-error');
+function selectedIds() {
+  return boxes.filter(b=>b.checked).map(b=>b.value);
+}
 function sync() {
-  const ids = boxes.filter(b=>b.checked).map(b=>b.value);
+  const ids = selectedIds();
+  go.setAttribute('aria-describedby', 'deck-error');
   if (ids.length === 0) {
     go.removeAttribute('href');
     go.setAttribute('aria-disabled', 'true');
+    go.setAttribute('aria-invalid', 'true');
+    go.setAttribute('aria-errormessage', 'deck-error');
     go.classList.add('is-disabled');
     err.classList.remove('is-hidden');
     return;
   }
   err.classList.add('is-hidden');
   go.removeAttribute('aria-disabled');
+  go.removeAttribute('aria-invalid');
+  go.removeAttribute('aria-errormessage');
   go.classList.remove('is-disabled');
   const q = ids.length === boxes.length ? 'all' : ids.join(',');
   go.href = '03_quiz/index.html?decks=' + encodeURIComponent(q);
 }
 go.addEventListener('click', function (ev) {
-  if (!go.getAttribute('href')) {
+  sync();
+  const ids = selectedIds();
+  if (ids.length === 0) {
     ev.preventDefault();
+    err.classList.add('is-hidden');
+    void err.offsetWidth;
     err.classList.remove('is-hidden');
+    err.focus?.();
+    return;
+  }
+  if (ids.length !== boxes.length && (go.getAttribute('href') || '').indexOf('decks=all') !== -1) {
+    ev.preventDefault();
+    location.href = '03_quiz/index.html?decks=' + encodeURIComponent(ids.join(','));
   }
 });
 boxes.forEach(b=>b.addEventListener('change', sync));

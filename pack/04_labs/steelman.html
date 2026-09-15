@@ -19,6 +19,7 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#steelman">Skip to lab</a>
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="../index.html">the Build Loop</a>
@@ -31,14 +32,15 @@
       <button type="button" class="theme-btn" data-theme-toggle>Dim mode</button>
     </div>
   </header>
-  <div class="wrap">
+  <main class="wrap" id="steelman">
     <h1>Misconception Steelman Studio</h1>
     <p class="muted">Rewrite the weak take into the strongest fair version an intelligent opponent could mean. Then self-score with the rubric.</p>
     <div class="panel">
       <div class="muted">Weak take</div>
       <p class="weak" id="weak"></p>
-      <label class="muted" for="text">Your steelman</label>
-      <textarea id="text" placeholder="In the strongest fair form, the claim is… because… Evidence would include… The best objection is…"></textarea>
+      <label class="muted" for="text">Your steelman
+      <textarea id="text" name="text" placeholder="In the strongest fair form, the claim is… because… Evidence would include… The best objection is…"></textarea>
+      </label>
       <div class="checks" id="checks"></div>
       <button id="scoreBtn">Score rubric</button>
       <button id="next">New prompt</button>
@@ -47,7 +49,7 @@
       <div class="model" id="model"></div>
     </div>
     <div id="grok-grader"></div>
-  </div>
+  </main>
   <script src="shared.js"></script>
   <script>
             const ITEMS = [

@@ -16,6 +16,8 @@ then open `http://127.0.0.1:8765/00_CLICK_HERE_TO_BEGIN.html`.
 
 **File open:** double-click `00_CLICK_HERE_TO_BEGIN.html`. Chromium may treat each `file://` page as a separate origin, so progress on the quiz may not show on the dashboard. Use HTTP if that happens.
 
+`Open Home.bat`, `Open Dashboard.bat`, `Open Labs.bat`, `Open Quiz.bat`, and `Open Deck Chooser.bat` open `http://127.0.0.1:8765/...`. They start the same local server if it is not already running (Python required).
+
 ## Inside
 
 | Surface | What it is |
