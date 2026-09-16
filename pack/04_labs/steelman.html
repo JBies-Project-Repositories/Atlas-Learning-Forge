@@ -38,9 +38,8 @@
     <div class="panel">
       <div class="muted">Weak take</div>
       <p class="weak" id="weak"></p>
-      <label class="muted" for="text">Your steelman
+      <label class="muted" id="text-label" for="text">Your steelman</label>
       <textarea id="text" name="text" placeholder="In the strongest fair form, the claim is… because… Evidence would include… The best objection is…"></textarea>
-      </label>
       <div class="checks" id="checks"></div>
       <button id="scoreBtn">Score rubric</button>
       <button id="next">New prompt</button>
@@ -396,6 +395,14 @@
       document.getElementById("r" + idx).addEventListener("change", () => grader.refresh());
     });
     AtlasProgress.touchLab("steelman", { visit: true });
+    var lab = document.getElementById("text-label");
+    var box = document.getElementById("text");
+    if (lab && box) {
+      lab.addEventListener("click", function (e) {
+        e.preventDefault();
+        box.focus();
+      });
+    }
     load();
     if (window.AtlasLabGrader) {
       grader = AtlasLabGrader.mount("grok-grader", "steelman", {

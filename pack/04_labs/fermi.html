@@ -1564,7 +1564,7 @@
     deckSel.appendChild(lessons);
     const sets = document.createElement("optgroup");
     sets.label = "Sets";
-    [["all", "All lessons"], ["body", "Arc A–B · door + methods"], ["blood", "Arc C–D · tools + ship"]].forEach(([v, t]) => {
+    [["all", "All lessons"], ["door", "Arc A–B · door + methods"], ["tools", "Arc C–D · tools + ship"]].forEach(([v, t]) => {
       const o = document.createElement("option");
       o.value = v;
       o.textContent = t;
@@ -1597,19 +1597,19 @@
     function idsFromValue(v) {
       if (!v) return [];
       if (v === "all") return DECKS.map((d) => d.id);
-      if (v === "body") return [...BODY];
-      if (v === "blood") return [...BLOOD];
+      if (v === "door") return [...BODY];
+      if (v === "tools") return [...BLOOD];
       return [v];
     }
 
     function parseUrl() {
       const q = new URLSearchParams(location.search).get("decks");
       if (!q) return "";
-      if (q === "all" || q === "body" || q === "blood") return q;
+      if (q === "all" || q === "door" || q === "tools") return q;
       const ids = q.split(",").map((s) => s.trim()).filter((id) => DECKS.some((d) => d.id === id));
       if (ids.length === DECKS.length) return "all";
-      if (ids.length === 4 && ids.every((id) => BODY.has(id))) return "body";
-      if (ids.length === 4 && ids.every((id) => BLOOD.has(id))) return "blood";
+      if (ids.length === BODY.size && ids.every((id) => BODY.has(id))) return "door";
+      if (ids.length === BLOOD.size && ids.every((id) => BLOOD.has(id))) return "tools";
       return ids[0] || "";
     }
 

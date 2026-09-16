@@ -14,8 +14,21 @@
   apply(start);
   document.addEventListener("click", function (ev) {
     var t = ev.target;
-    if (!t || !t.getAttribute || !t.hasAttribute("data-theme-toggle")) return;
-    var cur = document.documentElement.getAttribute("data-theme") === "dim" ? "dim" : "light";
-    apply(cur === "dim" ? "light" : "dim");
+    if (!t || !t.getAttribute) return;
+    if (t.hasAttribute("data-theme-toggle")) {
+      var cur = document.documentElement.getAttribute("data-theme") === "dim" ? "dim" : "light";
+      apply(cur === "dim" ? "light" : "dim");
+      return;
+    }
+    var skip = t.closest ? t.closest("a.skip-link") : null;
+    if (!skip) return;
+    var href = skip.getAttribute("href") || "";
+    if (href.charAt(0) !== "#") return;
+    var dest = document.getElementById(href.slice(1));
+    if (!dest) return;
+    ev.preventDefault();
+    if (!dest.hasAttribute("tabindex")) dest.setAttribute("tabindex", "-1");
+    dest.focus();
+    dest.scrollIntoView({ block: "start" });
   });
 })();

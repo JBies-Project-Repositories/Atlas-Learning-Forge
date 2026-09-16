@@ -1,70 +1,53 @@
 # INTEGRITY_REPORT — Atlas of the Build Loop
 
-**Date:** 2026-09-15 (reconstruction: 16-lesson atlas)  
-**course_root:** `/mnt/c/Users/jbies/OneDrive/Desktop/Atlas of the Build Loop — Study Pack`  
+**Date:** 2026-09-15 (staged freeze)  
+**course_root (working):** Desktop `Atlas of the Build Loop — Study Pack`  
+**staging:** `Altas Courses/Staging/Atlas of the Build Loop — Study Pack`  
 **mirror:** `/home/jbies/Atlas-Learning-Forge/pack`
 
-Primer 7-lesson density table is superseded. Live spine: 16 lessons, 8 quiz items each (128), labs keyed to `bl-a1-diverge` … `bl-d4-launch`. See `_lessons_meta.tsv` and `Curriculum.md`.
+Live spine: 16 lessons, 8 quiz items each (128), labs keyed to `bl-a1-diverge` … `bl-d4-launch`.
 
 ## Gate 0
 
-- [x] `course_root` announced and new
-- [x] `material_name` = the Build Loop; title = Atlas of the Build Loop
-- [x] meta: 7 lessons with ids/titles/focus
-- [x] seed 7 → final 7 (freeze; not an honest short subject)
-- [x] sources normalized (`normalized/target.txt`); coverage-gap note in SOURCE_NOTES
-- [x] storage keys unique (`atlas_build_loop_*_v1`); no Mastery/am-*
-- [x] COURSE_CONFIG copied into `01_source/`
+- [x] course_root new; staging copy created (create-only, no overwrite of an existing Staging folder)
+- [x] material_name = the Build Loop; title = Atlas of the Build Loop
+- [x] meta: 16 lessons with ids/titles/focus
+- [x] seed 7 → atlas 16 (four arc-packs)
+- [x] sources normalized; coverage-gap in SOURCE_NOTES; RESEARCH_PASS
+- [x] storage keys unique (`atlas_build_loop_*_v1`)
+- [x] COURSE_CONFIG in `01_source/`
 
 ## Gate 1 — density (Lesson Content + worked examples)
 
 | id | title | md | html | quiz | sections | words≈ | examples | terms | misc | figures |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| bl-01-loop | The Loop | y | y | 8 | 6+ | 1885 | 1 | 10 | 8 | SVG y |
-| bl-02-methods | Project Management Methodology | y | y | 8 | 6+ | 1265 | 1 | 12 | 8 | HTML y |
-| bl-03-intent | Communicating Intent | y | y | 8 | 6+ | 1083 | 1 | 12 | 8 | SVG y |
-| bl-04-brainstorm | Brainstorming | y | y | 8 | 6+ | 965 | 1 | 10 | 8 | HTML y |
-| bl-05-prototype | Prototyping | y | y | 8 | 6+ | 1083 | 1 | 12 | 8 | SVG y |
-| bl-06-review | Review | y | y | 8 | 6+ | 921 | 1 | 11 | 8 | HTML y |
-| bl-07-ship | Iteration and Shipping | y | y | 8 | 6+ | 1038 | 1 | 10 | 8 | SVG y |
-
-All lessons include objectives, prerequisites, skeleton, Learn more (no fabricated papers).
+| bl-a1-diverge | Divergent and Convergent Thinking | y | y | 8 | 12 | 3644 | 1 | 11 | 9 | y |
+| bl-a2-cynefin | Complicated, Complex, and Cynefin | y | y | 8 | 13 | 3824 | 1 | 11 | 9 | y |
+| bl-a3-pdca-ooda | PDCA and OODA | y | y | 8 | 12 | 3396 | 1 | 11 | 9 | y |
+| bl-a4-bml-diamond | Build–Measure–Learn and Double Diamond | y | y | 8 | 11 | 3258 | 1 | 11 | 9 | y |
+| bl-b1-discovery | Discovery, Delivery, and Dual-Track | y | y | 8 | 12 | 3672 | 1 | 11 | 9 | y |
+| bl-b2-coats | Agile, Scrum, and Honest Waterfall | y | y | 8 | 12 | 3937 | 1 | 11 | 9 | y |
+| bl-b3-levers | Cadence, Scope, WIP, and Definition of Done | y | y | 8 | 12 | 3587 | 1 | 11 | 9 | y |
+| bl-b4-intent | Commander’s Intent and the Brief | y | y | 8 | 12 | 3602 | 1 | 12 | 9 | y |
+| bl-c1-protocol | Brainstorming as a Protocol | y | y | 8 | 12 | 3418 | 1 | 13 | 9 | y |
+| bl-c2-generate | Generation Methods and Converge Reviews | y | y | 8 | 13 | 3495 | 1 | 13 | 9 | y |
+| bl-c3-fidelity | Fidelity and Kinds of Prototype | y | y | 8 | 12 | 3252 | 1 | 13 | 9 | y |
+| bl-c4-test | Pretotype, MVP, and the Riskiest Assumption | y | y | 8 | 13 | 3404 | 1 | 13 | 9 | y |
+| bl-d1-critique | Critique, RAT, and Pre-mortem | y | y | 8 | 13 | 3907 | 1 | 13 | 9 | y |
+| bl-d2-reviews | User, Stakeholder, and Expert Review | y | y | 8 | 12 | 3427 | 1 | 12 | 9 | y |
+| bl-d3-evidence | Pivot, Persevere, and Evidence Thresholds | y | y | 8 | 11 | 3187 | 1 | 12 | 9 | y |
+| bl-d4-launch | Launch, Quality, Operations, Mode Switch | y | y | 8 | 11 | 3252 | 1 | 13 | 9 | y |
 
 ## Gate 2 / 2H
 
-- [x] `00_CLICK_HERE_TO_BEGIN.html` + `.bat` + cover path
-- [x] `contents.html` exists; cover does not dump every lesson card as the home
-- [x] All lesson md+html for meta rows; prev/next + Cover/Contents
-- [x] Quiz: 7 × 8; one correct each; distractors from that lesson’s misconceptions
-- [x] Deck chooser lessonIds match bank and lab dropdowns
-- [x] SRS = terms + misconception rows per lesson
-- [x] Term Match = that lesson’s key terms
-- [x] Scenario Audit: 120–200 words, ≥2 sound claims, 4–7 mapped errors, count not told
-- [x] Labs + `shared.js` key = `atlas_build_loop_progress_v1`
-- [x] Graders only on Scenario Audit + Steelman (live fill)
-- [x] No weighted decision matrix
-- [x] Profile absent
-- [x] No foreign Mastery/am-* keys
-- [x] Bats present; CRLF; `cd /d "%~dp0"`
-- [x] SOURCE_NOTES + Curriculum + this report
-- [x] No writes outside course_root (except git mirror copy)
-- [x] Labeled charts are SVG/HTML
-- [x] Named folder is the Atlas (no zip, no nested inner pack)
-- [x] Comprehensive: contents + quiz + labs describe the final 7-lesson spine
-
-## Labs
-
-| File | Title | Grader |
-| --- | --- | --- |
-| spaced.html | Spaced Repetition | none |
-| bias.html | Scenario Audit | live fill |
-| fermi.html | Term Match | none |
-| steelman.html | Misconception Steelman Studio | live fill |
+- [x] Click-to-begin + bats + HTTP helper
+- [x] Cover + contents (16 cards, four arcs)
+- [x] All lesson md+html; prev/next
+- [x] Quiz 16 × 8; deck chooser ids match labs
+- [x] Case dossier + ops checklist as HTML
+- [x] Unique keys; no Mastery leftovers
+- [x] Staged copy on Altas Courses/Staging
 
 ## How to open
 
-Double-click `00_CLICK_HERE_TO_BEGIN.html` → cover → Contents or Lesson 1.
-
-## Mirror
-
-Desktop pack is the learner copy. `Atlas-Learning-Forge/pack/` is the git mirror. Sync with `pack/../scripts` or rsync both ways after a change.
+Staging or Desktop: `00_CLICK_HERE_TO_BEGIN.bat` → `http://127.0.0.1:8765/`.

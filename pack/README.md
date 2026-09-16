@@ -34,6 +34,6 @@ then open `http://127.0.0.1:8765/00_CLICK_HERE_TO_BEGIN.html`.
 
 Progress uses `atlas_build_loop_*_v1` in localStorage. Reset from the dashboard.
 
-## Mirror
+## Mirror and staging
 
-Desktop copy is the learner pack. The same tree is mirrored in the GitHub repo at `pack/` so process commits and Desktop stay in sync.
+Desktop copy is the working learner pack. GitHub `pack/` mirrors it. **Staging freeze:** `Altas Courses/Staging/Atlas of the Build Loop — Study Pack`.

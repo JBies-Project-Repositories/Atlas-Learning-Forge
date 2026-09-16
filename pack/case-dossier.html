@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case dossier — Atlas of the Build Loop</title>
+  <link rel="stylesheet" href="assets/pack.css" />
+</head>
+<body>
+  <a class="skip-link" href="#dossier">Skip to dossier</a>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">the Build Loop</a>
+      <nav>
+        <a href="index.html">Cover</a>
+        <a href="contents.html">Contents</a>
+        <a href="decks.html">Quiz</a>
+        <a href="04_labs/index.html">Labs</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+      <button type="button" class="theme-btn" data-theme-toggle>Dim mode</button>
+    </div>
+  </header>
+  <main class="wrap" id="dossier" tabindex="-1">
+    <div class="tag">Through-line</div>
+    <h1>Case dossier — Contractor onboarding</h1>
+    <p class="lead">One case, four arc-packs. Read this after Arc D. Markdown source: <a href="01_source/CASE_DOSSIER.md">CASE_DOSSIER.md</a>.</p>
+    <h2>The job</h2>
+    <p>New contractors cannot finish required tax/onboarding forms without Slack-DMing staff. Leadership asked for “AI summaries / nicer onboarding” and a demo date.</p>
+    <h2>What is true after each arc</h2>
+    <table>
+      <thead><tr><th>Arc</th><th>What we know</th><th>What we do not yet know</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td>The portal/job is <strong>complex</strong>; the payroll-file cutover is <strong>complicated</strong>. Friday’s artifact must be a loop, not a fake six-month Gantt.</td><td>Whether contractors can find the packet.</td></tr>
+        <tr><td>B</td><td>Discovery and delivery must split. Two DoDs. Intent: unassisted completion; non-goal = no new vendor this sprint.</td><td>Pre-fill quality.</td></tr>
+        <tr><td>C</td><td>Riskiest assumption is <strong>findability</strong>, not helper polish. Lo-fi experience test of inbox → link → form.</td><td>Whether pre-fill helps after findability holds.</td></tr>
+        <tr><td>D</td><td>4/5 failed findability → kill the pretty AI demo as a <em>test</em>. Ship the findability slice. Pre-fill stays in learning mode.</td><td>Live ops load after launch of the findability slice.</td></tr>
+      </tbody>
+    </table>
+    <h2>Named moves used</h2>
+    <p>Diverge (no scoring) → dual-track sandwich → pretotype → RAT fail → redesign findability → ship slice → mode switch.</p>
+    <h2>One-page brief (final)</h2>
+    <ul>
+      <li><strong>Purpose:</strong> A new contractor finishes required forms in one sitting without DMing staff.</li>
+      <li><strong>End state:</strong> 4/5 observed trials complete unassisted on a phone.</li>
+      <li><strong>Constraints:</strong> No new vendor; existing identity provider; accessibility of the current stack.</li>
+      <li><strong>Non-goals:</strong> Marketing rewrite; AI helper this round.</li>
+      <li><strong>Success:</strong> Task success on findability, then a separate threshold for any pre-fill Wizard-of-Oz.</li>
+      <li><strong>Ops at ship:</strong> Support script, rollback = revert the link, named on-call for first five tickets.</li>
+    </ul>
+    <p><a href="ops-checklist.html">Open the launch / operations checklist →</a></p>
+  </main>
+  <script src="assets/theme.js"></script>
+</body>
+</html>

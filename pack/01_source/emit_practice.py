@@ -220,8 +220,13 @@ def main() -> None:
         fermi_html,
         count=1,
     )
-    fermi_html = fermi_html.replace("Arc A–B · door + methods", "Arc A–B · door + methods")
-    fermi_html = fermi_html.replace("Arc C–D · tools + ship", "Arc C–D · tools + ship")
+    fermi_html = fermi_html.replace('["body", "Arc A–B · door + methods"]', '["door", "Arc A–B · door + methods"]')
+    fermi_html = fermi_html.replace('["blood", "Arc C–D · tools + ship"]', '["tools", "Arc C–D · tools + ship"]')
+    fermi_html = fermi_html.replace('v === "body"', 'v === "door"')
+    fermi_html = fermi_html.replace('v === "blood"', 'v === "tools"')
+    fermi_html = fermi_html.replace('q === "body" || q === "blood"', 'q === "door" || q === "tools"')
+    fermi_html = fermi_html.replace('return "body"', 'return "door"')
+    fermi_html = fermi_html.replace('return "blood"', 'return "tools"')
     (LABS / "fermi.html").write_text(fermi_html, encoding="utf-8")
     print("patched fermi sets")
 

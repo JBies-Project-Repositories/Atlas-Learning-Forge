@@ -241,7 +241,7 @@ def wrap(stem: str, title: str, body_html: str) -> str:
 <nav class="lesson-nav"><a href="../index.html">Cover</a> <a href="../contents.html">Contents</a> <a href="../decks.html">Quiz</a> <a href="../04_labs/index.html">Labs</a> <a href="../dashboard.html">Dashboard</a> {prev_h} {next_h} <button type="button" class="theme-btn" data-theme-toggle>Dim mode</button><div class="mark">{html.escape(PACK)}</div></nav>
 {hero}
 <main>
-<article class="lesson" id="lesson">
+<article class="lesson" id="lesson" tabindex="-1">
 <div class="badge">Dense lesson · professional practice · educational only</div>
 {body_html}
 <div class="footer">Offline study pack. Progress is stored in this browser only. Optional “Learn more” links open the public homes of named methods.</div>
