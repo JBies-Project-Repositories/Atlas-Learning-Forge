@@ -8,10 +8,11 @@ Created: 2026-09-15
 
 - `lead-charter.md` — how QA/Tester Lead runs the squad
 - `roster.md` — who exists on the squad today
-- `reports/` — tester and sponsor reports (Pass 1 and Pass 2, 2026-09-15)
-- `reports/PASS-1.md` — index of the first full QA pass
-- `reports/PASS-2.md` — index of the verification pass after the CLI fix
+- `reports/` — tester and sponsor reports (Pass 1–3, 2026-09-15)
+- `reports/PASS-1.md` — first full QA pass (7-lesson primer)
+- `reports/PASS-2.md` — verification after the CLI fix
+- `reports/PASS-3.md` — 16-lesson field atlas verification
 
 ## Status on 2026-09-15
 
-Pass 1 complete. Pass 2 verification complete on **Atlas of the Build Loop — Study Pack** under HTTP launch: 7/7 methodology reports; Pass 1 P0 defects closed. Remaining items are medium polish (see sponsor delta and `CLI_POLISH_BRIEF_PASS2_Atlas_Study_Pack.md`). Screenshots: `docs/screenshots/2026-09-15/` and `docs/screenshots/2026-09-15/pass-2/`.
+Pass 3 complete on the **16-lesson field atlas** under HTTP: 7/7 methodology reports; **no new P0s**; no Pass 1/2 P0 regressions. Shippable on the recommended launch path. Optional residuals (Steelman label focus, skip focus move, Fermi `body`/`blood` ids) are not ship-blockers. See `2026-09-15-sponsor-delta-PASS3-atlas-study-pack.md`.
