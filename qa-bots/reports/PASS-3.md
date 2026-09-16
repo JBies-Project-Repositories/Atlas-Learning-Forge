@@ -1,16 +1,16 @@
 # Pass 3 — Atlas Study Pack QA (2026-09-15)
 
-Verification of the **16-lesson field atlas** (four arc-packs) after reconstruction.
+Verification pass on the **16-lesson field atlas** Study Pack for Atlas Learning Forge (AI Builders Hackathon on Devpost).
 
 ## Verdict (from sponsor delta)
 
-Pass 3 complete (7/7). Shippable under HTTP. **No new P0s.** No reproduced Pass 1/2 P0 regressions.
-
-Old primer stems were not in live HTML. Quiz is 128 items (`bl-a1-diverge` … `bl-d4-launch`).
+Under the recommended HTTP launch path, Pass 3 is complete (7/7 methodology reports). No new P0s and no reproduced Pass 1/2 P0 regressions. Several Pass 2 polish items closed (dim badge contrast, quiz subtitle vs filter, quiz-status, theme aria-pressed, most skip/main markup). Remaining residuals are not ship-blockers on HTTP. No CLI P0 fix brief this pass.
 
 ## Contents
 
-- Seven PASS3 methodology reports in this folder
-- `2026-09-15-sponsor-delta-PASS3-atlas-study-pack.md` — Lead rollup
+- `qa-bots/reports/` — seven PASS3 methodology reports, sponsor delta, and PASS3 brief
+- `docs/screenshots/2026-09-15/pass-3/exploratory-sbtm/` — exploratory evidence
+- `docs/screenshots/2026-09-15/pass-3/evidence/` — shared Pass 3 evidence shots
+- `docs/screenshots/2026-09-15/pass-3/pack/` — pack-mirrored Pass 3 screenshots
 
-CLI P0 fix brief: **not required**. Optional polish only (Steelman label focus, skip focus move, Fermi `body`/`blood` ids, dossier HTML).
+Duplicate lowercase `accessibility-wcag-PASS3.md` was identical to `Accessibility_WCAG_PASS3.md` and omitted.
